@@ -9,6 +9,7 @@ import HeaderIcons from "./header-icons/HeaderIcons";
 const Header = () => {
     return (
         <header className="header xl:flex">
+            <div className="header-container">
             <Link to="/" className="xl:flex justify-start link-header">
                 <img src={logo} alt="Website logo" className="logo"/>
                 <h1 className="title">House of pets</h1>
@@ -20,6 +21,7 @@ const Header = () => {
 
             <div className="header-icons">
                 <HeaderIcons/>
+            </div>
             </div>
         </header>
     );

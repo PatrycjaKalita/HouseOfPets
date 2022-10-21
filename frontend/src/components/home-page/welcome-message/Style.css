@@ -1,0 +1,78 @@
+.container-wm{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    background: rgb(203,206,215);
+    background: linear-gradient(90deg, rgba(203,206,215,1) 0%, rgba(227,230,237,1) 100%);
+}
+
+.container-text{
+    position: absolute;
+    left: 330px;
+    top: 0;
+    width: 30%;
+    transform: translateY(40%);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.top-text{
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.second-text{
+    font-weight: bold;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.block-of-text{
+    margin-bottom: 25px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.adoption-btn{
+    cursor: pointer;
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: #8D451D;
+    border-radius: 50px;
+}
+
+.adoption-btn:hover{
+    background-color: transparent;
+    color: #8D451D;
+    border: solid 2px #8D451D;
+}
+
+.container-img{
+    position: absolute;
+    left: 65%;
+    bottom: 0;
+    width: auto;
+    vertical-align: middle;
+}
+
+.dog-image{
+    height: 90%;
+    width: auto;
+}
+
+.container-img-cat{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    top: 0;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+}
+
+.cat-image{
+    height: 70%;
+    width: auto;
+}
