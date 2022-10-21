@@ -1,0 +1,34 @@
+.header{
+    font-family: 'Merriweather', serif;
+    padding: 20px 200px;
+    border-bottom: solid 1px #d2d2d2;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.link-header{
+    cursor: pointer;
+    width: 50%;
+}
+
+.title{
+    font-family: 'Bebas Neue', cursive;
+    color: black;
+    font-size: 38px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.logo{
+    width: 64px;
+    height: 64px;
+}
+
+.header-searchbar{
+    padding-top: 10px;
+}
+
+.header-icons{
+    width: 50%;
+    padding-top: 10px;
+}

@@ -1,0 +1,9 @@
+.header-icon{
+    font-size: 36px;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.header-icon:hover{
+    color: #f29f05;
+}
