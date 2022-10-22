@@ -6,12 +6,12 @@ import backgroundCat from '../../../assets/cat-bg-transparent.png';
 
 const WelcomeMessage = () => {
     return (
-        <div className="mb-16 container-wm">
+        <div className="mb-20 container-wm">
             <div className="container-text">
-                <h1 className="top-text">Znajdź swoje</h1>
-                <h1 className="second-text">idealne zwierzątko</h1>
+                <h1 className="top-text-wm">Znajdź swoje</h1>
+                <h1 className="second-text-wm">idealne zwierzątko</h1>
 
-                <p className="block-of-text">
+                <p className="block-of-text-wm">
                     Nasze zwierzaki czekają na Ciebie.<br/>
                     Działamy na terenie całej Polski.<br/>
                     Jeśli zwierzak ma do Ciebie trafić <br/> to ogarniemy to.

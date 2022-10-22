@@ -9,9 +9,9 @@ import turtle from '../../../assets/donation/turtle.png';
 
 const Donation = () => {
     return (
-        <div className="mb-32 justify-center flex main-container">
+        <div className="mb-28 justify-center flex main-container">
             <div className="container">
-                <h1 className="top-text">Chcesz nam pomóc?</h1>
+                <h1 className="top-text-donation">Chcesz nam pomóc?</h1>
 
                 <div className="flex donation-container">
                 <div className="left-container">
@@ -22,7 +22,7 @@ const Donation = () => {
 
                 <div className="right-container">
                     <span className="description-text">lub przy użyciu PayPal: informacja@hosueofpets.pl</span>
-                    <div className="img-container">
+                    <div className="img-container mt-2">
                         <img alt="cat" src={cat} className="animal-img mr-5"/>
                         <img alt="dog" src={dog} className="animal-img mr-5"/>
                         <img alt="bird" src={bird} className="animal-img mr-5"/>

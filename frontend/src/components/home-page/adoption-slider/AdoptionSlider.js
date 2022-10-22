@@ -74,7 +74,7 @@ const AdoptionSlider = () => {
     }
 
     return (
-        <div className="mb-32">
+        <div className="mb-28">
             <h1 className="slider-title">Zwierzęta do adopcji</h1>
 
             <div className="relative">

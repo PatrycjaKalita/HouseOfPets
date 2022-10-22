@@ -1,6 +1,6 @@
 .container-wm{
     width: 100%;
-    height: 700px;
+    height: 650px;
     position: relative;
     background: rgb(203,206,215);
     background: linear-gradient(90deg, rgba(203,206,215,1) 0%, rgba(227,230,237,1) 100%);
@@ -16,21 +16,20 @@
     vertical-align: middle;
 }
 
-.top-text{
+.top-text-wm{
     font-weight: bold;
-    font-size: 40px;
+    font-size: 36px;
 }
 
-.second-text{
+.second-text-wm{
     font-weight: bold;
     font-size: 42px;
     margin-bottom: 25px;
 }
 
-.block-of-text{
+.block-of-text-wm{
     margin-bottom: 25px;
     font-size: 20px;
-    font-weight: lighter;
 }
 
 .adoption-btn{

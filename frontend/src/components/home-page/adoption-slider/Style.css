@@ -32,14 +32,14 @@
 
 .slider-icon.left{
     top: 37%;
-    left: 10%;
+    left: 9.8%;
     transform: translateY(-60%);
 
 }
 
 .slider-icon.right{
     top: 37%;
-    right: 10%;
+    right: 9.8%;
     transform: translateY(-60%);
 }
 
