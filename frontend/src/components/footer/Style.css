@@ -1,0 +1,21 @@
+.footer-main-container{
+    background-color: #efefef;
+    justify-content: center;
+}
+
+.footer-container{
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.footer-column-link{
+    font-size: 14px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.footer-column-link:hover{
+    color: #f29f05;
+}

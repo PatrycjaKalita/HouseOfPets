@@ -1,12 +1,12 @@
-.container-wm{
+.container-wm {
     width: 100%;
     height: 650px;
     position: relative;
-    background: rgb(203,206,215);
-    background: linear-gradient(90deg, rgba(203,206,215,1) 0%, rgba(227,230,237,1) 100%);
+    background: rgb(203, 206, 215);
+    background: linear-gradient(90deg, rgba(203, 206, 215, 1) 0%, rgba(227, 230, 237, 1) 100%);
 }
 
-.container-text{
+.container-text {
     position: absolute;
     left: 330px;
     top: 0;
@@ -16,23 +16,24 @@
     vertical-align: middle;
 }
 
-.top-text-wm{
+.top-text-wm {
     font-weight: bold;
     font-size: 36px;
 }
 
-.second-text-wm{
+.second-text-wm {
     font-weight: bold;
     font-size: 42px;
     margin-bottom: 25px;
 }
 
-.block-of-text-wm{
+.block-of-text-wm {
     margin-bottom: 25px;
     font-size: 20px;
+    color: #262626;
 }
 
-.adoption-btn{
+.adoption-btn {
     cursor: pointer;
     font-size: 18px;
     width: 200px;
@@ -42,13 +43,13 @@
     border-radius: 50px;
 }
 
-.adoption-btn:hover{
+.adoption-btn:hover {
     background-color: transparent;
     color: #8D451D;
     border: solid 2px #8D451D;
 }
 
-.container-img{
+.container-img {
     position: absolute;
     left: 65%;
     bottom: 0;
@@ -56,12 +57,12 @@
     vertical-align: middle;
 }
 
-.dog-image{
+.dog-image {
     height: 90%;
     width: auto;
 }
 
-.container-img-cat{
+.container-img-cat {
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -71,7 +72,7 @@
     align-items: flex-end;
 }
 
-.cat-image{
+.cat-image {
     height: 70%;
     width: auto;
 }

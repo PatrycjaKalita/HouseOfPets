@@ -1,0 +1,53 @@
+.pas-container {
+    width: 80%;
+}
+
+.pas-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+.pas-points-container {
+    width: 100%;
+    display: flex;
+}
+
+.pas-points-container-sec {
+    gap: 100px;
+}
+
+.pas-point {
+    cursor: pointer;
+    width: 400px;
+}
+
+.pas-container-point-image {
+    height: 64px;
+    width: 64px;
+    border-radius: 30px;
+    background-color: #fdf4e1;
+    margin-bottom: 32px;
+}
+
+.pas-point-image {
+    height: 32px;
+    width: auto;
+    margin: auto;
+    padding: 15px;
+}
+
+.pas-point-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #333333;
+}
+
+.pas-point-description {
+    font-weight: lighter;
+    color: #555555;
+    font-size: 18px;
+    line-height: 38px;
+}
