@@ -18,7 +18,7 @@
 }
 
 .donation-container {
-    gap: 150px;
+    gap: 250px;
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -31,12 +31,12 @@
 }
 
 .description-text {
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .number-text {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 22px;
     margin-bottom: 15px;
 }
 

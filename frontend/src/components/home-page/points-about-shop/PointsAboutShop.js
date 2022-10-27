@@ -38,15 +38,15 @@ const PointsAboutShop = () => {
     ]
 
     return (
-        <div className="mb-28 justify-center flex">
+        <div className="mb-40 justify-center flex main-pas-container">
             <div className="pas-container justify-center">
                 <h1 className="pas-title">Czym wyróżnia się nasz sklep?</h1>
 
-                <div className="pas-points-container justify-center">
-                    <div className="grid grid-container grid-cols-3 pas-points-container-sec">
+                <div className="justify-center">
+                    <div className="grid grid-container grid-cols-3 pas-points-container">
                         {
                             points.map((points, index) => (
-                                <div className="col-span-1 row-span-1 pas-point" key={index}>
+                                <div className=" col-span-1 row-span-1" key={index}>
                                     <div className="pas-container-point-image">
                                         <img className="pas-point-image"
                                              src={process.env.PUBLIC_URL + `/assets/pointsIcons/${points.icon}`} alt=""/>

@@ -45,10 +45,10 @@ const Bestsellers = () => {
     ], []);
 
     const productTitle = (title) => {
-        if (title.length > 20) {
-            const tmp = title.slice(0, 20);
+        if (title.length > 25) {
+            const tmp = title.slice(0, 25);
             return tmp + "...";
-        } else if (title.length <= 20)
+        } else if (title.length <= 25)
             return title;
     }
 

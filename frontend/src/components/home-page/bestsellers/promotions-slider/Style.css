@@ -25,12 +25,11 @@
 }
 
 .slider-paw-container {
-    padding-top: 10px;
     position: absolute;
     gap: 10px;
     left: 55%;
     transform: translateX(-50%);
-    top: 100%
+    top: 95%
 }
 
 .paw-first {

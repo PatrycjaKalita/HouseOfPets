@@ -5,7 +5,7 @@ import shopCat from "../../../assets/shop-cat.jpg"
 
 const ShopDescription = () => {
     return (
-        <div className="mb-28 justify-center flex main-shop-description-container">
+        <div className="mb-32 justify-center flex main-shop-description-container">
             <div className="xl:flex shop-description-container">
                 <img alt="pets" src={shopCat} className="shop-description-img"/>
 
