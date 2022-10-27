@@ -20,7 +20,7 @@ const PromotionsSlider = () => {
                             className={slideIndex === index + 1 ? "opacity-100 " : "promotion-container"}
                         >
                             <img
-                                className="object-fill h-510 w-full"
+                                className="promotion-image"
                                 alt={obj.title}
                                 src={process.env.PUBLIC_URL + `/assets/img/img${index + 1}.png`}
                             />

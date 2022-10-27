@@ -2,34 +2,32 @@
     width: 35%;
     height: auto;
     position: relative;
+    margin-right: 35px;
 }
 
 .slider-promotion-container {
-    height: 670px;
+    width: 450px;
+    height: auto;
     overflow: hidden;
     position: relative;
-    padding-left: 50px;
+    margin-left: auto;
 }
 
 .promotion-container {
     opacity: 0;
     position: absolute;
-    width: 100%;
-    height: 500px;
 }
 
 .promotion-image {
     object-fit: cover;
-    height: 500px;
-    width: 100%;
 }
 
 .slider-paw-container {
     position: absolute;
-    gap: 10px;
     left: 55%;
     transform: translateX(-50%);
-    top: 95%
+    top: 100%;
+    padding-left: 20px;
 }
 
 .paw-first {

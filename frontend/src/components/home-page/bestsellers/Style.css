@@ -10,13 +10,13 @@
 }
 
 .bestseller-slider-container {
-    width: 100%;
     display: flex;
-    padding: 40px;
+    margin-left: 35px;
 }
 
 .bestseller-products-container {
     gap: 70px;
+    width: 65%;
 }
 
 .product-container {
