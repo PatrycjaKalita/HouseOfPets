@@ -1,64 +1,134 @@
-.main-shop-description-container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+@media only screen and (min-width: 1024px) {
+    .main-shop-description-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        display: flex;
+        margin-bottom: 120px;
+    }
+
+    .shop-description-container {
+        background-color: #8d451d;
+        border-radius: 50px;
+        padding: 30px 30px 30px 120px;
+        align-items: center;
+        gap: 130px;
+        margin-left: 35px;
+        margin-right: 35px;
+        display: flex;
+    }
+
+    .shop-description-img {
+        width: auto;
+        height: 300px;
+        transform: scale(1.45);
+        border-radius: 30px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .shop-description-blockquote {
+        padding-right: 30px;
+    }
+
+    .shop-description-top-text {
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .shop-description-second-text {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 14px;
+    }
+
+    .shop-description-block-of-text {
+        margin-bottom: 20px;
+        color: white;
+        font-size: 16px;
+        font-weight: lighter;
+        line-height: 30px;
+    }
+
+    .shop-description-button {
+        width: 300px;
+        height: 70px;
+        color: #381c0c;
+        font-size: 26px;
+        background-color: #f29f05;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .shop-description-button:hover {
+        color: #f29f05;
+        background-color: transparent;
+        border: solid 2px #f29f05;
+    }
 }
 
-.shop-description-container {
-    background-color: #8d451d;
-    border-radius: 50px;
-    padding: 30px 30px 30px 120px;
-    align-items: center;
-    gap: 130px;
-    margin-left: 35px;
-    margin-right: 35px;
-}
+@media only screen and (max-width: 1024px) {
+    .main-shop-description-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        background-color: #8d451d;
+        border-radius: 50px;
+        margin-bottom: 50px;
+    }
 
-.shop-description-img {
-    width: auto;
-    height: 300px;
-    transform: scale(1.45);
-    border-radius: 30px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-}
+    .shop-description-container {
+        background-color: #8d451d;
+        border-radius: 50px;
+    }
 
-.shop-description-blockquote {
-    padding-right: 30px;
-}
+    .shop-description-img {
+        width: 100%;
+        border-radius: 50px 50px 0 0;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
 
-.shop-description-top-text {
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-}
+    .shop-description-blockquote {
+        padding: 20px;
+    }
 
-.shop-description-second-text {
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 14px;
-}
+    .shop-description-top-text {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-.shop-description-block-of-text {
-    margin-bottom: 20px;
-    color: white;
-    font-size: 16px;
-    font-weight: lighter;
-    line-height: 30px;
-}
+    .shop-description-second-text {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
 
-.shop-description-button {
-    width: 300px;
-    height: 70px;
-    color: #381c0c;
-    font-size: 26px;
-    background-color: #f29f05;
-    cursor: pointer;
-    border-radius: 50px;
-}
+    .shop-description-block-of-text {
+        margin-bottom: 10px;
+        color: white;
+        font-size: 12px;
+        font-weight: lighter;
+        line-height: 26px;
+    }
 
-.shop-description-button:hover {
-    color: #f29f05;
-    background-color: transparent;
-    border: solid 2px #f29f05;
+    .shop-description-button {
+        width: 100%;
+        height: 50px;
+        color: #381c0c;
+        font-size: 16px;
+        background-color: #f29f05;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .shop-description-button:hover {
+        color: #f29f05;
+        background-color: transparent;
+        border: solid 2px #f29f05;
+    }
 }

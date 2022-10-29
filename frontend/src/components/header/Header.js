@@ -8,20 +8,20 @@ import HeaderIcons from "./header-icons/HeaderIcons";
 
 const Header = () => {
     return (
-        <header className="header xl:flex">
+        <header className="header">
             <div className="header-container">
-            <Link to="/" className="xl:flex justify-start link-header">
-                <img src={logo} alt="Website logo" className="logo"/>
-                <h1 className="title">House of pets</h1>
-            </Link>
+                <Link to="/" className="link-header">
+                    <img src={logo} alt="Website logo" className="logo"/>
+                    <h1 className="title">House of pets</h1>
+                </Link>
 
-            <div className="header-searchbar">
-                <Searchbar/>
-            </div>
+                <div className="header-searchbar">
+                    <Searchbar/>
+                </div>
 
-            <div className="header-icons">
-                <HeaderIcons/>
-            </div>
+                <div className="header-icons">
+                    <HeaderIcons/>
+                </div>
             </div>
         </header>
     );

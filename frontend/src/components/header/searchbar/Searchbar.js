@@ -101,7 +101,7 @@ const Searchbar = () => {
 
     return (
         <div className="searchbar-container">
-            <div className="xl:flex relative">
+            <div className="flex relative searchbar-mobile">
                 <input type="text" placeholder="Szukaj"
                        className="search-input"
                        value={wordEntered}

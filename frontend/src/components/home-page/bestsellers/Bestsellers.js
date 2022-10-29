@@ -53,15 +53,15 @@ const Bestsellers = () => {
     }
 
     return (
-        <div className="mb-28 justify-center flex">
+        <div className="main-bestseller-container">
             <div className="bestseller-container">
                 <h1 className="bestseller-title">Najczęściej wybierane produkty</h1>
                 <div className="bestseller-slider-container">
-                    <div className="grid grid-container grid-cols-3 bestseller-products-container">
+                    <div className="bestseller-products-container">
                         {
                             products.map((product, index) => (
                                 <Link key={index} to={'/product'}>
-                                    <div className="col-span-1 row-span-1 product-container">
+                                    <div className="product-container">
                                         <img className="product-container-img" src={product.image} alt=""/>
                                         <h2 className="product-container-title">{productTitle(product.title)}</h2>
                                         <h1 className="product-container-price">{product.price} zł</h1>

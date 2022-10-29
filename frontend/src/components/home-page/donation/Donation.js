@@ -9,27 +9,27 @@ import turtle from '../../../assets/donation/turtle.png';
 
 const Donation = () => {
     return (
-        <div className="mb-28 justify-center flex main-container">
+        <div className="main-container">
             <div className="container">
                 <h1 className="top-text-donation">Chcesz nam pomóc?</h1>
 
-                <div className="flex donation-container">
-                <div className="left-container">
-                    <span className="description-text">Wpłać dowolną darowiznę:</span>
-                    <h1 className="number-text">93 3888 3099 3322 0001 9320 0029</h1>
-                    <span className="description-text">Tytułem: Darowizna - House of pets</span>
-                </div>
-
-                <div className="right-container">
-                    <span className="description-text">lub przy użyciu PayPal: informacja@hosueofpets.pl</span>
-                    <div className="img-container mt-2">
-                        <img alt="cat" src={cat} className="animal-img mr-5"/>
-                        <img alt="dog" src={dog} className="animal-img mr-5"/>
-                        <img alt="bird" src={bird} className="animal-img mr-5"/>
-                        <img alt="rabbit" src={rabbit} className="animal-img mr-5"/>
-                        <img alt="turtle" src={turtle} className="animal-img mr-5"/>
+                <div className="donation-container">
+                    <div className="left-container">
+                        <span className="description-text">Wpłać dowolną darowiznę:</span>
+                        <h1 className="number-text">93 3888 3099 3322 0001 9320 0029</h1>
+                        <span className="description-text">Tytułem: Darowizna - House of pets</span>
                     </div>
-                </div>
+
+                    <div className="right-container">
+                        <span className="description-text">lub przy użyciu PayPal: informacja@hosueofpets.pl</span>
+                     <div className="img-container mt-2">
+                            <img alt="cat" src={cat} className="animal-img"/>
+                            <img alt="dog" src={dog} className="animal-img"/>
+                            <img alt="bird" src={bird} className="animal-img"/>
+                            <img alt="rabbit" src={rabbit} className="animal-img"/>
+                            <img alt="turtle" src={turtle} className="animal-img"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

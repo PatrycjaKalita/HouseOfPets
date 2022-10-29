@@ -6,7 +6,7 @@ import backgroundCat from '../../../assets/cat-bg-transparent.png';
 
 const WelcomeMessage = () => {
     return (
-        <div className="mb-20 container-wm">
+        <div className="container-wm">
             <div className="container-text">
                 <h1 className="top-text-wm">Znajdź swoje</h1>
                 <h1 className="second-text-wm">idealne zwierzątko</h1>
