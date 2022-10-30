@@ -7,27 +7,27 @@ const Navlinks = () => {
         {
             key: 1,
             name: "KOTY",
-            link: "/adoption-or-shop/koty",
+            link: "/choose-option/koty",
         },
         {
             key: 2,
             name: "PSY",
-            link: "/adoption-or-shop/psy",
+            link: "/choose-option/psy",
         },
         {
             key: 3,
             name: "MAŁE ZWIERZĄTKA",
-            link: "/adoption-or-shop/male-zwierzatka",
+            link: "/choose-option/male-zwierzatka",
         },
         {
             key: 4,
             name: "PTAKI",
-            link: "/adoption-or-shop/ptaki",
+            link: "/choose-option/ptaki",
         },
         {
             key: 5,
             name: "TERRARYSTYKA",
-            link: "/adoption-or-shop/terrarystyka",
+            link: "/choose-option/terrarystyka",
         }
     ]
 
