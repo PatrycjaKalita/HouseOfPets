@@ -1,7 +1,7 @@
 # Frontend
 Projekt ten został stworzy przy użyciu biblioteki JavaScript -  React.
 
-W projekcie korzystam również z: ionicons oraz tailwindcss.
+W projekcie korzystam również z: ionicons, Material UI oraz tailwindcss.
 
 ---
 
