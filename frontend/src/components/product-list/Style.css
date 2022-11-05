@@ -1,0 +1,254 @@
+/* Styles for ProductsList file */
+.main-container-products-list {
+    width: 80%;
+    margin: 20px auto 100px auto;
+}
+
+.products-filters-list-container {
+    display: flex;
+}
+
+.filter-container {
+    border: solid 1px #9D9D9D;
+    padding: 10px 20px 10px 20px;
+    margin-right: 60px;
+}
+
+.filter-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.filter-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 20px
+}
+
+.checkbox-filters-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    padding-left: 30px;
+    padding-bottom: 5px;
+}
+
+.checkbox-filters-number {
+    display: inline-block;
+    font-weight: lighter;
+    color: #CCCCCC;
+}
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+.custom-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: solid 1px #D3D3D3;
+}
+
+.checkbox-filters-container:hover input ~ .custom-checkmark,
+.checkbox-filters-container input:active ~ .custom-checkmark {
+    background-color: transparent;
+    border: solid 1px #666666;
+}
+
+.checkbox-filters-container input:checked ~ .custom-checkmark {
+    background-color: #8D451D;
+}
+
+.custom-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-filters-container input:checked ~ .custom-checkmark:after {
+    display: block;
+}
+
+.checkbox-filters-container .custom-checkmark:after {
+    left: 8px;
+    bottom: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.price-filter-line {
+    display: inline-block;
+    width: 15px;
+    border: solid 1px #e1e1e1;
+    background-color: #e1e1e1;
+    margin-top: 18px;
+}
+
+.changing-searching-options-container {
+    width: 800px;
+    /*margin: 100px auto;*/
+
+    display: flex;
+    flex-direction: column;
+    /*gap: 24px;*/
+}
+
+
+.changing-searching-options {
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+
+    /*display: grid;*/
+    /*grid-template-columns: auto 1fr auto;
+    column-gap: 24px;
+    row-gap: 32px;*/
+    align-items: center;
+}
+
+.changing-searching-options-top-part {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.top-part-options {
+    color: #9A9A9A;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+.top-part-selected-options {
+    color: #555555;
+    font-size: 16px;
+    padding-right: 10px;
+}
+
+.hidden-box {
+    grid-column: 2;
+    display: none;
+}
+
+
+.open {
+    border-top: 4px solid #8D451D;
+}
+
+.open .hidden-box {
+    display: block;
+}
+
+
+.products-list-container {
+    display: grid;
+    gap: 60px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.product-list-container {
+    grid-column: span 1 / span 1;
+    grid-row: span 1 / span 1;
+    height: 310px;
+    width: 250px;
+}
+
+.product-list-img {
+    height: 240px;
+    width: auto;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-list-title {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.product-list-sec-row, .product-list-rating-container {
+    display: flex;
+    vertical-align: middle;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.product-list-star {
+    color: #F29F05;
+    font-size: 25px;
+}
+
+.product-list-rating {
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.product-list-container-price {
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+}
+
+.product-list-price {
+    font-size: 24px;
+    color: #8D451D;
+}
+
+/* Styles for TopInformations file */
+.main-container-top-informations {
+    margin-bottom: 50px;
+}
+
+.product-list-path-container {
+    font-weight: lighter;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.product-list-link:hover {
+    border-bottom: solid 1px black;
+}
+
+.top-information-title-page {
+    margin-bottom: 20px;
+}
+
+.top-information-animal-type {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.top-information-product-category {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.top-information-product-number {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CCCCCC;
+}
+
+.top-information-description-title {
+    color: #464646;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.top-information-description {
+    color: #646464;
+    font-size: 16px;
+    line-height: 26px;
+}
+

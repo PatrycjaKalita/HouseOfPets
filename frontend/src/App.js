@@ -7,6 +7,7 @@ import HomePage from "./components/home-page/HomePage";
 import Footer from "./components/footer/Footer";
 import ChooseOption from "./components/choose-option/ChooseOption";
 import ShopForm from "./components/shop-form/ShopForm";
+import ProductsList from "./components/product-list/ProductsList";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/" element={<><HomePage/></>}/>
                 <Route path="/choose-option/koty" element={<><ChooseOption/></>}/>
                 <Route path="/shop-form/koty" element={<><ShopForm/></>}/>
+                <Route path="/shop/:animalType/products/:productCategory" exact element={<><ProductsList animalType="koty" productCategory="sucha-karma"/></>}/>
             </Routes>
 
             <Footer/>

@@ -11,7 +11,6 @@ import './Style.css';
 import catTop from '../../assets/cats-shop-form/img1.png';
 import firstCatBottom from '../../assets/cats-shop-form/img2.png';
 import secondCatBottom from '../../assets/cats-shop-form/img3.PNG';
-import {FormHelperText} from "@mui/material";
 import {Link} from "react-router-dom";
 
 
@@ -180,14 +179,13 @@ const ShopForm = () => {
                             </div>
 
                             <div className="weight-container">
-                                <div>
-                                    <TextField
-                                        /*type="number"*/
-                                        label="Waga"
-                                        variant="outlined"
-                                        className={classes.textFieldStyle}
-                                    />
-                                </div>
+                                <TextField
+                                    /*type="number"*/
+                                    label="Waga"
+                                    variant="outlined"
+                                    className={classes.textFieldStyle}
+                                />
+
                                 <p className="kilograms">kg</p>
                             </div>
                         </div>
@@ -198,7 +196,7 @@ const ShopForm = () => {
                                     Anuluj
                                 </button>
                             </Link>
-                            <Link to="/shop/products/sucha-karma">
+                            <Link to="/shop/koty/products/sucha-karma">
                                 <button className="btn-search-shop-form">
                                     SZUKAJ
                                 </button>
