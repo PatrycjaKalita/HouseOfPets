@@ -1,6 +1,5 @@
 @media only screen and (min-width: 1024px) {
     .searchbar-container {
-        font-family: 'Merriweather', serif;
         width: 100%;
     }
 
@@ -62,17 +61,18 @@
 
     .searchbar-title {
         font-size: 16px;
+        font-weight: 400;
     }
 
     .searchbar-price {
         font-size: 18px;
         color: #8d451d;
+        font-weight: 500;
     }
 }
 
 @media only screen and (max-width: 1024px) {
     .searchbar-container {
-        font-family: 'Merriweather', serif;
         width: 100%;
     }
 
@@ -137,10 +137,12 @@
 
     .searchbar-title {
         font-size: 12px;
+        font-weight: 400;
     }
 
     .searchbar-price {
         font-size: 14px;
         color: #8d451d;
+        font-weight: 500;
     }
 }

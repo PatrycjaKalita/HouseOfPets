@@ -30,7 +30,7 @@
     }
 
     .shop-form-first-row-left {
-        width: 50%;
+        width: 65%;
     }
 
     .shop-form-first-row-title {
@@ -39,7 +39,7 @@
     }
 
     .shop-form-first-row-right {
-        width: 50%;
+        width: 35%;
         justify-content: flex-end;
         display: flex;
     }
@@ -54,7 +54,7 @@
     }
 
     .shop-form-second-row {
-        width: 55%;
+        width: 65%;
     }
 
     .shop-form-second-row-title {

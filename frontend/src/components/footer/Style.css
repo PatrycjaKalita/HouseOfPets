@@ -41,7 +41,7 @@
         background-color: white;
         width: 100%;
         justify-content: center;
-        font-weight: lighter;
+        font-weight: 300;
         font-size: 12px;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -72,13 +72,13 @@
     }
 
     .footer-column-title {
-        font-weight: bold;
+        font-weight: 500;
         margin-bottom: 5px;
     }
 
     .footer-column-link {
         font-size: 14px;
-        font-weight: lighter;
+        font-weight: 300;
         cursor: pointer;
         transition-duration: 300ms;
         line-height: 2rem;
@@ -140,9 +140,8 @@
     .page-bottom-container-text {
         width: 40%;
         justify-content: center;
-        font-weight: lighter;
+        font-weight: 300;
         font-size: 12px;
-
     }
 
     .footer-page-title {
@@ -154,7 +153,6 @@
 
     .page-bottom-text-left {
         font-size: 8px;
-
     }
 
     .page-bottom-text-right {
@@ -162,14 +160,14 @@
     }
 
     .footer-column-title {
-        font-weight: bold;
+        font-weight: 500;
         font-size: 10px;
         margin-bottom: 5px;
     }
 
     .footer-column-link {
         font-size: 10px;
-        font-weight: lighter;
+        font-weight: 300;
         cursor: pointer;
         transition-duration: 300ms;
     }

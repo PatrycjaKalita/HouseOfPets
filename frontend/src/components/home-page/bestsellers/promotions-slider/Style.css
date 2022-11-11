@@ -35,12 +35,14 @@
         transform: rotate(-25deg);
         font-size: 30px;
         color: #8D451D;
+        padding-right: 5px;
     }
 
     .paw-second {
         transform: rotate(-25deg);
         font-size: 25px;
         color: #b4b3b3;
+        padding-right: 5px;
     }
 
     .paw-second:hover {
@@ -85,12 +87,14 @@
         transform: rotate(-25deg);
         font-size: 24px;
         color: #8D451D;
+        padding-right: 5px;
     }
 
     .paw-second {
         transform: rotate(-25deg);
         font-size: 20px;
         color: #b4b3b3;
+        padding-right: 5px;
     }
 
     .paw-second:hover {

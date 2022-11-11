@@ -41,7 +41,9 @@ const Navlinks = () => {
                         <div className="navlinks-container">
                             <Link to={link.link}>
                                 <h1 className="navlinks-title"
-                                    onClick={() => {heading !== link.name ? setHeading(link.name) : setHeading("");}}>
+                                    onClick={() => {
+                                        heading !== link.name ? setHeading(link.name) : setHeading("");
+                                    }}>
                                     {link.name}
                                 </h1>
                             </Link>

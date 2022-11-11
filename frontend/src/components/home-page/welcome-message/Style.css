@@ -42,6 +42,7 @@
         height: 50px;
         color: white;
         background-color: #8D451D;
+        border: solid 2px #8D451D;
         border-radius: 50px;
     }
 
@@ -119,6 +120,7 @@
         height: 40px;
         color: white;
         background-color: #8D451D;
+        border: solid 2px #8D451D;
         border-radius: 50px;
     }
 

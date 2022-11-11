@@ -49,7 +49,8 @@ const PointsAboutShop = () => {
                                 <div className="col-span-1 row-span-1" key={index}>
                                     <div className="pas-container-point-image">
                                         <img className="pas-point-image"
-                                             src={process.env.PUBLIC_URL + `/assets/pointsIcons/${points.icon}`} alt=""/>
+                                             src={process.env.PUBLIC_URL + `/assets/pointsIcons/${points.icon}`}
+                                             alt=""/>
                                     </div>
 
                                     <h2 className="pas-point-title">{points.title}</h2>

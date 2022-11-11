@@ -38,6 +38,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -89,10 +90,26 @@
       <workItem from="1667241976069" duration="8978000" />
       <workItem from="1667291356416" duration="8273000" />
       <workItem from="1667387662340" duration="42902000" />
+      <workItem from="1667768369220" duration="353000" />
+      <workItem from="1667768956221" duration="196000" />
+      <workItem from="1667932229542" duration="418000" />
+      <workItem from="1667932669215" duration="22516000" />
+      <workItem from="1668177447465" duration="5616000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/product-list/changing-searching-options/ChangingSearchingOptions.js</url>
+          <line>117</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

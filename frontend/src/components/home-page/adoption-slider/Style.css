@@ -7,13 +7,12 @@
     margin-right: auto;
 }
 
-
 #slider::-webkit-scrollbar {
     display: none;
 }
 
 @media only screen and (min-width: 1024px) {
-    .adoption-slider{
+    .adoption-slider {
         margin-bottom: 100px;
     }
 
@@ -48,7 +47,6 @@
         top: 37%;
         left: 9.8%;
         transform: translateY(-60%);
-
     }
 
     .slider-icon.right {
@@ -101,11 +99,12 @@
     .slider-pet-breed {
         margin-left: 2px;
         font-size: 16px;
+        font-weight: 300;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    .adoption-slider{
+    .adoption-slider {
         margin-bottom: 50px;
     }
 
@@ -139,7 +138,6 @@
         top: 45%;
         left: 16%;
         transform: translateY(-60%);
-
     }
 
     .slider-icon-others.right {
@@ -190,5 +188,6 @@
     .slider-pet-breed {
         margin-left: 2px;
         font-size: 12px;
+        font-weight: 300;
     }
 }

@@ -49,10 +49,11 @@
     .product-container-title {
         margin-left: 5px;
         font-size: 18px;
+        font-weight: 400;
     }
 
     .product-container-price {
-        font-weight: bold;
+        font-weight: 700;
         color: #8D451D;
         font-size: 22px;
         margin-left: 5px;
@@ -108,10 +109,11 @@
     .product-container-title {
         margin-left: 5px;
         font-size: 16px;
+        font-weight: 400;
     }
 
     .product-container-price {
-        font-weight: bold;
+        font-weight: 700;
         color: #8D451D;
         font-size: 18px;
         margin-left: 5px;

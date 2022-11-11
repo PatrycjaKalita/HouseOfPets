@@ -7,11 +7,20 @@ import {Pagination} from "@mui/material";
 
 import './Style.css';
 import TopInformations from "./top-informations/TopInformations";
+import ChangingSearchingOptions from "./changing-searching-options/ChangingSearchingOptions";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
+import MenuItem from "@mui/material/MenuItem";
+import NavLinks from "../navbar/NavLinks";
+import HeaderIcon from "../header/header-icons/HeaderIcon";
+
+import {products} from './productsData';
 
 const useStyles = makeStyles({
     textFieldStyle: {
         width: 100,
-        fontFamily: "Merriweather",
         "& label.Mui-focused": {
             color: '#464646',
         },
@@ -21,74 +30,42 @@ const useStyles = makeStyles({
             }
         }
     },
+    selectStyles: {
+        width: 200,
+        color: '#464646',
+        "&.MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D",
+                color: "#8D451D",
+            },
+        },
+        selectIcon: {
+            position: "relative",
+            fontSize: "20px",
+            paddingRight: "10px",
+        },
+    },
+    inputLabelStyle: {
+        '&.MuiInputLabel-root': {
+            "&.Mui-focused": {
+                color: '#464646',
+            },
+        },
+    },
     root: {}
 });
 
 
 const ProductsList = () => {
     const classes = useStyles();
-    const products = useMemo(() => [
-        {
-            image: "https://zooart.com.pl/pol_pl_ROYAL-CANIN-Hair-Skin-Care-4kg-karma-sucha-dla-kotow-doroslych-lsniaca-siersc-i-zdrowa-skora-1784_1.jpg",
-            title: "ROYAL CANIN Hair&Skin",
-            price: "154.65",
-            link: '/royal-canin-hair-&-skin',
-            rating: '4.5',
-            producer: 'Royal Canin',
-            lifePhase: 'dorosły',
-        },
-        {
-            image: "https://zooart.com.pl/pol_pl_ROYAL-CANIN-Kitten-Sterilised-2kg-karma-sucha-dla-kociat-od-6-do-12-miesiaca-zycia-sterylizowanych-23748_8.jpg",
-            title: "ROYAL CANIN Kitten Sterilised 2kg",
-            price: "83.95",
-            link: '/royal-canin-kitten-sterilised-2-kg',
-            rating: '4.2',
-            producer: 'Royal Canin',
-            lifePhase: 'junior',
-        },
-        {
-            image: "https://media.os.fressnapf.com/products-v2/5/9/a/a/59aa20c0d5b797ee0768f5898f63ea563e6ce45a_cfb1468d08bb0bc43f67a83c3bc65be9698b4afe.jpg?t=prod_m&f=webp",
-            title: "Royal Canin British Shorthair",
-            price: "36.80",
-            link: '/royal-canin-british-shorthair',
-            rating: '3',
-            producer: 'Royal Canin',
-            lifePhase: 'dorosły',
-        },
-        {
-            image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
-            title: "WHISKAS Sterile 14kg z kurczakiem",
-            price: "115.80",
-            link: '/whiskas-sterile-14-kg-z-kurczakiem',
-            rating: '4.8',
-            producer: 'Whiskas',
-            lifePhase: 'senior',
-        },
-        {
-            image: "https://image.ceneostatic.pl/data/products/92064026/i-almo-nature-holistic-adult-z-ryba-oleista-2kg.jpg",
-            title: "ALMO NATURE Holistic Adult z rybą oleistą 2kg",
-            price: "45.00",
-            link: '/almo-nature-holistic-adult-z-ryba-oleista-2-kg',
-            rating: '3.1',
-            producer: 'Almo Nature',
-            lifePhase: 'dorosły',
-        },
-        {
-            image: "https://zooart.com.pl/pol_pl_-PERFECT-FIT-Sensitive-1-7kg-Bogaty-w-Indyka-sucha-karma-dla-doroslych-kotow-46221_1.png",
-            title: "PERFECT FIT (Sensitive 1+) 7kg Bogaty w Indyka",
-            price: "109.90",
-            link: '/perfect-fit-7-kg-bogaty-w-indyka',
-            rating: '5',
-            producer: 'Perfect Fit',
-            lifePhase: 'dorosły',
-        },
-    ], []);
+
+    const [open, setOpen] = useState(false);
 
     const productTitle = (title) => {
-        if (title.length > 21) {
-            const tmp = title.slice(0, 21);
-            return tmp + "...";
-        } else if (title.length <= 21)
+        if (title.length > 22) {
+            const tmp = title.slice(0, 22);
+            return tmp + "..";
+        } else if (title.length <= 22)
             return title;
     }
 
@@ -344,6 +321,14 @@ const ProductsList = () => {
             <TopInformations productsNumber={products.length}/>
 
             <div className="products-filters-list-container">
+                {/*<span onClick={() => setOpen(!open)}>
+                    <ion-icon name="funnel-outline"></ion-icon>
+                </span>
+
+                <div className={`navbar-mobile-menu ${open ? 'left-0' : 'left-[-100%]'}`}>
+                   Fitry
+                </div>*/}
+
                 {/*Filtry*/}
                 <div className="filter-container">
                     <h1 className="filter-title">Filtry</h1>
@@ -409,34 +394,30 @@ const ProductsList = () => {
                     }
                 </div>
 
-
                 <div>
                     {/*Prawa strona*/}
-                    <div>
+                    <div className="right-side-csof-sorting-by-price">
                         {/*Top prawej strony, sortowanko + zmiana kategori*/}
+                        <ChangingSearchingOptions/>
 
-                        <div className="changing-searching-options-container">
-                            <div className="changing-searching-options open">
-                                <div className="changing-searching-options-top-part">
-                                    <p className="top-part-options">OPCJE:</p>
-                                    <p className="top-part-selected-options">Rasa: Wszystkie</p>
-                                    <p className="top-part-selected-options">Wiek: Wszystkie</p>
-                                    <p className="top-part-selected-options">Waga: Brak</p>
-                                    <p className="top-part-selected-options">Kategoria: Sucha karma</p>
-                                    <span className="">
-                                    <ion-icon name="chevron-up-outline"></ion-icon>
-                                </span>
-                                </div>
-                                <div className="hidden-box">
-                                    <p>
-                                        Formularz do zmiany kategorii wyboru.
-                                    </p>
-                                </div>
-                            </div>
+                        <div className="rs-sorting-by-price">
+                            <FormControl>
+                                <InputLabel className={classes.inputLabelStyle}>Sortuj po</InputLabel>
+
+                                <Select
+                                    className={classes.selectStyles}
+                                    IconComponent={ExpandMoreRoundedIcon}
+                                    /*value={valueBreeds}*/
+                                    label="Sortuj po"
+                                    onChange={e => setSelectedSorting(e.target.value)}
+                                >
+
+                                    <MenuItem value="ascending">Cena - rosnąco</MenuItem>
+                                    <MenuItem value="descending">Cena - malejąco</MenuItem>
+                                </Select>
+                            </FormControl>
                         </div>
-
                     </div>
-
 
                     {/* Product */}
                     <div className="products-list-container">

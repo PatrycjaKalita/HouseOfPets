@@ -10,16 +10,16 @@ const ChooseOption = () => {
         <div className="choose-option-container">
             <div className="choose-option-adoption">
                 <img src={adoptionCat} alt="Adoption cat" className="choose-option-img"/>
-                    <div className="choose-option-container-btn-adoption">
-                        <button className="choose-option-btn-adoption">ADOPTUJ</button>
-                    </div>
+                <div className="choose-option-container-btn-adoption">
+                    <button className="choose-option-btn-adoption">ADOPTUJ</button>
+                </div>
             </div>
 
             <div className="choose-option-shop">
                 <img src={shopCat} alt="Shop cat" className="choose-option-img"/>
                 <div className="choose-option-container-btn-shop">
-                    <Link to="/shop/koty/products/sucha-karma">
-                        <button className="choose-option-btn-shop" >ZRÓB ZAKUPY</button>
+                    <Link to="/shop-form/koty">
+                        <button className="choose-option-btn-shop">ZRÓB ZAKUPY</button>
                     </Link>
                 </div>
             </div>

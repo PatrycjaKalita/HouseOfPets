@@ -8,7 +8,7 @@ const FooterColumn = ({links, title}) => {
             {links.map((link) => (
                 <li key={link.name}>
                     <a className="footer-column-link"
-                       href={link.link} >
+                       href={link.link}>
                         {link.name}
                     </a>
                 </li>

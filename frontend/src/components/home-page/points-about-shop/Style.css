@@ -51,7 +51,7 @@
     }
 
     .pas-point-description {
-        font-weight: lighter;
+        font-weight: 300;
         color: #555555;
         font-size: 16px;
         line-height: 38px;
@@ -100,7 +100,7 @@
     }
 
     .pas-point-description {
-        font-weight: lighter;
+        font-weight: 300;
         color: #555555;
         font-size: 12px;
         margin-bottom: 25px;

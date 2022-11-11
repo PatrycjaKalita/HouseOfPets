@@ -1,22 +1,17 @@
-import React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, {SelectChangeEvent} from '@mui/material/Select';
-import {makeStyles} from "@material-ui/core/styles";
+import React, {useState} from 'react';
+import '../Style.css';
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select, {SelectChangeEvent} from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
-import TextField from '@mui/material/TextField';
-
-import './Style.css';
-import catTop from '../../assets/cats-shop-form/img1.png';
-import firstCatBottom from '../../assets/cats-shop-form/img2.png';
-import secondCatBottom from '../../assets/cats-shop-form/img3.PNG';
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
 import {Link} from "react-router-dom";
-
+import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
     selectStyles: {
-        width: 250,
+        width: 200,
         "&.MuiOutlinedInput-root": {
             "&.Mui-focused fieldset": {
                 borderColor: "#8D451D",
@@ -30,7 +25,7 @@ const useStyles = makeStyles({
         },
     },
     selectStylesAge: {
-        width: 130,
+        width: 150,
         "&.MuiOutlinedInput-root": {
             "&.Mui-focused fieldset": {
                 borderColor: "#8D451D",
@@ -51,13 +46,9 @@ const useStyles = makeStyles({
         },
     },
     textFieldStyle: {
-        width: 130,
+        width: 150,
         "& label.Mui-focused": {
             color: '#464646',
-        },
-        '& input:invalid + fieldset': {
-            borderColor: 'red',
-            borderWidth: 2,
         },
         '& input:valid:focus + fieldset': {
             borderColor: "#8D451D",
@@ -65,7 +56,8 @@ const useStyles = makeStyles({
     },
 });
 
-const ShopForm = () => {
+const ChangingSearchingOptions = () => {
+    const [showed, setShowed] = useState(false);
     const classes = useStyles();
 
     /*Settings for categories*/
@@ -95,51 +87,47 @@ const ShopForm = () => {
     };
 
     return (
-        <div className="main-container-shop-form">
-            <div className="shop-form-container">
+        <div className="changing-searching-options-container">
+            <div className="changing-searching-options open">
+                <div
+                    className={showed ? "changing-searching-options-top-part-open" : "changing-searching-options-top-part"}>
+                    <p className="top-part-options">OPCJE:</p>
 
-                <h1 className="shop-form-title">Witaj w naszym sklepie "House of pets"!</h1>
+                    <p className="top-part-selected-options">Rasa:</p>
+                    <p className="top-part-selected-options-answer">Domowy</p>
 
-                <div className="shop-form-img-others">
-                    {/*Prawa strona*/}
-                    <img alt="cat 1" src={catTop} className="shop-form-others-img"/>
+                    <p className="top-part-selected-options">Wiek:</p>
+                    <p className="top-part-selected-options-answer">Wszystkie</p>
+
+                    <p className="top-part-selected-options">Waga:</p>
+                    <p className="top-part-selected-options-answer">Brak</p>
+
+                    <p className="top-part-selected-options">Kategoria:</p>
+                    <p className="top-part-selected-options-answer">Sucha karma</p>
+
+                    <span className={showed ? "top-part-options-chevron-none" : "top-part-options-chevron-down"}
+                          onClick={(e) => setShowed(true)}>
+                                        <ion-icon name="chevron-down-outline"></ion-icon>
+                                    </span>
+
+                    <span className={showed ? "top-part-options-chevron-up" : "top-part-options-chevron-none"}
+                          onClick={(e) => setShowed(false)}>
+                                        <ion-icon name="chevron-up-outline"></ion-icon>
+                                    </span>
                 </div>
-
-                <form onSubmit={handleSubmit} className="shop-form">
-                    <div className="shop-form-first-row">
-                        {/*Lewa strona*/}
-                        <div className="shop-form-first-row-left">
-                            <h1 className="shop-form-first-row-title">Jakiego produktu szukasz?</h1>
-                            <FormControl>
-                                <InputLabel className={classes.inputLabelStyle}>Kategoria</InputLabel>
-                                <Select
-                                    className={classes.selectStyles}
-                                    IconComponent={ExpandMoreRoundedIcon}
-                                    value={valueCategories}
-                                    label="Kategoria"
-                                    onChange={handleChangeCategories}
-                                >
-                                    <MenuItem value="all"><em>Wszystkie</em></MenuItem>
-                                    <MenuItem value="s_karma">Sucha karma</MenuItem>
-                                    <MenuItem value="m_karma">Mokra karma</MenuItem>
-                                    <MenuItem value="przysmaki">Przysmaki</MenuItem>
-                                </Select>
-                            </FormControl>
+                <div className={showed ? "top-part-hidden-box" : "top-part-options-chevron-none"}>
+                    <form onSubmit={handleSubmit}>
+                        <div className="csof-first-row">
+                            <p className="csof-description">
+                                Wszystkie pola NIE są wymagane.
+                                <br/>Domyślną wartością są dane z poprzedniego formularza.</p>
                         </div>
-                        <div className="shop-form-first-row-right">
-                            {/*Prawa strona*/}
-                            <img alt="cat 1" src={catTop} className="shop-form-first-row-right-img"/>
-                        </div>
-                    </div>
 
-
-                    <div className="shop-form-second-row">
-                        <h1 className="shop-form-second-row-title">Dla kogo szukasz produktu?</h1>
-
-                        <div className="options-container">
-                            <div className="breed-container">
+                        <div className="csof-second-row">
+                            <div className="csof-breed-container">
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rasa</InputLabel>
+
                                     <Select
                                         className={classes.selectStyles}
                                         IconComponent={ExpandMoreRoundedIcon}
@@ -147,13 +135,14 @@ const ShopForm = () => {
                                         label="Rasa"
                                         onChange={handleChangeBreeds}
                                     >
+
                                         <MenuItem value="all"><em>Wszystkie</em></MenuItem>
                                         <MenuItem value="domowy">Domowy</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>
 
-                            <div className="age-container">
+                            <div className="csof-age-container">
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Wiek</InputLabel>
                                     <Select
@@ -168,8 +157,28 @@ const ShopForm = () => {
                                     </Select>
                                 </FormControl>
                             </div>
+                        </div>
 
-                            <div className="weight-container">
+                        <div className="csof-third-row">
+                            <div className="csof-category-container">
+                                <FormControl>
+                                    <InputLabel className={classes.inputLabelStyle}>Kategoria</InputLabel>
+                                    <Select
+                                        className={classes.selectStyles}
+                                        IconComponent={ExpandMoreRoundedIcon}
+                                        value={valueCategories}
+                                        label="Kategoria"
+                                        onChange={handleChangeCategories}
+                                    >
+                                        <MenuItem value="all"><em>Wszystkie</em></MenuItem>
+                                        <MenuItem value="s_karma">Sucha karma</MenuItem>
+                                        <MenuItem value="m_karma">Mokra karma</MenuItem>
+                                        <MenuItem value="przysmaki">Przysmaki</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div className="csof-weight-container">
                                 <TextField
                                     /*type="number"*/
                                     label="Waga"
@@ -181,29 +190,18 @@ const ShopForm = () => {
                             </div>
                         </div>
 
-                        <div className="shop-form-third-row">
-                            <Link to="/choose-option/koty">
-                                <button className="btn-cancel-shop-form">
-                                    Anuluj
-                                </button>
-                            </Link>
+                        <div className="csof-fourth-row">
                             <Link to="/shop/koty/products/sucha-karma">
                                 <button className="btn-search-shop-form">
                                     SZUKAJ
                                 </button>
                             </Link>
                         </div>
-
-                    </div>
-                </form>
-
-                <div className="shop-form-fourth-row">
-                    <img alt="cat 2" src={firstCatBottom} className="shop-form-fourth-row-left-img"/>
-                    <img alt="cat 3" src={secondCatBottom} className="shop-form-fourth-row-right-img"/>
+                    </form>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ShopForm;
+export default ChangingSearchingOptions;

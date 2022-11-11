@@ -1,6 +1,5 @@
 @media only screen and (min-width: 1024px) {
     .header {
-        font-family: 'Merriweather', serif;
         padding-bottom: 20px;
         padding-top: 20px;
         border-bottom: solid 1px #d2d2d2;
@@ -48,7 +47,6 @@
 /* Styles for phone amd tablets */
 @media only screen and (max-width: 1024px) {
     .header {
-        font-family: 'Merriweather', serif;
         padding-bottom: 10px;
         padding-top: 10px;
         border-bottom: solid 1px #d2d2d2;
