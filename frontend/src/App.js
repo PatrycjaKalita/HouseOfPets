@@ -7,7 +7,7 @@ import HomePage from "./components/home-page/HomePage";
 import Footer from "./components/footer/Footer";
 import ChooseOption from "./components/choose-option/ChooseOption";
 import ShopForm from "./components/shop-form/ShopForm";
-import ProductsList from "./components/product-list/ProductsList";
+import ProductsList from "./components/products-list/ProductsList";
 
 function App() {
     return (

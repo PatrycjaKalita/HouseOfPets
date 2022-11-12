@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 
-import '../Style.css';
+import './Style.css';
 
 const TopInformations = (props) => {
     let {animalType} = useParams();

@@ -1,4 +1,4 @@
-import React, {useMemo, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import {makeStyles} from "@material-ui/core/styles";
@@ -6,17 +6,16 @@ import {InputAdornment} from "@mui/material";
 import {Pagination} from "@mui/material";
 
 import './Style.css';
+import {products} from './productsData';
 import TopInformations from "./top-informations/TopInformations";
 import ChangingSearchingOptions from "./changing-searching-options/ChangingSearchingOptions";
+
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
-import NavLinks from "../navbar/NavLinks";
-import HeaderIcon from "../header/header-icons/HeaderIcon";
-
-import {products} from './productsData';
+import ProductInList from "./product-in-list/ProductInList";
 
 const useStyles = makeStyles({
     textFieldStyle: {
@@ -61,11 +60,19 @@ const ProductsList = () => {
 
     const [open, setOpen] = useState(false);
 
-    const productTitle = (title) => {
+    const productTitleShort = (title) => {
         if (title.length > 22) {
             const tmp = title.slice(0, 22);
             return tmp + "..";
         } else if (title.length <= 22)
+            return title;
+    }
+
+    const productTitleShortMobile = (title) => {
+        if (title.length > 27) {
+            const tmp = title.slice(0, 27);
+            return tmp + "..";
+        } else if (title.length <= 27)
             return title;
     }
 
@@ -292,7 +299,7 @@ const ProductsList = () => {
                 setNewLifePhaseQuantityProducts(products);
             }
         }
-    }, [filteredProducts, minPrice, maxPrice, products])
+    }, [filteredProducts, minPrice, maxPrice])
 
     if (selectedSorting === 'ascending') {
         newFilteredProducts.sort(sortAscending);
@@ -321,14 +328,6 @@ const ProductsList = () => {
             <TopInformations productsNumber={products.length}/>
 
             <div className="products-filters-list-container">
-                {/*<span onClick={() => setOpen(!open)}>
-                    <ion-icon name="funnel-outline"></ion-icon>
-                </span>
-
-                <div className={`navbar-mobile-menu ${open ? 'left-0' : 'left-[-100%]'}`}>
-                   Fitry
-                </div>*/}
-
                 {/*Filtry*/}
                 <div className="filter-container">
                     <h1 className="filter-title">Filtry</h1>
@@ -425,24 +424,12 @@ const ProductsList = () => {
                             newFilteredProducts.length > 0 ?
                                 newFilteredProducts.slice((page - 1) * LIMIT_FOR_PAGE, page * LIMIT_FOR_PAGE).map((product, index) => (
                                     <Link key={index} to={product.link}>
-                                        <div className="product-list-container">
-                                            <img className="product-list-img" src={product.image} alt=""/>
-                                            <h1 className="product-list-title">{productTitle(product.title)}</h1>
-                                            <div className="product-list-sec-row">
-                                                <div className="product-list-rating-container">
-                                                    <span className="product-list-star">
-                                                        <ion-icon name="star"></ion-icon>
-                                                    </span>
-                                                    <h1 className="product-list-rating">{product.rating}</h1>
-                                                </div>
-                                                <div className="product-list-container-price">
-                                                    <h1 className="product-list-price">{product.price}zł</h1>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ProductInList productImage={product.image}
+                                                       productTitle={productTitleShort(product.title)}
+                                                       productRating={product.rating} productPrice={product.price}/>
                                     </Link>
                                 )) :
-                                <div className="col-span-3 text-center">
+                                <div className="no-product-message">
                                     <h1>
                                         Żaden produkt nie spełnia podanych kryteriów.
                                     </h1>
@@ -453,6 +440,138 @@ const ProductsList = () => {
                                         disabled={noOfPages === 0 || noOfPages === 1}
                                         defaultPage={1} siblingCount={1}
                                         variant="outlined" shape="rounded" className="float-right"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* For windows that are max 1024px width*/}
+            <div className="products-filters-list-container-mobile">
+                <div className="filter-searching-mobile">
+                    <div className="right-side-csof-sorting-by-price">
+                        <ChangingSearchingOptions/>
+                    </div>
+
+                    <span className="filter-icon-mobile" onClick={() => setOpen(!open)}>
+                        <ion-icon name="funnel-outline"></ion-icon>
+                    </span>
+                </div>
+
+                {/*Filtry*/}
+                <div className={`filter-container-mobile ${open ? 'left-0' : 'left-[-100%]'}`}>
+                    <div className="flex w-full">
+                        <h1 className="filter-title">Filtry</h1>
+
+                        <div className="filter-window-close">
+                        <span className="header-icon-mobile" onClick={() => setOpen(!open)}>
+                            <ion-icon name={`${open ? "close" : "close"}`}></ion-icon>
+                        </span>
+                        </div>
+                    </div>
+                    <div className="rs-sorting-by-price">
+                        <FormControl>
+                            <InputLabel className={classes.inputLabelStyle}>Sortuj po</InputLabel>
+
+                            <Select
+                                className={classes.selectStyles}
+                                IconComponent={ExpandMoreRoundedIcon}
+                                label="Sortuj po"
+                                onChange={e => setSelectedSorting(e.target.value)}
+                            >
+
+                                <MenuItem value="ascending">Cena - rosnąco</MenuItem>
+                                <MenuItem value="descending">Cena - malejąco</MenuItem>
+                            </Select>
+                        </FormControl>
+                    </div>
+
+                    <h1 className="filter-name">Producenci</h1>
+                    {
+                        uniqueProducers.map((producers, index) => (
+                            <label key={index} className="checkbox-filters-container">{producers.producer}
+                                <label
+                                    className="checkbox-filters-number">({newProducerQuantityProducts.filter(({producer}) => producer === producers.producer).length})</label>
+
+                                <input
+                                    className="checkbox-filters"
+                                    onChange={() => handleToggle(producers.producer)} type="checkbox"
+                                    id={'checkbox' + producers.producer} value={producers.producer}
+                                    checked={Checked.indexOf(producers.producer) !== -1}/>
+                                <span className="custom-checkmark"></span>
+                            </label>
+                        ))
+                    }
+
+                    <h1 className="filter-name">Cena</h1>
+                    <div className="price-container-mobile">
+                        <TextField
+                            onChange={e => setMinPrice(parseInt(e.target.value, 10))}
+                            label="od"
+                            variant="outlined"
+                            size="small"
+                            className={classes.textFieldStyle}
+                            InputProps={{
+                                endAdornment: <InputAdornment position="start">zł</InputAdornment>,
+                            }}
+                        />
+                        <div className="price-filter-line"></div>
+                        <TextField
+                            onChange={e => setMaxPrice(parseInt(e.target.value, 10))}
+                            label="do"
+                            variant="outlined"
+                            size="small"
+                            className={classes.textFieldStyle}
+                            InputProps={{
+                                endAdornment: <InputAdornment position="start">zł</InputAdornment>,
+                                classes: {
+                                    root: classes.root
+                                }
+                            }}
+                        />
+
+                    </div>
+
+                    <h1 className="filter-name">Faza życia</h1>
+                    {
+                        uniqueLifePhase.map((lifephase, index) => (
+                            <label key={index} className="checkbox-filters-container">{lifephase.lifePhase}
+                                <label
+                                    className="checkbox-filters-number">({newLifePhaseQuantityProducts.filter(({lifePhase}) => lifePhase === lifephase.lifePhase).length})</label>
+
+                                <input
+                                    className="checkbox-filters"
+                                    onChange={() => handleToggle(lifephase.lifePhase)} type="checkbox"
+                                    id={'checkbox' + lifephase.lifePhase} value={lifephase.lifePhase}
+                                    checked={Checked.indexOf(lifephase.lifePhase) !== -1}/>
+                                <span className="custom-checkmark"></span>
+                            </label>
+                        ))
+                    }
+                </div>
+
+                <div>
+                    {/* Product */}
+                    <div className="products-list-container">
+                        {
+                            newFilteredProducts.length > 0 ?
+                                newFilteredProducts.slice((page - 1) * LIMIT_FOR_PAGE, page * LIMIT_FOR_PAGE).map((product, index) => (
+                                    <Link key={index} to={product.link}>
+                                        <ProductInList productImage={product.image}
+                                                       productTitle={productTitleShortMobile(product.title)}
+                                                       productRating={product.rating} productPrice={product.price}/>
+                                    </Link>
+                                )) :
+                                <div className="no-product-message">
+                                    <h1>
+                                        Żaden produkt nie spełnia podanych kryteriów.
+                                    </h1>
+                                </div>
+                        }
+                        <div className="pagination">
+                            <Pagination count={noOfPages} page={page} onChange={handleChange}
+                                        disabled={noOfPages === 0 || noOfPages === 1}
+                                        defaultPage={1} siblingCount={1}
+                                        variant="outlined" shape="rounded" className="m-auto"/>
                         </div>
                     </div>
                 </div>

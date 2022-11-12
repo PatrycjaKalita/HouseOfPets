@@ -12,6 +12,7 @@ import catTop from '../../assets/cats-shop-form/img1.png';
 import firstCatBottom from '../../assets/cats-shop-form/img2.png';
 import secondCatBottom from '../../assets/cats-shop-form/img3.PNG';
 import {Link} from "react-router-dom";
+import {InputAdornment} from "@mui/material";
 
 
 const useStyles = makeStyles({
@@ -55,14 +56,24 @@ const useStyles = makeStyles({
         "& label.Mui-focused": {
             color: '#464646',
         },
-        '& input:invalid + fieldset': {
-            borderColor: 'red',
-            borderWidth: 2,
-        },
-        '& input:valid:focus + fieldset': {
-            borderColor: "#8D451D",
-        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        }
     },
+    textFieldStyleMobile: {
+        width: 250,
+        "& label.Mui-focused": {
+            color: '#464646',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        }
+    },
+
 });
 
 const ShopForm = () => {
@@ -100,9 +111,9 @@ const ShopForm = () => {
 
                 <h1 className="shop-form-title">Witaj w naszym sklepie "House of pets"!</h1>
 
-                <div className="shop-form-img-others">
+                <div className="shop-form-img-mobile">
                     {/*Prawa strona*/}
-                    <img alt="cat 1" src={catTop} className="shop-form-others-img"/>
+                    <img alt="cat 1" src={catTop} className="shop-form-mobile-img"/>
                 </div>
 
                 <form onSubmit={handleSubmit} className="shop-form">
@@ -175,9 +186,38 @@ const ShopForm = () => {
                                     label="Waga"
                                     variant="outlined"
                                     className={classes.textFieldStyle}
+                                    InputProps={{
+                                        endAdornment: <InputAdornment position="start">kg</InputAdornment>,
+                                    }}
                                 />
+                            </div>
 
-                                <p className="kilograms">kg</p>
+                            <div className="age-container-mobile">
+                                <FormControl>
+                                    <InputLabel className={classes.inputLabelStyle}>Wiek</InputLabel>
+                                    <Select
+                                        className={classes.selectStyles}
+                                        IconComponent={ExpandMoreRoundedIcon}
+                                        value={valueAges}
+                                        label="Wiek"
+                                        onChange={handleChangeAges}
+                                    >
+                                        <MenuItem value="all"><em>Wszystkie</em></MenuItem>
+                                        <MenuItem value="age1">1</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div className="weight-container-mobile">
+                                <TextField
+                                    /*type="number"*/
+                                    label="Waga"
+                                    variant="outlined"
+                                    className={classes.textFieldStyleMobile}
+                                    InputProps={{
+                                        endAdornment: <InputAdornment position="start">kg</InputAdornment>,
+                                    }}
+                                />
                             </div>
                         </div>
 
@@ -193,7 +233,6 @@ const ShopForm = () => {
                                 </button>
                             </Link>
                         </div>
-
                     </div>
                 </form>
 
