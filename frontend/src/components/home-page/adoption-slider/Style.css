@@ -1,3 +1,4 @@
+/* General styles for all devices */
 .main-slider-container {
     position: relative;
     display: flex;
@@ -9,6 +10,10 @@
 
 #slider::-webkit-scrollbar {
     display: none;
+}
+
+.slider-icon.left:hover, .slider-icon.right:hover {
+    opacity: 1;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -23,7 +28,7 @@
         margin-bottom: 48px;
     }
 
-    .slider-icon-others.left, .slider-icon-others.right {
+    .slider-icon-mobile.left, .slider-icon-mobile.right {
         display: none;
     }
 
@@ -53,10 +58,6 @@
         top: 37%;
         right: 9.8%;
         transform: translateY(-60%);
-    }
-
-    .slider-icon.left:hover, .slider-icon.right:hover {
-        opacity: 1;
     }
 
     .main-slider-container {
@@ -118,7 +119,7 @@
         display: none;
     }
 
-    .slider-icon-others.left, .slider-icon-others.right {
+    .slider-icon-mobile.left, .slider-icon-mobile.right {
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -134,20 +135,16 @@
         font-size: 20px;
     }
 
-    .slider-icon-others.left {
+    .slider-icon-mobile.left {
         top: 45%;
         left: 16%;
         transform: translateY(-60%);
     }
 
-    .slider-icon-others.right {
+    .slider-icon-mobile.right {
         top: 45%;
         right: 16%;
         transform: translateY(-60%);
-    }
-
-    .slider-icon-others.left:hover, .slider-icon-others.right:hover {
-        opacity: 1;
     }
 
     .main-slider-container {

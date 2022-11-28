@@ -11,20 +11,20 @@ const HeaderIcons = () => {
     return (
         <div>
             <div className="header-icons-monitors">
-                <Link to="/ulubione">
+                <Link to="/ulubione" className="header-icon-link">
                     <HeaderIcon iconName="heart-outline" iconNameHover="heart"/>
                 </Link>
 
-                <Link to="/koszyk">
+                <Link to="/koszyk" className="header-icon-link">
                     <HeaderIcon iconName="basket-outline" iconNameHover="basket"/>
                 </Link>
 
-                <Link to="">
+                <Link to="" className="header-icon-link">
                     <HeaderIcon iconName="person-outline" iconNameHover="person"/>
                 </Link>
             </div>
 
-            <div className="header-icons-others">
+            <div className="header-icons-mobile">
                 <Link to="">
                     <span className="header-icon-mobile"
                           onMouseEnter={() => setProfile("person")}

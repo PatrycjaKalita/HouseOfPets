@@ -1,0 +1,213 @@
+.main-product-container {
+    width: 80%;
+    margin: 10px auto 100px auto;
+}
+
+.main-details-container {
+    display: flex;
+}
+
+.product-img-container {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.product-img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.product-vertical-line {
+    display: inline-block;
+    height: 330px;
+    border: solid 1px #EFEFEF;
+    background-color: #EFEFEF;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.product-main-details-container {
+    position: relative;
+}
+
+.product-name {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-rating-container {
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.product-number-opinions {
+    color: #464646;
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: 300;
+}
+
+.product-availability {
+    color: #007D00;
+    font-size: 14px;
+    margin-top: 3px;
+    position: absolute;
+    right: 0;
+}
+
+.product-no-availability {
+    color: #CC221C;
+    font-size: 14px;
+    margin-top: 3px;
+    position: absolute;
+    right: 0;
+}
+
+.product-weights-container, .product-delivery-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.product-producer-name {
+    font-weight: 300;
+    padding-right: 5px;
+}
+
+.product-producer-container, .product-code-container {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.product-variable-name {
+    font-weight: 300;
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.product-variable-value {
+    font-size: 14px;
+}
+
+.product-weight-name {
+    font-weight: 300;
+    padding-right: 5px;
+    font-size: 14px;
+}
+
+.product-weight-btn {
+    border: solid 1px #CCCCCC;
+    color: #818181;
+    border-radius: 50px;
+    margin-right: 10px;
+    width: 70px;
+    font-size: 14px;
+}
+
+.product-weight-btn:hover {
+    border: solid 1px #CCCCCC;
+    color: #af7d61;
+    border-radius: 50px;
+    margin-right: 10px;
+    width: 70px;
+    font-size: 16px;
+}
+
+.product-weight-view-btn {
+    border: solid 1px #CCCCCC;
+    color: #8D451D;
+    border-radius: 50px;
+    margin-right: 10px;
+    width: 70px;
+}
+
+.product-quantity-price-container {
+    margin-top: 20px;
+    display: flex;
+}
+
+.product-quantity-container {
+    display: flex;
+}
+
+.product-quantity-name {
+    font-weight: 300;
+    padding-right: 5px;
+    font-size: 14px;
+    padding-top: 7px;
+}
+
+.product-btn-quantity {
+    border-radius: 50px;
+    border: solid 1px #CCCCCC;
+    display: flex;
+}
+
+.product-btn-minus {
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+    color: #818181;
+}
+
+.product-btn-plus {
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    color: #818181;
+}
+
+.product-btn-minus:hover, .product-btn-plus:hover {
+    color: #F29F05;
+    transform: scale(1.3);
+}
+
+.product-btn-quantity-number {
+    font-size: 14px;
+    width: 40px;
+    padding: 6px 0 5px 0;
+    text-align: center;
+    border-left: solid 1px #CCCCCC;
+    border-right: solid 1px #CCCCCC;
+}
+
+.product-main-price {
+    color: #8D451D;
+    font-size: 24px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+}
+
+.product-btn-add-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.product-btn-add-to-card {
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bf6211 0%, #a6523f 100%),
+    linear-gradient(to right, #bf6211 0%, #a6523f 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    color: white;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: -5px;
+}
+
+.product-btn-add-to-card:hover {
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: linear-gradient(to right, white, white),
+    linear-gradient(to right, #bf6211 0%, #a6523f 100%);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    color: #a6523f;
+    position: absolute;
+    right: -5px;
+}

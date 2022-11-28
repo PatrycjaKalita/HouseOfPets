@@ -161,6 +161,7 @@ input[type=checkbox] {
         position: absolute;
         transition-duration: 500ms;
         z-index: 50;
+        top: 0;
         padding: 20px 0 20px 0;
     }
 
@@ -199,10 +200,6 @@ input[type=checkbox] {
 
     .price-container-mobile {
         margin-left: 35px;
-    }
-
-    .right-side-csof-sorting-by-price {
-        /*display: none;*/
     }
 
     .products-list-container {

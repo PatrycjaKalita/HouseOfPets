@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import ChooseOption from "./components/choose-option/ChooseOption";
 import ShopForm from "./components/shop-form/ShopForm";
 import ProductsList from "./components/products-list/ProductsList";
+import Product from "./components/product/Product";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/choose-option/koty" element={<><ChooseOption/></>}/>
                 <Route path="/shop-form/koty" element={<><ShopForm/></>}/>
                 <Route path="/shop/:animalType/products/:productCategory" exact element={<><ProductsList animalType="koty" productCategory="sucha-karma"/></>}/>
+                <Route path="/shop/:animalType/products/:productCategory/:productName" exact element={<><Product animalType="koty" productCategory="sucha-karma" productName="whiskas-sterile-14-kg-z-kurczakiem"/></>}/>
             </Routes>
 
             <Footer/>

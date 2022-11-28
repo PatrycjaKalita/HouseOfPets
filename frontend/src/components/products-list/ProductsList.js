@@ -458,7 +458,7 @@ const ProductsList = () => {
                 </div>
 
                 {/*Filtry*/}
-                <div className={`filter-container-mobile ${open ? 'left-0' : 'left-[-100%]'}`}>
+                <div className={`filter-container-mobile ${open ? 'left-0' : 'left-[-120%]'}`}>
                     <div className="flex w-full">
                         <h1 className="filter-title">Filtry</h1>
 

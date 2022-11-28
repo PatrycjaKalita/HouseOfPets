@@ -30,10 +30,10 @@ export const products = [
         image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
         title: "WHISKAS Sterile 14kg z kurczakiem",
         price: "115.80",
-        link: '/whiskas-sterile-14-kg-z-kurczakiem',
+        link: '/shop/koty/products/sucha-karma/whiskas-sterile-14-kg-z-kurczakiem',
         rating: '4.8',
         producer: 'Whiskas',
-        lifePhase: 'senior',
+        lifePhase: 'dorosły',
     },
     {
         image: "https://image.ceneostatic.pl/data/products/92064026/i-almo-nature-holistic-adult-z-ryba-oleista-2kg.jpg",

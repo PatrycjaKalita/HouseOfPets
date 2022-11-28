@@ -1,3 +1,8 @@
+/* General styles for all devices */
+*:not(.main-container) {
+    box-sizing: content-box;
+}
+
 @media only screen and (min-width: 1024px) {
     .main-container {
         width: 80%;
@@ -7,10 +12,6 @@
         display: flex;
         justify-content: center;
         margin-bottom: 100px;
-    }
-
-    *:not(.main-container) {
-        box-sizing: content-box;
     }
 
     .container {
@@ -30,7 +31,7 @@
     }
 
     .top-text-donation {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 32px;
         margin-bottom: 15px;
         padding-left: 25px;
@@ -42,7 +43,7 @@
     }
 
     .number-text {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 22px;
         margin-bottom: 15px;
     }
@@ -66,10 +67,6 @@
         margin-bottom: 50px;
     }
 
-    *:not(.main-container) {
-        box-sizing: content-box;
-    }
-
     .container {
         background-color: #F1e088;
         width: 80%;
@@ -81,7 +78,7 @@
     }
 
     .top-text-donation {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 20px;
         margin-bottom: 15px;
         padding-left: 25px;
@@ -93,7 +90,7 @@
     }
 
     .number-text {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 16px;
         margin-bottom: 15px;
     }

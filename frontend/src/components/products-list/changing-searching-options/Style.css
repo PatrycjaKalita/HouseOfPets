@@ -125,7 +125,7 @@
         margin-right: 90px;
     }
 
-    .products-filters-list-container-others {
+    .products-filters-list-container-mobile {
         display: none;
     }
 
@@ -147,6 +147,10 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    .products-filters-list-container-mobile{
+        position: relative;
+    }
+
     .changing-searching-options-container {
         margin-bottom: 50px;
         width: 250px

@@ -1,3 +1,18 @@
+/* General styles for all devices */
+.promotion-container {
+    opacity: 0;
+    position: absolute;
+}
+
+.promotion-image {
+    object-fit: cover;
+}
+
+.paw-second:hover {
+    color: #af7d61;
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 1024px) {
     .main-slider-promotion-container {
         width: 35%;
@@ -12,15 +27,6 @@
         overflow: hidden;
         position: relative;
         margin-left: auto;
-    }
-
-    .promotion-container {
-        opacity: 0;
-        position: absolute;
-    }
-
-    .promotion-image {
-        object-fit: cover;
     }
 
     .slider-paw-container {
@@ -44,11 +50,6 @@
         color: #b4b3b3;
         padding-right: 5px;
     }
-
-    .paw-second:hover {
-        color: #af7d61;
-        cursor: pointer;
-    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -65,15 +66,6 @@
         height: 400px;
         overflow: hidden;
         position: relative;
-    }
-
-    .promotion-container {
-        opacity: 0;
-        position: absolute;
-    }
-
-    .promotion-image {
-        object-fit: cover;
     }
 
     .slider-paw-container {
@@ -95,10 +87,5 @@
         font-size: 20px;
         color: #b4b3b3;
         padding-right: 5px;
-    }
-
-    .paw-second:hover {
-        color: #af7d61;
-        cursor: pointer;
     }
 }

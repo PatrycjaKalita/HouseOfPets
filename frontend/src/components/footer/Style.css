@@ -1,9 +1,18 @@
-@media only screen and (min-width: 1024px) {
-    .footer-main-container {
-        background-color: #efefef;
-        justify-content: center;
-    }
+/* General styles for all devices */
+.footer-main-container {
+    background-color: #efefef;
+    justify-content: center;
+}
 
+.footer-logo-container-img {
+    height: 80px;
+}
+
+.footer-column-link:hover {
+    color: #f29f05;
+}
+
+@media only screen and (min-width: 1024px) {
     .footer-container {
         align-items: center;
         justify-content: center;
@@ -16,10 +25,6 @@
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         margin-right: 100px;
-    }
-
-    .footer-logo-container-img {
-        height: 80px;
     }
 
     .footer-columns-container {
@@ -84,21 +89,12 @@
         line-height: 2rem;
     }
 
-    .footer-column-link:hover {
-        color: #f29f05;
-    }
-
-    .footer-page-title, .page-bottom-container-others {
+    .footer-page-title, .page-bottom-container-mobile {
         display: none;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    .footer-main-container {
-        background-color: #efefef;
-        justify-content: center;
-    }
-
     .footer-container {
         align-items: center;
         justify-content: center;
@@ -110,10 +106,6 @@
         display: none;
     }
 
-    .footer-logo-container-img {
-        height: 80px;
-    }
-
     .footer-columns-container {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -121,7 +113,7 @@
         padding: 15px;
     }
 
-    .footer-paypal-container-others {
+    .footer-paypal-container-mobile {
         display: flex;
         width: 60%;
         justify-content: flex-end;
@@ -132,7 +124,7 @@
         padding-top: 10px;
     }
 
-    .page-bottom-container-others {
+    .page-bottom-container-mobile {
         display: flex;
         padding: 5px 15px 40px 15px;
     }
@@ -170,10 +162,6 @@
         font-weight: 300;
         cursor: pointer;
         transition-duration: 300ms;
-    }
-
-    .footer-column-link:hover {
-        color: #f29f05;
     }
 
     .footer-paypal-container, .page-bottom-container {

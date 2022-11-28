@@ -1,3 +1,11 @@
+/* General styles for all devices */
+.link-header {
+    cursor: pointer;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 @media only screen and (min-width: 1024px) {
     .header {
         padding-bottom: 20px;
@@ -14,25 +22,18 @@
         display: flex;
     }
 
-    .link-header {
-        cursor: pointer;
-        width: 50%;
-        display: flex;
-        justify-content: flex-start;
-    }
-
     .title {
         font-family: 'Bebas Neue', cursive;
         color: black;
-        font-size: 38px;
+        font-size: 34px;
         padding-top: 10px;
-        padding-left: 15px;
+        /*padding-left: 15px;*/
     }
 
-    .logo {
+/*    .logo {
         width: 64px;
         height: 64px;
-    }
+    }*/
 
     .header-searchbar {
         padding-top: 10px;
@@ -58,13 +59,6 @@
         width: 90%;
         margin: auto;
         display: flex;
-    }
-
-    .link-header {
-        width: 50%;
-        cursor: pointer;
-        display: flex;
-        justify-content: flex-start;
     }
 
     .title {

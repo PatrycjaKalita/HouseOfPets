@@ -1,3 +1,21 @@
+/* General styles for all devices */
+.adoption-btn {
+    cursor: pointer;
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: #8D451D;
+    border: solid 2px #8D451D;
+    border-radius: 50px;
+}
+
+.adoption-btn:hover {
+    background-color: transparent;
+    color: #8D451D;
+    border: solid 2px #8D451D;
+}
+
 @media only screen and (min-width: 1024px) {
     .container-wm {
         width: 100%;
@@ -19,12 +37,12 @@
     }
 
     .top-text-wm {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 32px;
     }
 
     .second-text-wm {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 40px;
         margin-bottom: 25px;
     }
@@ -33,23 +51,6 @@
         margin-bottom: 25px;
         font-size: 18px;
         color: #262626;
-    }
-
-    .adoption-btn {
-        cursor: pointer;
-        font-size: 18px;
-        width: 200px;
-        height: 50px;
-        color: white;
-        background-color: #8D451D;
-        border: solid 2px #8D451D;
-        border-radius: 50px;
-    }
-
-    .adoption-btn:hover {
-        background-color: transparent;
-        color: #8D451D;
-        border: solid 2px #8D451D;
     }
 
     .container-img {
@@ -111,23 +112,6 @@
 
     .block-of-text-wm {
         display: none;
-    }
-
-    .adoption-btn {
-        cursor: pointer;
-        font-size: 16px;
-        width: 200px;
-        height: 40px;
-        color: white;
-        background-color: #8D451D;
-        border: solid 2px #8D451D;
-        border-radius: 50px;
-    }
-
-    .adoption-btn:hover {
-        background-color: transparent;
-        color: #8D451D;
-        border: solid 2px #8D451D;
     }
 
     .container-img {

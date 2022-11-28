@@ -5,9 +5,13 @@
 
 @media only screen and (min-width: 1024px) {
     .header-icon {
-        font-size: 36px;
+        font-size: 28px;
         cursor: pointer;
         padding-left: 15px;
+    }
+
+    .header-icon-link {
+        padding-top: 5px;
     }
 
     .header-icons-monitors {
@@ -15,11 +19,11 @@
         justify-content: flex-end;
     }
 
-    .header-icons-others {
+    .header-icons-mobile {
         display: none;
     }
 
-    .navbar-mobile-menu{
+    .navbar-mobile-menu {
         display: none;
     }
 }
@@ -41,13 +45,13 @@
         display: none;
     }
 
-    .header-icons-others {
+    .header-icons-mobile {
         display: flex;
         justify-content: flex-end;
     }
 
     .navbar-mobile-menu {
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         background-color: white;
         height: 55%;
         width: 100%;
@@ -66,14 +70,14 @@
         margin-bottom: 20px;
     }
 
-    .close-icon-mobile{
+    .close-icon-mobile {
         padding-top: 15px;
         text-align: right;
         width: 65%;
         padding-right: 20px;
     }
 
-    .navbar-mobile-menu-links{
+    .navbar-mobile-menu-links {
         padding-right: 20px;
         padding-top: 15px;
         text-align: right;

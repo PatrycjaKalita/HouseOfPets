@@ -1,3 +1,8 @@
+/* General styles for all devices */
+.product-container:hover {
+    transform: scale(1.1);
+}
+
 @media only screen and (min-width: 1024px) {
     .main-bestseller-container {
         justify-content: center;
@@ -34,10 +39,6 @@
         cursor: pointer;
         grid-column: span 1 / span 1;
         grid-row: span 1 / span 1;
-    }
-
-    .product-container:hover {
-        transform: scale(1.1);
     }
 
     .product-container-img {
@@ -92,10 +93,6 @@
         height: 250px;
         width: auto;
         cursor: pointer;
-    }
-
-    .product-container:hover {
-        transform: scale(1.1);
     }
 
     .product-container-img {

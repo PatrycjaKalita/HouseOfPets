@@ -1,0 +1,35 @@
+.product-dosage-main-container {
+    width: 80%;
+    margin: 20px auto 35px auto;
+}
+
+.product-dosage-title {
+    font-size: 24px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+
+.product-dosage-header-container{
+    display: flex;
+    padding: 5px 0 5px 0;
+}
+
+.product-dosage-container {
+    border-top: 2px solid rgb(243 244 246);
+    display: flex;
+    padding: 5px 0 5px 0;
+}
+
+.product-dosage-header, .product-dosage-weight-content {
+    font-size: 14px;
+    padding-left: 15px;
+    width: 30%;
+    font-weight: 500;
+}
+
+.product-dosage-content {
+    font-size: 14px;
+    color: #464646;
+    width: 30%;
+    padding-left: 15px;
+}

@@ -73,12 +73,12 @@ const AdoptionSlider = () => {
         slider.scrollLeft = slider.scrollLeft - 500;
     }
 
-    const slideLeftOthers = () => {
+    const slideLeftMobile = () => {
         let slider = document.getElementById("slider");
         slider.scrollLeft = slider.scrollLeft + 250;
     }
 
-    const slideRightOthers = () => {
+    const slideRightMobile = () => {
         let slider = document.getElementById("slider");
         slider.scrollLeft = slider.scrollLeft - 250;
     }
@@ -92,8 +92,8 @@ const AdoptionSlider = () => {
                     <ion-icon name="chevron-back" onClick={slideRight}></ion-icon>
                 </span>
 
-                <span className="slider-icon-others left">
-                    <ion-icon name="chevron-back" onClick={slideRightOthers}></ion-icon>
+                <span className="slider-icon-mobile left">
+                    <ion-icon name="chevron-back" onClick={slideRightMobile}></ion-icon>
                 </span>
 
                 <div className="main-slider-container">
@@ -119,8 +119,8 @@ const AdoptionSlider = () => {
 
                 </div>
 
-                <span className="slider-icon-others right">
-                    <ion-icon name="chevron-forward" onClick={slideLeftOthers}></ion-icon>
+                <span className="slider-icon-mobile right">
+                    <ion-icon name="chevron-forward" onClick={slideLeftMobile}></ion-icon>
                 </span>
 
                 <span className="slider-icon right">

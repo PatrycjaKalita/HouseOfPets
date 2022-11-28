@@ -1,3 +1,10 @@
+/* General styles for all devices */
+.shop-description-button:hover {
+    color: #f29f05;
+    background-color: transparent;
+    border: solid 2px #f29f05;
+}
+
 @media only screen and (min-width: 1024px) {
     .main-shop-description-container {
         width: 80%;
@@ -34,13 +41,13 @@
     .shop-description-top-text {
         color: white;
         font-size: 28px;
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .shop-description-second-text {
         color: white;
         font-size: 30px;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 14px;
     }
 
@@ -61,12 +68,6 @@
         border: solid 2px #f29f05;
         cursor: pointer;
         border-radius: 50px;
-    }
-
-    .shop-description-button:hover {
-        color: #f29f05;
-        background-color: transparent;
-        border: solid 2px #f29f05;
     }
 }
 
@@ -99,13 +100,13 @@
     .shop-description-top-text {
         color: white;
         font-size: 16px;
-        font-weight: bold;
+        font-weight: 700;
     }
 
     .shop-description-second-text {
         color: white;
         font-size: 18px;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 8px;
     }
 
@@ -126,11 +127,5 @@
         border: solid 2px #f29f05;
         cursor: pointer;
         border-radius: 50px;
-    }
-
-    .shop-description-button:hover {
-        color: #f29f05;
-        background-color: transparent;
-        border: solid 2px #f29f05;
     }
 }

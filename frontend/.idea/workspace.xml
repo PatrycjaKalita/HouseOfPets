@@ -38,7 +38,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -97,6 +97,20 @@
       <workItem from="1668177447465" duration="5616000" />
       <workItem from="1668197455236" duration="5711000" />
       <workItem from="1668258461620" duration="13240000" />
+      <workItem from="1668341064150" duration="4810000" />
+      <workItem from="1668356385593" duration="2914000" />
+      <workItem from="1668414724741" duration="1697000" />
+      <workItem from="1668416610984" duration="2635000" />
+      <workItem from="1668628967095" duration="3325000" />
+      <workItem from="1668805813817" duration="3428000" />
+      <workItem from="1668869623387" duration="15416000" />
+      <workItem from="1668936583351" duration="17988000" />
+      <workItem from="1669140402994" duration="9330000" />
+      <workItem from="1669189364851" duration="593000" />
+      <workItem from="1669228477862" duration="7407000" />
+      <workItem from="1669402508980" duration="595000" />
+      <workItem from="1669631736217" duration="71000" />
+      <workItem from="1669633220030" duration="253000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@
     .pas-title {
         text-align: center;
         font-size: 30px;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 60px;
     }
 
@@ -44,7 +44,7 @@
     }
 
     .pas-point-title {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 20px;
         margin-bottom: 16px;
         color: #333333;
@@ -73,7 +73,7 @@
     .pas-title {
         text-align: center;
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 30px;
     }
 
@@ -93,7 +93,7 @@
     }
 
     .pas-point-title {
-        font-weight: bold;
+        font-weight: 700;
         font-size: 16px;
         margin-bottom: 8px;
         color: #333333;
