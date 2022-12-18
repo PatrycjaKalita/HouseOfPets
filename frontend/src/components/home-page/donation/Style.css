@@ -1,113 +1,59 @@
-/* General styles for all devices */
 *:not(.main-container) {
     box-sizing: content-box;
 }
 
-@media only screen and (min-width: 1024px) {
-    .main-container {
-        width: 80%;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 100px;
-    }
-
-    .container {
-        background-color: #F1e088;
-        width: 100%;
-        padding: 40px;
-        border-radius: 50px;
-        margin-left: 35px;
-        margin-right: 35px;
-    }
-
-    .donation-container {
-        gap: 250px;
-        padding-left: 25px;
-        padding-right: 25px;
-        display: flex;
-    }
-
-    .top-text-donation {
-        font-weight: 700;
-        font-size: 32px;
-        margin-bottom: 15px;
-        padding-left: 25px;
-    }
-
-    .description-text {
-        font-size: 18px;
-        font-weight: 400;
-    }
-
-    .number-text {
-        font-weight: 700;
-        font-size: 22px;
-        margin-bottom: 15px;
-    }
-
-    .img-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .animal-img {
-        width: 60px;
-        height: 60px;
-        margin-right: 20px;
-    }
+.main-container {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
 }
 
-@media only screen and (max-width: 1024px) {
-    .main-container {
-        justify-content: center;
-        margin-bottom: 50px;
-    }
+.container {
+    background-color: #F1e088;
+    width: 100%;
+    padding: 40px;
+    border-radius: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
 
-    .container {
-        background-color: #F1e088;
-        width: 80%;
-        padding: 15px;
-        border-radius: 50px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
+.donation-container {
+    gap: 250px;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+}
 
-    .top-text-donation {
-        font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 15px;
-        padding-left: 25px;
-    }
+.top-text-donation {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
 
-    .description-text {
-        font-size: 14px;
-        font-weight: 400;
-    }
+.description-text {
+    font-size: 18px;
+    font-weight: 400;
+}
 
-    .number-text {
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
+.number-text {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
 
-    .right-container {
-        margin-top: 15px;
-    }
+.img-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
 
-    .img-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .animal-img {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
+.animal-img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
 }

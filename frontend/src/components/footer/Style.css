@@ -1,4 +1,3 @@
-/* General styles for all devices */
 .footer-main-container {
     background-color: #efefef;
     justify-content: center;
@@ -12,159 +11,83 @@
     color: #f29f05;
 }
 
-@media only screen and (min-width: 1024px) {
-    .footer-container {
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        margin: auto;
-        display: flex;
-    }
-
-    .footer-logo-container {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        margin-right: 100px;
-    }
-
-    .footer-columns-container {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 30px;
-        padding: 60px 62px 60px 62px;
-    }
-
-    .footer-paypal-container {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        margin-left: 120px;
-        margin-bottom: 120px;
-    }
-
-    .page-bottom-container {
-        display: flex;
-        background-color: white;
-        width: 100%;
-        justify-content: center;
-        font-weight: 300;
-        font-size: 12px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .page-bottom-text-left {
-        display: flex;
-        justify-content: flex-start;
-        width: 33%;
-        padding-right: 30px;
-    }
-
-    .page-bottom-text-right {
-        display: flex;
-        justify-content: flex-end;
-        width: 40%;
-        padding-left: 64px;
-    }
-
-    .footer-paypal-container-img {
-        width: 120px;
-    }
-
-    .footer-column-container {
-        padding-right: 30px;
-        border-color: rgb(209 213 219);
-        border-right-width: 2px;
-    }
-
-    .footer-column-title {
-        font-weight: 500;
-        margin-bottom: 5px;
-    }
-
-    .footer-column-link {
-        font-size: 14px;
-        font-weight: 300;
-        cursor: pointer;
-        transition-duration: 300ms;
-        line-height: 2rem;
-    }
-
-    .footer-page-title, .page-bottom-container-mobile {
-        display: none;
-    }
+.footer-container {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    display: flex;
 }
 
-@media only screen and (max-width: 1024px) {
-    .footer-container {
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        margin: auto;
-    }
-
-    .footer-logo-container {
-        display: none;
-    }
-
-    .footer-columns-container {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .footer-paypal-container-mobile {
-        display: flex;
-        width: 60%;
-        justify-content: flex-end;
-    }
-
-    .footer-paypal-container-img {
-        height: 30px;
-        padding-top: 10px;
-    }
-
-    .page-bottom-container-mobile {
-        display: flex;
-        padding: 5px 15px 40px 15px;
-    }
-
-    .page-bottom-container-text {
-        width: 40%;
-        justify-content: center;
-        font-weight: 300;
-        font-size: 12px;
-    }
-
-    .footer-page-title {
-        font-family: 'Bebas Neue', cursive;
-        color: black;
-        font-size: 18px;
-        padding-top: 5px;
-    }
-
-    .page-bottom-text-left {
-        font-size: 8px;
-    }
-
-    .page-bottom-text-right {
-        font-size: 8px;
-    }
-
-    .footer-column-title {
-        font-weight: 500;
-        font-size: 10px;
-        margin-bottom: 5px;
-    }
-
-    .footer-column-link {
-        font-size: 10px;
-        font-weight: 300;
-        cursor: pointer;
-        transition-duration: 300ms;
-    }
-
-    .footer-paypal-container, .page-bottom-container {
-        display: none;
-    }
+.footer-logo-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-right: 100px;
 }
+
+.footer-columns-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    padding: 60px 62px 60px 62px;
+}
+
+.footer-paypal-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-left: 120px;
+    margin-bottom: 120px;
+}
+
+.page-bottom-container {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.page-bottom-text-left {
+    display: flex;
+    justify-content: flex-start;
+    width: 33%;
+    padding-right: 30px;
+}
+
+.page-bottom-text-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    padding-left: 64px;
+}
+
+.footer-paypal-container-img {
+    width: 120px;
+}
+
+.footer-column-container {
+    padding-right: 30px;
+    border-color: rgb(209 213 219);
+    border-right-width: 2px;
+}
+
+.footer-column-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.footer-column-link {
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    transition-duration: 300ms;
+    line-height: 2rem;
+}
+
+.footer-page-title, .page-bottom-container-mobile {
+    display: none;
+}
+

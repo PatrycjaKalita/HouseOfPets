@@ -374,23 +374,6 @@ const ProductsList = () => {
                             }
                         }}
                     />
-
-                    <h1 className="filter-name">Faza życia</h1>
-                    {
-                        uniqueLifePhase.map((lifephase, index) => (
-                            <label key={index} className="checkbox-filters-container">{lifephase.lifePhase}
-                                <label
-                                    className="checkbox-filters-number">({newLifePhaseQuantityProducts.filter(({lifePhase}) => lifePhase === lifephase.lifePhase).length})</label>
-
-                                <input
-                                    className="checkbox-filters"
-                                    onChange={() => handleToggle(lifephase.lifePhase)} type="checkbox"
-                                    id={'checkbox' + lifephase.lifePhase} value={lifephase.lifePhase}
-                                    checked={Checked.indexOf(lifephase.lifePhase) !== -1}/>
-                                <span className="custom-checkmark"></span>
-                            </label>
-                        ))
-                    }
                 </div>
 
                 <div>

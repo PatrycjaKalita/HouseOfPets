@@ -36,7 +36,7 @@ export const products = [
         lifePhase: 'dorosły',
     },
     {
-        image: "https://image.ceneostatic.pl/data/products/92064026/i-almo-nature-holistic-adult-z-ryba-oleista-2kg.jpg",
+        image: "https://www.krakvet.pl/pol_pl_Almo-Nature-Adult-z-ryba-oleista-sucha-karma-holistyczna-dla-kota-2-kg-31385_1.jpg",
         title: "ALMO NATURE Holistic Adult z rybą oleistą 2kg",
         price: "45.00",
         link: '/almo-nature-holistic-adult-z-ryba-oleista-2-kg',
@@ -45,7 +45,7 @@ export const products = [
         lifePhase: 'dorosły',
     },
     {
-        image: "https://zooart.com.pl/pol_pl_-PERFECT-FIT-Sensitive-1-7kg-Bogaty-w-Indyka-sucha-karma-dla-doroslych-kotow-46221_1.png",
+        image: "https://media.os.fressnapf.com/products-v2/f/7/b/f/f7bffa21025bad257fce06365ea2c407a7b7d6aa_697def108e1a22697d1d833f024146d4c3113b4f.jpg?t=prod_m&f=webp",
         title: "PERFECT FIT (Sensitive 1+) 7kg Bogaty w Indyka",
         price: "109.90",
         link: '/perfect-fit-7-kg-bogaty-w-indyka',

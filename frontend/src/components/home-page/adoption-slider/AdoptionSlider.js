@@ -73,16 +73,6 @@ const AdoptionSlider = () => {
         slider.scrollLeft = slider.scrollLeft - 500;
     }
 
-    const slideLeftMobile = () => {
-        let slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft + 250;
-    }
-
-    const slideRightMobile = () => {
-        let slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft - 250;
-    }
-
     return (
         <div className="adoption-slider">
             <h1 className="slider-title">Zwierzęta do adopcji</h1>
@@ -90,10 +80,6 @@ const AdoptionSlider = () => {
             <div className="relative">
                 <span className="slider-icon left">
                     <ion-icon name="chevron-back" onClick={slideRight}></ion-icon>
-                </span>
-
-                <span className="slider-icon-mobile left">
-                    <ion-icon name="chevron-back" onClick={slideRightMobile}></ion-icon>
                 </span>
 
                 <div className="main-slider-container">
@@ -116,12 +102,7 @@ const AdoptionSlider = () => {
                             })
                         }
                     </div>
-
                 </div>
-
-                <span className="slider-icon-mobile right">
-                    <ion-icon name="chevron-forward" onClick={slideLeftMobile}></ion-icon>
-                </span>
 
                 <span className="slider-icon right">
                     <ion-icon name="chevron-forward" onClick={slideLeft}></ion-icon>

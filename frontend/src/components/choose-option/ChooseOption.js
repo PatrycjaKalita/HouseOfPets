@@ -2,28 +2,30 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import './Style.css';
-import shopCat from '../../assets/choose-option/shop-cat.jpg';
-import adoptionCat from '../../assets/choose-option/adoption-cat.jpg';
+import shop from '../../assets/choose-option/shop.png';
+import adoptionCat from '../../assets/choose-option/adoption-cat.png';
 
 const ChooseOption = () => {
     return (
-        <div className="choose-option-container">
-            <div className="choose-option-adoption">
-                <img src={adoptionCat} alt="Adoption cat" className="choose-option-img"/>
-                <div className="choose-option-container-btn-adoption">
-                    <button className="choose-option-btn-adoption">ADOPTUJ</button>
-                </div>
-            </div>
+        <div className="main-choose-option-container">
+            <h1 className="choose-option-title">Wybrano: <b>Koty</b></h1>
+            <h1 className="choose-option-question">Co poszukujesz?</h1>
 
-            <div className="choose-option-shop">
-                <img src={shopCat} alt="Shop cat" className="choose-option-img"/>
-                <div className="choose-option-container-btn-shop">
-                    <Link to="/shop-form/koty">
-                        <button className="choose-option-btn-shop">ZRÓB ZAKUPY</button>
-                    </Link>
-                </div>
+            <div className="choose-option-container">
+                <Link to="" className="choose-option-adoption">
+                    <img src={adoptionCat} alt="Adoption cat" className="choose-option-img"/>
+
+                    <h1 className="choose-option-btn-adoption">ADOPCJE</h1>
+                </Link>
+
+                <Link to="/shop-form/koty" className="choose-option-shop">
+                    <img src={shop} alt="Shop" className="choose-option-img"/>
+
+                    <h1 className="choose-option-btn-shop">SKLEP</h1>
+                </Link>
             </div>
         </div>
+
     );
 };
 

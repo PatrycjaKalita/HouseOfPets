@@ -1,34 +1,25 @@
 import React from 'react';
 
 import "./Style.css"
-import backgroundDog from '../../../assets/dog-bg-transparent.png';
-import backgroundCat from '../../../assets/cat-bg-transparent.png';
+import wmImage from "../../../assets/main-page.png"
 
 const WelcomeMessage = () => {
     return (
         <div className="container-wm">
             <div className="container-text">
-                <h1 className="top-text-wm">Znajdź swoje</h1>
-                <h1 className="second-text-wm">idealne zwierzątko</h1>
+                <h1 className="top-text-wm">Witaj w House of pets!</h1>
+                <h1 className="second-text-wm">Znajdź z nami swoje idealne zwierzątko</h1>
 
                 <p className="block-of-text-wm">
-                    Nasze zwierzaki czekają na Ciebie.<br/>
-                    Działamy na terenie całej Polski.<br/>
-                    Jeśli zwierzak ma do Ciebie trafić <br/> to ogarniemy to.
-                    Wyślij nam ankietę. <br/>Zwierzątka czekają na adopcję.
+                    Bardzo się cieszymy, że jesteś tutaj z nami! Nasze zwierzątka<br/>
+                    czekająna Ciebie.<br/>
+                    Działamy na terenie całej Polski. Jeśli zwierzak ma do Ciebie <br/>
+                    trafić to ograniemy to.
                 </p>
-
-                <button className="adoption-btn">
-                    ADOPTUJ
-                </button>
             </div>
 
-            <div className="container-img-cat">
-                <img alt="Background cat" src={backgroundCat} className="cat-image"/>
-            </div>
-
-            <div className="container-img">
-                <img alt="Background dog" src={backgroundDog} className="dog-image"/>
+            <div>
+                <img alt="wm" className="image-wm" src={wmImage}/>
             </div>
         </div>
     );

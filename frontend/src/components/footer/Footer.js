@@ -23,18 +23,6 @@ const Footer = () => {
                 <div className="footer-paypal-container">
                     <img src={Payments} alt="payments" className="footer-paypal-container-img"/>
                 </div>
-
-                <div className="page-bottom-container-mobile">
-                    <div className="page-bottom-container-text">
-                        <h1 className="footer-page-title">House of pets</h1>
-                        <span className="page-bottom-text-left">House of pets Copyright © 2022 - 2023</span>
-                        <br/>
-                        <span className="page-bottom-text-right">Korzystanie z serwisu oznacza akceptację regulaminu.</span>
-                    </div>
-                    <div className="footer-paypal-container-mobile">
-                        <img src={Payments} alt="payments" className="footer-paypal-container-img"/>
-                    </div>
-                </div>
             </div>
 
             <div className="page-bottom-container">
@@ -43,8 +31,6 @@ const Footer = () => {
                 <br/>
                 <span className="page-bottom-text-right">Korzystanie z serwisu oznacza akceptację regulaminu.</span>
             </div>
-
-
         </div>
     );
 };

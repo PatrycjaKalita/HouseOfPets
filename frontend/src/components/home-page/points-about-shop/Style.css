@@ -1,109 +1,57 @@
-@media only screen and (min-width: 1024px) {
-    .main-pas-container {
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 150px;
-    }
-
-    .pas-container {
-        height: auto;
-        margin-left: 35px;
-        margin-right: 35px;
-        justify-content: center;
-    }
-
-    .pas-title {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 700;
-        margin-bottom: 60px;
-    }
-
-    .pas-points-container {
-        gap: 5%;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        display: grid;
-    }
-
-    .pas-container-point-image {
-        height: 64px;
-        width: 64px;
-        border-radius: 30px;
-        background-color: #fdf4e1;
-        margin-bottom: 32px;
-    }
-
-    .pas-point-image {
-        height: 32px;
-        width: auto;
-        margin: auto;
-        padding: 15px;
-    }
-
-    .pas-point-title {
-        font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 16px;
-        color: #333333;
-    }
-
-    .pas-point-description {
-        font-weight: 300;
-        color: #555555;
-        font-size: 16px;
-        line-height: 38px;
-    }
+.main-pas-container {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 150px;
 }
 
-@media only screen and (max-width: 1024px) {
-    .main-pas-container {
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 50px;
-    }
+.pas-container {
+    height: auto;
+    margin-left: 35px;
+    margin-right: 35px;
+    justify-content: center;
+}
 
-    .pas-container {
-        justify-content: center;
-    }
+.pas-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
 
-    .pas-title {
-        text-align: center;
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 30px;
-    }
+.pas-points-container {
+    gap: 5%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+}
 
-    .pas-container-point-image {
-        height: 56px;
-        width: 56px;
-        border-radius: 30px;
-        background-color: #fdf4e1;
-        margin-bottom: 16px;
-    }
+.pas-container-point-image {
+    height: 64px;
+    width: 64px;
+    border-radius: 30px;
+    background-color: #fdf4e1;
+    margin-bottom: 32px;
+}
 
-    .pas-point-image {
-        height: 28px;
-        width: auto;
-        margin: auto;
-        padding: 14px;
-    }
+.pas-point-image {
+    height: 32px;
+    width: auto;
+    margin: auto;
+    padding: 15px;
+}
 
-    .pas-point-title {
-        font-weight: 700;
-        font-size: 16px;
-        margin-bottom: 8px;
-        color: #333333;
-    }
+.pas-point-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #333333;
+}
 
-    .pas-point-description {
-        font-weight: 300;
-        color: #555555;
-        font-size: 12px;
-        margin-bottom: 25px;
-        line-height: 26px;
-    }
+.pas-point-description {
+    font-weight: 300;
+    color: #555555;
+    font-size: 16px;
+    line-height: 38px;
 }

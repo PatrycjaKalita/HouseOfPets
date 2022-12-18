@@ -1,54 +1,60 @@
-/* General styles for all devices */
+.main-nav {
+    width: 80%;
+    display: flex;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
 .navlinks-container {
     padding-left: 0.75rem; /* 12px */
     padding-right: 0.75rem; /* 12px */
+    display: flex;
 }
 
-.navlinks-title:hover {
-    font-weight: 400;
+.nav-container {
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navlinks-title {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.navlinks-title:hover, .navlink-SALE:hover {
     color: #f29f05;
 }
 
-@media only screen and (min-width: 1024px) {
-    .nav-container {
-        width: 100%;
-    }
-
-    .navbar-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .navlinks-title {
-        padding-top: 5px;
-        padding-bottom: 15px;
-        font-size: 18px;
-        margin-left: 10px;
-        cursor: pointer;
-        font-weight: 300;
-    }
-
-    .nav-searchbar {
-        display: none;
-    }
+.nav-icon {
+    height: 30px;
+    padding-top: 5px;
 }
 
-@media only screen and (max-width: 1024px) {
-    .nav-container {
-        display: none;
-    }
+.nav-searchbar {
+    display: none;
+}
 
-    .nav-searchbar {
-        margin-bottom: 25px;
-        justify-content: center;
-    }
+.navlink-sale-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
 
-    .navlinks-title {
-        padding-bottom: 15px;
-        font-size: 16px;
-        margin-left: 8px;
-        cursor: pointer;
-        font-weight: 300;
-    }
+.navlink-SALE {
+    padding-top: 5px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #BF1515;
 }

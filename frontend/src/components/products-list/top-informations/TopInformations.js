@@ -37,7 +37,7 @@ const TopInformations = (props) => {
                 <h1 className="top-information-animal-type">{capitalizeFirstLetter(animalType)}</h1>
                 <span
                     className="top-information-product-category">{capitalizeFirstLetter(productCategory.replace(/-/g, ' '))}</span>
-                <span className="top-information-product-number">({productNumber})</span>
+                <span className="top-information-product-number"> ({productNumber})</span>
             </div>
 
             <h1 className="top-information-description-title">Sucha karma dla kotów - mit</h1>

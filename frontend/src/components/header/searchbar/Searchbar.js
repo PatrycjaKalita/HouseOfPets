@@ -67,6 +67,7 @@ const Searchbar = () => {
             "link": "/search-product-1"
         }
     ];
+    const [showed, setShowed] = useState(false);
 
     const [filteredData, setFilteredData] = useState([]);
     const [wordEntered, setWordEntered] = useState("");
@@ -100,48 +101,57 @@ const Searchbar = () => {
     }
 
     return (
-        <div className="searchbar-container">
-            <div className="flex relative searchbar-mobile">
-                <input type="text" placeholder="Szukaj"
-                       className="search-input"
-                       value={wordEntered}
-                       onChange={handleFilter}
-                />
+        <div>
+            <div>
+                <span className={showed ? "hidden" : "header-icon"}
+                      onClick={(e) => setShowed(true)}>
+                    <ion-icon name="search-outline"></ion-icon>
+                </span>
+            </div>
 
-                <div className="search-icons-container absolute">
-                    {filteredData.length !== 0 ? (
-                        <span className="search-icons">
+            <div className={showed ? "searchbar-container" : "hidden"}>
+                <div className="flex relative searchbar-mobile">
+                    <input type="text" placeholder="Szukaj"
+                           className="search-input"
+                           value={wordEntered}
+                           onChange={handleFilter}
+                    />
+
+                    <div className="search-icons-container absolute">
+                        {filteredData.length !== 0 ? (
+                            <span className="search-icons">
                             <ion-icon name="close" onClick={clearInput}></ion-icon>
                         </span>
-                    ) : (
-                        <span className="search-icons">
+                        ) : (
+                            <span className="search-icons">
                             <ion-icon name="search"></ion-icon>
                         </span>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </div>
-            {filteredData.length !== 0 && (
-                <div className="filtered-search-container">
-                    {filteredData.slice(0, 15).map((value) => {
-                        return (
-                            <Link to={value.link}>
-                                <div className="filtered-search">
-                                    <img alt={value.title} src={value.image} className="search-image"/>
-                                    <div className="pl-10">
-                                        <h2 className="searchbar-title">{productTitle(value.title)}</h2>
-                                        <h1 className="searchbar-price">{value.price}  zł</h1>
+                {filteredData.length !== 0 && (
+                    <div className="filtered-search-container">
+                        {filteredData.slice(0, 15).map((value) => {
+                            return (
+                                <Link to={value.link}>
+                                    <div className="filtered-search">
+                                        <img alt={value.title} src={value.image} className="search-image"/>
+                                        <div className="pl-10">
+                                            <h2 className="searchbar-title">{productTitle(value.title)}</h2>
+                                            <h1 className="searchbar-price">{value.price}  zł</h1>
+                                        </div>
                                     </div>
-                                </div>
-                            </Link>
-                        )
-                    })}
-                </div>
-            ) /*: (
+                                </Link>
+                            )
+                        })}
+                    </div>
+                ) /*: (
                 <div className="absolute">
                     <h2>Brak wyników wyszukiwania.</h2>
                 </div>
                 )*/
-            }
+                }
+            </div>
         </div>
     );
 };
