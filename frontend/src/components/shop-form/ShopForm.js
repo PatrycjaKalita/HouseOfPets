@@ -47,30 +47,7 @@ const useStyles = makeStyles({
                 color: '#464646',
             },
         },
-    },
-    textFieldStyle: {
-        width: 130,
-        "& label.Mui-focused": {
-            color: '#464646',
-        },
-        "& .MuiOutlinedInput-root": {
-            "&.Mui-focused fieldset": {
-                borderColor: "#8D451D"
-            }
-        }
-    },
-    textFieldStyleMobile: {
-        width: 250,
-        "& label.Mui-focused": {
-            color: '#464646',
-        },
-        "& .MuiOutlinedInput-root": {
-            "&.Mui-focused fieldset": {
-                borderColor: "#8D451D"
-            }
-        }
-    },
-
+    }
 });
 
 const ShopForm = () => {
@@ -78,30 +55,26 @@ const ShopForm = () => {
 
     /*Settings for categories*/
     const [valueCategories, setValueCategories] = React.useState('');
-
     const handleChangeCategories = (event: SelectChangeEvent) => {
         setValueCategories(event.target.value);
     };
 
     /*Settings for breeds*/
     const [valueBreeds, setValueBreeds] = React.useState('');
-
-    const handleChangeBreeds = (e: SelectChangeEvent) => {
-        setValueBreeds(e.target.value);
+    const handleChangeBreeds = (event: SelectChangeEvent) => {
+        setValueBreeds(event.target.value);
     };
 
     /*Settings for age*/
-    const [valueAges, setValueAges] = React.useState('');
-
-    const handleChangeAges = (e: SelectChangeEvent) => {
-        setValueAges(e.target.value);
+    const [valueAge, setValueAge] = React.useState('');
+    const handleChangeAge = (event: SelectChangeEvent) => {
+        setValueAge(event.target.value);
     };
 
     /*Settings for weights*/
-    const [valueWeights, setValueWeights] = React.useState('');
-
-    const handleChangeWeights = (e: SelectChangeEvent) => {
-        setValueWeights(e.target.value);
+    const [valueWeight, setValueWeight] = React.useState('');
+    const handleChangeWeight = (event: SelectChangeEvent) => {
+        setValueWeight(event.target.value);
     };
 
 
@@ -173,9 +146,9 @@ const ShopForm = () => {
                                 <Select
                                     className={classes.selectStylesAge}
                                     IconComponent={ExpandMoreRoundedIcon}
-                                    value={valueAges}
+                                    value={valueAge}
                                     label="Wiek"
-                                    onChange={handleChangeAges}
+                                    onChange={handleChangeAge}
                                 >
                                     <MenuItem value="all"><em>Wszystkie</em></MenuItem>
                                     <MenuItem value="age1">1</MenuItem>
@@ -189,9 +162,9 @@ const ShopForm = () => {
                                 <Select
                                     className={classes.selectStylesAge}
                                     IconComponent={ExpandMoreRoundedIcon}
-                                    value={valueWeights}
+                                    value={valueWeight}
                                     label="Waga"
-                                    onChange={handleChangeWeights}
+                                    onChange={handleChangeWeight}
                                 >
                                     <MenuItem value="all"><em>Wszystkie</em></MenuItem>
                                     <MenuItem value="age1">1</MenuItem>

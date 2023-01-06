@@ -47,7 +47,7 @@ const Product = () => {
     }
 
     return (
-        <div>
+        <>
             <div className="main-product-container">
                 <ProductLink/>
 
@@ -142,7 +142,7 @@ const Product = () => {
                 <ProductDosage/>
                 <ProductReviews averageRating={averageRating}/>
             </div>
-        </div>
+        </>
     );
 };
 

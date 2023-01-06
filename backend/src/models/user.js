@@ -52,7 +52,7 @@ const userSchema = new mongoose.Schema(
         salt: String,
         role: {
             type: String,
-            default: 'subscriber'
+            default: 'klient'
         },
         resetPasswordLink: {
             data: String,
@@ -99,4 +99,4 @@ userSchema.methods = {
     }
 }
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('Users', userSchema)

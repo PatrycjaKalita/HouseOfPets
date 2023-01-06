@@ -1,6 +1,6 @@
 .main-product-container {
     width: 80%;
-    margin: 10px auto 100px auto;
+    margin: 50px auto 100px auto;
 }
 
 .main-details-container {
@@ -187,27 +187,40 @@
 }
 
 .product-btn-add-to-card {
-    border: 2px solid transparent;
-    border-radius: 50px;
-    background: linear-gradient(to right, #bf6211 0%, #a6523f 100%),
-    linear-gradient(to right, #bf6211 0%, #a6523f 100%);
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-    color: white;
     width: 200px;
-    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
     position: absolute;
     right: -5px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-size: 300% 100%;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
 .product-btn-add-to-card:hover {
-    border: 2px solid transparent;
-    border-radius: 50px;
-    background: linear-gradient(to right, white, white),
-    linear-gradient(to right, #bf6211 0%, #a6523f 100%);
-    background-clip: padding-box, border-box;
-    background-origin: padding-box, border-box;
-    color: #a6523f;
-    position: absolute;
-    right: -5px;
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.product-btn-add-to-card:focus {
+    outline: none;
+}
+
+.product-btn-add-to-card {
+    background-image: linear-gradient(
+            to right,
+            #a6523f,
+            #bf6211,
+            #8d451d,
+            #47230f
+    );
 }

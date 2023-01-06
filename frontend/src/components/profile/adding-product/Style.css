@@ -1,0 +1,94 @@
+.main-AP-container {
+    width: 80%;
+    margin: 50px auto 100px auto;
+    display: flex;
+}
+
+.AP-container {
+    width: 80%;
+}
+
+.AP-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.AP-FORM-base-info {
+    display: flex;
+}
+
+.AP-image-upload {
+    display: grid;
+    place-items: center;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    background: #EFEFEF;
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+.AP-camera-icon {
+    font-size: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    --ionicon-stroke-width: 16px;
+    color: #B4B3B3;
+}
+
+.AP-upload-image-label {
+    text-align: center;
+    color: #666666;
+    cursor: pointer;
+}
+
+.AP-add-image-input {
+    display: none;
+}
+
+.AP-image-preview {
+    position: relative;
+    border: 1px solid #666666;
+    border-radius: 20px;
+}
+
+.AP-close-icon {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.AP-uploaded-image {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.AP-base-info-part {
+    width: 75%;
+    height: auto;
+}
+
+.AP-base-info-second-part {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 35px;
+    column-gap: 70px;
+}
+
+.AP-extra-info-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.AP-title-of-section {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}

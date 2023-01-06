@@ -24,10 +24,10 @@
 .navlinks-title {
     padding-top: 5px;
     padding-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 10px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .navlinks-title:hover, .navlink-SALE:hover {
@@ -35,7 +35,7 @@
 }
 
 .nav-icon {
-    height: 30px;
+    height: 25px;
     padding-top: 5px;
 }
 
@@ -52,7 +52,7 @@
 .navlink-SALE {
     padding-top: 5px;
     padding-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 10px;
     cursor: pointer;
     font-weight: 500;

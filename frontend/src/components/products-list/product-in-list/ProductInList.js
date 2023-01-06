@@ -1,12 +1,26 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './Style.css';
 
 const ProductInList = (props) => {
-    const productImage = useState(props.productImage);
-    const productTitle = useState(props.productTitle);
-    const productRating = useState(props.productRating);
-    const productPrice = useState(props.productPrice);
+    const productImage = props.productImage;
+    const productTitle = props.productTitle;
+    const productRating = props.productRating;
+
+    let productPrice = props.productPrice;
+    const productPromotion = props.productPromotion;
+
+    const [productPricePromotion, setProductPricePromotion] = useState(0);
+    const [showed, setShowed] = useState(false);
+
+    useEffect(() => {
+        if (productPromotion === true) {
+            let promotion = (productPrice / 100) * 10
+            setProductPricePromotion(productPrice - promotion)
+            console.log(productPricePromotion)
+            setShowed(true)
+        }
+    });
 
     return (
         <div className="product-list-container">
@@ -23,7 +37,12 @@ const ProductInList = (props) => {
                 </div>
 
                 <div className="product-list-container-price">
-                    <h1 className="product-list-price">{productPrice}zł</h1>
+                    <h1 className={showed ? "hidden" : "product-list-price"}>{productPrice.toFixed(2)} zł</h1>
+                    <h1 className={showed ? "product-list-price-promotion" : "hidden"}>{productPricePromotion.toFixed(2)} zł</h1>
+                </div>
+
+                <div className={showed ? "product-list-container-price-old" : "hidden"}>
+                    <h1 className="product-list-price-old">{productPrice.toFixed(2)} zł</h1>
                 </div>
             </div>
         </div>

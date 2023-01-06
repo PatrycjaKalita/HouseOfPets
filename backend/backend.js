@@ -14,7 +14,9 @@ mongoose
     .catch((err) => console.log("DB Error => ", err));
 
 //import routes
+const productRoutes = require('./src/routes/product')
 const authRoutes = require('./src/routes/auth')
+const userRoutes = require('./src/routes/user')
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
@@ -26,7 +28,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //middleware
+app.use('/api', productRoutes)
 app.use('/api', authRoutes)
+app.use('/api', userRoutes)
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {

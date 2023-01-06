@@ -1,0 +1,101 @@
+.main-profile-container {
+    width: 80%;
+    margin: 50px auto 100px auto;
+    display: flex;
+}
+
+.profile-container {
+    width: 80%;
+}
+
+.profile-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.order-container {
+    display: flex;
+    border: 1px solid #B4B3B3;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.order-image {
+    width: auto;
+    object-fit: cover;
+    height: 100px;
+    margin: 20px 0 20px 40px;
+}
+
+.order-details-client {
+    margin: 20px 0 20px 40px;
+    text-align: right;
+    position: absolute;
+    right: 40px;
+}
+
+.order-details-employee {
+    padding: 20px 40px 20px 40px;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #efefef;
+}
+
+.order-menu-more:hover, .order-menu-more:focus, .order-menu-more:active {
+    color: #8D451D;
+}
+
+.order-data {
+    font-weight: 400;
+    font-size: 16px;
+    color: #666666;
+}
+
+.client-order-details {
+    margin-top: 10px;
+}
+
+.c-o-price {
+    font-size: 24px;
+    font-weight: 500;
+    color: #464646;
+    margin-bottom: 5px;
+}
+
+.link-to-order-details {
+    font-weight: 400;
+    font-size: 16px;
+    color: #A46A4A;
+}
+
+.link-to-order-details:hover {
+    text-decoration-line: underline;
+}
+
+.employee-order-details {
+}
+
+.e-o-status {
+    font-weight: 500;
+    font-size: 20px;
+    color: #262626;
+    margin-bottom: 5px;
+}
+
+.e-o-price {
+    font-size: 18px;
+    font-weight: 500;
+    color: #464646;
+}
+
+.e-o-client {
+    font-size: 18px;
+    font-weight: 400;
+    color: #464646;
+}

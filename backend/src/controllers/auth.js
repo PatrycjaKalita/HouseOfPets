@@ -1,5 +1,6 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
+//const expressJwt = require('express-jwt')
 
 exports.signup = (req, res) => {
     const {login, name, lastname, email, phone_number, street_and_number, postcode_and_city, password} = req.body
@@ -53,3 +54,40 @@ exports.signin = (req, res) => {
         })
     })
 }
+
+exports.requireSignin = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (token === undefined) return res.status(401).json({
+        error: 'Missing JWT'
+    });
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(401).json({
+            error: 'Invalid or expired JWT'
+        });
+
+        req.user = user;
+        next();
+    });
+};
+
+exports.adminMiddleware = (req, res, next) => {
+    User.findById({ _id: req.user._id }).exec((err, user) => {
+        if (err || !user) {
+            return res.status(400).json({
+                error: 'Użytkownik nie istnieje'
+            });
+        }
+
+        if (user.role !== 'pracownik') {
+            return res.status(400).json({
+                error: 'Dostęp odmówiony.'
+            });
+        }
+
+        req.profile = user;
+        next();
+    });
+};

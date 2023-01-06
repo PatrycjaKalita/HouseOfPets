@@ -93,7 +93,7 @@ const Searchbar = () => {
     }
 
     const productTitle = (title) => {
-        if(title.length > 25){
+        if (title.length > 25) {
             const tmp = title.slice(0, 25);
             return tmp + "...";
         } else if (title.length <= 25)
@@ -101,44 +101,39 @@ const Searchbar = () => {
     }
 
     return (
-        <div>
-            <div>
-                <span className={showed ? "hidden" : "header-icon"}
-                      onClick={(e) => setShowed(true)}>
-                    <ion-icon name="search-outline"></ion-icon>
-                </span>
-            </div>
+        <div className="main-searchbar-container">
 
             <div className={showed ? "searchbar-container" : "hidden"}>
-                <div className="flex relative searchbar-mobile">
+                <div className="searchbar-container-before">
+                    <span className="search-icon-left">
+                            <ion-icon name="search-outline"></ion-icon>
+                    </span>
+
                     <input type="text" placeholder="Szukaj"
                            className="search-input"
                            value={wordEntered}
                            onChange={handleFilter}
                     />
 
-                    <div className="search-icons-container absolute">
-                        {filteredData.length !== 0 ? (
-                            <span className="search-icons">
-                            <ion-icon name="close" onClick={clearInput}></ion-icon>
-                        </span>
-                        ) : (
-                            <span className="search-icons">
-                            <ion-icon name="search"></ion-icon>
-                        </span>
-                        )}
-                    </div>
+                    {filteredData.length !== 0 ? (
+                        <span className="search-icons">
+                                <ion-icon name="close" onClick={clearInput}></ion-icon>
+                            </span>
+                    ) : (
+                        <div></div>
+                    )}
                 </div>
+
                 {filteredData.length !== 0 && (
                     <div className="filtered-search-container">
-                        {filteredData.slice(0, 15).map((value) => {
+                        {filteredData.slice(0, 15).map((value, index) => {
                             return (
-                                <Link to={value.link}>
+                                <Link to={value.link} key={index}>
                                     <div className="filtered-search">
                                         <img alt={value.title} src={value.image} className="search-image"/>
                                         <div className="pl-10">
                                             <h2 className="searchbar-title">{productTitle(value.title)}</h2>
-                                            <h1 className="searchbar-price">{value.price}  zł</h1>
+                                            <h1 className="searchbar-price">{value.price} zł</h1>
                                         </div>
                                     </div>
                                 </Link>
@@ -151,6 +146,17 @@ const Searchbar = () => {
                 </div>
                 )*/
                 }
+            </div>
+
+            <div className="header-search-icons">
+                <span className={showed ? "hidden" : "header-search-icon"}
+                      onClick={() => setShowed(true)}>
+                    <ion-icon name="search-outline"></ion-icon>
+                </span>
+                <span className={showed ? "header-close-icon" : "hidden"}
+                      onClick={() => setShowed(false)}>
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
             </div>
         </div>
     );

@@ -5,7 +5,6 @@
     font-size: 14px;
     padding-left: 25px;
     padding-bottom: 5px;
-    /*margin-left: 35px;*/
 }
 
 .checkbox-filters-number {
@@ -60,67 +59,65 @@ input[type=checkbox] {
 }
 
 .no-product-message {
-    text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+    color: #464646;
+    position: absolute;
 }
 
+.main-container-products-list {
+    width: 80%;
+    margin: 10px auto 100px auto;
+}
 
-    .main-container-products-list {
-        width: 80%;
-        margin: 10px auto 100px auto;
-    }
+.products-filters-list-container {
+    display: flex;
+}
 
-    .products-filters-list-container {
-        display: flex;
-    }
+.filter-container {
+    border: solid 1px #9D9D9D;
+    padding: 10px 20px 10px 20px;
+    margin-right: 60px;
+    width: 20%;
+    height: 300px;
+}
 
-    .filter-container {
-        border: solid 1px #9D9D9D;
-        padding: 10px 20px 10px 20px;
-        margin-right: 60px;
-        width: 20%;
-        height: 300px;
-    }
+.filter-title {
+    font-weight: 700;
+    font-size: 24px;
+}
 
-    .filter-title {
-        font-weight: 700;
-        font-size: 24px;
-    }
+.filter-name {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 20px
+}
 
-    .filter-name {
-        font-weight: 500;
-        font-size: 18px;
-        margin-bottom: 5px;
-        margin-top: 20px
-    }
+.custom-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: solid 1px #D3D3D3;
+}
 
-    .custom-checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: transparent;
-        border: solid 1px #D3D3D3;
-    }
+.right-side-csof-sorting-by-price {
+    display: flex;
+}
 
-    .right-side-csof-sorting-by-price {
-        display: flex;
-    }
+.rs-sorting-by-price {
+    margin-top: 2px;
+    width: 26%;
+    text-align: right;
+}
 
-    .rs-sorting-by-price {
-        margin-top: 2px;
-        width: 26%;
-        text-align: right;
-    }
+.products-list-container {
+    display: grid;
+    gap: 50px;
+    position: relative;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 
-    .products-list-container {
-        display: grid;
-        gap: 50px;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .products-filters-list-container-mobile {
-        display: none;
-    }
 

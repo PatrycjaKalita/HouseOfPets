@@ -12,9 +12,7 @@ const Header = () => {
                     <h1 className="title">House of pets</h1>
                 </Link>
 
-                <div className="header-icons">
-                    <HeaderIcons/>
-                </div>
+                <HeaderIcons/>
             </div>
         </header>
     );

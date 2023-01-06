@@ -1,0 +1,41 @@
+.main-settings-container{
+    width: 80%;
+    margin: 50px auto 100px auto;
+    display: flex;
+}
+
+.settings-container{
+    width: 80%;
+}
+
+.settings-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.box-title-update{
+    font-size: 18px;
+    color: #464646;
+    margin-bottom: 15px;
+}
+
+.login-data-update, .personal-data-update, .address-data-update{
+    margin-bottom: 35px;
+    padding-left: 15%;
+}
+
+.update-btn-container{
+    width: 100%;
+    text-align: right;
+}
+
+.update-profile-btn {
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #8D451D;
+    color: white;
+    margin: 0 auto 15px auto;
+    font-size: 18px;
+}

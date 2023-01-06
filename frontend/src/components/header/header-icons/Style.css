@@ -9,18 +9,13 @@
 }
 
 .header-icon-link {
-    padding-top: 5px;
+    padding-top: 15px;
+    width: 40px;
+    height: 40px;
 }
 
-.header-icons-monitors {
+.header-icons {
     display: flex;
     justify-content: flex-end;
-}
-
-.header-icons-mobile {
-    display: none;
-}
-
-.navbar-mobile-menu {
-    display: none;
+    width: 50%;
 }

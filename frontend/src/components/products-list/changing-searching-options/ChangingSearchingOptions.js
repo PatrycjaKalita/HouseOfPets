@@ -6,10 +6,8 @@ import InputLabel from "@mui/material/InputLabel";
 import Select, {SelectChangeEvent} from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
 import {Link} from "react-router-dom";
 import {makeStyles} from "@material-ui/core/styles";
-import {InputAdornment} from "@mui/material";
 
 const useStyles = makeStyles({
     selectStyles: {
@@ -32,32 +30,7 @@ const useStyles = makeStyles({
                 color: '#464646',
             },
         },
-    },
-    selectStylesAgeMobile: {
-        width: 200,
-        "&.MuiOutlinedInput-root": {
-            "&.Mui-focused fieldset": {
-                borderColor: "#8D451D",
-                color: "#8D451D"
-            },
-        },
-        selectIcon: {
-            position: "relative",
-            fontSize: "20px",
-            paddingRight: "10px",
-        },
-    },
-    textFieldStyleMobile: {
-        width: 200,
-        "& label.Mui-focused": {
-            color: '#464646',
-        },
-        "& .MuiOutlinedInput-root": {
-            "&.Mui-focused fieldset": {
-                borderColor: "#8D451D"
-            }
-        }
-    },
+    }
 });
 
 const ChangingSearchingOptions = () => {
@@ -67,8 +40,8 @@ const ChangingSearchingOptions = () => {
     /*Settings for categories*/
     const [valueCategories, setValueCategories] = React.useState('');
 
-    const handleChangeCategories = (event: SelectChangeEvent) => {
-        setValueCategories(event.target.value);
+    const handleChangeCategories = (e: SelectChangeEvent) => {
+        setValueCategories(e.target.value);
     };
 
     /*Settings for breeds*/
@@ -83,6 +56,13 @@ const ChangingSearchingOptions = () => {
 
     const handleChangeAges = (e: SelectChangeEvent) => {
         setValueAges(e.target.value);
+    };
+
+    /*Settings for weight*/
+    const [valueWeights, setValueWeights] = React.useState('');
+
+    const handleChangeWeights = (e: SelectChangeEvent) => {
+        setValueWeights(e.target.value);
     };
 
     /*Function for form*/
@@ -111,42 +91,17 @@ const ChangingSearchingOptions = () => {
                         <p className="top-part-selected-options-answer">Sucha karma</p>
                     </div>
 
-                    <div className="searching-options-mobile">
-                        <p className="top-part-options">OPCJE:</p>
-
-                        <p className="top-part-selected-options">Rasa:</p>
-                        <p className="top-part-selected-options-answer">Domowy</p>
-                    </div>
-
                     <span className={showed ? "top-part-options-chevron-none" : "top-part-options-chevron-down"}
-                          onClick={(e) => setShowed(true)}>
+                          onClick={() => setShowed(true)}>
                                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </span>
 
                     <span className={showed ? "top-part-options-chevron-up" : "top-part-options-chevron-none"}
-                          onClick={(e) => setShowed(false)}>
+                          onClick={() => setShowed(false)}>
                                         <ion-icon name="chevron-up-outline"></ion-icon>
                     </span>
                 </div>
                 <div className={showed ? "top-part-hidden-box" : "top-part-options-chevron-none"}>
-                    <div className="searching-options-hidden-box">
-                        <div className="searching-options-mobile">
-                            <p className="top-part-selected-options">Wiek:</p>
-                            <p className="top-part-selected-options-answer">Wszystkie</p>
-                        </div>
-
-                        <div className="searching-options-mobile">
-                            <p className="top-part-selected-options">Waga:</p>
-                            <p className="top-part-selected-options-answer">Brak</p>
-                        </div>
-
-                        <div className="searching-options-mobile">
-                            <p className="top-part-selected-options">Kategoria:</p>
-                            <p className="top-part-selected-options-answer">Sucha karma</p>
-                        </div>
-
-                    </div>
-
                     <form onSubmit={handleSubmit}>
                         <div className="csof-first-row">
                             <p className="csof-description">
@@ -177,7 +132,7 @@ const ChangingSearchingOptions = () => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Wiek</InputLabel>
                                     <Select
-                                        className={classes.selectStylesAgeMobile}
+                                        className={classes.selectStyles}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueAges}
                                         label="Wiek"
@@ -210,46 +165,19 @@ const ChangingSearchingOptions = () => {
                             </div>
 
                             <div className="csof-weight-container">
-                                <TextField
-                                    /*type="number"*/
-                                    label="Waga"
-                                    variant="outlined"
-                                    className={classes.textFieldStyleMobile}
-                                    InputProps={{
-                                        endAdornment: <InputAdornment position="start">kg</InputAdornment>,
-                                    }}
-                                />
-                            </div>
-                        </div>
-
-                        {/* Mobile version */}
-                        <div className="csof-third-row-mobile">
-                            <div className="csof-weight-container">
-                                <TextField
-                                    /*type="number"*/
-                                    InputProps={{
-                                        endAdornment: <InputAdornment position="start">kg</InputAdornment>,
-                                    }}
-                                    label="Waga"
-                                    variant="outlined"
-                                    className={classes.textFieldStyleMobile}
-                                />
-                            </div>
-
-                            <div className="csof-category-container">
                                 <FormControl>
-                                    <InputLabel className={classes.inputLabelStyle}>Kategoria</InputLabel>
+                                    <InputLabel className={classes.inputLabelStyle}>Waga</InputLabel>
                                     <Select
                                         className={classes.selectStyles}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueCategories}
-                                        label="Kategoria"
-                                        onChange={handleChangeCategories}
+                                        value={valueWeights}
+                                        label="Waga"
+                                        onChange={handleChangeWeights}
                                     >
-                                        <MenuItem value="all"><em>Wszystkie</em></MenuItem>
-                                        <MenuItem value="s_karma">Sucha karma</MenuItem>
-                                        <MenuItem value="m_karma">Mokra karma</MenuItem>
-                                        <MenuItem value="przysmaki">Przysmaki</MenuItem>
+                                        <MenuItem value="all"><em>Waga</em></MenuItem>
+                                        <MenuItem value="op1">0.0kg - 0.5kg</MenuItem>
+                                        <MenuItem value="op2">0.5kg - 1kg</MenuItem>
+                                        <MenuItem value="op3">1kg</MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

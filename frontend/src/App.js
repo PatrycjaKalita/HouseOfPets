@@ -1,31 +1,60 @@
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./components/home-page/HomePage";
 import Footer from "./components/footer/Footer";
+import Register from "./components/register/Register";
+import ClientRoutes from "./auth/ClientRoutes";
+import EmployeeRoutes from "./auth/EmployeeRoutes";
+import Profile from "./components/profile/Profile";
+import Login from "./components/login/Login";
+import Settings from "./components/profile/settings/Settings";
+import ListOfProducts from "./components/profile/list-of-products/ListOfProducts";
 import ChooseOption from "./components/choose-option/ChooseOption";
 import ShopForm from "./components/shop-form/ShopForm";
 import ProductsList from "./components/products-list/ProductsList";
 import Product from "./components/product/Product";
+import AddingProduct from "./components/profile/adding-product/AddingProduct";
+
 
 function App() {
     return (
-        <Router>
+        <BrowserRouter>
             <Header/>
             <Navbar/>
 
-            <Routes>
-                <Route path="/" element={<><HomePage/></>}/>
-                <Route path="/choose-option/koty" element={<><ChooseOption/></>}/>
-                <Route path="/shop-form/koty" element={<><ShopForm/></>}/>
-                <Route path="/shop/:animalType/products/:productCategory" exact element={<><ProductsList animalType="koty" productCategory="sucha-karma"/></>}/>
-                <Route path="/shop/:animalType/products/:productCategory/:productName" exact element={<><Product animalType="koty" productCategory="sucha-karma" productName="whiskas-sterile-14-kg-z-kurczakiem"/></>}/>
-            </Routes>
+            <Switch>
+                <Route path="/" exact component={HomePage}/>
+                <Route path="/zarejestruj-sie" component={Register}/>
+                <Route path="/zaloguj-sie" component={Login}/>
+
+                <Route path="/choose-option/koty"><ChooseOption/></Route>
+                <Route path="/shop-form/koty"><ShopForm/></Route>
+
+                <Route path="/shop/:animalType/products/:productCategory" exact>
+                    <ProductsList animalType="koty" productCategory="sucha-karma"/>
+                </Route>
+
+                <Route path="/shop/:animalType/products/:productCategory/:productName" exact>
+                    <Product animalType="koty" productCategory="sucha-karma" productName="whiskas-sterile-14-kg-z-kurczakiem"/>
+                </Route>
+
+
+                <ClientRoutes path="/profil/zamowienia" exact><Profile choose={'his_orders'}/></ClientRoutes>
+                <ClientRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></ClientRoutes>
+
+                <EmployeeRoutes path="/profil/pracownik/zamowienia" exact><Profile choose={'orders'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct choose={'products'}/></EmployeeRoutes>
+
+                {/*<EmployeeRoutes path="/profil/pracownik" exact component={Admin}/>*/}
+            </Switch>
 
             <Footer/>
-        </Router>
+        </BrowserRouter>
     );
 }
 
