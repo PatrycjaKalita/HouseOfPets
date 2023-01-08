@@ -1,6 +1,5 @@
 const User = require('../models/user')
 const jwt = require('jsonwebtoken')
-//const expressJwt = require('express-jwt')
 
 exports.signup = (req, res) => {
     const {login, name, lastname, email, phone_number, street_and_number, postcode_and_city, password} = req.body
@@ -24,7 +23,7 @@ exports.signup = (req, res) => {
             })
         }
         res.json({
-            message: 'Signup Success!'
+            message: 'Rejestracja pomyślna!'
         })
     })
 }
@@ -56,14 +55,13 @@ exports.signin = (req, res) => {
 }
 
 exports.requireSignin = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
+    const auth = req.headers['authorization'];
 
-    if (token === undefined) return res.status(401).json({
-        error: 'Missing JWT'
+    if (auth && auth.split(' ')[1] === undefined) return res.status(401).json({
+        error: 'Brak JWT'
     });
 
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    jwt.verify(auth && auth.split(' ')[1], process.env.JWT_SECRET, (err, user) => {
         if (err) return res.status(401).json({
             error: 'Invalid or expired JWT'
         });

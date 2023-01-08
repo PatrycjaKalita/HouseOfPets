@@ -11,11 +11,9 @@ import Select, {SelectChangeEvent} from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-/*import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';*/
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
 
 const AddingProduct = (props) => {
     const classes = useStyles();
@@ -29,6 +27,21 @@ const AddingProduct = (props) => {
             reader.onload = function (e) {
                 setImage(e.target.result);
                 setIsUploaded(true);
+            };
+
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    }
+
+    const [imageDesc, setImageDesc] = useState("");
+    const [isUploadedImage, setIsUploadedImage] = useState(false);
+    function handleImageDescChange(e) {
+        if (e.target.files && e.target.files[0]) {
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                setImageDesc(e.target.result);
+                setIsUploadedImage(true);
             };
 
             reader.readAsDataURL(e.target.files[0]);
@@ -65,7 +78,7 @@ const AddingProduct = (props) => {
         setValueWeight(e.target.value);
     };
 
-    /*const [dateValue, setDateValue] = useState<Date | null>(null);*/
+    const [startDate, setStartDate] = useState(null);
 
     return (
         <div className="main-AP-container">
@@ -217,53 +230,179 @@ const AddingProduct = (props) => {
                         </div>
                     </div>
 
-                     <div className="AP-extra-info-container">
+                    <div className="AP-extra-info-container">
                         <h1 className="AP-title-of-section">Dodatkowe informacje (wypełnić odpowiednie pola)</h1>
 
-{/*                         <LocalizationProvider dateAdapter={AdapterDateFns}>
-                         <DesktopDatePicker
-                             label="Data ważności"
-                             value={dateValue}
-                             onChange={(newValue) => {
-                                 setDateValue(newValue);
-                             }}
-                             renderInput={(params) => <TextField {...params} />}
-\
-                         />
-                         </LocalizationProvider>*/}
+                        <div className="AP-extra-info-inputs">
+                            <DatePicker
+                                onChange={(date: Date) => setStartDate(date)}
+                                className="date-picker focus:ring-0 outline-[#8D451D]"
+                                isClearable
+                                dateFormat='dd/MM/yyyy'
+                                selected={startDate}
+                                placeholderText="Data ważności"
+                            />
+
+                            <div className="AP-extra-info-weight-info">
+                                <TextField
+                                    label="Waga"
+                                    variant="outlined"
+                                    className={classes.textFieldExtraInfo}
+                                />
+                            </div>
+
+                            <TextField
+                                label="Kolor"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1 className="AP-title-of-section">Opis produktu</h1>
 
                         <TextField
-                            label="Waga"
-
+                            label="Opis"
                             variant="outlined"
-                            className={classes.textFieldExtraInfo}
+                            multiline
+                            fullWidth
+                            rows={4}
+                            className={classes.textFieldName}
                         />
+
+                        <div className="AP-description-extra">
+                            <TextField
+                                label="Dodatkowy opis"
+                                variant="outlined"
+                                multiline
+                                fullWidth
+                                rows={2}
+                                className={classes.textFieldName}
+                            />
+                        </div>
+
+                        <div className="AP-image-upload-desc">
+                            {!isUploadedImage ? (
+                                <>
+                                    <label htmlFor="upload-input-desc">
+                                    <span className="AP-camera-icon">
+                                        <ion-icon name="camera-outline"></ion-icon>
+                                    </span>
+                                        <p className="AP-upload-image-label">Dodaj zdjęcie opisu</p>
+                                    </label>
+
+                                    <input
+                                        id="upload-input-desc"
+                                        className="AP-add-image-input"
+                                        type="file"
+                                        accept=".jpg,.jpeg,.gif,.png,.svg"
+                                        onChange={handleImageDescChange}
+                                    />
+                                </>
+                            ) : (
+                                <div className="AP-image-preview">
+                                    <span className="AP-close-icon" onClick={() => {
+                                        setIsUploadedImage(false);
+                                        setImageDesc(null);
+                                    }}>
+                                        <ion-icon name="close-outline"></ion-icon>
+                                    </span>
+
+                                    <img
+                                        className="AP-uploaded-image"
+                                        src={imageDesc}
+                                        draggable={false}
+                                        alt="uploaded-img"
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="AP-composition-container">
+                        <h1 className="AP-title-of-section">Skład produktu</h1>
 
                         <TextField
-                            label="Kolor"
-
+                            label="Skład"
                             variant="outlined"
-                            className={classes.textFieldExtraInfo}
+                            multiline
+                            fullWidth
+                            rows={4}
+                            className={classes.textFieldName}
                         />
-                    </div>
-{/*
-                    <div>
-                        <h1>Opis produktu</h1>
+
+                        <div className="AP-composition-extra">
+                            <TextField
+                                label="Dodatki (w składzie)"
+                                variant="outlined"
+                                multiline
+                                fullWidth
+                                rows={3}
+                                className={classes.textFieldName}
+                            />
+                        </div>
                     </div>
 
                     <div>
-                        <h1>Skład produktu</h1>
+                        <h1 className="AP-title-of-section-ac">Składniki analityczne produktu</h1>
+                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie występują składniki analityczne, to należy uzupełnić znajdujące się poniżej pola. </p>
+
+                        <div className="AP-AC-inputs">
+                            <TextField
+                                label="Białko surowe"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+
+                            <TextField
+                                label="Tłuszcze surowe"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+
+                            <TextField
+                                label="Popiół surowy"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+
+                            <TextField
+                                label="Włókno surowe"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+                        </div>
                     </div>
 
-                    <div>
-                        <h1>Składniki analityczne produktu</h1>
+                    <div className="AP-dosage-container">
+                        <h1 className="AP-title-of-section-ac">Dawkowanie produktu</h1>
+                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie jest opisane dawkowanie, to należy uzupełnić znajdujące się poniżej pola.  </p>
+
+                        <div className="AP-dosage-inputs">
+                            <TextField
+                                label="Białko surowe"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+
+                            <TextField
+                                label="Tłuszcze surowe"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+
+                            <TextField
+                                label="Popiół surowy"
+                                variant="outlined"
+                                className={classes.textFieldExtraInfo}
+                            />
+                        </div>
                     </div>
 
-                    <div>
-                        <h1>Dawkowanie produktu</h1>
-                    </div>*/}
-
-                    {/*<button className="" >Dodaj produkt</button>*/}
+                    <div className="AP-form-btn-container">
+                        <button className="AP-form-btn" >Dodaj produkt</button>
+                    </div>
                 </form>
             </div>
         </div>

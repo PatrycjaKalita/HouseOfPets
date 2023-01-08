@@ -12,7 +12,8 @@ const More = (props) => {
         if (props.options === 1) {
             return (
                 <div className={classToggle}>
-                    <h1 className="dropDown-first-option">Usuń</h1>
+                    <h1 className="dropDown-first-option">Zablokuj</h1>
+                    <h1 className="dropDown-second-option">Usuń</h1>
                 </div>
             );
         }

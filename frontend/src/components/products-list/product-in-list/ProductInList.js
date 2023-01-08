@@ -13,6 +13,7 @@ const ProductInList = (props) => {
     const [productPricePromotion, setProductPricePromotion] = useState(0);
     const [showed, setShowed] = useState(false);
 
+    // eslint-disable-next-line
     useEffect(() => {
         if (productPromotion === true) {
             let promotion = (productPrice / 100) * 10
@@ -20,6 +21,7 @@ const ProductInList = (props) => {
             console.log(productPricePromotion)
             setShowed(true)
         }
+
     });
 
     return (

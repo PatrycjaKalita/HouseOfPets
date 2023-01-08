@@ -17,6 +17,7 @@ import ShopForm from "./components/shop-form/ShopForm";
 import ProductsList from "./components/products-list/ProductsList";
 import Product from "./components/product/Product";
 import AddingProduct from "./components/profile/adding-product/AddingProduct";
+import ListOfUsers from "./components/profile/list-of-users/ListOfUsers";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
                 <EmployeeRoutes path="/profil/pracownik/zamowienia" exact><Profile choose={'orders'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers choose={'users'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts choose={'products'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct choose={'products'}/></EmployeeRoutes>
 

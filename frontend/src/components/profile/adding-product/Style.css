@@ -18,7 +18,7 @@
     display: flex;
 }
 
-.AP-image-upload {
+.AP-image-upload, .AP-image-upload-desc {
     display: grid;
     place-items: center;
     position: relative;
@@ -82,13 +82,99 @@
     column-gap: 70px;
 }
 
-.AP-extra-info-container{
-    margin-top: 50px;
-    margin-bottom: 50px;
+.AP-extra-info-container, .AP-composition-container, .AP-dosage-container {
+    margin: 50px 0;
 }
 
 .AP-title-of-section {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 35px;
+}
+
+.AP-extra-info-inputs {
+    display: flex;
+}
+
+.date-picker {
+    border: 1px solid #D3D3D3;
+    width: 250px;
+    height: 55px;
+    border-radius: 5px;
+    padding-left: 10px;
+    color: #303030;
+}
+
+.date-picker:hover {
+    border: 1px solid black;
+}
+
+.react-datepicker__close-icon {
+    right: 0 !important;
+}
+
+.react-datepicker__input-container, .react-datepicker-wrapper {
+    width: auto !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.date-picker::placeholder {
+    color: #666666;
+}
+
+.AP-extra-info-weight-info {
+    margin: 0 200px;
+}
+
+.AP-description-extra {
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.AP-image-upload-desc {
+    margin: 0 auto;
+}
+
+.AP-composition-extra {
+    margin-top: 35px;
+}
+
+.AP-title-of-section-ac{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.AP-title-of-section-ac-desc{
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.AP-AC-inputs{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 50px;
+}
+
+.AP-dosage-inputs{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 200px;
+}
+
+.AP-form-btn-container{
+    width: 100%;
+    text-align: right;
+}
+
+.AP-form-btn{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #8D451D;
+    color: white;
+    margin: 0 auto 15px auto;
+    font-size: 18px;
 }

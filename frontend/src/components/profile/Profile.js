@@ -22,9 +22,11 @@ const Profile = (props) => {
         setPage(value);
     };
 
+
     useEffect(() => {
         setNoOfPages(Math.ceil(ordersData.length / LIMIT_FOR_PAGE));
         //setPage(1);
+        // eslint-disable-next-line
     }, [ordersData])
 
     return (

@@ -1,13 +1,12 @@
 import React from 'react';
-import {Link, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import './Style.css'
 import HeaderIcon from "./HeaderIcon";
 import Searchbar from "../searchbar/Searchbar";
-import {isAuth, signOut} from '../../../auth/Helpers';
+import {isAuth} from '../../../auth/Helpers';
 
 const HeaderIcons = () => {
-    const history = useHistory();
     return (
         <div className="header-icons">
             <Searchbar/>

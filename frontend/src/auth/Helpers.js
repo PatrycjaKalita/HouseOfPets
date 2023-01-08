@@ -63,6 +63,7 @@ export const signOut = (next) => {
 };
 
 export const updateUser = (response, next) => {
+    // eslint-disable-next-line
     if (typeof window !== undefined) {
         const auth = response.data;
         localStorage.setItem('user', JSON.stringify(auth));
