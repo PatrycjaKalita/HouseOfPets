@@ -14,6 +14,12 @@
     margin-bottom: 50px;
 }
 
+.LOU-list-container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 35px;
+}
+
 .LOU-one-part-container{
     position: relative;
     width: 220px;

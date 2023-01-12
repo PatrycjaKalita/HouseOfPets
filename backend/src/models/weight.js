@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const weightSchema = new mongoose.Schema(
     {
         number: {
-            type: Number,
+            type: String,
             required: true
         }
     },

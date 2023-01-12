@@ -1,0 +1,74 @@
+.main-LOA-container {
+    width: 80%;
+    margin: 50px auto 100px auto;
+    display: flex;
+}
+
+.LOA-container {
+    width: 80%;
+}
+
+.LOA-top-part {
+    margin-bottom: 50px;
+    display: flex;
+    position: relative;
+}
+
+.LOA-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.LOA-top-part-icons {
+    right: 0;
+    position: absolute;
+}
+
+.LOA-option-icon {
+    font-size: 22px;
+    color: #464646;
+    margin-left: 10px;
+}
+
+.LOA-option-icon:hover {
+    color: #8D451D;
+}
+
+.LOA-list-container{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 50px;
+}
+
+.LOA-one-part-container{
+    position: relative;
+    width: 220px;
+    border: 1px solid #B4B3B3;
+}
+
+.LOA-animal-image{
+    margin: 20px 20px 0 20px;
+    height: 160px;
+    width: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.LOA-name {
+    padding: 20px 0 5px 15px;
+    font-size: 22px;
+}
+
+.LOA-sex{
+    padding: 25px 0 5px 0;
+    right: 35px;
+    position: absolute;
+    font-size: 16px;
+    color: #f29f05;
+}
+
+.LOA-breed{
+    padding: 5px 0 15px 15px;
+    font-size: 16px;
+    font-weight: 300;
+}

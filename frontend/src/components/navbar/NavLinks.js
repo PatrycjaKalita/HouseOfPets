@@ -5,8 +5,8 @@ import './Style.css';
 import iconCat from "../../assets/nav-bar/cat.png"
 import iconDog from "../../assets/nav-bar/dog.png"
 import iconLittleAnimals from "../../assets/nav-bar/rabbit.png"
-import iconBird from "../../assets/nav-bar/parrot.png"
-import iconTurtle from "../../assets/nav-bar/turtle.png"
+/*import iconBird from "../../assets/nav-bar/parrot.png"
+import iconTurtle from "../../assets/nav-bar/turtle.png"*/
 
 const Navlinks = () => {
     const links = [
@@ -28,7 +28,7 @@ const Navlinks = () => {
             icon: iconLittleAnimals,
             link: "/choose-option/male-zwierzatka",
         },
-        {
+/*        {
             key: 4,
             name: "PTAKI",
             icon: iconBird,
@@ -39,7 +39,7 @@ const Navlinks = () => {
             name: "TERRARYSTYKA",
             icon: iconTurtle,
             link: "/choose-option/terrarystyka",
-        }
+        }*/
     ]
 
     const [heading, setHeading] = useState("");

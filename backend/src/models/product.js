@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema(
     {
         link: {
             type: String,
-            required: true
+            /*required: true*/
         },
         name: {
             type: String,
@@ -39,33 +39,33 @@ const productSchema = new mongoose.Schema(
         },
         product_code: {
             type: Number,
-            required: true,
+            /*required: true,*/
             min: 6
         },
-        animal_id: [{
+        animal_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Animals'
-        }],
-        category_id: [{
+        },
+        category_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Categories'
-        }],
-        description_id: [{
+        },
+        description_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Descriptions'
-        }],
-        composition_id: [{
+        },
+        composition_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Compositions'
-        }],
-        analytical_component_id: [{
+        },
+        analytical_component_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'AnalyticalComponents'
-        }],
-        dosage_id: [{
+        },
+        dosage_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Dosage'
-        }],
+        },
     },
     {
         timestamps: true

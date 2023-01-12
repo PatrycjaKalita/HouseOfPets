@@ -42,7 +42,7 @@ const animalForAdoptionSchema = new mongoose.Schema(
         },
         type_of_pets_id: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'TypesOfAnimals'
+            ref: 'TypeOfAnimal'
         }],
         breed_id: [{
             type: mongoose.Schema.Types.ObjectId,
@@ -62,4 +62,4 @@ const animalForAdoptionSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('AnimalsForAdoptions', animalForAdoptionSchema)
+module.exports = mongoose.model('AnimalForAdoption', animalForAdoptionSchema)

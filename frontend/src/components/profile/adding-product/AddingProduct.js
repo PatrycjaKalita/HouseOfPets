@@ -1,23 +1,26 @@
-import React, {useState} from 'react';
-
+import React, {useState, useEffect} from 'react';
 import './Style.css'
 import {useStyles} from './MUIStyle'
-import ProfileNavigation from "../profile-navigation/ProfileNavigation";
-import {ToastContainer} from "react-toastify";
-import TextField from "@mui/material/TextField";
 
+import ProfileNavigation from "../profile-navigation/ProfileNavigation";
+import {toast, ToastContainer} from "react-toastify";
+import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
-import Select, {SelectChangeEvent} from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import {getCookie, signOut} from "../../../auth/Helpers";
+import {useHistory} from "react-router-dom";
 
 const AddingProduct = (props) => {
-    const classes = useStyles();
-    const [image, setImage] = useState("");
+    const classes = useStyles()
+    const history = useHistory()
+
+    const [picture, setPicture] = useState("");
     const [isUploaded, setIsUploaded] = useState(false);
 
     function handleImageChange(e) {
@@ -25,7 +28,7 @@ const AddingProduct = (props) => {
             let reader = new FileReader();
 
             reader.onload = function (e) {
-                setImage(e.target.result);
+                setPicture(e.target.result);
                 setIsUploaded(true);
             };
 
@@ -35,6 +38,7 @@ const AddingProduct = (props) => {
 
     const [imageDesc, setImageDesc] = useState("");
     const [isUploadedImage, setIsUploadedImage] = useState(false);
+
     function handleImageDescChange(e) {
         if (e.target.files && e.target.files[0]) {
             let reader = new FileReader();
@@ -48,37 +52,149 @@ const AddingProduct = (props) => {
         }
     }
 
-    const [valueCategories, setValueCategories] = useState('');
-
-    const handleChangeCategories = (e: SelectChangeEvent) => {
-        setValueCategories(e.target.value);
-    };
-
-    const [valueTypesOfAnimals, setValueTypesOfAnimals] = useState('');
-
-    const handleChangeTypesOfAnimals = (e: SelectChangeEvent) => {
-        setValueTypesOfAnimals(e.target.value);
-    };
-
-    const [valueBreeds, setValueBreeds] = useState('');
-
-    const handleChangeBreeds = (e: SelectChangeEvent) => {
-        setValueBreeds(e.target.value);
-    };
-
-    const [valueAge, setValueAge] = useState('');
-
-    const handleChangeAge = (e: SelectChangeEvent) => {
-        setValueAge(e.target.value);
-    };
-
-    const [valueWeight, setValueWeight] = useState('');
-
-    const handleChangeWeight = (e: SelectChangeEvent) => {
-        setValueWeight(e.target.value);
-    };
-
     const [startDate, setStartDate] = useState(null);
+
+    const [values, setValues] = useState({
+        link: '',
+        name: '',
+        producer: '',
+        price: '',
+        amount: '',
+        expiration_date: '',
+        weight: '',
+        color: '',
+        image: '',
+        category: '',
+        product_code: '',
+        buttonText: 'Dodaj produkt'
+    })
+
+    /*link i product_code jakoś samo żeby się generowało i było by fajnie*/
+    const [valueSelect, setValueSelect] = useState({
+        category: '',
+        typeOfAnimal: '',
+        breed: '',
+        age: '',
+        aWeight: '',
+    });
+
+    const handleChange = (e) => {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+    }
+
+    useEffect(() => {
+        loadProduct();
+    }, []);
+
+    const token = getCookie('token');
+
+    const [availableProductDetails, setAvailableProductDetails] = useState(false);
+
+    const loadProduct = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/product`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                console.log('Wyswietlanie zwierzat i kategori', response.data.availableProductDetails);
+                setAvailableProductDetails(response.data.availableProductDetails);
+
+                const nazwa = response.data.availableProductDetails.animals.map((animal) => {
+                    return animal?.typeofanimal[0].name
+                });
+                console.log([...new Set(nazwa)], "ciap ciap")
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/');
+                    })
+                }
+            });
+    };
+
+    const {
+        link,
+        name,
+        producer,
+        price,
+        amount,
+        expiration_date,
+        weight,
+        color,
+        image,
+        category,
+        product_code,
+        buttonText
+    } = values
+
+    const handleChangeText = (name) => (event) => {
+        console.log(event.target.value)
+        setValues({...values, [name]: event.target.value})
+    }
+
+    /*co z tym dalej?*/
+    const createProductLink = () => {
+        let tmp = lowerLetters(values.name)
+        console.log(tmp.replace(' ', '-'))
+        setValues({...values, [link]: tmp.replace(' ', '-')})
+    }
+
+
+    function lowerLetters(string) {
+        return string.toLowerCase();
+    }
+
+    const clickSubmit = event => {
+        event.preventDefault()
+        setValues({...values, buttonText: 'Submitting'})
+        axios({
+            method: 'POST',
+            url: `${process.env.REACT_APP_API}/adding/product`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                link,
+                name,
+                producer,
+                price,
+                amount,
+                expiration_date,
+                weight,
+                color,
+                image,
+                category,
+                product_code,
+            }
+        }).then(response => {
+            console.log('Produkt dodany', response);
+            setValues({
+                ...values,
+                link,
+                name,
+                producer,
+                price,
+                amount,
+                expiration_date,
+                weight,
+                color,
+                image,
+                category,
+                product_code,
+                buttonText: 'Dodano produkt'
+            })
+            toast.success('Produkt dodany');
+        }).catch(error => {
+            setValues({...values, buttonText: 'Submit'})
+            toast.error(error.response.data.error)
+        })
+    }
 
     return (
         <div className="main-AP-container">
@@ -113,14 +229,14 @@ const AddingProduct = (props) => {
                                 <div className="AP-image-preview">
                                     <span className="AP-close-icon" onClick={() => {
                                         setIsUploaded(false);
-                                        setImage(null);
+                                        setPicture(null);
                                     }}>
                                         <ion-icon name="close-outline"></ion-icon>
                                     </span>
 
                                     <img
                                         className="AP-uploaded-image"
-                                        src={image}
+                                        src={picture}
                                         draggable={false}
                                         alt="uploaded-img"
                                     />
@@ -130,7 +246,9 @@ const AddingProduct = (props) => {
 
                         <div className="AP-base-info-part">
                             <TextField
-                                label="Nazwa"
+                                onChange={handleChangeText('name')}
+                                value={name}
+                                label="Nazwa produktu"
                                 variant="outlined"
                                 className={classes.textFieldName}
                                 fullWidth
@@ -138,6 +256,8 @@ const AddingProduct = (props) => {
 
                             <div className="AP-base-info-second-part">
                                 <TextField
+                                    onChange={handleChangeText('producer')}
+                                    value={producer}
                                     label="Producent"
                                     variant="outlined"
                                     className={classes.textField}
@@ -148,24 +268,33 @@ const AddingProduct = (props) => {
                                     <Select
                                         className={classes.selectStylesCategories}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueCategories}
+                                        value={valueSelect.category}
                                         label="Kategoria"
-                                        onChange={handleChangeCategories}
+                                        name={"category"}
+                                        onChange={handleChange}
                                     >
-                                        <MenuItem value="s_karma">Sucha karma</MenuItem>
-                                        <MenuItem value="m_karma">Mokra karma</MenuItem>
-                                        <MenuItem value="przysmaki">Przysmaki</MenuItem>
+                                        {
+                                            availableProductDetails === false ?
+                                                <MenuItem value="all">Loading..</MenuItem>
+                                                :
+                                                availableProductDetails.categories.map((category, index) => {
+                                                    return <MenuItem value={category._id}>{category.name}</MenuItem>
+                                                })}
                                     </Select>
                                 </FormControl>
 
 
                                 <TextField
+                                    onChange={handleChangeText('amount')}
+                                    value={amount}
                                     label="Ilość"
                                     variant="outlined"
                                     className={classes.textField}
                                 />
 
                                 <TextField
+                                    onChange={handleChangeText('price')}
+                                    value={price}
                                     label="Cena"
                                     variant="outlined"
                                     className={classes.textField}
@@ -179,12 +308,21 @@ const AddingProduct = (props) => {
                                     <Select
                                         className={classes.selectStylesCategories}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueTypesOfAnimals}
+                                        value={valueSelect.typeOfAnimal}
                                         label="Rodzaj zwierzęcia"
-                                        onChange={handleChangeTypesOfAnimals}
+                                        name={"typeOfAnimal"}
+                                        onChange={handleChange}
                                     >
-                                        <MenuItem value="all">Pies</MenuItem>
-                                        <MenuItem value="domowy">Kot</MenuItem>
+                                        {
+                                            availableProductDetails === false ?
+                                                <MenuItem value="all">Loading..</MenuItem>
+                                                :
+                                                availableProductDetails.animals.map((animal) => {
+                                                    /*console.log(animal?.typeofanimal[0]?.name);*/
+                                                    return <MenuItem
+                                                        value={animal?.typeofanimal[0]?._id}>{animal?.typeofanimal[0]?.name}</MenuItem>
+                                                })
+                                        }
                                     </Select>
                                 </FormControl>
 
@@ -193,11 +331,20 @@ const AddingProduct = (props) => {
                                     <Select
                                         className={classes.selectStylesCategories}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueBreeds}
+                                        value={valueSelect.breed}
                                         label="Rasa"
-                                        onChange={handleChangeBreeds}
+                                        name={"breed"}
+                                        onChange={handleChange}
                                     >
-                                        <MenuItem value="domowy">Domowy</MenuItem>
+                                        {
+                                            availableProductDetails === false ?
+                                                <MenuItem value="all">Loading..</MenuItem>
+                                                :
+                                                availableProductDetails.animals.map((animal) => {
+                                                    return <MenuItem
+                                                        value={animal?.breeds[0]?._id}>{animal?.breeds[0]?.name}</MenuItem>
+                                                })
+                                        }
                                     </Select>
                                 </FormControl>
 
@@ -206,11 +353,20 @@ const AddingProduct = (props) => {
                                     <Select
                                         className={classes.selectStylesAW}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueAge}
+                                        value={valueSelect.age}
                                         label="Wiek"
-                                        onChange={handleChangeAge}
+                                        name={"age"}
+                                        onChange={handleChange}
                                     >
-                                        <MenuItem value="age1">1</MenuItem>
+                                        {
+                                            availableProductDetails === false ?
+                                                <MenuItem value="all">Loading..</MenuItem>
+                                                :
+                                                availableProductDetails.animals.map((animal) => {
+                                                    return <MenuItem
+                                                        value={animal?.age[0]?._id}>{animal?.age[0]?.number_with_name}</MenuItem>
+                                                })
+                                        }
                                     </Select>
                                 </FormControl>
 
@@ -219,11 +375,20 @@ const AddingProduct = (props) => {
                                     <Select
                                         className={classes.selectStylesAW}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueWeight}
+                                        value={valueSelect.aWeight}
                                         label="Waga"
-                                        onChange={handleChangeWeight}
+                                        name={"aWeight"}
+                                        onChange={handleChange}
                                     >
-                                        <MenuItem value="age1">1</MenuItem>
+                                        {
+                                            availableProductDetails === false ?
+                                                <MenuItem value="all">Loading..</MenuItem>
+                                                :
+                                                availableProductDetails.animals.map((animal) => {
+                                                    return <MenuItem
+                                                        value={animal?.weight[0]?._id}>{animal?.weight[0]?.number}</MenuItem>
+                                                })
+                                        }
                                     </Select>
                                 </FormControl>
                             </div>
@@ -240,11 +405,14 @@ const AddingProduct = (props) => {
                                 isClearable
                                 dateFormat='dd/MM/yyyy'
                                 selected={startDate}
+
                                 placeholderText="Data ważności"
                             />
 
                             <div className="AP-extra-info-weight-info">
                                 <TextField
+                                    onChange={handleChangeText('weight')}
+                                    value={weight}
                                     label="Waga"
                                     variant="outlined"
                                     className={classes.textFieldExtraInfo}
@@ -252,6 +420,8 @@ const AddingProduct = (props) => {
                             </div>
 
                             <TextField
+                                onChange={handleChangeText('color')}
+                                value={color}
                                 label="Kolor"
                                 variant="outlined"
                                 className={classes.textFieldExtraInfo}
@@ -346,7 +516,8 @@ const AddingProduct = (props) => {
 
                     <div>
                         <h1 className="AP-title-of-section-ac">Składniki analityczne produktu</h1>
-                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie występują składniki analityczne, to należy uzupełnić znajdujące się poniżej pola. </p>
+                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie występują składniki analityczne, to
+                            należy uzupełnić znajdujące się poniżej pola. </p>
 
                         <div className="AP-AC-inputs">
                             <TextField
@@ -377,7 +548,8 @@ const AddingProduct = (props) => {
 
                     <div className="AP-dosage-container">
                         <h1 className="AP-title-of-section-ac">Dawkowanie produktu</h1>
-                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie jest opisane dawkowanie, to należy uzupełnić znajdujące się poniżej pola.  </p>
+                        <p className="AP-title-of-section-ac-desc">Jeśli w produkcie jest opisane dawkowanie, to należy
+                            uzupełnić znajdujące się poniżej pola. </p>
 
                         <div className="AP-dosage-inputs">
                             <TextField
@@ -401,7 +573,7 @@ const AddingProduct = (props) => {
                     </div>
 
                     <div className="AP-form-btn-container">
-                        <button className="AP-form-btn" >Dodaj produkt</button>
+                        <button className="AP-form-btn" onClick={clickSubmit}>{buttonText}</button>
                     </div>
                 </form>
             </div>

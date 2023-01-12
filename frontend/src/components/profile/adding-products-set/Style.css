@@ -1,0 +1,58 @@
+.APS-products-in-set {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 50px;
+    row-gap: 35px;
+}
+
+.APS-first-row-base-info {
+    display: flex;
+    position: relative;
+}
+
+.APS-price-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-top: 5px
+}
+
+.APS-price-title {
+    color: #666666;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-top: 12px
+}
+
+.APS-price-value {
+    color: #8D451D;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.APS-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.APS-description{
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+.APS-form-btn{
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #8D451D;
+    color: white;
+    margin: 0 8px 15px auto;
+    font-size: 18px;
+}
+
+.APS-form-btn-container{
+    width: 100%;
+    text-align: right;
+}

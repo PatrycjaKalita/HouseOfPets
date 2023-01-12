@@ -7,6 +7,7 @@ import {Pagination} from "@mui/material";
 
 import './Style.css';
 import {products} from './productsData';
+import {productTitleShort} from '../../utils/product'
 import TopInformations from "./top-informations/TopInformations";
 import ChangingSearchingOptions from "./changing-searching-options/ChangingSearchingOptions";
 
@@ -57,14 +58,6 @@ const useStyles = makeStyles({
 
 const ProductsList = () => {
     const classes = useStyles();
-
-    const productTitleShort = (title) => {
-        if (title.length > 22) {
-            const tmp = title.slice(0, 22);
-            return tmp + "..";
-        } else if (title.length <= 22)
-            return title;
-    }
 
     /*Producers*/
     let uniqueProducers = products.filter((value, index, self) =>

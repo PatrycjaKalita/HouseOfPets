@@ -12,4 +12,4 @@ const typeOfAnimalSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('TypesOfAnimal', typeOfAnimalSchema)
+module.exports = mongoose.model('TypeOfAnimal', typeOfAnimalSchema)

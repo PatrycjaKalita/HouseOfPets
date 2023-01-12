@@ -1,109 +1,86 @@
-.main-LOP-container {
+.main-LOPS-container {
     width: 80%;
     margin: 50px auto 100px auto;
     display: flex;
 }
 
-.LOP-container {
+.LOPS-container {
     width: 80%;
 }
 
-.LOP-top-part {
+.LOPS-top-part {
     margin-bottom: 50px;
     display: flex;
     position: relative;
 }
 
-.LOP-title {
+.LOPS-title {
     font-size: 20px;
     font-weight: 500;
 }
 
-.LOP-top-part-icons {
+.LOPS-top-part-icons {
     right: 0;
     position: absolute;
 }
 
-.LOP-option-icon {
+.LOPS-option-icon {
     font-size: 22px;
     color: #464646;
     margin-left: 10px;
 }
 
-.LOP-option-icon:hover {
+.LOPS-option-icon:hover {
     color: #8D451D;
 }
 
-.LOP-list-container{
+.LOPS-list-container{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 50px;
 }
 
-.LOP-one-part-container{
+.LOPS-one-part-container{
     position: relative;
     width: 220px;
     border: 1px solid #B4B3B3;
 }
 
-.LOP-animal-image{
+.LOPS-animal-image{
     margin: 20px 20px 0 20px;
     height: 160px;
     width: 170px;
     object-fit: cover;
 }
 
-.LOP-name {
+.LOPS-name {
     padding: 20px 0 5px 15px;
     font-size: 18px;
-    font-weight: 500;
 }
 
-.LOP-list-star {
+.LOPS-list-star {
     color: #F29F05;
     font-size: 20px;
 }
 
-.LOP-list-rating {
+.LOPS-list-rating {
     font-size: 16px;
     margin-left: 5px;
     margin-top: 1px;
 }
-.LOP-product-info{
+.LOPS-product-info{
     display: flex;
     padding: 5px 0 0 15px;
 }
 
-.LOP-list-container-price {
-    padding-right: 10px;
+.LOPS-list-container-price {
     position: absolute;
-    right: 10px;
+    right: 15px;
     bottom: 12px;
 }
 
-.LOP-list-price {
+.LOPS-list-price {
     font-size: 20px;
     color: #8D451D;
     font-weight: 500;
-}
-
-.LOP-list-price-promotion {
-    font-size: 20px;
-    color: #BF1515;
-    font-weight: 500;
-}
-
-.LOP-list-container-price-old {
-    padding-right: 10px;
-    position: absolute;
-    right: 10px;
-    padding-top: 5px;
-    bottom: 0;
-}
-
-.LOP-list-price-old{
-    font-size: 14px;
-    text-decoration-line: line-through;
-    font-weight: 400;
-    color: #464646;
 }

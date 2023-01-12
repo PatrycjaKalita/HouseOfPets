@@ -19,13 +19,13 @@ const ListOfUsers = (props) => {
     const token = getCookie('token');
 
     useEffect(() => {
-        loadProfile();
+        loadListOfUsers();
     });
 
-    const loadProfile = () => {
+    const loadListOfUsers = () => {
         axios({
             method: 'GET',
-            url: `${process.env.REACT_APP_API}/user/${isAuth()._id}`,
+            /*url: `${process.env.REACT_APP_API}/user/${isAuth()._id}`,*/
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -54,22 +54,6 @@ const ListOfUsers = (props) => {
             });
     };
 
-    const displayUser = (users) => {
-
-        if (!users.length) return null;
-
-
-        return users.map((user, index) => (
-            <div key={index} className="LOU-one-part-container">
-                <More options={1}/>
-
-                <h1 className="LOU-login">Login: <b>{user.login}</b></h1>
-                <h1 className="LOU-name">Imię: <b>{user.name}</b></h1>
-                <h1 className="LOU-lastname">Nazwisko: <b>{user.lastname}</b></h1>
-            </div>
-        ));
-    };
-
     return (
         <div className="main-LOP-container">
             <ProfileNavigation choose={props.choose}/>
@@ -77,19 +61,14 @@ const ListOfUsers = (props) => {
             <div className="LOU-container">
                 <h1 className="LOU-title">Wszyscy użytkownicy</h1>
 
-                {/*4 kolumny + pagination*/}
-                <div>
-                    {displayUser(values.users)}
-
-
-                    {/* <div className="LOU-one-part-container">
+                <div className='LOU-list-container'>
+                    <div className="LOU-one-part-container">
                         <More options={1}/>
 
                         <h1 className="LOU-login">Login: <b>Imię</b></h1>
                         <h1 className="LOU-name">Imię: <b>Imię</b></h1>
                         <h1 className="LOU-lastname">Nazwisko: <b>Imię</b></h1>
-                    </div>*/}
-
+                    </div>
                 </div>
             </div>
         </div>

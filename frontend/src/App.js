@@ -18,6 +18,12 @@ import ProductsList from "./components/products-list/ProductsList";
 import Product from "./components/product/Product";
 import AddingProduct from "./components/profile/adding-product/AddingProduct";
 import ListOfUsers from "./components/profile/list-of-users/ListOfUsers";
+import ListOfAnimal from "./components/profile/list-of-animals/ListOfAnimal";
+import AddingAnimal from "./components/profile/adding-animal/AddingAnimal";
+import ListOfProductsSets from "./components/profile/list-of-products-sets/ListOfProductsSets";
+import AddingProductsSets from "./components/profile/adding-products-set/AddingProductsSets";
+import OrderDetails from "./components/profile/order-details/OrderDetails";
+
 
 
 function App() {
@@ -47,10 +53,15 @@ function App() {
                 <ClientRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></ClientRoutes>
 
                 <EmployeeRoutes path="/profil/pracownik/zamowienia" exact><Profile choose={'orders'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/zamowienie/id" exact><OrderDetails choose={'orders'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers choose={'users'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts choose={'products'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zwierzeta" exact><ListOfAnimal choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-pupila-do-adopcji" exact><AddingAnimal choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow" exact><ListOfProductsSets choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-zestawu" exact><AddingProductsSets choose={'products-sets'}/></EmployeeRoutes>
 
                 {/*<EmployeeRoutes path="/profil/pracownik" exact component={Admin}/>*/}
             </Switch>

@@ -1,0 +1,100 @@
+{
+    "_id" : ObjectId("63bee7531312a763a0629bfe"),
+    "name" : "Brytyjski krótkowłosy"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629bff"),
+    "name" : "Pers"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c00"),
+    "name" : "Maine Coon"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c01"),
+    "name" : "Europejski"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c02"),
+    "name" : "Ragdoll"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c03"),
+    "name" : "Syberyjski"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c04"),
+    "name" : "Norweski"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c05"),
+    "name" : "Pers"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c06"),
+    "name" : "Egipski"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c07"),
+    "name" : "Owczarek niemiecki"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c08"),
+    "name" : "Owczarek podhalański"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c09"),
+    "name" : "Labrador"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0a"),
+    "name" : "Dalmatyńczyk"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0b"),
+    "name" : "Doberman"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0c"),
+    "name" : "Shepherd"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0d"),
+    "name" : "Jamnik"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0e"),
+    "name" : "Golden Retriever"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c0f"),
+    "name" : "Chomiki karłowate"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c10"),
+    "name" : "Chomiki"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c11"),
+    "name" : "Chomik Teddy"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c12"),
+    "name" : "Koszatniczka"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c13"),
+    "name" : "Królik rasy tan"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c14"),
+    "name" : "Królik miniaturowy"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c15"),
+    "name" : "Królik domowy"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629c16"),
+    "name" : "Świnka morska"
+}

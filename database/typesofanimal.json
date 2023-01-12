@@ -1,0 +1,12 @@
+{
+    "_id" : ObjectId("63bee7531312a763a0629bfb"),
+    "name" : "Kot"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629bfc"),
+    "name" : "Pies"
+}
+{
+    "_id" : ObjectId("63bee7531312a763a0629bfd"),
+    "name" : "Małe zwierzątka"
+}

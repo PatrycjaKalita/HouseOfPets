@@ -1,0 +1,63 @@
+{
+    "_id" : ObjectId("63bee8341312a763a0629c40"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfb"),
+    "breed_id" : ObjectId("63bee7531312a763a0629bfe"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf4"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c17")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c41"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfb"),
+    "breed_id" : ObjectId("63bee7531312a763a0629bff"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf5"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c18")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c42"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfb"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c01"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf6"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c19")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c43"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfc"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c07"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf7"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c1b")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c44"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfc"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c08"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf9"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c1c")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c45"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfc"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c09"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf8"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c1d")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c46"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfd"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c10"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf4"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c17")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c47"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfd"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c12"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf5"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c18")
+}
+{
+    "_id" : ObjectId("63bee8341312a763a0629c48"),
+    "type_of_pets_id" : ObjectId("63bee7531312a763a0629bfd"),
+    "breed_id" : ObjectId("63bee7531312a763a0629c14"),
+    "age_id" : ObjectId("63bee7531312a763a0629bf6"),
+    "weight_id" : ObjectId("63bee7531312a763a0629c19")
+}

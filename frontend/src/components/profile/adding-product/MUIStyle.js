@@ -45,6 +45,20 @@ export const useStyles = makeStyles({
             },
         },
     },
+    selectStylesProducts : {
+        width: 350,
+        "&.MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D",
+                color: "#8D451D"
+            },
+        },
+        selectIcon: {
+            position: "relative",
+            fontSize: "20px",
+            paddingRight: "10px",
+        },
+    },
     selectStylesAW: {
         width: 250,
         "&.MuiOutlinedInput-root": {
@@ -62,6 +76,30 @@ export const useStyles = makeStyles({
     textFieldExtraInfo: {
         color: '#666666',
         width: 250,
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
+    textFieldCareTaker: {
+        color: '#666666',
+        width: 300,
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
+    textFieldAddress: {
+        color: '#666666',
+        width: 700,
         "& label.Mui-focused": {
             color: '#666666',
         },

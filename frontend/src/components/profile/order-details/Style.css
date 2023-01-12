@@ -1,0 +1,61 @@
+.main-OD-container {
+    width: 80%;
+    margin: 50px auto 100px auto;
+    display: flex;
+}
+
+.OD-container {
+    width: 80%;
+}
+
+.OD-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.OD-title-part {
+    color: #464646;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.OD-info-container {
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.OD-info-row {
+    display: flex;
+    width: 250px;
+    position: relative;
+}
+
+.OD-info-title {
+    color: #464646;
+    font-size: 18px;
+}
+
+.OD-info-value {
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+}
+
+.OD-info-last-row {
+    display: flex;
+    border-top: 2px solid #464646;
+    width: 250px;
+    position: relative;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.OD-order-cost {
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    color: #f29f05;
+}

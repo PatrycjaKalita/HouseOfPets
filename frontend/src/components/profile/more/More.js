@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Popover from '@mui/material/Popover';
 import PopupState, {bindTrigger, bindPopover} from 'material-ui-popup-state';
 import './Style.css'
+import {Link} from "react-router-dom";
 
 const More = (props) => {
     const classToggle = useState('active');
@@ -20,20 +21,21 @@ const More = (props) => {
         if (props.options === 2) {
             return (
                 <div className={classToggle}>
-                    <h1 className="dropDown-first-option">Szczegóły zamówienia</h1>
+                    <Link to="/profil/zamowienie/id">
+                        <h1 className="dropDown-first-option">Szczegóły zamówienia</h1>
+                    </Link>
                     <h1 className="dropDown-second-option">Anuluj</h1>
                 </div>
             );
         }
-        /*        if (props.options.length === 3) {
-                    return (
-                        <span className={classToggle}>
-                            <h1 className="text-sm border-2 border-m_gray p-2">{props.options[0]}</h1>
-                            <h1 className="text-sm border-x-2 border-b-2 border-m_gray p-2">{props.options[1]}</h1>
-                             <h1 className="text-sm border-x-2 border-b-2 border-m_gray p-2">{props.options[2]}</h1>
-                        </span>
-                    );
-                }*/
+        if (props.options === 3) {
+            return (
+                <div className={classToggle}>
+                    <h1 className="dropDown-first-option">Edytuj</h1>
+                    <h1 className="dropDown-second-option">Usuń</h1>
+                </div>
+            );
+        }
     }
 
     return (

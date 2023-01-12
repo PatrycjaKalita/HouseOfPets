@@ -50,7 +50,7 @@ const Profile = (props) => {
                                     <div className={logIn === "klient" ? "client-order-details" : "hidden"}>
                                         <h1 className="c-o-price">{order.price} zł</h1>
 
-                                        <Link to="/zamowienie/:id">
+                                        <Link to="/profil/zamowienie/id">
                                             <h1 className="link-to-order-details">Szczegóły zamówienia</h1>
                                         </Link>
                                     </div>
