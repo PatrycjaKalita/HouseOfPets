@@ -13,59 +13,21 @@ import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import {Visibility, VisibilityOff} from "@material-ui/icons";
 import {useHistory} from "react-router-dom";
-
-const useStyles = makeStyles({
-    root: {
-        width: 300,
-        "& label.Mui-focused": {
-            color: "#666666"
-        },
-        "& .MuiInput-underline:after": {
-            borderBottomColor: "#8D451D"
-        },
-    },
-    inputLabelStyle: {
-        '&.MuiInputLabel-root': {
-            "&.Mui-focused": {
-                color: '#464646',
-            },
-        },
-    },
-    rootInput: {
-        width: 300,
-        '&.MuiInput-underline:after': {
-            borderBottomColor: "#8D451D"
-        },
-        "& input": {
-            "&:-webkit-autofill": {
-                transition:
-                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
-            },
-            "&:-webkit-autofill:focus": {
-                transition:
-                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
-            },
-            "&:-webkit-autofill:hover": {
-                transition:
-                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
-            },
-        },
-    }
-});
+import {useStyles} from "../adding-product/MUIStyle";
 
 const Settings = (props) => {
     const classes = useStyles()
     const history = useHistory()
 
     const [values, setValues] = useState({
-        login: '',
-        name: '',
-        lastname: '',
-        email: '',
-        phone_number: '',
-        street_and_number: '',
-        postcode_and_city: '',
-        password: '',
+        login: isAuth().login,
+        name: isAuth().name,
+        lastname: isAuth().lastname,
+        email: isAuth().email,
+        phone_number: isAuth().phone_number,
+        street_and_number: isAuth().street_and_number,
+        postcode_and_city: isAuth().postcode_and_city,
+        password: isAuth().password,
         buttonText: 'Aktualizuj'
     })
 
@@ -86,32 +48,13 @@ const Settings = (props) => {
         })
             .then(response => {
                 console.log('PRIVATE PROFILE UPDATE', response);
-                const {
-                    login,
-                    name,
-                    lastname,
-                    email,
-                    phone_number,
-                    street_and_number,
-                    postcode_and_city,
-                    password,
-                } = response.data;
-                setValues({
-                    ...values, login,
-                    name,
-                    lastname,
-                    email,
-                    phone_number,
-                    street_and_number,
-                    postcode_and_city,
-                    password,
-                });
+
             })
             .catch(error => {
                 console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
                 if (error.response.status === 401) {
                     signOut(() => {
-                        history.push('/');
+                        history.push('/zaloguj-sie');
                     });
                 }
             });

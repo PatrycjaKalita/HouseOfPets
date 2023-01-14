@@ -19,8 +19,8 @@ const HeaderIcons = () => {
             )}
 
             {/*ZALOGOWANY*/}
-            {isAuth() && isAuth().role === 'klient' && (
-                <Link to="/profil" className="header-icon-link">
+           {isAuth() && isAuth().role === 'klient' && (
+                <Link to="/profil/zamowienia" className="header-icon-link">
                     <HeaderIcon iconName="person-circle-outline" iconNameHover="person-circle"/>
                 </Link>
             )}

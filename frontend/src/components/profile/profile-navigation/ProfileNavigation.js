@@ -27,8 +27,8 @@ const ProfileNavigation = (props) => {
 
             <div className="profile-nav-options">
                 {
-                    profileNavigation.map((name, index) =>
-                        <div key={index}
+                    profileNavigation.map((name) =>
+                        <div
                              className={name.id === props.choose ? "profile-nav-option-choose" : "profile-nav-option"}>
                             <Link to={name.link}>
                                 <h1 className={name.id === props.choose ? "profile-nav-option-name-choose" : "profile-nav-option-name"}>{name.name}</h1>

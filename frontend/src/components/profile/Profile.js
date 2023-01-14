@@ -40,8 +40,8 @@ const Profile = (props) => {
                     {
                         ordersData.slice((page - 1) * LIMIT_FOR_PAGE, page * LIMIT_FOR_PAGE).map((order, index) =>
                             <div key={index} className="order-container">
-                                {order.images.map((image, index) => {
-                                    return (<img key={index} src={image} alt="product" className="order-image"/>);
+                                {order.images.map((image) => {
+                                    return (<img src={image} alt="product" className="order-image"/>);
                                 })}
 
                                 <div className={logIn === "klient" ? "order-details-client" : "order-details-employee"}>

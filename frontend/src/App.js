@@ -25,7 +25,6 @@ import AddingProductsSets from "./components/profile/adding-products-set/AddingP
 import OrderDetails from "./components/profile/order-details/OrderDetails";
 
 
-
 function App() {
     return (
         <BrowserRouter>
@@ -45,25 +44,35 @@ function App() {
                 </Route>
 
                 <Route path="/shop/:animalType/products/:productCategory/:productName" exact>
-                    <Product animalType="koty" productCategory="sucha-karma" productName="whiskas-sterile-14-kg-z-kurczakiem"/>
+                    <Product animalType="koty" productCategory="sucha-karma"
+                             productName="whiskas-sterile-14-kg-z-kurczakiem"/>
                 </Route>
 
-
+                {/*Links only for client*/}
                 <ClientRoutes path="/profil/zamowienia" exact><Profile choose={'his_orders'}/></ClientRoutes>
                 <ClientRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></ClientRoutes>
+                <ClientRoutes path="/profil/zamowienie/id" exact><OrderDetails choose={'his_orders'}/></ClientRoutes>
 
+                {/*Links only for employee*/}
                 <EmployeeRoutes path="/profil/pracownik/zamowienia" exact><Profile choose={'orders'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/zamowienie/id" exact><OrderDetails choose={'orders'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zamowienie/id" exact><OrderDetails
+                    choose={'orders'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers choose={'users'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts choose={'products'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct choose={'products'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/zwierzeta" exact><ListOfAnimal choose={'animals'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-pupila-do-adopcji" exact><AddingAnimal choose={'animals'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow" exact><ListOfProductsSets choose={'products-sets'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-zestawu" exact><AddingProductsSets choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers
+                    choose={'users'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts
+                    choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct
+                    choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zwierzeta" exact><ListOfAnimal
+                    choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-pupila-do-adopcji" exact><AddingAnimal
+                    choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow" exact><ListOfProductsSets
+                    choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-zestawu" exact><AddingProductsSets
+                    choose={'products-sets'}/></EmployeeRoutes>
 
-                {/*<EmployeeRoutes path="/profil/pracownik" exact component={Admin}/>*/}
             </Switch>
 
             <Footer/>

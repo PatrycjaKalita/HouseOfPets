@@ -21,7 +21,7 @@ const More = (props) => {
         if (props.options === 2) {
             return (
                 <div className={classToggle}>
-                    <Link to="/profil/zamowienie/id">
+                    <Link to="/profil/pracownik/zamowienie/id">
                         <h1 className="dropDown-first-option">Szczegóły zamówienia</h1>
                     </Link>
                     <h1 className="dropDown-second-option">Anuluj</h1>

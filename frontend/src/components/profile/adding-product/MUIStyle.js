@@ -109,4 +109,33 @@ export const useStyles = makeStyles({
             }
         },
     },
+    root: {
+        width: 300,
+        "& label.Mui-focused": {
+            color: "#666666"
+        },
+        "& .MuiInput-underline:after": {
+            borderBottomColor: "#8D451D"
+        },
+    },
+    rootInput: {
+        width: 300,
+        '&.MuiInput-underline:after': {
+            borderBottomColor: "#8D451D"
+        },
+        "& input": {
+            "&:-webkit-autofill": {
+                transition:
+                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
+            },
+            "&:-webkit-autofill:focus": {
+                transition:
+                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
+            },
+            "&:-webkit-autofill:hover": {
+                transition:
+                    "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
+            },
+        },
+    }
 })
