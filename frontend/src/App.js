@@ -23,7 +23,9 @@ import AddingAnimal from "./components/profile/adding-animal/AddingAnimal";
 import ListOfProductsSets from "./components/profile/list-of-products-sets/ListOfProductsSets";
 import AddingProductsSets from "./components/profile/adding-products-set/AddingProductsSets";
 import OrderDetails from "./components/profile/order-details/OrderDetails";
-
+import Cart from "./components/cart/Cart";
+import OrderSummary from "./components/order-summary/OrderSummary";
+import Sales from "./components/sales/Sales";
 
 function App() {
     return (
@@ -35,6 +37,9 @@ function App() {
                 <Route path="/" exact component={HomePage}/>
                 <Route path="/zarejestruj-sie" component={Register}/>
                 <Route path="/zaloguj-sie" component={Login}/>
+                <Route path="/promocje"><Sales/></Route>
+                <Route path="/koszyk"><Cart/></Route>
+                <Route path="/zamowienie"><OrderSummary/></Route>
 
                 <Route path="/choose-option/koty"><ChooseOption/></Route>
                 <Route path="/shop-form/koty"><ShopForm/></Route>
@@ -46,6 +51,11 @@ function App() {
                 <Route path="/shop/:animalType/products/:productCategory/:productName" exact>
                     <Product animalType="koty" productCategory="sucha-karma"
                              productName="whiskas-sterile-14-kg-z-kurczakiem"/>
+                </Route>
+
+                <Route path="/shop/:animalType/products/zestawy/:productName" exact>
+                    <Product animalType="koty" productCategory="zestawy"
+                             productName="starter-pack"/>
                 </Route>
 
                 {/*Links only for client*/}

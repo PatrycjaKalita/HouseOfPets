@@ -1,18 +1,21 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {Rating} from "@mui/material";
 
 import './Style.css';
-import {product, productReviews, productWeight} from './productData';
-
+import {set, productInfo, productReviews, productWeight} from './productData';
+import {updatePrice} from '../../utils/product'
 import ProductNavigation from "./product-navigation/ProductNavigation";
 import ProductDescription from "./product-description/ProductDescription";
 import ProductComposition from "./product-composition/ProductComposition";
 import ProductDosage from "./product-dosage/ProductDosage";
 import ProductReviews from "./product-reviews/ProductReviews";
 import ProductLink from "./product-link/ProductLink";
+import ProductsSet from "./products-set/ProductsSet";
 
 const Product = () => {
+    const [quantity, setQuantity] = useState(1);
+    let {productCategory} = useParams();
     let totalRatings = 0;
     productReviews.forEach(({numberOfStars}) => totalRatings += numberOfStars);
 
@@ -38,12 +41,11 @@ const Product = () => {
             return "Dostępny";
     }
 
-    const [quantity, setQuantity] = useState(1);
-
-    function updatePrice(number) {
-        let price = quantity * number;
-        price = price.toFixed(2);
-        return price + " zł";
+    let product;
+    if(productCategory === "zestawy"){
+        product = set;
+    }else{
+        product = productInfo;
     }
 
     return (
@@ -52,8 +54,8 @@ const Product = () => {
                 <ProductLink/>
 
                 {
-                    product.map((product, index) => (
-                        <div key={index} className="main-details-container">
+                    product.map((product) => (
+                        <div className="main-details-container">
                             <div className="product-img-container">
                                 <img className="product-img" alt="" src={product.image}/>
                             </div>
@@ -72,7 +74,7 @@ const Product = () => {
                                     <h1 className={product.quantity > 0 ? "product-availability" : "product-no-availability"}>{checkProductAvailability(product.quantity)}</h1>
                                 </div>
 
-                                <div className="product-producer-container">
+                                <div className={productCategory === "zestawy" ? "hidden" : "product-producer-container"}>
                                     <h1 className="product-producer-name">Producent:</h1>
                                     <h1 className="product-producer-value">{product.producer}</h1>
                                 </div>
@@ -87,12 +89,12 @@ const Product = () => {
                                     <h1 className="product-variable-value">1 dzień roboczy</h1>
                                 </div>
 
-                                <div className="product-weights-container">
+                                <div className={productCategory === "zestawy" ? "hidden" : "product-weights-container"}>
                                     <h1 className="product-weight-name">Waga:</h1>
                                     <div className="flex">
                                         {
-                                            productWeight.map((weight, index) => (
-                                                <Link key={index} to="/">
+                                            productWeight.map((weight) => (
+                                                <Link to="/">
                                                     <button
                                                         className={weight.weight === product.weight ? "product-weight-view-btn" : "product-weight-btn"}>
                                                         {weight.weight} g
@@ -124,7 +126,7 @@ const Product = () => {
                                         </div>
                                     </div>
 
-                                    <h1 className="product-main-price">{updatePrice(product.price)}</h1>
+                                    <h1 className="product-main-price">{updatePrice(product.price, quantity)}</h1>
                                 </div>
 
                                 <div className="product-btn-add-container">
@@ -135,13 +137,16 @@ const Product = () => {
                     ))
                 }
             </div>
-            <div>
+            <div className={productCategory === "zestawy" ? "hidden" : ""}>
                 <ProductNavigation/>
                 <ProductDescription/>
                 <ProductComposition/>
                 <ProductDosage/>
-                <ProductReviews averageRating={averageRating}/>
             </div>
+            <div className={productCategory === "zestawy" ? "" : "hidden"}>
+                <ProductsSet/>
+            </div>
+            <ProductReviews averageRating={averageRating}/>
         </>
     );
 };

@@ -123,10 +123,9 @@ const Searchbar = () => {
                         <div></div>
                     )}
                 </div>
-
-                {filteredData.length !== 0 && (
-                    <div className="filtered-search-container">
-                        {filteredData.slice(0, 15).map((value, index) => {
+                <div className="filtered-search-container">
+                {filteredData.length !== 0 ?
+                        filteredData.slice(0, 15).map((value, index) => {
                             return (
                                 <Link to={value.link} key={index}>
                                     <div className="filtered-search">
@@ -138,16 +137,15 @@ const Searchbar = () => {
                                     </div>
                                 </Link>
                             )
-                        })}
-                    </div>
-                ) /*: (
-                <div className="absolute">
+                        })
+                : (
+                <div className="searchbar-nothing-found">
                     <h2>Brak wyników wyszukiwania.</h2>
                 </div>
-                )*/
+                )
                 }
             </div>
-
+            </div>
             <div className="header-search-icons">
                 <span className={showed ? "hidden" : "header-search-icon"}
                       onClick={() => setShowed(true)}>

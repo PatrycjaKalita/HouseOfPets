@@ -1,0 +1,25 @@
+.right-side-sales {
+    position: relative;
+    width: 80%;
+}
+
+.sales-sorting-by-price {
+    position: absolute;
+    right: 0;
+}
+
+.sales-list-container {
+    margin-top: 70px;
+    display: grid;
+    gap: 50px;
+    position: relative;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.no-product-message {
+    font-size: 18px;
+    text-align: center;
+    color: #464646;
+    width: 100%;
+    margin-top: 100px;
+}

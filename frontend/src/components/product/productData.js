@@ -1,4 +1,4 @@
-export const product = [
+export const productInfo = [
     {
         link: '/whiskas-sterile-14-kg-z-kurczakiem',
         image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
@@ -95,4 +95,18 @@ export const productReviews = [
         numberOfStars: 5,
         review: "Polecam tą suchą karmę. Moja kocica bardzo ją lubi.",
     }
+]
+
+export const set = [
+    {
+        link: '/starter-pack',
+        image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
+        title: "STARTER PACK",
+        price: "315.80",
+        /*producer: 'Whiskas',*/
+        /*lifePhase: 'dorosły',*/
+        code: "692736",
+        /*weight: 14000,*/
+        quantity: 200,
+    },
 ]

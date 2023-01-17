@@ -32,7 +32,7 @@
 }
 
 .product-reviews-header-number-opinion {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     color: rgb(107 114 128);
 }
@@ -46,7 +46,7 @@
 .product-reviews-user-name {
     display: flex;
     width: 30%;
-    font-size: 14px;
+    font-size: 16px;
     justify-content: center;
     font-weight: 300;
     padding-top: 5px;
@@ -61,6 +61,6 @@
 
 .product-reviews-content-review {
     padding-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
     padding-bottom: 5px;
 }

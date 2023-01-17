@@ -1,34 +1,4 @@
-export const products = [
-    {
-        image: "https://zooart.com.pl/pol_pl_ROYAL-CANIN-Hair-Skin-Care-4kg-karma-sucha-dla-kotow-doroslych-lsniaca-siersc-i-zdrowa-skora-1784_1.jpg",
-        title: "ROYAL CANIN Hair&Skin",
-        price: 154.65,
-        link: '/royal-canin-hair-&-skin',
-        rating: '4.5',
-        producer: 'Royal Canin',
-        lifePhase: 'dorosły',
-        promotion: false,
-    },
-    {
-        image: "https://zooart.com.pl/pol_pl_ROYAL-CANIN-Kitten-Sterilised-2kg-karma-sucha-dla-kociat-od-6-do-12-miesiaca-zycia-sterylizowanych-23748_8.jpg",
-        title: "ROYAL CANIN Kitten Sterilised 2kg",
-        price: 83.95,
-        link: '/royal-canin-kitten-sterilised-2-kg',
-        rating: '4.2',
-        producer: 'Royal Canin',
-        lifePhase: 'junior',
-        promotion: false,
-    },
-    {
-        image: "https://media.os.fressnapf.com/products-v2/5/9/a/a/59aa20c0d5b797ee0768f5898f63ea563e6ce45a_cfb1468d08bb0bc43f67a83c3bc65be9698b4afe.jpg?t=prod_m&f=webp",
-        title: "Royal Canin British Shorthair",
-        price: 36.80,
-        link: '/royal-canin-british-shorthair',
-        rating: '3',
-        producer: 'Royal Canin',
-        lifePhase: 'dorosły',
-        promotion: false,
-    },
+export const promotion = [
     {
         image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
         title: "WHISKAS Sterile 14kg z kurczakiem",

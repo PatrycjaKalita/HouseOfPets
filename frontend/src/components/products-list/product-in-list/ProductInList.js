@@ -12,7 +12,7 @@ const ProductInList = (props) => {
     const productPromotion = props.productPromotion;
 
     return (
-        <div className="product-list-container">
+        <div className="product-inlist-container">
             <img className="product-list-img" src={productImage} alt=""/>
             <h1 className="product-list-title">{productTitle}</h1>
 

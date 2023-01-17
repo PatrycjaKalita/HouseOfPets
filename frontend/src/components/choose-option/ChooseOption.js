@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import './Style.css';
 import shop from '../../assets/choose-option/shop.png';
-import adoptionCat from '../../assets/choose-option/adoption-cat.png';
+import {animals} from './chooseOptionData'
 
 const ChooseOption = () => {
     return (
@@ -13,7 +13,7 @@ const ChooseOption = () => {
 
             <div className="choose-option-container">
                 <Link to="" className="choose-option-adoption">
-                    <img src={adoptionCat} alt="Adoption cat" className="choose-option-img"/>
+                    <img src={shop} alt="Adoption cat" className="choose-option-img"/>
 
                     <h1 className="choose-option-btn-adoption">ADOPCJE</h1>
                 </Link>

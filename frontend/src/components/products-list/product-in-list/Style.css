@@ -1,4 +1,8 @@
-.product-list-container:hover {
+.product-inlist-container {
+    height: 280px;
+}
+
+.product-inlist-container:hover {
     transform: scale(1.1);
 }
 
@@ -51,6 +55,7 @@
     font-size: 20px;
     color: #BF1515;
     font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .product-list-container-price-old {
@@ -62,7 +67,7 @@
 }
 
 .product-list-price-old{
-    font-size: 14px;
+    font-size: 16px;
     text-decoration-line: line-through;
     font-weight: 400;
     color: #464646;

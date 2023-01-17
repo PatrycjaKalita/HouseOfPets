@@ -96,3 +96,13 @@
     height: 40px;
     padding-top: 15px;
 }
+
+.searchbar-nothing-found{
+    background-color: white;
+    border-bottom: solid 1px #d2d2d2;
+    display: flex;
+    padding: 20px;
+    width: 310px;
+    font-size: 16px;
+    color: #666666;
+}

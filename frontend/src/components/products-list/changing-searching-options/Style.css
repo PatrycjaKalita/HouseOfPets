@@ -60,14 +60,14 @@
 
 .top-part-selected-options {
     color: #7b7b7b;
-    font-size: 14px;
+    font-size: 16px;
     padding-right: 5px;
     padding-top: 1px;
 }
 
 .top-part-selected-options-answer {
     color: #555555;
-    font-size: 14px;
+    font-size: 16px;
     padding-right: 10px;
     padding-top: 1px;
 }
@@ -103,7 +103,7 @@
 }
 
 .csof-description {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
     color: #7b7b7b;
 }

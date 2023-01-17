@@ -14,3 +14,9 @@ export const productTitleShort = (title) => {
     } else if (title.length <= 22)
         return title;
 }
+
+export function updatePrice(number, quantity) {
+    let price = quantity * number;
+    price = price.toFixed(2);
+    return price + " zł";
+}
