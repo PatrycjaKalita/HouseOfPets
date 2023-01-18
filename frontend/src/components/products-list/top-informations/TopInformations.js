@@ -1,16 +1,12 @@
 import React, {useState} from 'react';
 import {Link, useParams} from "react-router-dom";
-
+import {capitalizeFirstLetter} from '../../../utils/word'
 import './Style.css';
 
 const TopInformations = (props) => {
     let {animalType} = useParams();
     let {productCategory} = useParams();
     const productNumber = useState(props.productsNumber);
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
     return (
         <div className="main-container-top-informations">

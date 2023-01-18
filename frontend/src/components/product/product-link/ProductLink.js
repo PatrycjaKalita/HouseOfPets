@@ -2,15 +2,12 @@ import React from 'react';
 import {Link, useParams} from "react-router-dom";
 
 import './Style.css';
+import {capitalizeFirstLetter} from '../../../utils/word'
 
-const ProductLink = (props) => {
+const ProductLink = () => {
     let {animalType} = useParams();
     let {productCategory} = useParams();
     let {productName} = useParams();
-
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
     return (
         <div className="product-link-container">

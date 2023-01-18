@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Style.css'
 import shopCat from "../../../assets/shop-cat.jpg"
+import {Link} from "react-router-dom";
 
 const ShopDescription = () => {
     return (
@@ -20,7 +21,9 @@ const ShopDescription = () => {
                         oraz karm w naszym sklepie zoologicznym online.
                     </p>
 
-                    <button className="shop-description-button">ZRÓB ZAKUPY</button>
+                    <Link to="/promocje">
+                        <button className="shop-description-button">ZRÓB ZAKUPY</button>
+                    </Link>
                 </blockquote>
             </div>
         </div>

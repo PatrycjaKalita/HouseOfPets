@@ -1,0 +1,60 @@
+.animal-pp-description{
+    font-size: 18px;
+    color: #464646;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.APP-product-list-container{
+    display: flex;
+    column-gap: 70px;
+}
+
+.APP-product-container{
+    height: 280px;
+    width: 250px;
+}
+
+.APP-product-container:hover{
+    transform: scale(1.1);
+}
+
+.APP-product-list-img {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.APP-product-list-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.APP-product-second-row{
+    display: flex;
+    position: relative;
+}
+
+.APP-product-list-star {
+    color: #F29F05;
+    font-size: 20px;
+}
+
+.APP-product-list-rating {
+    font-size: 16px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.APP-product-list-price {
+    font-size: 20px;
+    color: #8D451D;
+    font-weight: 500;
+    position: absolute;
+    right: 15px;
+}
+
+

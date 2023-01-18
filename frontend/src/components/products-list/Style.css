@@ -2,9 +2,9 @@
     display: block;
     position: relative;
     cursor: pointer;
-    font-size: 16px;
-    padding-left: 25px;
-    padding-bottom: 5px;
+    font-size: 18px;
+    padding-left: 35px;
+    margin-bottom: 10px;
 }
 
 .checkbox-filters-number {
@@ -74,11 +74,11 @@ input[type=checkbox] {
 }
 
 .filter-container {
-    border: solid 1px #9D9D9D;
+    border-right: solid 1px #9D9D9D;
     padding: 10px 20px 10px 20px;
     margin-right: 60px;
     width: 15%;
-    height: 300px;
+    height: auto;
 }
 
 .filter-title {

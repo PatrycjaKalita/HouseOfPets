@@ -70,7 +70,6 @@ const Filters = () => {
                 ))
             }
         </div>
-
     );
 };
 

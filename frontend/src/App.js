@@ -26,6 +26,8 @@ import OrderDetails from "./components/profile/order-details/OrderDetails";
 import Cart from "./components/cart/Cart";
 import OrderSummary from "./components/order-summary/OrderSummary";
 import Sales from "./components/sales/Sales";
+import AnimalsList from "./components/animals-list/AnimalsList";
+import Animal from "./components/animal/Animal";
 
 function App() {
     return (
@@ -41,7 +43,14 @@ function App() {
                 <Route path="/koszyk"><Cart/></Route>
                 <Route path="/zamowienie"><OrderSummary/></Route>
 
-                <Route path="/choose-option/koty"><ChooseOption/></Route>
+                <Route path="/choose-option/koty"><ChooseOption choose={'koty'}/></Route>
+                <Route path="/choose-option/psy"><ChooseOption choose={'psy'}/></Route>
+                <Route path="/choose-option/male-zwierzatka"><ChooseOption choose={'male-zwierzatka'}/></Route>
+
+                <Route path="/adopcja/:animalType" exact><AnimalsList animalType="koty"/></Route>
+                <Route path="/adopcja/:animalType/:animalName" exact><Animal animalType="koty"
+                                                                             animalName="Kropka"/></Route>
+
                 <Route path="/shop-form/koty"><ShopForm/></Route>
 
                 <Route path="/shop/:animalType/products/:productCategory" exact>

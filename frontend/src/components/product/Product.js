@@ -4,7 +4,7 @@ import {Rating} from "@mui/material";
 
 import './Style.css';
 import {set, productInfo, productReviews, productWeight} from './productData';
-import {updatePrice} from '../../utils/product'
+import {updatePrice, checkNumberOfOpinions, checkProductAvailability} from '../../utils/product'
 import ProductNavigation from "./product-navigation/ProductNavigation";
 import ProductDescription from "./product-description/ProductDescription";
 import ProductComposition from "./product-composition/ProductComposition";
@@ -21,25 +21,6 @@ const Product = () => {
 
     let averageRating = totalRatings / productReviews.length;
     averageRating = averageRating.toFixed(1);
-
-    function checkNumberOfOpinions(number) {
-        if (number <= 0) {
-            return "(0 opinii)";
-        } else if (number === 1) {
-            return "(" + number + " opinia)";
-        } else if (number === 2 || number === 3 || number === 4) {
-            return "(" + number + " opinie)";
-        } else if (number >= 5) {
-            return "(" + number + " opinii)";
-        }
-    }
-
-    function checkProductAvailability(number) {
-        if (number <= 0) {
-            return "Nie dostępny";
-        } else
-            return "Dostępny";
-    }
 
     let product;
     if(productCategory === "zestawy"){

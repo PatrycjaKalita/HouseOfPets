@@ -1,0 +1,123 @@
+.main-animal-container{
+    margin: 10px auto 100px auto;
+    width: 80%;
+}
+
+.animal-container {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.animal-img-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.animal-img {
+    width: auto;
+    height: 350px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.animal-vertical-line {
+    display: inline-block;
+    height: 500px;
+    border: solid 1px #EFEFEF;
+    background-color: #EFEFEF;
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+.animal-details-container {
+    position: relative;
+    width: 35%;
+}
+
+.animal-name {
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 35px;
+}
+
+.animal-detail-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.animal-detail-name {
+    font-weight: 300;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.animal-detail-value {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.animal-sex-M {
+    font-size: 20px;
+    font-weight: 500;
+    color: #8D451D;
+}
+
+.animal-sex-K {
+    font-size: 20px;
+    font-weight: 500;
+    color: #f29f05;
+}
+
+.animal-caretaker-container{
+    margin: 35px 0;
+    display: flex;
+}
+
+.animal-caretaker-phone-info{
+    border: 2px solid #8D451D;
+    padding: 10px 15px;
+    width: 110px;
+    margin-right: 50px;
+}
+
+.animal-caretaker-info-title{
+    color: #8D451D;
+    display: flex;
+}
+
+.animal-caretaker-info-icon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.animal-caretaker-info-name{
+    font-size: 18px;
+}
+
+.animal-caretaker-mail-info{
+    border: 2px solid #8D451D;
+    padding: 10px 15px;
+    width: 250px;
+}
+
+.animal-caretaker-address-info{
+    border: 2px solid #8D451D;
+    padding: 10px 15px;
+    width: 440px;
+}
+
+.animal-description-container{
+    margin-bottom: 50px;
+}
+
+.animal-description-title{
+    font-size: 24px;
+    padding-bottom: 15px;
+    font-weight: 500;
+}
+
+.animal-description-value{
+    font-size: 20px;
+    color: #464646;
+}

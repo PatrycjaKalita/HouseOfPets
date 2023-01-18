@@ -20,3 +20,22 @@ export function updatePrice(number, quantity) {
     price = price.toFixed(2);
     return price + " zł";
 }
+
+export function checkNumberOfOpinions(number) {
+    if (number <= 0) {
+        return "(0 opinii)";
+    } else if (number === 1) {
+        return "(" + number + " opinia)";
+    } else if (number === 2 || number === 3 || number === 4) {
+        return "(" + number + " opinie)";
+    } else if (number >= 5) {
+        return "(" + number + " opinii)";
+    }
+}
+
+export function checkProductAvailability(number) {
+    if (number <= 0) {
+        return "Nie dostępny";
+    } else
+        return "Dostępny";
+}

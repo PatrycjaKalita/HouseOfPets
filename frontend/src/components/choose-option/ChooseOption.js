@@ -5,27 +5,39 @@ import './Style.css';
 import shop from '../../assets/choose-option/shop.png';
 import {animals} from './chooseOptionData'
 
-const ChooseOption = () => {
+const ChooseOption = (props) => {
     return (
-        <div className="main-choose-option-container">
-            <h1 className="choose-option-title">Wybrano: <b>Koty</b></h1>
-            <h1 className="choose-option-question">Co poszukujesz?</h1>
+        <>
+            {
+                animals.map((animal) => {
+                        if (animal.id === props.choose) {
+                            return (
+                                <div className="main-choose-option-container">
 
-            <div className="choose-option-container">
-                <Link to="" className="choose-option-adoption">
-                    <img src={shop} alt="Adoption cat" className="choose-option-img"/>
+                                    <h1 className="choose-option-title">Wybrano: <b>{animal.title}</b></h1>
+                                    <h1 className="choose-option-question">Co poszukujesz?</h1>
 
-                    <h1 className="choose-option-btn-adoption">ADOPCJE</h1>
-                </Link>
+                                    <div className="choose-option-container">
+                                        <Link to={animal.linkToAdoption} className="choose-option-adoption">
+                                            <img src={animal.imageAdoption} alt="Adoption cat"
+                                                 className="choose-option-img"/>
 
-                <Link to="/shop-form/koty" className="choose-option-shop">
-                    <img src={shop} alt="Shop" className="choose-option-img"/>
+                                            <h1 className="choose-option-btn-adoption">ADOPCJE</h1>
+                                        </Link>
 
-                    <h1 className="choose-option-btn-shop">SKLEP</h1>
-                </Link>
-            </div>
-        </div>
+                                        <Link to={animal.linkToShopForm} className="choose-option-shop">
+                                            <img src={shop} alt="Shop" className="choose-option-img"/>
 
+                                            <h1 className="choose-option-btn-shop">SKLEP</h1>
+                                        </Link>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    }
+                )
+            }
+        </>
     );
 };
 

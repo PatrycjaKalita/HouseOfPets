@@ -1,0 +1,28 @@
+.main-container-animals-list {
+    margin: 10px auto 100px auto;
+    width: 80%;
+}
+
+.AL-title-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.AL-title-list {
+    color: #666666;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.AL-container{
+    display: flex;
+}
+
+.AL-animal-list-container {
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    position: relative;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}

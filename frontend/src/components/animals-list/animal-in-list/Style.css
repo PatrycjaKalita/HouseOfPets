@@ -1,0 +1,42 @@
+.AIL-container:hover{
+    transform: scale(1.1);
+}
+.AIL-image {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.AIL-first-row {
+    display: flex;
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.AIL-name {
+    font-size: 26px;
+}
+
+.AIL-sex-M {
+    position: absolute;
+    font-size: 20px;
+    color: #8D451D;
+    bottom: 2px;
+    right: 10px;
+}
+
+.AIL-sex-K {
+    position: absolute;
+    font-size: 20px;
+    color: #f29f05;
+    bottom: 2px;
+    right: 10px;
+}
+
+.AIL-breed{
+    font-size: 20px;
+    font-weight: 300;
+    color: #464646;
+}
