@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import ProfileNavigation from "../profile-navigation/ProfileNavigation";
 import './Style.css'
 import TextField from "@mui/material/TextField";
-import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
 import {toast, ToastContainer} from "react-toastify";
 import {getCookie, isAuth, signOut, updateUser} from '../../../auth/Helpers';
@@ -111,7 +110,7 @@ const Settings = (props) => {
                     password: '',
                     buttonText: 'Zaktualizowano'
                 })
-                toast.success('Profile updated successfully');
+                /*toast.success('Profile updated successfully');*/
             });
         }).catch(error => {
             //console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);

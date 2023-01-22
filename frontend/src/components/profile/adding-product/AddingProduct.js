@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Style.css'
 import {useStyles} from './MUIStyle'
 
@@ -17,9 +17,10 @@ import {getCookie, signOut} from "../../../auth/Helpers";
 import {useHistory} from "react-router-dom";
 
 const AddingProduct = (props) => {
-    const classes = useStyles()
     const history = useHistory()
+    const classes = useStyles()
 
+    /*Product Image*/
     const [picture, setPicture] = useState("");
     const [isUploaded, setIsUploaded] = useState(false);
 
@@ -31,11 +32,11 @@ const AddingProduct = (props) => {
                 setPicture(e.target.result);
                 setIsUploaded(true);
             };
-
             reader.readAsDataURL(e.target.files[0]);
         }
     }
 
+    /*Description Image*/
     const [imageDesc, setImageDesc] = useState("");
     const [isUploadedImage, setIsUploadedImage] = useState(false);
 
@@ -47,12 +48,9 @@ const AddingProduct = (props) => {
                 setImageDesc(e.target.result);
                 setIsUploadedImage(true);
             };
-
             reader.readAsDataURL(e.target.files[0]);
         }
     }
-
-    const [startDate, setStartDate] = useState(null);
 
     const [values, setValues] = useState({
         link: '',
@@ -64,12 +62,22 @@ const AddingProduct = (props) => {
         weight: '',
         color: '',
         image: '',
-        category: '',
         product_code: '',
+        description: '',
+        extra_description: '',
+        image_description: '',
+        composition: '',
+        additives: '',
+        protein: '',
+        fat: '',
+        ash: '',
+        fiber: '',
+        body_weight: '',
+        moderate_needs: '',
+        low_needs: '',
         buttonText: 'Dodaj produkt'
     })
 
-    /*link i product_code jakoś samo żeby się generowało i było by fajnie*/
     const [valueSelect, setValueSelect] = useState({
         category: '',
         typeOfAnimal: '',
@@ -78,20 +86,14 @@ const AddingProduct = (props) => {
         aWeight: '',
     });
 
-    const handleChange = (e) => {
-        const {name, value} = e.target
-        setValueSelect({...valueSelect, [name]: value})
-    }
-
     useEffect(() => {
-        loadProduct();
+        loadProductDetails();
+        loadTypesOfAnimals();
     }, []);
 
     const token = getCookie('token');
-
     const [availableProductDetails, setAvailableProductDetails] = useState(false);
-
-    const loadProduct = () => {
+    const loadProductDetails = () => {
         axios({
             method: 'GET',
             url: `${process.env.REACT_APP_API}/adding/product`,
@@ -100,25 +102,180 @@ const AddingProduct = (props) => {
             }
         })
             .then(response => {
-                console.log('Wyswietlanie zwierzat i kategori', response.data.availableProductDetails);
                 setAvailableProductDetails(response.data.availableProductDetails);
-
-                const nazwa = response.data.availableProductDetails.animals.map((animal) => {
-                    return animal?.typeofanimal[0].name
-                });
-                console.log([...new Set(nazwa)], "ciap ciap")
+                /*console.log(response.data.availableProductDetails.animals)*/
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
                 if (error.response.status === 401) {
                     signOut(() => {
-                        history.push('/');
+                        history.push('/zaloguj-sie');
                     })
                 }
             });
     };
 
-    const {
+    let idCategory
+    const handleCategoryChange = (e) => {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+        idCategory = e.target.value
+    }
+
+    const [availableTypesOfAnimals, setAvailableTypesOfAnimals] = useState(false);
+    const loadTypesOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/product/animalType`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableTypesOfAnimals(response.data.availableAnimalTypes);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    let idTypeOfAnimalSelect;
+    function handleBreedsChange(e) {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+        idTypeOfAnimalSelect = e.target.value
+        /*console.log(availableProductDetails.animals.map((animal) => animal.type_of_pets_id === idTypeOfAnimalSelect))*/
+        if (availableTypesOfAnimals !== false) {
+            loadBreedsOfAnimals()
+        }
+    }
+
+    const [availableBreedsOfAnimals, setAvailableBreedsOfAnimals] = useState([]);
+    const loadBreedsOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/product/breed?id=${idTypeOfAnimalSelect}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableBreedsOfAnimals(response.data.availableAnimalBreeds.breeds);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    let idBreedOfAnimalSelect;
+    function handleAgesChange(e) {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+        idBreedOfAnimalSelect = e.target.value
+        /*console.log(availableProductDetails.animals.map((animal) => animal.type_of_pets_id === idTypeOfAnimalSelect || animal.breed_id === idBreedOfAnimalSelect))*/
+        if (availableBreedsOfAnimals !== 0) {
+            loadAgesOfAnimals()
+        }
+    }
+
+    const [availableAgesOfAnimals, setAvailableAgesOfAnimals] = useState([]);
+    const loadAgesOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/product/age?id=${idBreedOfAnimalSelect}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableAgesOfAnimals(response.data.availableAnimalAges.ages);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    let idAgeOfAnimalSelect;
+    function handleWeightsChange(e) {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+        idAgeOfAnimalSelect = e.target.value
+        /*console.log(availableProductDetails.animals.map((animal) => animal.type_of_pets_id === idTypeOfAnimalSelect || animal.breed_id === idBreedOfAnimalSelect || animal.age_id === idAgeOfAnimalSelect))*/
+        if (availableAgesOfAnimals !== 0) {
+            loadWeightsOfAnimals()
+        }
+    }
+
+    const [availableWeightsOfAnimals, setAvailableWeightsOfAnimals] = useState([]);
+    const loadWeightsOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/product/weight?id=${idAgeOfAnimalSelect}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableWeightsOfAnimals(response.data.availableAnimalWeights.weights);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+
+    };
+
+    let idWeightOfAnimalSelect
+
+    let typeOfPetsId = valueSelect.typeOfAnimal
+    let breedId = valueSelect.breed
+    let ageId = valueSelect.age
+    let weightId = valueSelect.aWeight
+
+    const handleChange = (e) => {
+        const {name, value} = e.target
+        setValueSelect({...valueSelect, [name]: value})
+
+        idWeightOfAnimalSelect = e.target.value
+        /*console.log(idWeightOfAnimalSelect)*/
+        /*        console.log(availableProductDetails.animals.map((animal) =>
+                    (animal.type_of_pets_id === typeOfPetsId || animal.breed_id === breedId || animal.age_id === ageId || animal.weight_id === weightId)
+                ))*/
+        /*        console.log(idTypeOfAnimalSelect)
+                console.log(idBreedOfAnimalSelect)
+                console.log(idAgeOfAnimalSelect)
+                console.log(idWeightOfAnimalSelect)*/
+        /*        console.log(availableProductDetails.animals.map((animal) =>
+                    (animal.type_of_pets_id === idTypeOfAnimalSelect || animal.breed_id === idBreedOfAnimalSelect || animal.age_id === idAgeOfAnimalSelect || animal.weight_id === idWeightOfAnimalSelect)
+                ))*/
+    }
+
+    /*    console.log(typeOfPetsId)
+        console.log(breedId)
+        console.log(ageId)
+        console.log(weightId)*/
+
+
+    let {
         link,
         name,
         producer,
@@ -128,29 +285,68 @@ const AddingProduct = (props) => {
         weight,
         color,
         image,
-        category,
+        animal_id,
+        category_id,
         product_code,
+        description,
+        extra_description,
+        sale,
+        image_description,
+        composition,
+        additives,
+        protein,
+        fat,
+        ash,
+        fiber,
+        body_weight,
+        moderate_needs,
+        low_needs,
+        type_of_animal_name,
         buttonText
     } = values
 
     const handleChangeText = (name) => (event) => {
-        console.log(event.target.value)
         setValues({...values, [name]: event.target.value})
     }
+    category_id = valueSelect.category
 
-    /*co z tym dalej?*/
-    const createProductLink = () => {
-        let tmp = lowerLetters(values.name)
-        console.log(tmp.replace(' ', '-'))
-        setValues({...values, [link]: tmp.replace(' ', '-')})
+    function generateLink(idCategory) {
+        let typ;
+        if (typeOfPetsId === '63bee7531312a763a0629bfb') {
+            typ = 'koty'
+        } else if (typeOfPetsId === '63bee7531312a763a0629bfc') {
+            typ = 'psy'
+        } else if (typeOfPetsId === '63bee7531312a763a0629bfd') {
+            typ = 'male-zwierzatka'
+        }
+        let categoryNameArray = availableProductDetails.categories.map((category) => {
+                return (category._id === idCategory) ? category.link : ''
+            }
+        )
+        let removeSpaceInName = name.replaceAll(" ", "-")
+        let customLink = "/shop/" + typ + "/products/" + categoryNameArray + '/' + lowerLetters(removeSpaceInName)
+
+        link = customLink.replaceAll(",", "")
     }
-
 
     function lowerLetters(string) {
         return string.toLowerCase();
     }
 
+    product_code = Math.floor(Math.random() * (999999999 - 100000) ) + 100000
+
+    /*Dodawanie daty*/
+    const [startDate, setStartDate] = useState(null);
+    expiration_date = startDate
+
+    /*Dodanie zdjęć*/
+    image = picture
+
+    /*Promocje*/
+    sale = 0
+
     const clickSubmit = event => {
+        generateLink(idCategory)
         event.preventDefault()
         setValues({...values, buttonText: 'Submitting'})
         axios({
@@ -169,11 +365,25 @@ const AddingProduct = (props) => {
                 weight,
                 color,
                 image,
-                category,
+                sale,
                 product_code,
+                description,
+                extra_description,
+                image_description,
+                composition,
+                additives,
+                protein,
+                fat,
+                ash,
+                fiber,
+                body_weight,
+                moderate_needs,
+                low_needs,
+                category_id,
+                animal_id,
+                type_of_animal_name,
             }
         }).then(response => {
-            console.log('Produkt dodany', response);
             setValues({
                 ...values,
                 link,
@@ -185,11 +395,27 @@ const AddingProduct = (props) => {
                 weight,
                 color,
                 image,
-                category,
+                animal_id,
+                category_id,
                 product_code,
+                description,
+                sale,
+                extra_description,
+                image_description,
+                composition,
+                additives,
+                protein,
+                fat,
+                ash,
+                fiber,
+                body_weight,
+                moderate_needs,
+                low_needs,
+                type_of_animal_name,
                 buttonText: 'Dodano produkt'
             })
             toast.success('Produkt dodany');
+
         }).catch(error => {
             setValues({...values, buttonText: 'Submit'})
             toast.error(error.response.data.error)
@@ -271,13 +497,13 @@ const AddingProduct = (props) => {
                                         value={valueSelect.category}
                                         label="Kategoria"
                                         name={"category"}
-                                        onChange={handleChange}
+                                        onChange={handleCategoryChange}
                                     >
                                         {
-                                            availableProductDetails === false ?
+                                            availableProductDetails.hasOwnProperty('categories') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableProductDetails.categories.map((category, index) => {
+                                                availableProductDetails.categories.map((category) => {
                                                     return <MenuItem value={category._id}>{category.name}</MenuItem>
                                                 })}
                                     </Select>
@@ -311,16 +537,14 @@ const AddingProduct = (props) => {
                                         value={valueSelect.typeOfAnimal}
                                         label="Rodzaj zwierzęcia"
                                         name={"typeOfAnimal"}
-                                        onChange={handleChange}
+                                        onChange={handleBreedsChange}
                                     >
                                         {
-                                            availableProductDetails === false ?
+                                            availableTypesOfAnimals.hasOwnProperty('animalTypes') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableProductDetails.animals.map((animal) => {
-                                                    /*console.log(animal?.typeofanimal[0]?.name);*/
-                                                    return <MenuItem
-                                                        value={animal?.typeofanimal[0]?._id}>{animal?.typeofanimal[0]?.name}</MenuItem>
+                                                availableTypesOfAnimals.animalTypes.map((type) => {
+                                                    return <MenuItem value={type._id}>{type.name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -334,15 +558,15 @@ const AddingProduct = (props) => {
                                         value={valueSelect.breed}
                                         label="Rasa"
                                         name={"breed"}
-                                        onChange={handleChange}
+                                        onChange={handleAgesChange}
                                     >
                                         {
-                                            availableProductDetails === false ?
+                                            availableBreedsOfAnimals.length === 0 ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableProductDetails.animals.map((animal) => {
+                                                availableBreedsOfAnimals.map((breed) => {
                                                     return <MenuItem
-                                                        value={animal?.breeds[0]?._id}>{animal?.breeds[0]?.name}</MenuItem>
+                                                        value={breed._id}>{breed.name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -356,15 +580,15 @@ const AddingProduct = (props) => {
                                         value={valueSelect.age}
                                         label="Wiek"
                                         name={"age"}
-                                        onChange={handleChange}
+                                        onChange={handleWeightsChange}
                                     >
                                         {
-                                            availableProductDetails === false ?
+                                            availableAgesOfAnimals.length === 0 ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableProductDetails.animals.map((animal) => {
+                                                availableAgesOfAnimals.map((age) => {
                                                     return <MenuItem
-                                                        value={animal?.age[0]?._id}>{animal?.age[0]?.number_with_name}</MenuItem>
+                                                        value={age._id}>{age.number_with_name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -381,12 +605,12 @@ const AddingProduct = (props) => {
                                         onChange={handleChange}
                                     >
                                         {
-                                            availableProductDetails === false ?
+                                            availableWeightsOfAnimals.length === 0 ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableProductDetails.animals.map((animal) => {
+                                                availableWeightsOfAnimals.map((weight) => {
                                                     return <MenuItem
-                                                        value={animal?.weight[0]?._id}>{animal?.weight[0]?.number}</MenuItem>
+                                                        value={weight._id}>{weight.number}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -394,7 +618,6 @@ const AddingProduct = (props) => {
                             </div>
                         </div>
                     </div>
-
                     <div className="AP-extra-info-container">
                         <h1 className="AP-title-of-section">Dodatkowe informacje (wypełnić odpowiednie pola)</h1>
 
@@ -428,24 +651,26 @@ const AddingProduct = (props) => {
                             />
                         </div>
                     </div>
-
                     <div>
                         <h1 className="AP-title-of-section">Opis produktu</h1>
 
                         <TextField
                             label="Opis"
+                            value={description}
+                            onChange={handleChangeText('description')}
                             variant="outlined"
                             multiline
                             fullWidth
                             rows={4}
                             className={classes.textFieldName}
                         />
-
                         <div className="AP-description-extra">
                             <TextField
                                 label="Dodatkowy opis"
                                 variant="outlined"
                                 multiline
+                                value={extra_description}
+                                onChange={handleChangeText('extra_description')}
                                 fullWidth
                                 rows={2}
                                 className={classes.textFieldName}
@@ -456,7 +681,7 @@ const AddingProduct = (props) => {
                             {!isUploadedImage ? (
                                 <>
                                     <label htmlFor="upload-input-desc">
-                                    <span className="AP-camera-icon">
+                                    <span className="AP-camera-icon" onChange={handleImageDescChange}>
                                         <ion-icon name="camera-outline"></ion-icon>
                                     </span>
                                         <p className="AP-upload-image-label">Dodaj zdjęcie opisu</p>
@@ -489,7 +714,6 @@ const AddingProduct = (props) => {
                             )}
                         </div>
                     </div>
-
                     <div className="AP-composition-container">
                         <h1 className="AP-title-of-section">Skład produktu</h1>
 
@@ -497,23 +721,25 @@ const AddingProduct = (props) => {
                             label="Skład"
                             variant="outlined"
                             multiline
+                            value={composition}
+                            onChange={handleChangeText('composition')}
                             fullWidth
                             rows={4}
                             className={classes.textFieldName}
                         />
-
                         <div className="AP-composition-extra">
                             <TextField
                                 label="Dodatki (w składzie)"
                                 variant="outlined"
                                 multiline
                                 fullWidth
+                                value={additives}
+                                onChange={handleChangeText('additives')}
                                 rows={3}
                                 className={classes.textFieldName}
                             />
                         </div>
                     </div>
-
                     <div>
                         <h1 className="AP-title-of-section-ac">Składniki analityczne produktu</h1>
                         <p className="AP-title-of-section-ac-desc">Jeśli w produkcie występują składniki analityczne, to
@@ -521,24 +747,32 @@ const AddingProduct = (props) => {
 
                         <div className="AP-AC-inputs">
                             <TextField
+                                value={protein}
+                                onChange={handleChangeText('protein')}
                                 label="Białko surowe"
                                 variant="outlined"
                                 className={classes.textFieldExtraInfo}
                             />
 
                             <TextField
+                                value={fat}
+                                onChange={handleChangeText('fat')}
                                 label="Tłuszcze surowe"
                                 variant="outlined"
                                 className={classes.textFieldExtraInfo}
                             />
 
                             <TextField
+                                value={ash}
+                                onChange={handleChangeText('ash')}
                                 label="Popiół surowy"
                                 variant="outlined"
                                 className={classes.textFieldExtraInfo}
                             />
 
                             <TextField
+                                value={fiber}
+                                onChange={handleChangeText('fiber')}
                                 label="Włókno surowe"
                                 variant="outlined"
                                 className={classes.textFieldExtraInfo}
@@ -553,25 +787,30 @@ const AddingProduct = (props) => {
 
                         <div className="AP-dosage-inputs">
                             <TextField
-                                label="Białko surowe"
+                                label="Masa ciała"
                                 variant="outlined"
+                                onChange={handleChangeText('body_weight')}
+                                value={body_weight}
                                 className={classes.textFieldExtraInfo}
                             />
 
                             <TextField
-                                label="Tłuszcze surowe"
+                                label="Umiarkowane potrzeby"
                                 variant="outlined"
+                                onChange={handleChangeText('moderate_needs')}
+                                value={moderate_needs}
                                 className={classes.textFieldExtraInfo}
                             />
 
                             <TextField
-                                label="Popiół surowy"
+                                label="Niskie potrzeby"
                                 variant="outlined"
+                                onChange={handleChangeText('low_needs')}
+                                value={low_needs}
                                 className={classes.textFieldExtraInfo}
                             />
                         </div>
                     </div>
-
                     <div className="AP-form-btn-container">
                         <button className="AP-form-btn" onClick={clickSubmit}>{buttonText}</button>
                     </div>

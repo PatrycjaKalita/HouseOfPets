@@ -4,7 +4,6 @@ const productSchema = new mongoose.Schema(
     {
         link: {
             type: String,
-            /*required: true*/
         },
         name: {
             type: String,
@@ -27,6 +26,9 @@ const productSchema = new mongoose.Schema(
         expiration_date: {
             type: Date
         },
+        sale: {
+            type: Number
+        },
         weight: {
             type: Number,
         },
@@ -39,7 +41,6 @@ const productSchema = new mongoose.Schema(
         },
         product_code: {
             type: Number,
-            /*required: true,*/
             min: 6
         },
         animal_id: {
@@ -50,21 +51,44 @@ const productSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Categories'
         },
-        description_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Descriptions'
+        description: {
+            type: String,
+            required: true
         },
-        composition_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Compositions'
+        extra_description: {
+            type: String
         },
-        analytical_component_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'AnalyticalComponents'
+        image_description: {
+            type: String
         },
-        dosage_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Dosage'
+        composition: {
+            type: String,
+            required: true
+        },
+        additives: {
+            type: String,
+            trim: true,
+        },
+        protein: {
+            type: Number,
+        },
+        fat: {
+            type: Number,
+        },
+        ash: {
+            type: Number,
+        },
+        fiber: {
+            type: Number,
+        },
+        body_weight: {
+            type: Number,
+        },
+        moderate_needs: {
+            type: Number,
+        },
+        low_needs: {
+            type: Number,
         },
     },
     {

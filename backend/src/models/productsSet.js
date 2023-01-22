@@ -15,14 +15,28 @@ const productsSetSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
+        sale: {
+            type: Number,
+        },
+        image:{
+            type: String,
+        },
         set_code: {
             type: Number,
             required: true,
-            min: 6
+            min: 6,
         },
+        category_id: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Categories'
+        }],
         animal_id: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Animals'
+        }],
+        products_id: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Products'
         }],
     },
     {

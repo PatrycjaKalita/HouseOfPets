@@ -4,7 +4,7 @@ const animalForAdoptionSchema = new mongoose.Schema(
     {
         link: {
             type: String,
-            required: true
+            unique: true,
         },
         name: {
             type: String,
@@ -26,15 +26,18 @@ const animalForAdoptionSchema = new mongoose.Schema(
         email: {
             type: String,
             trim: true,
-            unique: true,
+            required: true,
             lowercase: true
+        },
+        sex: {
+            type: String,
+            required: true,
         },
         phone_number: {
             type: String,
-            trim: true,
             required: true,
-            unique: true,
-            max: 9
+            max: 9,
+            min: 9
         },
         image: {
             type: String,
@@ -42,7 +45,7 @@ const animalForAdoptionSchema = new mongoose.Schema(
         },
         type_of_pets_id: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'TypeOfAnimal'
+            ref: 'TypeOfAnimals'
         }],
         breed_id: [{
             type: mongoose.Schema.Types.ObjectId,
@@ -50,11 +53,11 @@ const animalForAdoptionSchema = new mongoose.Schema(
         }],
         age_id: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Age'
+            ref: 'Ages'
         }],
         weight_id: [{
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Weight'
+            ref: 'Weights'
         }]
     },
     {
@@ -62,4 +65,4 @@ const animalForAdoptionSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('AnimalForAdoption', animalForAdoptionSchema)
+module.exports = mongoose.model('AnimalsForAdoptions', animalForAdoptionSchema)

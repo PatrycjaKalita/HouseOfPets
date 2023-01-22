@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Style.css'
-import productImg from "../../../assets/royalCanin.jpg";
+import productImg from "../../../assets/addingProduct/royalCanin.jpg";
 import {updatePrice} from '../../../utils/product'
 
 const ShoppingCart = () => {

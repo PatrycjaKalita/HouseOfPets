@@ -4,7 +4,7 @@ const animalSchema = new mongoose.Schema(
     {
         type_of_pets_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'TypeOfAnimal',
+            ref: 'TypeOfAnimals',
         },
         breed_id: {
             type: mongoose.Schema.Types.ObjectId,
@@ -12,11 +12,11 @@ const animalSchema = new mongoose.Schema(
         },
         age_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Age'
+            ref: 'Ages'
         },
         weight_id: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Weight'
+            ref: 'Weights'
         }
     },
     {

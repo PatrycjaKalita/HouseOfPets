@@ -12,4 +12,4 @@ const weightSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Weight', weightSchema)
+module.exports = mongoose.model('Weights', weightSchema)

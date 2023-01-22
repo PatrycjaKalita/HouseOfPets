@@ -1,32 +1,41 @@
-{
-    "_id" : ObjectId("63bee7531312a763a0629c17"),
-    "number" : "do  300g"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c18"),
-    "number" : "300-500 g"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c19"),
-    "number" : "500g-1kg"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c1a"),
-    "number" : "1-3kg"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c1b"),
-    "number" : "3-6kg"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c1c"),
-    "number" : "6-10kg"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c1d"),
-    "number" : "10-15kg"
-}
-{
-    "_id" : ObjectId("63bee7531312a763a0629c1e"),
-    "number" : "+15kg"
-}
+[{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c17"
+  },
+  "number": "do  300g"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c18"
+  },
+  "number": "300-500 g"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c19"
+  },
+  "number": "500g-1kg"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c1a"
+  },
+  "number": "1-3kg"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c1b"
+  },
+  "number": "3-6kg"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c1c"
+  },
+  "number": "6-10kg"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c1d"
+  },
+  "number": "10-15kg"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629c1e"
+  },
+  "number": "+15kg"
+}]

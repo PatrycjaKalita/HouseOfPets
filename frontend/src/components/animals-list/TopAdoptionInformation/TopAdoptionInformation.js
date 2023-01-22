@@ -18,9 +18,10 @@ const TopAdoptionInformation = () => {
         } else if (string === "psy") {
             let name = string.slice(0, -1);
             return name + "A"
-        } else if (string === "male zwierzatka") {
+        } else if (string === "małe-zwierzątka") {
             let name = string.slice(0, -1);
-            return name + "O"
+            let removeSpaceInName = name.replaceAll("-", " ")
+            return removeSpaceInName + "O"
         }
     }
 

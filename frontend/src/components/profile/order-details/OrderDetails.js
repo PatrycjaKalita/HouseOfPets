@@ -4,7 +4,7 @@ import ProfileNavigation from "../profile-navigation/ProfileNavigation";
 import {isAuth} from "../../../auth/Helpers";
 import './Style.css'
 import {useStyles} from "../adding-product/MUIStyle";
-import imageProduct from '../../../assets/royalCanin.jpg'
+import imageProduct from '../../../assets/addingProduct/royalCanin.jpg'
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";

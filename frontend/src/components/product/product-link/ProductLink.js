@@ -16,17 +16,17 @@ const ProductLink = () => {
             </Link>
             <span> > </span>
 
-            <Link to="/choose-option/koty">
+            <Link to="/choose-option/:animalType">
                 <span className="product-link">{capitalizeFirstLetter(animalType)}</span>
             </Link>
             <span> > </span>
 
-            <Link to="/shop-form/koty">
+            <Link to="/shop-form/:animalType">
                 <span className="product-link">Wybieranie</span>
             </Link>
             <span> > </span>
 
-            <Link to="/shop/koty/products/sucha-karma">
+            <Link to="/shop/:animalType/products/:productCategory">
                 <span className="product-link">{capitalizeFirstLetter(productCategory.replace(/-/g, ' '))}</span>
             </Link>
             <span> > </span>

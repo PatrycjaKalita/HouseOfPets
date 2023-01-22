@@ -1,132 +1,240 @@
-import React, {useState} from 'react';
-import {Link, useParams} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {useHistory, useParams} from "react-router-dom";
 import {Rating} from "@mui/material";
 
 import './Style.css';
-import {set, productInfo, productReviews, productWeight} from './productData';
-import {updatePrice, checkNumberOfOpinions, checkProductAvailability} from '../../utils/product'
+import {productReviews} from './productData';
+import {updatePrice, checkNumberOfOpinions, checkProductAvailability, promotion} from '../../utils/product'
 import ProductNavigation from "./product-navigation/ProductNavigation";
 import ProductDescription from "./product-description/ProductDescription";
 import ProductComposition from "./product-composition/ProductComposition";
 import ProductDosage from "./product-dosage/ProductDosage";
 import ProductReviews from "./product-reviews/ProductReviews";
 import ProductLink from "./product-link/ProductLink";
-import ProductsSet from "./products-set/ProductsSet";
+import ProductAnalyticalIngredients from "./product-analytical-ingredients/ProductAnalyticalIngredients";
+import {getCookie, isAuth, signOut} from "../../auth/Helpers";
+import axios from "axios";
+import TextField from "@mui/material/TextField";
+import {useStyles} from "../profile/adding-product/MUIStyle";
+import InputAdornment from "@mui/material/InputAdornment";
+import {toast} from "react-toastify";
 
 const Product = () => {
     const [quantity, setQuantity] = useState(1);
     let {productCategory} = useParams();
+
+    const token = getCookie('token');
+    const history = useHistory()
+    const classes = useStyles()
+
     let totalRatings = 0;
     productReviews.forEach(({numberOfStars}) => totalRatings += numberOfStars);
 
     let averageRating = totalRatings / productReviews.length;
     averageRating = averageRating.toFixed(1);
 
-    let product;
-    if(productCategory === "zestawy"){
-        product = set;
-    }else{
-        product = productInfo;
+    useEffect(() => {
+        loadProduct();
+    }, []);
+
+    const [availableProduct, setAvailableProduct] = useState(false);
+    const loadProduct = () => {
+        let newLink = window.location.href.replace('http://localhost:3000', '')
+
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/view/products?product_link=${newLink}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableProduct(response.data.availableProduct);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    const [values, setValues] = useState({
+        sale: '',
+    })
+
+    let {
+        sale
+    } = values
+
+    const handleChange = (name) => (event) => {
+        setValues({...values, [name]: event.target.value})
+        sale = event.target.value
+    }
+
+    const clickSubmitSale = event => {
+        let id = availableProduct.productDetails[0]._id
+        event.preventDefault()
+        setValues({...values})
+
+        axios({
+            method: 'PUT',
+            url: `${process.env.REACT_APP_API}/update/product-sale`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                id,
+                sale,
+            }
+        }).then(response => {
+            console.log('UPDATE SUCCESS', sale);
+            setValues({
+                ...values,
+                sale: '',
+            })
+        }).catch(error => {
+            setValues({...values})
+            toast.error(error.response.data.error)
+        })
     }
 
     return (
         <>
-            <div className="main-product-container">
-                <ProductLink/>
+            {
+                availableProduct.hasOwnProperty('productDetails') === false ?
+                    <h1>Loading..</h1>
+                    :
+                    availableProduct.productDetails.map((product) => {
+                            return <>
+                                <div className="main-product-container">
+                                    <ProductLink/>
 
-                {
-                    product.map((product) => (
-                        <div className="main-details-container">
-                            <div className="product-img-container">
-                                <img className="product-img" alt="" src={product.image}/>
-                            </div>
+                                    <div className="main-details-container">
+                                        <div className="product-img-container">
+                                            <img className="product-img" alt="" src={product.image}/>
+                                        </div>
 
-                            <div className="product-vertical-line"></div>
+                                        <div className="product-vertical-line"></div>
 
-                            <div className="product-main-details-container">
-                                <h1 className="product-name">{product.title}</h1>
+                                        <div className="product-main-details-container">
+                                            <h1 className="product-name">{product.name}</h1>
 
-                                <div className="product-rating-container">
-                                    <Rating className="starBorderOutlined" value={averageRating} readOnly
-                                            precision={0.5} max={5} size="small"/>
+                                            <div className="product-rating-container">
+                                                <Rating className="starBorderOutlined" value={averageRating} readOnly
+                                                        precision={0.5} max={5} size="small"/>
 
-                                    <h1 className="product-number-opinions">{checkNumberOfOpinions(productReviews.length)}</h1>
+                                                <h1 className="product-number-opinions">{checkNumberOfOpinions(5)}</h1>
 
-                                    <h1 className={product.quantity > 0 ? "product-availability" : "product-no-availability"}>{checkProductAvailability(product.quantity)}</h1>
-                                </div>
+                                                <h1 className={product.amount > 0 ? "product-availability" : "product-no-availability"}>{checkProductAvailability(product.amount)}</h1>
+                                            </div>
 
-                                <div className={productCategory === "zestawy" ? "hidden" : "product-producer-container"}>
-                                    <h1 className="product-producer-name">Producent:</h1>
-                                    <h1 className="product-producer-value">{product.producer}</h1>
-                                </div>
+                                            <div
+                                                className={"product-producer-container"}>
+                                                <h1 className="product-producer-name">Producent:</h1>
+                                                <h1 className="product-producer-value">{product.producer}</h1>
+                                            </div>
 
-                                <div className="product-code-container">
-                                    <h1 className="product-variable-name">Kod produktu:</h1>
-                                    <h1 className="product-variable-value">{product.code}</h1>
-                                </div>
+                                            <div className="product-code-container">
+                                                <h1 className="product-variable-name">Kod produktu:</h1>
+                                                <h1 className="product-variable-value">{product.product_code}</h1>
+                                            </div>
 
-                                <div className="product-delivery-container">
-                                    <h1 className="product-variable-name">Dostawa:</h1>
-                                    <h1 className="product-variable-value">1 dzień roboczy</h1>
-                                </div>
+                                            <div className="product-delivery-container">
+                                                <h1 className="product-variable-name">Dostawa:</h1>
+                                                <h1 className="product-variable-value">1 dzień roboczy</h1>
+                                            </div>
 
-                                <div className={productCategory === "zestawy" ? "hidden" : "product-weights-container"}>
-                                    <h1 className="product-weight-name">Waga:</h1>
-                                    <div className="flex">
-                                        {
-                                            productWeight.map((weight) => (
-                                                <Link to="/">
-                                                    <button
-                                                        className={weight.weight === product.weight ? "product-weight-view-btn" : "product-weight-btn"}>
-                                                        {weight.weight} g
-                                                    </button>
-                                                </Link>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
+                                            <div
+                                                className={product.weight === null ? "hidden" : "product-weights-container"}>
+                                                <h1 className="product-weight-name">Waga:</h1>
+                                                <h1 className="product-variable-value"> {product.weight} g</h1>
+                                            </div>
 
-                                <div className="product-quantity-price-container">
-                                    <div className="product-quantity-container">
-                                        <h1 className="product-quantity-name">Ilość:</h1>
-                                        <div className="product-btn-quantity">
-                                            <button className="product-btn-minus"
-                                                    onClick={() => {
-                                                        setQuantity(quantity - 1);
-                                                    }}>
-                                                -
-                                            </button>
+                                            <div
+                                                className={product.color === "" ? "hidden" : "product-weights-container"}>
+                                                <h1 className="product-weight-name">Kolor:</h1>
+                                                <h1 className="product-variable-value"> {product.color}</h1>
+                                            </div>
 
-                                            <h1 className="product-btn-quantity-number">{quantity}</h1>
+                                            <div className="product-quantity-price-container">
+                                                <div className="product-quantity-container">
+                                                    <h1 className="product-quantity-name">Ilość:</h1>
+                                                    <div className="product-btn-quantity">
+                                                        <button className="product-btn-minus"
+                                                                onClick={() => {
+                                                                    setQuantity(quantity - 1);
+                                                                }}>
+                                                            -
+                                                        </button>
 
-                                            <button className="product-btn-plus" onClick={() => {
-                                                setQuantity(quantity + 1);
-                                            }}>
-                                                +
-                                            </button>
+                                                        <h1 className="product-btn-quantity-number">{quantity}</h1>
+
+                                                        <button className="product-btn-plus" onClick={() => {
+                                                            setQuantity(quantity + 1);
+                                                        }}>
+                                                            +
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <h1 className={product.sale === 0 ? "product-main-price" : "hidden"}>{updatePrice(product.price, quantity)}</h1>
+
+                                                <div className={product.sale !== 0 ? "flex" : "hidden"}>
+                                                    <h1 className="product-base-price">{updatePrice(product.price, quantity)}</h1>
+
+                                                    <h1 className="product-sale-price">{updatePrice(promotion(product.price, product.sale), quantity)}</h1>
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
+                                                <button className="product-btn-add-to-card">Dodaj do koszyka</button>
+                                            </div>
+
+                                            <div
+                                                className={isAuth().role === "pracownik" ? "product-btn-add-container" : "hidden"}>
+                                                <TextField
+                                                    label="Zniżka o"
+                                                    variant="outlined"
+                                                    value={sale}
+                                                    onChange={handleChange('sale')}
+                                                    className={classes.textFieldCareTaker}
+                                                    InputProps={{
+                                                        endAdornment: <InputAdornment position="start">%</InputAdornment>,
+                                                    }}
+                                                />
+                                                <button className="product-btn-add-to-card" onClick={clickSubmitSale}>Dodaj promocję</button>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <h1 className="product-main-price">{updatePrice(product.price, quantity)}</h1>
                                 </div>
+                                    <ProductNavigation body_weight={product.body_weight}/>
 
-                                <div className="product-btn-add-container">
-                                    <button className="product-btn-add-to-card">Dodaj do koszyka</button>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className={productCategory === "zestawy" ? "hidden" : ""}>
-                <ProductNavigation/>
-                <ProductDescription/>
-                <ProductComposition/>
-                <ProductDosage/>
-            </div>
-            <div className={productCategory === "zestawy" ? "" : "hidden"}>
-                <ProductsSet/>
-            </div>
+                                    <ProductDescription productDescription={product.description}
+                                                        productExtraDescription={product.extra_description}
+                                                        productDescriptionImage={product.image_description}/>
+
+                                    <ProductComposition productComposition={product.composition}
+                                                        productAdditives={product.additives}/>
+
+                                    <div id="Sklad"
+                                         className={product.protein !== null ? "product-composition-main-container" : "hidden"}>
+                                        <ProductAnalyticalIngredients protein={product.protein} fat={product.fat}
+                                                                      ash={product.ash} fiber={product.fiber}/>
+                                    </div>
+
+                                    <div className={product.body_weight !== null ? "" : "hidden"}>
+                                        <ProductDosage body_weight={product.body_weight} low_needs={product.low_needs}
+                                                       moderate_needs={product.moderate_needs}/>
+                                    </div>
+                            </>
+                        }
+                    )
+            }
             <ProductReviews averageRating={averageRating}/>
         </>
     );

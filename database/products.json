@@ -1,0 +1,1193 @@
+[{
+  "_id": {
+    "$oid": "63ca61de5161b28818d3589a"
+  },
+  "link": "/shop/psy/products/sucha-karma/wolf-of-wildrness-junior-blue-river",
+  "name": "Wolf of Wilderness Junior \"Blue River\", łosoś i kurczak z wolnego wybiegu",
+  "producer": "Wolf of Wilderness",
+  "price": 32.8,
+  "sale": 75,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1675206000000"
+    }
+  },
+  "weight": 1000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/wolf/of/wilderness/junior/blue/river/oso/i/kurczak/z/wolnego/wybiegu/9/800/wow_freerange_classic_blueriver_junior_12kg_frontright_1000x1000_9.jpg",
+  "product_code": 398546013,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Wolf of Wilderness JUNIOR \"Blue River\", łosoś i kurczak z wolnego wybiegu w skrócie:\n\nZorientowany na nawyki żywieniowe dzikiego wilka: dla psów wszystkich ras i wielkości.\nReceptura w 100% bezzbożowa: odpowiednia również dla psów cierpiących na nietolerancję zbóż.\nWysokiej jakości białko: co najmniej 33 % świeżego mięsa z mięśni kurczaka i wartościowe białko z łososia.\nOdpowiedzialnie i smacznie: zawiera 100% świeżego mięsa z kurcząt hodowanych w klasie premium - z większą przestrzenią, większą ilością ściółki i dostępem do terenów zewnętrznych z przewagą roślinności.\nZgodna z dobrostanem gatunku i naturalna: bez sztucznych konserwantów, barwników i wzmacniaczy smaku.\nDzikie i pierwotne: uszlachetnione owocami leśnymi, korzeniami i dzikimi ziołami.\nZrównoważona jakość premium: żywność jest produkowana w neutralnej pod względem Co2 firmie rodzinnej w Niemczech, opakowanie nadaje się do recyklingu.",
+  "extra_description": "Wolf of Wilderness to dostosowana gatunkowo karma dla psów oparta na oryginalnej diecie wilka na wolności. Oprócz dużej ilości świeżego mięsa, bezzbożowe przepisy zawierają dzikie jagody, korzenie i dzikie zioła.",
+  "image_description": "https://shop-cdn-m.mediazs.com/bilder/wolf/of/wilderness/junior/blue/river/oso/i/kurczak/z/wolnego/wybiegu/4/800/wow_board_classic_freerange_junior_blueriver_2_0_1000x1000_pl3_4.jpg",
+  "composition": "Świeży kurczak z wolnego wybiegu* (33 %), płatki ziemniaczane, białko drobiowe (częściowo suszone i hydrolizowane, 18 %), białko łososia (suszone, 10 %), olej z łososia suszone i hydrolizowane, 18 %), białko łososia (suszone, 10 %), olej z łososia, suszona pulpa buraczana, jabłko (suszone), siemię lniane, drożdże piwne (suszone), ściany komórkowe drożdży (suszone, 0,2 %: beta-glukany i mannan-oligosacharydy), mączka z alg (0,1 %), dzikie jagody (suszone, łącznie 0,3 %: porzeczki, jagody aronii), inulina z cykorii, zioła (suszone, łącznie 0,2%: korzeń mniszka lekarskiego, ziele rumianku, ziele pokrzywy), glukozamina z tkanek zwierzęcych (0,04%), siarczan chondroityny (0,02%). \n*Kury z hodowli premium - z większą ilością miejsca, słomy i dostępem do terenów zewnętrznych z przewagą roślinności.",
+  "additives": "Dodatki żywieniowe:\nWitamina A 15 000 IU, witamina D3 1 600 IU, witamina E 300 IU, witamina C 200 mg, witamina B1 13 mg, witamina B2 (ryboflawina) 15 mg, witamina B6/chlorowodorek pirydoksyny 10 mg, witamina B12 200 mcg, niacyna 40 mg, D-pantotenian wapnia 40 mg, biotyna 350 mcg, kwas foliowy 1,3 mg, chlorek choliny 2. 500 mg, Miedź (pentahydrat siarczanu miedzi(II)) 12,5 mg, Cynk (siarczan cynku, jednowodny) 100 mg, Cynk (chelat cynku glicyny, hydrat) 50 mg, Mangan (siarczan manganu(II), jednowodny) 30 mg, Żelazo (monohydrat siarczanu żelaza(II)) 250 mg, Jod (jodan wapnia, bezwodny) 2,5 mg, Selen (selenin sodu) 0,40 mg.",
+  "protein": 31,
+  "fat": 15,
+  "ash": 7.2,
+  "fiber": 2.5,
+  "body_weight": 5,
+  "moderate_needs": 90,
+  "low_needs": 120,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674207710054"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674322299343"
+    }
+  },
+  "__v": 0,
+  "animal_id": {
+    "$oid": "63c95ae6996ba2a3abe622d5"
+  }
+},{
+  "_id": {
+    "$oid": "63ca75799a71623f0c89934b"
+  },
+  "link": "/shop/koty/products/sucha-karma/whiskas-sterile-14-kg-z-kurczakiem",
+  "name": "WHISKAS Sterile 14kg z kurczakiem",
+  "producer": "Whiskas",
+  "price": 115.8,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1690326000000"
+    }
+  },
+  "weight": 14000,
+  "color": "",
+  "image": "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
+  "product_code": 398546913,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Koty po zabiegu sterylizacji i kastracji często mają specjalne potrzeby żywieniowe. WHISKAS Sterile 14 kg to sucha karma dla kotów po sterylizacji z kurczakiem, która uwzględnia te potrzeby. Obniżony poziom składników mineralnych przekłada się na ochronę dróg moczowych przed popularnymi schorzeniami, zwłaszcza kamicą. Niska wartość tłuszczu sprawia, że pokarm ma obniżoną kaloryczność, a przez to sprzyja utrzymaniu prawidłowej masy ciała kota. Prebiotyki wspierają prawidłowe trawienie i regularne wypróżnienia, co pomaga również w usuwaniu kul włosowych z układu pokarmowego.",
+  "extra_description": "Specjalny kształt krokieta – a zwłaszcza jego twarda obwódka – w połączeniu z kompleksem składników gwarantują mechaniczne usuwanie osadu z zębów i wspieranie zdrowia dziąseł. Nienasycone kwasy tłuszczowe oraz cynk ułatwiają utrzymanie w zdrowiu skóry i powodują piękny wygląd sierści. Krokiety w karmie mają twardą otoczkę i miękkie wnętrze, zachęcające kota do spożycia całej porcji. Karma bytowa dla kotów sterylizowanych może być uzupełniona karmą mokrą tej samej marki.",
+  "image_description": "https://m.media-amazon.com/images/I/7116YTMQtiL._AC_SL1000_.jpg",
+  "composition": "zboża (m.in. 4% pszenicy),mięso i produkty uboczne pochodzenia zwierzęcego (m.in. 4% jasnego mięsa kurczaka), roślinne produkty uboczne (m.in. 2% wysłodki buraczane), oleje i tłuszcze, roślinne ekstrakty białkowe, minerały, warzywa (4% marchwi w pomarańczowych krokietach, 4% grochu w zielonych krokietach).",
+  "additives": "witamina A (4 090 j.m./kg), witamina D3 (450 j.m./kg), witamina E (95 mg/kg), pięciowodny siarczan miedzi (9.6 mg/kg), jednowodny siarczan manganu II (51.6 mg/kg), jodek potasu (0.79 mg/kg), selenin sodu (0,38 mg/kg), jednowodny siarczan cynku (138 mg/kg).",
+  "protein": 32,
+  "fat": 11,
+  "ash": 7.2,
+  "fiber": 4,
+  "body_weight": 5,
+  "moderate_needs": 55,
+  "low_needs": 20,
+  "animal_id": {
+    "$oid": "63ca746a9a71623f0c899349"
+  }
+},{
+  "_id": {
+    "$oid": "63ca88d39a71623f0c899351"
+  },
+  "link": "/shop/psy/products/sucha-karma/rinti-max-i-mum-wolowina",
+  "name": "RINTI Max-i-mum wołowina",
+  "producer": "RINTI",
+  "price": 34.79,
+  "sale": 50,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1706742000000"
+    }
+  },
+  "weight": 1000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/rinti/maximum/woowina/5/800/68403_pla_rinti_max_i_mum_4kg_rind_5.jpg",
+  "product_code": 398546012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Maksymalna świeżość: sucha karma RINTI Max-i-mum przyrządzana jest w 65% ze świeżego mięsa i świeżych podrobów. Wzmacnia to naturalny smak karmy i wspomaga przemianę materii Twojego psa.",
+  "extra_description": "Karma podstawowa dla Twojego psa, dzięki wysokiej zawartości mięsa, utrzymuje odpowiednie proporcje białka i tłuszczu. Wspomaga trawienie i odciąża organizm Twojego pupila. Białka zwierzęce są najlepiej przyswajane przez psy. Całkowita zawartość mięsa w karmie RINTI Max-i-mum wynosi 70% i zapewnia odpowiednią ilość białka. Ta wysokiej jakości sucha karma jest bezzbożowa i jest lekkostrawna nawet dla zwierząt z problemami trawiennymi. W 30% ta smaczna karma składa się z warzyw, które są źródłem witamin, składników mineralnych i odżywczych oraz błonnika. Dzięki wspomagającym trawienie drożdżom piwnym i bogatym w błonnik skorupkom ziarna babki RINTI Max-i-mum wspomaga zdrowe trawienie i dobre samopoczucie Twojego psa.",
+  "image_description": "",
+  "composition": "Świeża wołowina (min. 35%), świeży kurczak (min. 30%), ziemniaki, hydrolizat mięsa (3%), mączka drobiowa (2%), groch (suszony), łupiny babki płesznik (psylium), olej rybi, drożdże piwowarskie (suszone), marchew (suszona).",
+  "additives": "Witamina A (15 000 j.m./kg), witamina D3 (1200 j.m./kg), witamina E (octan-all-rac-alfa tokoferylu) (150 mg/kg), miedź (pięciowodny siarczan miedzi(II)) (10 mg/kg), cynk (tlenek cynku) (90 mg/kg), cynk (uwodniony aminokwasowy chelat cynku) (45 mg/kg), jod (bezwodny jodan wapnia) (2 mg/kg), selen (selenin sodu) (0,2 mg/kg).",
+  "protein": 22,
+  "fat": 16,
+  "ash": 1.2,
+  "fiber": 6,
+  "body_weight": 5,
+  "moderate_needs": 135,
+  "low_needs": 80,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674322169116"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63ca898c9a71623f0c899352"
+  },
+  "link": "/shop/psy/products/sucha-karma/rinti-max-i-mum-wolowina-4000",
+  "name": "RINTI Max-i-mum wołowina",
+  "producer": "RINTI",
+  "price": 92.79,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1675206000000"
+    }
+  },
+  "weight": 4000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/rinti/maximum/woowina/5/800/68403_pla_rinti_max_i_mum_4kg_rind_5.jpg",
+  "product_code": 398546011,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Maksymalna świeżość: sucha karma RINTI Max-i-mum przyrządzana jest w 65% ze świeżego mięsa i świeżych podrobów. Wzmacnia to naturalny smak karmy i wspomaga przemianę materii Twojego psa.",
+  "extra_description": "Karma podstawowa dla Twojego psa, dzięki wysokiej zawartości mięsa, utrzymuje odpowiednie proporcje białka i tłuszczu. Wspomaga trawienie i odciąża organizm Twojego pupila. Białka zwierzęce są najlepiej przyswajane przez psy. Całkowita zawartość mięsa w karmie RINTI Max-i-mum wynosi 70% i zapewnia odpowiednią ilość białka. Ta wysokiej jakości sucha karma jest bezzbożowa i jest lekkostrawna nawet dla zwierząt z problemami trawiennymi. W 30% ta smaczna karma składa się z warzyw, które są źródłem witamin, składników mineralnych i odżywczych oraz błonnika. Dzięki wspomagającym trawienie drożdżom piwnym i bogatym w błonnik skorupkom ziarna babki RINTI Max-i-mum wspomaga zdrowe trawienie i dobre samopoczucie Twojego psa.",
+  "image_description": "",
+  "composition": "Świeża wołowina (min. 35%), świeży kurczak (min. 30%), ziemniaki, hydrolizat mięsa (3%), mączka drobiowa (2%), groch (suszony), łupiny babki płesznik (psylium), olej rybi, drożdże piwowarskie (suszone), marchew (suszona).",
+  "additives": "Witamina A (15 000 j.m./kg), witamina D3 (1200 j.m./kg), witamina E (octan-all-rac-alfa tokoferylu) (150 mg/kg), miedź (pięciowodny siarczan miedzi(II)) (10 mg/kg), cynk (tlenek cynku) (90 mg/kg), cynk (uwodniony aminokwasowy chelat cynku) (45 mg/kg), jod (bezwodny jodan wapnia) (2 mg/kg), selen (selenin sodu) (0,2 mg/kg).",
+  "protein": 22,
+  "fat": 16,
+  "ash": 1.2,
+  "fiber": 6,
+  "body_weight": 5,
+  "moderate_needs": 135,
+  "low_needs": 80,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca8da69a71623f0c899355"
+  },
+  "link": "/shop/psy/products/obroze-smycze/heim-smycz-spacerowa-prążkowana-rose-czarna",
+  "name": "Heim smycz spacerowa prążkowana Rosé",
+  "producer": "Heim",
+  "price": 77.79,
+  "sale": 0,
+  "amount": 1500,
+  "color": "czarny",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/heim/smycz/spacerowa/prkowana/ros/czarna/7/800/221902_pla_heim_fuehrleine_geriegelt_rose_schwarz_hs_01_7.jpg",
+  "product_code": 398556012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c32"
+  },
+  "description": "Prosta, a mimo to wyszukana – prążkowana smycz Rosé marki Heim to elegancki towarzysz podczas wycieczek z psem. Utrzymana jest w ponadczasowej klasycznej czerni, ale dzięki szlachetnym detalom przyciąga wzrok. Karabińczyki i kółka wykonane są ze stali i posiadają wykończenie w kolorze różowego złota. Prezentowana smycz dla psa wykonana jest z odpornej taśmy, która potrafi wytrzymać wiele obciążeń. Zastosowany nylon jest miękki w dotyku i przyjemnie leży w dłoni. Prążkowana smycz Rosé marki Heim posiada 3-stopniową regulację, co pozwala dopasować jej długość do indywidualnych potrzeb.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Smycz: nylon. Karabińczyki i kółka: stal z wykończeniem w kolorze różowego złota.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca8e389a71623f0c899356"
+  },
+  "link": "/shop/psy/products/obroze-smycze/heim-smycz-spacerowa-prążkowana-rose-czerwony",
+  "name": "Heim smycz spacerowa prążkowana Rosé",
+  "producer": "Heim",
+  "price": 87.79,
+  "sale": 45,
+  "amount": 49,
+  "color": "czerwony",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/heim/smycz/spacerowa/prkowana/ros/czerwona/6/800/221901_pla_heim_fuehrleine_geriegelt_rose_rot_hs_01_6.jpg",
+  "product_code": 398856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c32"
+  },
+  "description": "Wysokiej jakości uzupełnienie każdego wyposażenia dla psa – prezentowana prążkowana smycz spacerowa Rosé marki Heim przekonuje szlachetnym wzornictwem i solidnym wykonaniem. Powstała z wytrzymałego nylonu utrzymanego w jaskrawoczerwonym kolorze. Wyrafinowane detale stanowią kółka i karabińczyki z wykończeniem w kolorze różowego złota.Smycz idealnie nadaje się do codziennego użytku. Leży wygodnie i miękko w dłoni. Smycz posiada 3-stopniową regulację, co pozwala dopasować jej długość do własnych potrzeb. Za pomocą karabińczyka prążkowaną smycz spacerową Rosé można łatwo przypiąć do obroży lub szelek. Smycz została wyprodukowana w Niemczech i charakteryzuje się wysoką jakością. Idealnie komponuje się w połączeniu z obrożami z tej samej kolekcji.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Smycz: nylon. Karabińczyki i kółka: stal z wykończeniem w kolorze różowego złota.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674322288986"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63ca8f0f9a71623f0c899357"
+  },
+  "link": "/shop/psy/products/obroze-smycze/heim-smycz-spacerowa-prążkowana-rose-jasnoróżowo-biała",
+  "name": "Heim smycz spacerowa prążkowana Rosé",
+  "producer": "Heim",
+  "price": 67.79,
+  "sale": 0,
+  "amount": 60,
+  "color": "jasnoróżowo-biała",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/hunter/smycz/regulowana/modern/art/jasnorowobiaa/8/800/185601_185602_pla_hunter_verstellbare_fuehrleine_modern_art_rosawei__200cm_hs_01_8.jpg",
+  "product_code": 338856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c32"
+  },
+  "description": "Łatwa do utrzymania w czystości, mocna i elegancka: regulowana smycz Modern Art marki HUNTER w różowo-białym kolorze łączy w sobie cechy przydatne w codziennym użytkowaniu z atrakcyjnym wyglądem. Jest to smycz typu extra slim, która doskonale nadaje się dla szczeniąt i małych psów i dobrze komponuje się z obrożami z kolekcji Modern Art. Długość prezentowanej smyczy dla psa można dowolnie ustawić za pomocą karabinka i trzech pierścieni. Smycz można nosić założoną wokół własnego tułowia. Wykonana została z mocnej, łatwej do utrzymania w czystości sztucznej skóry, a w razie potrzeby wystarczy ją przetrzeć – idealnie sprawdzi się w codziennym użytkowaniu.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Smycz: sztuczna skóra. D-ring i karabińczyki: metal niklowany",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca90359a71623f0c899358"
+  },
+  "link": "/shop/psy/products/akcesoria/hunter-miska-ze-stali-szlachetnej",
+  "name": "HUNTER miska ze stali szlachetnej",
+  "producer": "HUNTER",
+  "price": 21.99,
+  "sale": 0,
+  "amount": 60,
+  "color": "stalowy",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/hunter/miska/ze/stali/szlachetnej/8/800/26950_pla_hunter_edelstahlnapf_hs_03_8.jpg",
+  "product_code": 238856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Miska ze specjalnym logo producenta HUNTER zachwyca nie tylko swoją praktycznością, ale również stanie się ozdobą Twojej kuchni. Antypoślizgowe podłoże zapobiega samowolnemu przesuwaniu się miski podczas spożywania przez psa posiłku. Miska jest łatwa w utrzymaniu w czystości, a przez to higieniczna. Miskę łącznie z gumową obręczą można myć w zmywarce. Jest wykonana ze stali szlachetnej.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Stal szlachetna.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca90fb9a71623f0c899359"
+  },
+  "link": "/shop/psy/products/akcesoria/trixie-ceramiczna-miska-z-motywem-łapek",
+  "name": "Trixie ceramiczna miska z motywem łapek",
+  "producer": "Trixie",
+  "price": 11.99,
+  "sale": 0,
+  "amount": 60,
+  "color": "szaro-ciemnobrązowy",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/ceramiczna/miska/z/motywem/apek/7/800/24641_pla_trixie_keramiknapf_mit_pfoten_braun_hs_03_7.jpg",
+  "product_code": 231856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Ta urocza miska marki Trixie upiększy każde miejsce karmienia. Posiada wysoki ciężar własny, przez co jest bardzo stabilna i nie ślizga się. Zewnętrzna strona miski jest glazurowana i ozdobiona ślicznymi odciskami łapek. Wnętrze miski jest glazurowane na wysoki połysk i przez to łatwe do czyszczenia. Powłoka ta sprawia, że miska jest higieniczna: wystarczy ją wytrzeć i gotowe!",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Ceramika.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca929d9a71623f0c89935a"
+  },
+  "link": "/shop/psy/products/zabawki/chuckit!-rugged-flyer-frisbee",
+  "name": "Chuckit! Rugged Flyer frisbee",
+  "producer": "Chuckit",
+  "price": 33.99,
+  "sale": 0,
+  "amount": 60,
+  "color": "pomarańczowy",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/chuckit/rugged/flyer/frisbee/pomaraczowe/2/800/115205_pla_doskocil_chuckit_rugged_flyer_orange_25cm_hs_01_2.jpg",
+  "product_code": 201856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2e"
+  },
+  "description": "Latający towarzysz zabaw, który wiele zniesie: Chuckit! Rugged Flyer frisbee zadba o to, żeby wiele się działo podczas pobytu z psem w parku, na plaży lub w ogrodzie. Krążek frisbee został opracowany z myślą o dużych psach o silnych szczękach, dlatego jest bardzo wytrzymały. Połączenie sztywnego tworzywa sztucznego i termoelastycznej gumy nadaje mu wyjątkową trwałość. Frisbee ma ergonomiczny kształt i dzięki wypustkom jest bardzo poręczne: można je wygodnie trzymać, rzucać i podnosić. Jaskrawe kolory: intensywny pomarańczowy i biały sprawiają, że łatwo je ponownie znaleźć. Chuckit! Rugged Flyer frisbee unosi się na wodzie – od tej chwili nic już nie stanie na przeszkodzie wesołym zabawom z Twoim czworonożnym przyjacielem podczas kolejnego urlopu nad morzem czy nad jeziorem.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "80% materiał sztuczny, 20% TPR (guma termoplastyczna).",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca93c29a71623f0c89935b"
+  },
+  "link": "/shop/psy/products/zabawki/kong-squeezz-gryzak-dla-psa",
+  "name": "KONG Squeezz gryzak dla psa",
+  "producer": "KONG",
+  "price": 23.99,
+  "sale": 0,
+  "amount": 160,
+  "color": "zielony",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/kong/squeezz/gryzak/dla/psa/0/800/326040kong_squeezz_stick_m_0.jpg",
+  "product_code": 200856012,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2e"
+  },
+  "description": "Gryzak Kong wniesie wiele ruchu do codziennego życia! Wytrzymała zabawka z elastycznego tworzywa sztucznego idealna do aportowania i różnorodnych gier. Dzięki swojej sprężystości odbija się nieprzewidywalnie, co sprawia wiele zabawy psu. Jasny kolor zabawki pomaga znaleźć ją w wysokiej trawie. Gryzak ma dziurkę pośrodku, przez którą możesz wypełnić go przysmakami, co zajmie Twojego psa przez kilka chwil.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Tworzywo sztuczne.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63ca95459a71623f0c89935e"
+  },
+  "link": "/shop/psy/products/obroze-smycze/obroża-z-podszyciem-heim-rose",
+  "name": "Obroża z podszyciem Heim Rosé",
+  "producer": "KONG",
+  "price": 93.99,
+  "sale": 0,
+  "amount": 1600,
+  "color": "czarno-brązowa",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/obroa/z/podszyciem/heim/ros/czarnobrzowa/4/800/217888_217889_21789_217891_pla_heim_halsband_gefuettert_rose_schwarzbraun_hs_01_4.jpg",
+  "product_code": 270856212,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c32"
+  },
+  "description": "Dzięki obroży Heim z kolekcji Rosé Twój czworonożny przyjaciel będzie przyciągał wzrok! Regulowana obroża jest wykonana z aksamitnie miękkiej, czarnej skóry bydlęcej i brązowej skóry. Ozdobne szwy i piękne okucia w kolorze różowego złota nadają obroży dodatkowo szlachetne wykończenie. Dzięki dostępnej oddzielnie, regulowanej smyczy z serii Rosé możesz również uzyskać jednolity wygląd dla swojego ulubieńca.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Górny materiał: skóra bydlęca. Podszycie: skóra. Okucia i sprzączka: wykończenie w kolorze różowego złota, bez niklu",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63bee7531312a763a0629bfc"
+  }
+},{
+  "_id": {
+    "$oid": "63ca98bc9a71623f0c899361"
+  },
+  "link": "/shop/psy/products/mokra-karma/little-wolf-of-wilderness-junior-6-x-800-g",
+  "name": "Little Wolf of Wilderness Junior 6 x 800 g",
+  "producer": "Wolf of Wilderness",
+  "price": 104.24,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1676847600000"
+    }
+  },
+  "weight": 1000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/little/wolf/of/wilderness/junior/x/g/4/800/wow_junior_blueriver_800g_1000x1000_4.jpg",
+  "product_code": 198546013,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2d"
+  },
+  "description": "Nasze psy są nam wierne, są dla nas pełnoprawnymi członkowami naszych rodzin i towarzyszą nam każdego dnia, czym z pewności zasługują sobie na jak najlepsze pożywienie. Ponieważ psy wywodzą się od wilków, są one mięso- i wszystkożerne, co nie zmieniło się mimo zmian ewolucyjnych. Wolf of Wilderness postawił sobie za cel stworzenie karmy, która będzie odpowiadała naturalnym instynktom wilków, w związku z czym w pokarmie tej marki stosuje się wyłącznie naturalne składniki, które obecne są również w wilczej diecie. Badania nad zwyczajami żywieniowymi wilków wykazały, że ich dieta składa się przede wszystkim z mięsa ich ofiar oraz owoców leśnych, korzeni i dzikich ziół, które mogły znajdować się w żołądkach ich zdobyczy. Wilki zamieszkujące dzikie środowisko nie przyjmowały prawie żadnych węglowodanów. Nasza karma również zawiera jedynie niewielką ich ilość oraz nie zawiera zbóż.",
+  "extra_description": "Bezzbożowa receptura karmy Little Wolf of Wilderness Junior składa się w przynajmniej 66% z czystego mięsa, które jest jedynym źródłem białka zwierzęcego. Mięso dostarcza lekkostrawnych białek i tłuszczy, a jedynym dodatkiem są owoce leśne, korzenie i dzikie zioła. Mieszanka owoców leśnych w połączeniu z korzeniami mniszka, ziołami z lasów i łąk, takimi jak babka lancetowata, pokrzywa i krwawnik, dostarcza ważnych składników odżywczych, minerałów i substancji witalnych i roślinnych",
+  "image_description": "",
+  "composition": "46% składa się z: serc kurczęcych, mięsa z kurczaka, wątróbki z kurczaka, płuc z kurczaka, 28,8% bulion mięsny, 20% łosoś, 2% żurawina, 2% porzeczki, 1% minerały, 0,2% olej słonecznikowy, 0,2% dzikie zioła (korzeń mniszka, pokrzywa, babka lancetowata, krwawnik pospolity), 0,1% sproszkowane skorupki jaj",
+  "additives": "witamina D3 200 j.m., witamina E [octan all-rac-alfa-tokoferylu] 30 mg, cynk (jednowodny siarczan cynku) 15 mg, mangan (jednowodny siarczan manganu(III)) 3 mg, jod (jodan wapnia) 0,75 mg",
+  "protein": 11.5,
+  "fat": 6.5,
+  "ash": 2.1,
+  "fiber": 0.4,
+  "body_weight": 5,
+  "moderate_needs": 350,
+  "low_needs": 290,
+  "animal_id": {
+    "$oid": "63c95ae6996ba2a3abe622d5"
+  }
+},{
+  "_id": {
+    "$oid": "63ca9d349a71623f0c899364"
+  },
+  "link": "/shop/psy/products/akcesoria/ortopedyczna-sofa-dla-psa",
+  "name": "Ortopedyczna sofa dla psa",
+  "producer": "Hundebett",
+  "price": 154.24,
+  "sale": 0,
+  "amount": 500,
+  "color": "szara",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/ortopedyczna/sofa/dla/psa/szara/5/800/97669_pla_orthosofa_grau_fg_4820_5.jpg",
+  "product_code": 198226013,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Ortopedyczna sofa dla psa jest przytulną oazą dla Twojego czworonoga, zawierającą piankę wiskozową (tzw. wkład Memory Foam), która zapewni spokojny i bezbolesny sen. Ta zapamiętująca kształt pianka sprawdziła się już wiele lat temu w medycynie, ponieważ dopasowuje się do ciała, tym samym odciążając stawy i kręgosłup. Memory Form pod wpływem ciepła dopasowuje się do ciała, oraz podtrzymuje ciało.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Poszewka, nakładka: 100 % poliestru. Materac: pianka poliuretanowa / pianka wiskozowa (tzw. pianka Memory).",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca86349a71623f0c89934f"
+  }
+},{
+  "_id": {
+    "$oid": "63caa0d49a71623f0c899368"
+  },
+  "link": "/shop/psy/products/mokra-karma/grau-karma-mokra-dla-psa-6-x-400g",
+  "name": "Grau karma mokra dla psa 6 x 400g",
+  "producer": "Grau",
+  "price": 67.11,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1706742000000"
+    }
+  },
+  "weight": 24000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/grau/karma/mokra/dla/psa/x/g/6/800/268396_pla_grau_hundefutter_lamm_400g_hs_01_6.jpg",
+  "product_code": 19854013,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2d"
+  },
+  "description": "Odpowiednia dla psów stosujących diety wykluczające oraz psów o wrażliwych żołądkach: karma dla psów GRAU to wysokiej jakości mokra karma, której skład opiera się tylko na jednym rodzaju mięsa. Bez względu na to, czy jest to karma czysto mięsna, czy z delikatnie przetworzonymi warzywami: zawsze karma dla psów z dużą zawartością mięsa rozpieszcza podniebienie Twojego pupila pysznym smakiem.",
+  "extra_description": "Mokra karma dla psów GRAU jest produkowana w Niemczech w oparciu o wysokie kryteria jakości. Jest ona przygotowywana z naturalnych składników, bez dodatku zbóż i cukru. Dzięki temu karma ta jest również dobrym wyborem dla psów z odpowiednimi alergiami i nietolerancjami. ",
+  "image_description": "",
+  "composition": "Jagnięcina (70%, w tym serca jagnięce, mięso jagnięce, wątroba jagnięca, płuca jagnięce, żwacze jagnięce), rosół (28,8%), składniki mineralne (1%), olej lniany (0,2%).",
+  "additives": "Witamina D3 (200 j.m./kg), cynk [jako siarczan cynku, jednowodny] (25 mg/kg), mangan [jako siarczan manganu (II), jednowodny] (1,4 mg/kg), jod [jako jodan wapnia, bezwodny] (0,75 mg/kg).",
+  "protein": 10.5,
+  "fat": 8.5,
+  "ash": 3,
+  "fiber": 0.4,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca9e459a71623f0c899366"
+  }
+},{
+  "_id": {
+    "$oid": "63caa2bb9a71623f0c89936b"
+  },
+  "link": "/shop/psy/products/sucha-karma/royal-canin-breed-german-shepherd-adult",
+  "name": "Royal Canin Breed German Shepherd Adult",
+  "producer": "Royal Canin",
+  "price": 209.11,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1690844400000"
+    }
+  },
+  "weight": 11000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/breed/german/shepherd/adult/9/800/rc55fb_1_9.jpg",
+  "product_code": 1985413,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Owczarek niemiecki to szlachetny pies o niezrównanej wszechstronności. Mocna muskulatura, dobrze rozwinięta klatka piersiowa, silne i zdecydowane ruchy i – rzecz jasna – usposobienie czynią z owczarka niemieckiego idealnego psa użytkowego: psa-przewodnika, psa ratowniczego, psa policyjnego czy psa wartowniczego. Karma Royal Canin Breed German Shepherd spełnia szczególne potrzeby żywieniowe Twojego owczarka niemieckiego i jest dopasowana do jego stylu życia.Produkty marki Royal Canin są poddawane kompleksowym kontrolom jakości, aby zagwarantować optymalną jakość karm. Karmy z linii Breed Health Nutrition wyróżniają się zawartością wysokiej jakości białek i zbilansowanym profilem składników odżywczych. Poza tym kształt, wielkość i tekstura krokietów tej karmy suchej zostały dopasowane do potrzeb konkretnej rasy.",
+  "image_description": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/breed/german/shepherd/adult/5/800/rc_bhn_3_5.jpg",
+  "extra_description": "Krokiety posiadają specjalną wielkość i kształt dopasowane do szczęki owczarka niemieckiego. Te skrojone na miarę krokiety zostały opracowane tak, aby zachęcić owczarka niemieckiego do starannego przeżuwania pokarmu.",
+  "composition": "Ryż, białko drobiowe (suszone), tłuszcz zwierzęcy, izolat białka roślinnego*, mąka kukurydziana, białko zwierzęce (hydrolizowane), lignoceluloza, suszone wysłodki buraczane, olej sojowy, olej rybi, olej kokosowy, hydrolizat z drożdży (źródło mannanooligosacharydów), hydrolizat ze skorupiaków (źródło glukozaminy), mączka z kwiatu aksamitki (źródło luteiny), hydrolizat z chrząstki (źródło chondroityny).",
+  "additives": "Witamina A (28 500 j.m./kg), witamina D3 (800 j.m./kg), E1 [żelazo] (51 mg/kg), E2 [jod] (5,1 mg/kg), E4 [miedź] (15 mg/kg), E5 [mangan] (66 mg/kg), E6 [cynk] (145 mg/kg), E8 [selen] (0,11 mg/kg).",
+  "protein": 24,
+  "fat": 19,
+  "ash": 6.5,
+  "fiber": 4,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca9e459a71623f0c899366"
+  }
+},{
+  "_id": {
+    "$oid": "63caa3a59a71623f0c89936e"
+  },
+  "link": "/shop/psy/products/kosmetyki-i-pielegnacja/moser-duża-szczotka-do-sierści",
+  "name": "Moser duża szczotka do sierści",
+  "producer": "Moser",
+  "price": 47,
+  "sale": 0,
+  "amount": 100,
+  "color": "zielony",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/moser/dua/szczotka/do/sierci/7/800/289696_pla_moser_grosse_zupfbuerste_hs_01_7.jpg",
+  "product_code": 19854131,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2f"
+  },
+  "description": "Praktyczna pomoc w regularnej pielęgnacji sierści! Duża szczotka do czyszczenia od Moser doskonale nadaje się do usuwania z sierści luźnych włosów, brudu i kołtunów. Dodatkowy efekt masażu podczas szczotkowania sprawia przyjemnoś większości czworonogów. Szczotka przeznaczona jest do codziennego użytku, łatwa w obsłudze. Ergonomiczny, żelowy uchwyt sprawia, że szczotka wygodnie i pewnie leży w dłoni. Duża szczotka do czyszczenia Moser wyróżnia się również atrakcyjnym designem w kolorach: zielonym, szarym i czarnym.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Szpilki: metal. Mocowanie szczotki: Tworzywo sztuczne. Uchwyt: żel / guma.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca9e459a71623f0c899366"
+  }
+},{
+  "_id": {
+    "$oid": "63caa4d29a71623f0c89936f"
+  },
+  "link": "/shop/psy/products/akcesoria/baskerville-ultra-2.0-kaganiec-dla-psa",
+  "name": "Baskerville Ultra 2.0 kaganiec dla psa",
+  "producer": "Baskerville",
+  "price": 86.49,
+  "sale": 0,
+  "amount": 10,
+  "color": "czarny",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/baskerville/ultra/kaganiec/dla/psa/8/800/94511_94512_94513_94515_94516_pla_maulkorb_baskerville_ultra_hs19_8.jpg",
+  "product_code": 198545131,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "W niepewnych sytuacjach lub w bardzo zatłoczonych miejscach założenie pupilowi kagańca może okazać się absolutnie konieczne. Prezentowany ergonomicznie ukształtowany kaganiec Baskerville Ultra 2.0 (tzw. kaganiec fizjologiczny) zapewnia najwyższy poziom bezpieczeństwa, a jednocześnie umożliwia Twojemu czworonożnemu towarzyszowi maksymalny komfort noszenia. Kaganiec jest nie tylko bardzo solidny, lecz także miękko wyściełany i giętki, co zapewnia psu dostateczną swobodę podczas picia, ziajania i jedzenia z ręki.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Kaganiec: termoplastyczne tworzywo sztuczne (TPR). Taśma: 100% poliestru. Sprzączka i klipsy: tworzywo sztuczne",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca9e459a71623f0c899366"
+  }
+},{
+  "_id": {
+    "$oid": "63caa6419a71623f0c899373"
+  },
+  "link": "/shop/psy/products/szelki-na-spacer/szelki-curli-vest-vlasp-air-mesh",
+  "name": "Szelki Curli Vest Clasp Air-Mesh",
+  "producer": "Curli Vest",
+  "price": 106.49,
+  "sale": 0,
+  "amount": 50,
+  "color": "niebieski",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/szelki/curli/vest/clasp/airmesh/niebieskie/3/800/267307_267497_267498_267499_267500_pla_curli_vest_geschirr_clasp_airmesh_blau_hs_01_3.jpg",
+  "product_code": 798545131,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c30"
+  },
+  "description": "Modny dodatek dla Twojego psa, zapewniający dodatkowo bezpieczeństwo i wysoki komfort noszenia: Szelki Curli Vest Clasp Air-Mesh to wygodne szelki step-in na klatkę piersiową dla mniejszych psów, łączące w sobie przyjemne właściwości materiału z funkcjonalnością i eleganckim designem. Materiał wierzchni to elastyczna tkanina Air-Mesh, dzięki której szelki nie tylko są wyjątkowo lekkie, ale również oddychające. Zastosowanie ściegu zygzakowego i naszyte na grzbiecie nylonowe taśmy umożliwiły optymalne rozłożenie napięcia.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Tkanina: poliester. Zapięcie na rzep: nylon. Taśmy: polipropylen. Klamra: POM (polioksymetylen)",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63caa51c9a71623f0c899371"
+  }
+},{
+  "_id": {
+    "$oid": "63caa7dd9a71623f0c899377"
+  },
+  "link": "/shop/psy/products/akcesoria/trixie-antypoślizgowa-miska-ze-stali-szlachetnej",
+  "name": "Trixie antypoślizgowa miska ze stali szlachetnej",
+  "producer": "Trixie",
+  "price": 26.49,
+  "sale": 0,
+  "amount": 50,
+  "color": "czerwony",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/antypolizgowa/miska/ze/stali/szlachetnej/0/800/213496_pla_trixie_edelstahlnapf_kunststoffmantel_300ml_hs_01_0.jpg",
+  "product_code": 708540131,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Miska ze stali szlachetnej marki Trixie posiada motyw uroczych łapek, który sprawi, że żaden pies nie przejdzie obok niej obojętnie. Miska od dołu jest wyposażona w antypoślizgowe wykończenie. Pozwala Twojemu zwierzakowi na swobodne jedzenie, bez przesuwania miski po podłodze. Higieniczny materiał, z którego wykonana jest miska, jest również łatwy do czyszczenia. ",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Stal szlachetna",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63caa51c9a71623f0c899371"
+  }
+},{
+  "_id": {
+    "$oid": "63caa8de9a71623f0c899378"
+  },
+  "link": "/shop/psy/products/obroze-smycze/flexi-xtreme-smycz-taśmowa-5m",
+  "name": "Flexi Xtreme smycz taśmowa 5m",
+  "producer": "Xtreme",
+  "price": 89.9,
+  "sale": 0,
+  "amount": 50,
+  "color": "pomarańczowy",
+  "expiration_date": null,
+  "weight": null,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/flexi/xtreme/smycz/tamowa/pomaraczowa/m/8/800/252396_flexi_xtreme_urtleine_orange_5m_hs_02_8.jpg",
+  "product_code": 808540131,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c32"
+  },
+  "description": "Pomarańczowa smycz taśmowa flexi Xtreme wyposażona jest w intuicyjny układ hamulcowy z funkcją blokady, co pozwala Ci w każdym momencie zachować pełną kontrolę. Długość taśmy wynosząca 5 m umożliwia Twojemu psu intensywną eksplorację otoczenia, gdy tylko sytuacja na to pozwala.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Tworzywo sztuczne",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63caa51c9a71623f0c899371"
+  }
+},{
+  "_id": {
+    "$oid": "63cac82d9a71623f0c89937b"
+  },
+  "link": "/shop/koty/products/mokra-karma/royal-canin-appetite-control-care-w-galarecie-12-x-85g",
+  "name": "Royal Canin Appetite Control Care w galarecie 12 x 85g",
+  "producer": "Royal Canin",
+  "price": 57.9,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1690326000000"
+    }
+  },
+  "weight": 1020,
+  "color": "",
+  "sale": 0,
+  "image": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/appetite/control/care/w/galarecie/1/800/203716_royalcanin_appetitecontrol_jelly_85g_hs_02_1.jpg",
+  "product_code": 808540189,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2d"
+  },
+  "description": "Wielu właścicieli kotów zapewne zna tę sytuacje, kiedy ich pupil stale domaga się kolejnej porcji jedzenia – często przekraczając tym samym ilości określone w zaleceniach żywieniowych. Ważne jest jednak, aby kot utrzymywał odpowiednia masę ciała. Otyłe zwierzę nie tylko ma ograniczoną ruchomość, cierpi na tym przede wszystkim jego zdrowie i samopoczucie, a tym samym spada jakość jego życia. Royal Canin Appetite Control Care to karma stworzona z myślą o czworonogach zagrożonych nadwagą, np. po przebytym zabiegu kastracji/sterylizacji. Zawarty w karmie błonnik rozpuszczalny i nierozpuszczalny może wzmocnić i wydłużyć zdrowe uczucie sytości. Kolejną ważną cechą tej karmy jest odpowiednio niska zawartość tłuszczu i wysoka zawartość białek, co korzystnie wpływa na utrzymanie masy mięśniowej.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Mięso i produkty uboczne pochodzenia zwierzęcego, ryby i produkty uboczne z ryb, produkty uboczne pochodzenia roślinnego, zboża, składniki mineralne.",
+  "additives": "Vitamin D3 (110 j.m./kg), żelazo (3 mg/kg), jod (0,26 mg/kg), miedź (2,1 mg/kg), mangan (1 mg/kg), cynk (10 mg/kg).",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca746a9a71623f0c899349"
+  }
+},{
+  "_id": {
+    "$oid": "63cad2949a71623f0c89937f"
+  },
+  "link": "/shop/koty/products/sucha-karma/feringa-adult-ryba",
+  "name": "Feringa Adult ryba",
+  "producer": "Feringa",
+  "price": 17.9,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1721948400000"
+    }
+  },
+  "weight": 400,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/feringa/adult/ryba/8/800/400470_feringa_trofu_fisch_3d_8.jpg",
+  "product_code": 808547189,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Feringa sucha karma dla kota powstała w efekcie niezwykle starannego procesu produkcji i jest bardzo smaczną kompozycją składającą się z lekkostrawnej ryby wzbogaconej odrobiną dyni i szczyptą kocimiętki. Feringa to naturalna karma bez dodatku zbóż, zawiera wartościowe białka i delikatną rybę. Staranny proces produkcji odbywa się w rodzinnym zakładzie w Austrii. Do procesu produkcyjnego wykorzystywane są jedynie wyselekcjonowane składniki, których obróbka jest niezwykle delikatna i pozwala zachować ich substancje odżywcze. Układ trawienny kota nie jest przystosowany do trawienia dużej ilości zbóż, z tego względu karmy Feringa są wytwarzane bez dodatku zbóż. Karma Feringa smakuje tak jakby została przygotowana w domu, Twój kot będzie zachwycony jej jakością.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "35 % ryby ( w tym pstrąg, karmazyn, dorsz, czarniak, śledź; suszone i zmielone), płatki ziemniaczane(rozpuszczone), 11 % tłuszcz drobiowy , 6 % dynia, 3 % olej z łososia, lignoceluloza, 2 % jajka (suszone i zmielone), minerały, 0,5 % suszona żurawina, 0,5 % kocimiętka, fruktooligosacharydy (FOS), 0,25 % suszone jagody.",
+  "additives": "witamina A 20.000 j.m., witamina D3 1.200 j.m., witamina E (RRR octan alfa tokoferolu) 120 mg, tauryna 2.000 mg, selen (jako selenit sodu) 0,15 mg, miedź (jako pięciowodny siarczan meidzi II) 10 mg, cynk (jako tlenek cynku) 125 mg, jod (jako bezwodny jdek wapnia) 1,38 mg",
+  "protein": 32.5,
+  "fat": 17.5,
+  "ash": 7.7,
+  "fiber": 2.6,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca746a9a71623f0c899349"
+  }
+},{
+  "_id": {
+    "$oid": "63cad4ab9a71623f0c899380"
+  },
+  "link": "/shop/koty/products/zabawki/wędka-z-myszką-wydającą-dźwięk",
+  "name": "Wędka z myszką wydającą dźwięk",
+  "producer": "House of pets",
+  "price": 12.9,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": null,
+  "weight": null,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/wdka/z/myszk/wydajc/dwik/8/800/mai_mix_22_gedreht_8.jpg",
+  "product_code": 808512389,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2e"
+  },
+  "description": "Wewnątrz myszy znajduje się specjalny Chip, generujący dźwięk. Już przy najmniejszym dotyku rozbrzmiewa odgłos imitujący prawdziwą mysz, który zachęca Twojego kota do zabawy. Myszka jest przymocowana do elastycznej gumowej taśmy. Dzięki wędce masz możliwość organizowania polowań z Twoim kotem.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Ogon z prawdziwych piór: dł. ok. 7 cm. Bateria w zestawie, niewymienna",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63ca746a9a71623f0c899349"
+  }
+},{
+  "_id": {
+    "$oid": "63cad6fd9a71623f0c899384"
+  },
+  "link": "/shop/koty/products/kosmetyki-i-pielegnacja/trixie-suchy-szampon-dla-psów-i-kotów",
+  "name": "Trixie suchy szampon dla psów i kotów",
+  "producer": "Trixie",
+  "price": 12.9,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": null,
+  "weight": null,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/suchy/szampon/dla/psw/i/kotw/9/800/62413_trixie_trocken_shampoo_9.jpg",
+  "product_code": 123512389,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2f"
+  },
+  "description": "Suchy szampon Trixie pozwoli każdemu futrzakowi zachować czystość bez wody! Łagodne czyszczenie odtłuszcza sierść i dba o jej wygląd. Szampon niweluje nieprzyjemne zapachy, pozostawiając na sierści przyjmny i świeży zapach. Delikatny suchy szampon jest idealny dla bojących sie wody czy chorych zwierząt, które nie powinny być kąpane. Produkt jest odpowiedni także dla młodych zwierząt od 12 tygodnia, aby przyzwyczajać je do regularniej pielęgnacji sierści",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "talk, D-Pantenol, Beta-cyklodekstryny, etanol, triklosan, substancje zapachowe.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cad65d9a71623f0c899382"
+  }
+},{
+  "_id": {
+    "$oid": "63cad7dc9a71623f0c899385"
+  },
+  "link": "/shop/koty/products/kosmetyki-i-pielegnacja/kooa-szczotka-bambusowa-do-sierści",
+  "name": "kooa Szczotka bambusowa do sierści",
+  "producer": "kooa",
+  "price": 19.9,
+  "sale": 15,
+  "amount": 500,
+  "expiration_date": null,
+  "weight": null,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/kooa/szczotka/bambusowa/do/sierci/9/800/1_252334_pla_kooa_zupfb_rste_aus_bambus_4_res_9.jpg",
+  "product_code": 423512389,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2f"
+  },
+  "description": "Produkty marki kooa umożliwiają pielęgnację Twojego pupila według tych samych standardów, które stosujesz w odniesieniu do siebie. Z pasją dbamy o dobre samopoczucie i komfort Twojego futrzastego członka rodziny, aby mógł w pełni cieszyć się każdym nowym dniem spędzonym razem z Tobą. Podnieś jakość życia swojego pupila i miej pewność, że stawiasz przy tym na innowacyjną markę produktów pielęgnacyjnych klasy premium dla swojego ulubieńca.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Uchwyt: bambus. Podłoże szczotki: guma. Włosie: drut stalowy.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cad65d9a71623f0c899382"
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674323269559"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63cad9c09a71623f0c899388"
+  },
+  "link": "/shop/koty/products/higiena/pakiet-próbny-tigerino-crystals-żwirek-dla-kota",
+  "name": "Pakiet próbny Tigerino Crystals żwirek dla kota",
+  "producer": "Feringa",
+  "price": 187.9,
+  "sale": 0,
+  "amount": 500,
+  "weight": 12600,
+  "expiration_date": null,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/pakiet/prbny/tigerino/crystals/wirek/dla/kota/rne/rodzaje/5/800/209477_pakiet_pr_bny_tigerino_crystals_wirek_dla_kota_3_x_5_l_5.jpg",
+  "product_code": 855542189,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c34"
+  },
+  "description": "4 różne rodzaje, 6 x 5 l (Classic, Lavender, Flower Power, Aloe Vera). Żwirek Tigerino zapewni Twojemu kotu wyjątkowy komfort podczas korzystania z kuwety, a to wszystko dzięki temu, że jest w stanie wchłonąć niemal tyle płynów, ile wynosi jego masa. Mocz, nieprzyjemne zapachy i zarazki są absorbowane w ciągu kilku sekund, wilgoć wyparowuje, a cząsteczki zapachów zostają związane. Obecne w żwirku mikropory natychmiast absorbują wilgoć, dzięki czemu kocia toaleta pozostaje sucha.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Żwirek silikonowy",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cad65d9a71623f0c899382"
+  }
+},{
+  "_id": {
+    "$oid": "63cadae39a71623f0c89938b"
+  },
+  "link": "/shop/koty/products/sucha-karma/royal-canin-breed-maine-coon-adult",
+  "name": "Royal Canin Breed Maine Coon Adult",
+  "producer": "Royal Canin",
+  "price": 77.9,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1690326000000"
+    }
+  },
+  "weight": 2000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/breed/maine/coon/adult/8/800/rc_fbn_mainecoon_mv_eretailkit_pl_pl_8.jpg",
+  "product_code": 808540229,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Przy takiej sylwetce i rozmiarach wsparcie struktur stawowych odgrywa bardzo ważną rolę. Karma Royal Canin Breed Maine Coon Adult zawiera wyjątkową kompozycję siarczanu chondroityny, glukozaminy i bogatego w EPA i DHA oleju rybiego, która korzystnie wpływa na kondycję kości i stawów. Ponadto EPA i DHA oraz L-karnityna i przeciwutleniacze wspierają fizjologiczną pracę serca. Cechą charakterystyczną kotów rasy maine coon jest także bujne futro. Gęsta sierść średniej długości z delikatnym, miękkim podszerstkiem wymaga specjalnej pielęgnacji. Karma Royal Canin Breed Maine Coon Adult dostarcza do organizmu Twojego kota wybrane aminokwasy, witaminy oraz kwasy tłuszczowe omega-3 i omega-6 – składniki odżywcze o korzystnym wpływie na połysk sierści i kondycję skóry.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "białko drobiowe (suszone), ryż, kukurydza, tłuszcz zwierzęcy, gluten paszowy kukurydziany, izolat białka roślinnego*, lignoceluloza, hydrolizowane białko pochodzenia zwierzęcego, izolat białka roślinnego*, suszone wysłodki buraczane, składniki mineralne, olej rybi, olej sojowy, psyllium (nasiona i łupiny babki płesznik), drożdże i ich części, fruktooligosacharydy, hydrolizat drożdży [źródło mannanooligosacharydów], olej z ogórecznika lekarskiego, hydrolizat skorupiaków [źródło glukozaminy], mączka z kwiatu aksamitki [źródło luteiny], hydrolizat z chrząstki [źródło chondroityny]",
+  "additives": "witamina A (30 500 j.m./kg), witamina D3 (800 j.m./kg), E1 [żelazo] (40 mg/kg), E2 [jod] (4 mg/kg), E4 [miedź] (12 mg/kg), E5 [mangan] (51 mg/kg), E6 [cynk] (154 mg/kg), E8 [selen] (0,08 mg/kg), tauryna (2,58 g/kg)",
+  "protein": 31,
+  "fat": 20,
+  "ash": 7.3,
+  "fiber": 5,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cad65d9a71623f0c899382"
+  }
+},{
+  "_id": {
+    "$oid": "63cc5b414c6402d09b507b71"
+  },
+  "link": "/shop/koty/products/higiena/benek-super-lawenda-żwirek-dla-kota",
+  "name": "Benek Super Lawenda żwirek dla kota",
+  "producer": "Benek",
+  "price": 34.8,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": "",
+  "weight": 8000,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/benek/super/lawenda/wirek/dla/kota/9/800/55478_pla_super_benek_lavender_10l_hs_01_9.jpg",
+  "product_code": 398543313,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c34"
+  },
+  "description": "Żwirek higieniczny dla zwierząt domowych wytwarzany z glinki bentonitowej. Dzięki zastosowanej technologii produkcji uzyskano regularne ziarna żwirku o wymiarach 2-5 mm. Wydajny, zbryla się z jednoczesnym pęcznieniem, co zwiększa znacznie jego wydajność. Bardzo skutecznie pochłania płyny i przykre zapachy. Bardzo chłonny, bezpyłowy granulat zbryla się tworząc regularne bryłki. Nie przykleja się do dna kuwety. Po nasypaniu świeżego żwirku należy zawsze potrząsnąć kuwetą, dzięki czemu żwirek nie klei się do dna.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Żwirek zbrylający się o uspokajającym zapachu lawendy i kocimiętki, bardzo chłonny i w 100% naturalny.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+},{
+  "_id": {
+    "$oid": "63cc5d5e4c6402d09b507b72"
+  },
+  "link": "/shop/koty/products/higiena/trixie-kuweta-dla-kota-vico-z-pokrywą",
+  "name": "Trixie Kuweta dla kota Vico z pokrywą",
+  "producer": "Trixie",
+  "price": 67.29,
+  "sale": 0,
+  "amount": 5000,
+  "expiration_date": "",
+  "weight": null,
+  "color": "biało-szary",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/kuweta/dla/kota/vico/z/pokryw/8/800/209015_pla_trixie_katzentoilette_vico_haube_hs_01_8.jpg",
+  "product_code": 398590313,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c34"
+  },
+  "description": "Trwała kuweta Vico marki Trixie skutecznie zapobiega wysypywaniu się żwirku dzięki podwójnemu profilowi krawędzi. Dzięki praktycznemu uchwytowi z łatwością uniesiesz toaletę, jeśli chcesz np. zmienić jej umiejscowienie. Uchylny front ułatwia czyszczenie toalety. Drzwi wahadłowe wykonane z mlecznego, przezroczystego plastiku pozwalają kotu na prywatność, a jednocześnie wpuszczają do środka wystarczającą ilość światła. Jeśli Twój kot woli korzystać z kuwety bez drzwi wahadłowych, możesz je po prostu usunąć. Dzięki praktycznym zamknięciom Easy-Click, kuwetę można bardzo łatwo otwierać i zamykać.",
+  "extra_description": "Wymiary: dł. x szer. x wys.: 56 cm x 40 cm x 40 cm. Zintegrowany uchwyt na pokrywie: wygodne przenoszenie ",
+  "image_description": "",
+  "composition": "Tworzywo sztuczne",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+},{
+  "_id": {
+    "$oid": "63cc5e9d4c6402d09b507b73"
+  },
+  "link": "/shop/koty/products/akcesoria/trixie-ceramiczna-miska-w-kształcie-głowy-kota",
+  "name": "Trixie ceramiczna miska w kształcie głowy kota",
+  "producer": "Trixie",
+  "price": 13.59,
+  "sale": 0,
+  "amount": 5000,
+  "expiration_date": "",
+  "weight": null,
+  "color": "biało-szary",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/ceramiczna/miska/w/ksztacie/gowy/kota/9/800/65030_pla_keramiknapf_fg_1_9.jpg",
+  "product_code": 300590313,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Płytka, ceramiczna miska marki Trixie to produkt, który na pewno zmieni kocią jadalnię w jeszcze przyjemniejsze miejsce. To wyjątkowa miska w kształcie głowy kota, z wystającymi uszami i namalowanymi oczami, uroczym noskiem w kształcie serca i wąsami. Chropowaty spód i ciężar miski zapobiegają wywróceniu się i przesuwaniu jej przez naszego pupila. Dzięki temu, że miska Trixie jest płytka, ułatwia jedzenie. Od teraz nasz kot może jeść z przyjemnością, aż do ostatniego kęsa. Miska jest higieniczna i łatwa w czyszczeniu: jej gładką powierzchnię można wytrzeć wilgotną ściereczką lub umyć ją w zmywarce.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Ceramika",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+},{
+  "_id": {
+    "$oid": "63cc60d14c6402d09b507b76"
+  },
+  "link": "/shop/koty/products/zabawki/catnip-veggies-zabawki-dla-kota",
+  "name": "Catnip Veggies zabawki dla kota",
+  "producer": "Catnip",
+  "price": 8.49,
+  "sale": 0,
+  "amount": 5000,
+  "expiration_date": "",
+  "weight": null,
+  "color": "kolorowy",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/catnip/veggies/zabawki/dla/kota/5/800/57761_PLA_Katzenspielzeug_Catnip_Veggies_FG_DSC3055_5.jpg",
+  "product_code": 300591234,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2e"
+  },
+  "description": "Twój kot wyjątkowo polubi to warzywo! Wesoła, dwuczęściowa zabawka dla kota Catnip Veggies została w 100% wypełniona kanadyjską kocimiętką. Dzięki temu przyjemnie pachnące warzywo spodoba się Twojemu ulubieńcowi. Otrzymasz dwie zabawki w kształcie warzyw, na których została wyhaftowany przyjazny uśmiech. Wypełnienie z kocimiętki działa wyjątkowo pobudzająco na twojego ulubieńca, a przy tym sprawia, że zabawki są miękkie, a więc doskonałe do zabawy i przytulania. W natkach rzodkiewek została umieszczona szeleszcząca folia, która przyciąga uwagę Twojego ulubieńca.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Wypełnione w 100 % kanadyjską kocimiętką (Catnip). Z szeleszczącą folią w liściach. Z haftowanym uśmiechem.",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+},{
+  "_id": {
+    "$oid": "63cc62284c6402d09b507b77"
+  },
+  "link": "/shop/koty/products/akcesoria/transporter-mappa",
+  "name": "Transporter Mappa",
+  "producer": "Mappa",
+  "price": 50,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": "",
+  "weight": null,
+  "color": "czarno-biały",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/transporter/mappa/9/800/74929_pla_transportboxatlas10_hs_01_9.jpg",
+  "product_code": 300593421,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c31"
+  },
+  "description": "Obojętnie, czy w drodze do lekarza, w podróży czy w trakcie krótkiej przejażdżki autem – Transporter Mappa ze składanym uchwytem jest zaufanym miejscem dla Twojego zwierzaka. Zintegrowane otwory wentylacyjne w górnej i dolnej pokrywie oraz drzwiczkach zapewniają odpowiednią cyrkulację powietrza wewnątrz transportera. Kratka z metalu umożliwia łatwe i szybkie otwarcie i pewne zamknięcie, dodatkowo może być ona całkowicie wyjęta. Dzięki poczwórnemu zamknięcie na klik (2 po lewej i 2 po prawej stronie) można łatwo i w kilka sekund oddzielić od siebie górną i dolną pokrywę. Transporter nadaję się dla małych psów, kotów i innych małych zwierząt.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Pudełko: tworzywo sztuczne. Kratka: metal, lakierowany",
+  "additives": "",
+  "protein": null,
+  "fat": null,
+  "ash": null,
+  "fiber": null,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+},{
+  "_id": {
+    "$oid": "63cc63594c6402d09b507b78"
+  },
+  "link": "/shop/koty/products/sucha-karma/ziwi-peak-karma-suszona-powietrzem-jeleń",
+  "name": "Ziwi Peak karma suszona powietrzem jeleń",
+  "producer": "Ziwi Peak",
+  "price": 105.65,
+  "sale": 0,
+  "amount": 500,
+  "expiration_date": {
+    "$date": {
+      "$numberLong": "1764802800000"
+    }
+  },
+  "weight": 400,
+  "color": "",
+  "image": "https://shop-cdn-m.mediazs.com/bilder/ziwi/peak/karma/suszona/powietrzem/jele/0/800/203314_pla_ziwipets_ziwipeak_airdried_katzenfutter_hirsch_400g_hs_01_0.jpg",
+  "product_code": 312393421,
+  "category_id": {
+    "$oid": "63bee7ee1312a763a0629c2c"
+  },
+  "description": "Starannie przygotowana z najlepszych składników: Ziwi Peak to karma dla kotów z Nowej Zelandii, charakteryzująca się wysoką jakością. Jest to karma suszona na powietrzu o wysokiej zawartości mięsa, która jest idealna do odpowiedniej dla gatunku, bogatej w białko diety dla Twojego pupila. Karma składa się w 96% z mięsa, podrobów i nowozelandzkiej małży zielonej. Mięso pochodzi od zwierząt ze zrównoważonej hodowli, na których nie stosuje się hormonów ani środków pobudzających wzrost. Dodatkowo karma nie zawiera zbóż, ziemniaków, soi, dodatku cukru ani wypełniaczy. Karmę przygotowywana jest w delikatny sposób poprzez suszenie powietrzem. W ten sposób zachowane zostają naturalny aromat i ważne substancje odżywcze.",
+  "extra_description": "",
+  "image_description": "",
+  "composition": "Mięso i podroby z dziczyzny (93%, mięso, żwacz, serce, płuca, wątroba, nerki, kości), nowozelandzkie małże zielone (3%), lecytyna, inulina z cykorii, składniki mineralne i witaminy, suszone wodorosty, sól, tauryna.",
+  "additives": "Chlorek sodu (1800 mg/kg), DL-metionina (1530 mg/kg), kompleks aminokwasów cynku (130 mg/kg), kompleks aminokwasów miedzi (67 mg/kg), kompleks aminokwasów żelaza (64 mg/kg), kompleks aminokwasów manganu (25 mg/kg), selenin sodu (8 mg/kg), witamina D3 (36 j.m./kg).",
+  "protein": 50,
+  "fat": 29,
+  "ash": 10,
+  "fiber": 1,
+  "body_weight": null,
+  "moderate_needs": null,
+  "low_needs": null,
+  "animal_id": {
+    "$oid": "63cc50574c6402d09b507b6f"
+  }
+}]

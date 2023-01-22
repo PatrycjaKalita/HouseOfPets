@@ -8,48 +8,30 @@ import {getCookie, isAuth, signOut,} from "../../../auth/Helpers";
 
 const ListOfUsers = (props) => {
     const history = useHistory()
-
-    const [values, setValues] = useState({
-        login: '',
-        name: '',
-        lastname: '',
-        users: []
-    })
-
     const token = getCookie('token');
 
     useEffect(() => {
         loadListOfUsers();
-    });
+    }, []);
 
+    const [availableUsersList, setAvailableUsersList] = useState(false);
     const loadListOfUsers = () => {
         axios({
             method: 'GET',
-            /*url: `${process.env.REACT_APP_API}/user/${isAuth()._id}`,*/
+            url: `${process.env.REACT_APP_API}/user/list`,
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                console.log('List of users: ', response);
-                const {
-                    login,
-                    name,
-                    lastname,
-                } = response.data;
-                setValues({
-                    ...values,
-                    login,
-                    name,
-                    lastname,
-                });
+                setAvailableUsersList(response.data.availableUsersList);
             })
             .catch(error => {
-                console.log('List of users', error.response.data.error);
+                console.log('Blad wyswietlania', error.response.data.error);
                 if (error.response.status === 401) {
                     signOut(() => {
-                        history.push('/');
-                    });
+                        history.push('/zaloguj-sie');
+                    })
                 }
             });
     };
@@ -62,13 +44,20 @@ const ListOfUsers = (props) => {
                 <h1 className="LOU-title">Wszyscy użytkownicy</h1>
 
                 <div className='LOU-list-container'>
-                    <div className="LOU-one-part-container">
-                        <More options={1}/>
+                    {
+                        availableUsersList.hasOwnProperty('user') === false ?
+                            <h1>Loading..</h1>
+                            :
+                            availableUsersList.user.map((user) => {
+                                return <div className="LOU-one-part-container">
+                                    <More options={1}/>
 
-                        <h1 className="LOU-login">Login: <b>Imię</b></h1>
-                        <h1 className="LOU-name">Imię: <b>Imię</b></h1>
-                        <h1 className="LOU-lastname">Nazwisko: <b>Imię</b></h1>
-                    </div>
+                                    <h1 className="LOU-login">Login: <b>{user.login}</b></h1>
+                                    <h1 className="LOU-name">Imię: <b>{user.name}</b></h1>
+                                    <h1 className="LOU-lastname">Nazwisko: <b>{user.lastname}</b></h1>
+                                </div>
+                            })
+                    }
                 </div>
             </div>
         </div>

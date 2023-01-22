@@ -28,6 +28,7 @@ import OrderSummary from "./components/order-summary/OrderSummary";
 import Sales from "./components/sales/Sales";
 import AnimalsList from "./components/animals-list/AnimalsList";
 import Animal from "./components/animal/Animal";
+import ProductsSet from "./components/products-set/ProductsSet";
 
 function App() {
     return (
@@ -47,9 +48,8 @@ function App() {
                 <Route path="/choose-option/psy"><ChooseOption choose={'psy'}/></Route>
                 <Route path="/choose-option/male-zwierzatka"><ChooseOption choose={'male-zwierzatka'}/></Route>
 
-                <Route path="/adopcja/:animalType" exact><AnimalsList animalType="koty"/></Route>
-                <Route path="/adopcja/:animalType/:animalName" exact><Animal animalType="koty"
-                                                                             animalName="Kropka"/></Route>
+                <Route path="/adopcja/:animalType" exact><AnimalsList/></Route>
+                <Route path="/adopcja/:animalType/:animalId" exact><Animal/></Route>
 
                 <Route path="/shop-form/koty"><ShopForm/></Route>
 
@@ -62,9 +62,8 @@ function App() {
                              productName="whiskas-sterile-14-kg-z-kurczakiem"/>
                 </Route>
 
-                <Route path="/shop/:animalType/products/zestawy/:productName" exact>
-                    <Product animalType="koty" productCategory="zestawy"
-                             productName="starter-pack"/>
+                <Route path="/shop/:animalType/productsset/zestawy/:productName" exact>
+                    <ProductsSet />
                 </Route>
 
                 {/*Links only for client*/}

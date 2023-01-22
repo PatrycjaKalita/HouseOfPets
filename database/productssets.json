@@ -1,0 +1,103 @@
+[{
+  "_id": {
+    "$oid": "63cc45defa30c287c0bdc4af"
+  },
+  "link": "/shop/psy/productsset/zestawy/psi-starter-pack",
+  "name": "Psi Starter Pack",
+  "price": 366.34,
+  "sale": 0,
+  "image": "https://img.freepik.com/free-vector/cute-labrador-dog-box-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-4327.jpg?w=740&t=st=1674332006~exp=1674332606~hmac=50783e56ab1686cf3c28c6c4b74bfddcc91bc9b404a5fe998dffb5a2da665ae7",
+  "set_code": 56745341,
+  "category_id": [
+    {
+      "$oid": "63cc3e194c6402d09b507b67"
+    }
+  ],
+  "animal_id": [
+    {
+      "$oid": "63ca86349a71623f0c89934f"
+    }
+  ],
+  "products_id": [
+    {
+      "$oid": "63ca88d39a71623f0c899351"
+    },
+    {
+      "$oid": "63ca98bc9a71623f0c899361"
+    },
+    {
+      "$oid": "63ca8da69a71623f0c899355"
+    },
+    {
+      "$oid": "63ca9d349a71623f0c899364"
+    },
+    {
+      "$oid": "63ca93c29a71623f0c89935b"
+    },
+    {
+      "$oid": "63ca90fb9a71623f0c899359"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674331614524"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674331614524"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cc65cab2e13bd996952ad7"
+  },
+  "link": "/shop/koty/productsset/zestawy/koci-starter-pack",
+  "name": "Koci Starter Pack",
+  "price": 251.82,
+  "sale": 0,
+  "image": "https://img.freepik.com/free-vector/cute-cat-playing-box-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-flat_138676-5000.jpg?w=740&t=st=1674339765~exp=1674340365~hmac=db3605fd0dda6ed83e625664e76ee55ecbb1d843f8358e37a8db6a2368a39a56",
+  "set_code": 34545341,
+  "category_id": [
+    {
+      "$oid": "63cc3e194c6402d09b507b67"
+    }
+  ],
+  "animal_id": [
+    {
+      "$oid": "63cc50574c6402d09b507b6f"
+    }
+  ],
+  "products_id": [
+    {
+      "$oid": "63cc63594c6402d09b507b78"
+    },
+    {
+      "$oid": "63cc62284c6402d09b507b77"
+    },
+    {
+      "$oid": "63cc60d14c6402d09b507b76"
+    },
+    {
+      "$oid": "63cc5e9d4c6402d09b507b73"
+    },
+    {
+      "$oid": "63cc5d5e4c6402d09b507b72"
+    },
+    {
+      "$oid": "63cc5b414c6402d09b507b71"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674339786045"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674339786045"
+    }
+  },
+  "__v": 0
+}]

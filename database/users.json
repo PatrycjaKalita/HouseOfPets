@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "63be764bc1b338d1ce3c1421"
+  },
+  "login": "Qlita",
+  "name": "Patrycja",
+  "lastname": "Kalita",
+  "email": "pai.kalita@gmail.com",
+  "phone_number": "444555353",
+  "street_and_number": "Polna 2",
+  "postcode_and_city": "20-000 Kielce",
+  "hashed_password": "7f0693af0d38b1faff89bdb2eacf5fe917c85118",
+  "salt": "37012260641",
+  "role": "klient",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1673426507469"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1673426650608"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63c6c425dad2bc1c06b4d8c4"
+  },
+  "login": "admin",
+  "name": "Dagmara",
+  "lastname": "Kalita",
+  "email": "dagmara@houseofpets.pl",
+  "phone_number": "324456654",
+  "street_and_number": "Leśna 32",
+  "postcode_and_city": "20-000 Kielce",
+  "hashed_password": "a35de5f84abdfe123113c52e8076e11eac082133",
+  "salt": "1296570788683",
+  "role": "pracownik",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1673970725995"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1673970725995"
+    }
+  },
+  "__v": 0
+}]

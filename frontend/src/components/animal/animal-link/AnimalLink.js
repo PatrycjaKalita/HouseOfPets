@@ -4,7 +4,7 @@ import {capitalizeFirstLetter} from '../../../utils/word'
 
 const AnimalLink = () => {
     let {animalType} = useParams();
-    let {animalName} = useParams();
+    let {animalId} = useParams();
 
     return (
         <div className="product-list-path-container">
@@ -27,7 +27,7 @@ const AnimalLink = () => {
 
             <span> > </span>
 
-            <span className="product-list-link">{animalName}</span>
+            <span className="product-list-link">{animalId}</span>
         </div>
     );
 };

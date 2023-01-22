@@ -56,47 +56,12 @@ const AddingProductsSets = (props) => {
     }
 
     useEffect(() => {
-        loadAnimalsDetails();
+
     }, []);
 
     const token = getCookie('token');
 
-    const [availableProductDetails, setAvailableProductDetails] = useState(false);
 
-    const loadAnimalsDetails = () => {
-        axios({
-            method: 'GET',
-            url: `${process.env.REACT_APP_API}/adding/product`,
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-            .then(response => {
-                console.log('Wyswietlanie zwierzat', response.data.availableProductDetails);
-                setAvailableProductDetails(response.data.availableProductDetails);
-
-                const nazwa = response.data.availableProductDetails.animals.map((animal) => {
-                    return animal?.typeofanimal[0].name
-                });
-                console.log([...new Set(nazwa)], "ciap ciap")
-            })
-            .catch(error => {
-                console.log('Blad wyswietlania', error.response.data.error);
-                if (error.response.status === 401) {
-                    signOut(() => {
-                        history.push('/');
-                    })
-                }
-            });
-    };
-
-    const {
-        link,
-        name,
-        price,
-        image,
-        buttonText
-    } = values
 
     const handleChangeText = (name) => (event) => {
         console.log(event.target.value)
@@ -161,7 +126,7 @@ const AddingProductsSets = (props) => {
                             <div className="APS-first-row-base-info">
                                 <TextField
                                     onChange={handleChangeText('name')}
-                                    value={name}
+
                                     label="Nazwa zestawu"
                                     variant="outlined"
                                     className={classes.textField}
@@ -184,7 +149,7 @@ const AddingProductsSets = (props) => {
                                         name={"typeOfAnimal"}
                                         onChange={handleChange}
                                     >
-                                        {
+{/*                                        {
                                             availableProductDetails === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
@@ -192,7 +157,7 @@ const AddingProductsSets = (props) => {
                                                     return <MenuItem
                                                         value={animal?.typeofanimal[0]?._id}>{animal?.typeofanimal[0]?.name}</MenuItem>
                                                 })
-                                        }
+                                        }*/}
                                     </Select>
                                 </FormControl>
 
@@ -206,7 +171,7 @@ const AddingProductsSets = (props) => {
                                         name={"breed"}
                                         onChange={handleChange}
                                     >
-                                        {
+{/*                                        {
                                             availableProductDetails === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
@@ -214,7 +179,7 @@ const AddingProductsSets = (props) => {
                                                     return <MenuItem
                                                         value={animal?.breeds[0]?._id}>{animal?.breeds[0]?.name}</MenuItem>
                                                 })
-                                        }
+                                        }*/}
                                     </Select>
                                 </FormControl>
 
@@ -228,7 +193,7 @@ const AddingProductsSets = (props) => {
                                         name={"age"}
                                         onChange={handleChange}
                                     >
-                                        {
+{/*                                        {
                                             availableProductDetails === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
@@ -236,7 +201,7 @@ const AddingProductsSets = (props) => {
                                                     return <MenuItem
                                                         value={animal?.age[0]?._id}>{animal?.age[0]?.number_with_name}</MenuItem>
                                                 })
-                                        }
+                                        }*/}
                                     </Select>
                                 </FormControl>
 
@@ -250,7 +215,7 @@ const AddingProductsSets = (props) => {
                                         name={"aWeight"}
                                         onChange={handleChange}
                                     >
-                                        {
+{/*                                        {
                                             availableProductDetails === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
@@ -258,7 +223,7 @@ const AddingProductsSets = (props) => {
                                                     return <MenuItem
                                                         value={animal?.weight[0]?._id}>{animal?.weight[0]?.number}</MenuItem>
                                                 })
-                                        }
+                                        }*/}
                                     </Select>
                                 </FormControl>
                             </div>
@@ -330,7 +295,7 @@ const AddingProductsSets = (props) => {
 
 
                     <div className="APS-form-btn-container">
-                        <button className="APS-form-btn" onClick={clickSubmit}>{buttonText}</button>
+                        <button className="APS-form-btn" onClick={clickSubmit}>l</button>
                     </div>
                 </form>
             </div>

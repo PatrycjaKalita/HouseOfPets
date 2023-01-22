@@ -1,0 +1,721 @@
+[{
+  "_id": {
+    "$oid": "63c9c5b905f48d13d811bb70"
+  },
+  "link": "/adopcja/koty/Mysza",
+  "name": "Mysza",
+  "address": "ul. Polna 12, 30-000 Duża Wieś",
+  "short_description": "Mysza jest z nami już od dłuższego czasu. Jest bardzo spokojna i preferuje spędzanie czasu na leniuchowaniu w domu. Mimo iż jest malutka ma ona ogromny apetyt na jedzonko i nie odmówi przysmaków między posiłkami.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674167733903"
+    }
+  },
+  "email": "robert.m@gmail.com",
+  "phone_number": "978872324",
+  "image": "https://cdn.pixabay.com/photo/2014/03/29/09/17/cat-300572_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf9"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1b"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674167737461"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674167737461"
+    }
+  },
+  "__v": 0,
+  "sex": "Samica"
+},{
+  "_id": {
+    "$oid": "63caede2e25c563deb9c0f73"
+  },
+  "link": "/adopcja/koty/Kropka",
+  "name": "Kropka",
+  "address": "ul. Długa 1, 20-00 Kielce",
+  "short_description": "Kropeczka zawdzięcza swoje imię kilku małym, czarnym kropeczkom na ciele. Jest bardzo żywiołowa. Uwielbia zabawy, aportować a najbardziej wspólne przytulanie..",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674243553531"
+    }
+  },
+  "email": "wolontariusz.dag@gmail.com",
+  "sex": "Samica",
+  "phone_number": "456657764",
+  "image": "https://www.thehappycatsite.com/wp-content/uploads/2017/12/White-Cat-HC-long.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1a"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674243554344"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674243554344"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63caf43fe25c563deb9c0f83"
+  },
+  "link": "/adopcja/koty/Lucky",
+  "name": "Lucky",
+  "address": "Mieszkowo, 34-930 Mieszkowo",
+  "short_description": "Lucky został znaleziony na chodniku przy ruchliwej drodze. Jest bardzo przyjacielski i bardzo lubi towarzystwo ludzi.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674245180570"
+    }
+  },
+  "email": "kars@gmail.com",
+  "sex": "Samiec",
+  "phone_number": "453345675",
+  "image": "https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf4"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c17"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674245183744"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674245183744"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63caf598e25c563deb9c0f93"
+  },
+  "link": "/adopcja/koty/Feliks",
+  "name": "Feliks",
+  "address": "ul. Wiejska 32, 20-000 Kielce",
+  "short_description": "Ten mały słodziutki kotek to Feliks. Bardzo spokojny i grzeczny kocur. Lubi spędzać swój czas na leniuchowaniu i robieniu sobie częstych drzemek.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674245527168"
+    }
+  },
+  "email": "kasia.wol@gmail.com",
+  "sex": "Samiec",
+  "phone_number": "435544345",
+  "image": "https://cdn.pixabay.com/photo/2016/02/10/16/37/cat-1192026_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c19"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674245528630"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674245528630"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63caf684e25c563deb9c0fa1"
+  },
+  "link": "/adopcja/koty/Bella",
+  "name": "Bella",
+  "address": "ul. Długa 12, 20-000 Kielce",
+  "short_description": "Ta piękna rudo-biała kocica, poszukuje swojego domu. Została znaleziona na ulicy, zostawiona i zaniedbana. Z charakteru bardzo grzeczna. Bardzo lubi spędzać czas z dziećmi.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674245763061"
+    }
+  },
+  "email": "mateusz.wol@gmail.com",
+  "sex": "Samica",
+  "phone_number": "435634459",
+  "image": "https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c04"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf8"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1a"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674245764483"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674245764483"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63caf730e25c563deb9c0faf"
+  },
+  "link": "/adopcja/koty/Missi",
+  "name": "Missi",
+  "address": "ul. Krakowska 201/2b, 20-000 Kielce",
+  "short_description": "Ta mała kotka to syberyjska piękność. Bardzo lubi wskakiwać na najwyższe półki. Gdy czegoś nie lubi to od razu daje o tym znać, a gdy chce coś tym bardziej pokazuje to. Jest bardzo inteligentna. Bardzo lubi uczyć się nowych sztuczek i później je pokazywać.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674245935359"
+    }
+  },
+  "email": "dagmara.wol@gmail.com",
+  "sex": "Samica",
+  "phone_number": "567768873",
+  "image": "https://cdn.pixabay.com/photo/2019/05/08/21/21/cat-4189697_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfb"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c03"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf7"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1a"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674245936675"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674245936675"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cafa1ce25c563deb9c0fbd"
+  },
+  "link": "/adopcja/psy/Maks",
+  "name": "Maks",
+  "address": "ul. Sienkiewicza 23, Busko-Zdrój",
+  "short_description": "Piesek znaleziony w lesie. Był przywiązany do drzewa i zostawiony na pewną śmierć. Na szczęście został znaleziony i przyprowadzony do nas. Piesek został wyleczony i teraz szuka swojego nowego domu. Bardzo lubi ludzi i zabawy z nimi. Jego ulubiona zabawą jest aportowanie.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674246682813"
+    }
+  },
+  "email": "darek.wol@gmail.com",
+  "sex": "Samiec",
+  "phone_number": "768776709",
+  "image": "https://cdn.pixabay.com/photo/2014/04/05/11/40/dog-316598_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfc"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf8"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1b"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674246684455"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674246684455"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cafbdfe25c563deb9c0fcb"
+  },
+  "link": "/adopcja/psy/Arnold",
+  "name": "Arnold",
+  "address": "ul. Jagiellońska 102a, 20-005 Staszów",
+  "short_description": "Arnold jest u nas już jakiś czas. Jest młody piesek, który ma pełno energii. Bardzo lubi spacery i różne zabawy. Bardzo lubi dzieci. Jest względem ich bardzo opiekuńczy.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674247132793"
+    }
+  },
+  "email": "beata.wol@gmail.com",
+  "sex": "Samiec",
+  "phone_number": "567657778",
+  "image": "https://cdn.pixabay.com/photo/2017/10/02/21/56/dog-2810484_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfc"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c01"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf7"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1b"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674247135178"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674247135178"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cb0969db29cabda47bfa3f"
+  },
+  "link": "/adopcja/psy/Marcelina",
+  "name": "Marcelina",
+  "address": "ul. Fikuśna 12/2a, 20-000 Kielce",
+  "short_description": "Marcelina to już dorosła dama. Uwielbia dobrze zjeść i uwielbia przytulaski. Jej ulubioną aktywnością jest leżenie na słońcu i opalanie się. Uwielbia towarzystwo ludzi.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674250599777"
+    }
+  },
+  "email": "tomasz.wolontariusz@gmail.com",
+  "sex": "Samica",
+  "phone_number": "756778885",
+  "image": "https://cdn.pixabay.com/photo/2018/03/18/18/06/australian-shepherd-3237735_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfc"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c0c"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf9"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1c"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674250601689"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674250601689"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cb0b5ddb29cabda47bfa4d"
+  },
+  "link": "/adopcja/psy/Luśka",
+  "name": "Luśka",
+  "address": "ul. Bór 11, 20-000 Kielce",
+  "short_description": "Ta biała kulka to sama słodycz. Uwielbia siedzieć z człowiekiem, wręcz nie potrafi zostać sama w pomieszczeniu. Uwielbia się bawić z kotkami w jej wieku. Lula uwielbia dawać \"cześć\" łapką na powitanie. Uwielbia zabawy na dworze, jednak spanie preferuje blisko człowieka.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674251098267"
+    }
+  },
+  "email": "aleksandra.wol@gmail.com",
+  "sex": "Samica",
+  "phone_number": "980123479",
+  "image": "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfc"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c09"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1b"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674251101344"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674251101344"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cbc3cf946d65d6370dec2b"
+  },
+  "link": "/adopcja/psy/Kabanosik",
+  "name": "Kabanosik",
+  "address": "ul. Krótka 1, 20-200 Staszów",
+  "short_description": "Kabanosik jest z nami od niedawna. Ten mały chłopiec uwielbia spacery, kąpiele (TAK! kąpiele) i drapanko po brzuszku. Jest skory do nauki nowych sztuczek. Lubi też bawić się z kotami w swoim wieku.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674298318695"
+    }
+  },
+  "email": "mateusz.wol@wp.pl",
+  "sex": "Samiec",
+  "phone_number": "755989758",
+  "image": "https://cdn.pixabay.com/photo/2016/07/15/15/55/dachshund-1519374_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfc"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c0d"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1a"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674298319447"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674298319447"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cbc695946d65d6370dec3b"
+  },
+  "link": "/adopcja/male-zwierzatka/Pysia",
+  "name": "Pysia",
+  "address": "u. Wolności 23/2, 20-000 Busko-zdrój",
+  "short_description": "Ta mała słodycz to Pysia. Jest bardzo rozrywkowa, uwielbia wspinaczki i zwiedzanie pomieszczeń. Bardzo lubi spać na kolanach, uwielbia zabawy i bieganie w kółeczku.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674299025611"
+    }
+  },
+  "email": "ola.wol@gmail.com",
+  "sex": "Samica",
+  "phone_number": "734443123",
+  "image": "https://cdn.pixabay.com/photo/2016/03/05/18/54/animal-1238229_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfd"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c12"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c17"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674299029280"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674299029280"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cbc78b946d65d6370dec55"
+  },
+  "link": "/adopcja/male-zwierzatka/Marek",
+  "name": "Marek",
+  "address": "ul. Wojska Polskiego 120/3a, 20-000 Kielce",
+  "short_description": "Ten mały przystojniak to Marek. Z natury leniuszek. Uwielbia leżenie, drzemki i w między czasie objadanie się orzeszkami ziemnymi (to jego ulubione). Lubi inne chomiki, ale nie jest on skory do zabawy. Preferuje on jednak drzemkę.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674299274144"
+    }
+  },
+  "email": "gabrysia.wol@wp.pl",
+  "sex": "Samiec",
+  "phone_number": "658889900",
+  "image": "https://cdn.pixabay.com/photo/2016/03/05/22/54/animal-1239398_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfd"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c10"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf6"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c17"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674299275784"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674299275784"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cbc948946d65d6370dec63"
+  },
+  "link": "/adopcja/male-zwierzatka/Janek",
+  "name": "Janek",
+  "address": "ul. Kościelna 11, 20-000 Busko-zdrój",
+  "short_description": "Ten słodziutki króliczek to pełna energii kuleczka. Uwielbia się bawić z innymi zwierzątkami. Uwielbia drapanko za uszkami. Ulubioną przekąską Janka jest jabłuszko.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674299718477"
+    }
+  },
+  "email": "dawid.wol@wp.pl",
+  "sex": "Samiec",
+  "phone_number": "786647444",
+  "image": "https://cdn.pixabay.com/photo/2020/02/29/18/59/rabbit-4890861_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfd"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c15"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf7"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c1a"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674299720081"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674299720081"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63cbcb3f946d65d6370dec87"
+  },
+  "link": "/adopcja/male-zwierzatka/Wanda",
+  "name": "Wanda",
+  "address": "ul. Krótka 37a, 20-000 Staszów",
+  "short_description": "Ta słodziutka mała kulka to Wanda. Uwielbia pieszczoty, przytulaski i drapanko po bródce.",
+  "added_to_adoption_date": {
+    "$date": {
+      "$numberLong": "1674300179288"
+    }
+  },
+  "email": "marcin.wol@wp.pl",
+  "sex": "Samica",
+  "phone_number": "657778543",
+  "image": "https://cdn.pixabay.com/photo/2015/08/29/22/00/rabbit-913550_1280.jpg",
+  "type_of_pets_id": [
+    {
+      "$oid": "63bee7531312a763a0629bfd"
+    }
+  ],
+  "breed_id": [
+    {
+      "$oid": "63bee7531312a763a0629c14"
+    }
+  ],
+  "age_id": [
+    {
+      "$oid": "63bee7531312a763a0629bf5"
+    }
+  ],
+  "weight_id": [
+    {
+      "$oid": "63bee7531312a763a0629c18"
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674300223331"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674300223331"
+    }
+  },
+  "__v": 0
+}]

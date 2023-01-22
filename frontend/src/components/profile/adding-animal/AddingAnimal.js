@@ -39,19 +39,18 @@ const AddingAnimal = (props) => {
         name: '',
         address: '',
         short_description: '',
+        sex: '',
         email: '',
         phone_number: '',
         image: '',
         buttonText: 'Dodaj zwierzątko'
     })
 
-    /*link jakoś samo żeby się generowało i było by fajnie*/
     const [valueSelect, setValueSelect] = useState({
-        category: '',
         typeOfAnimal: '',
         breed: '',
         age: '',
-        aWeight: '',
+        weight: '',
     });
 
     const handleChange = (e) => {
@@ -60,73 +59,151 @@ const AddingAnimal = (props) => {
     }
 
     useEffect(() => {
-        loadAnimalDetils();
+        loadTypesOfAnimals();
+        loadBreedsOfAnimals();
+        loadAgesOfAnimals();
+        loadWeightsOfAnimals();
     }, []);
 
     const token = getCookie('token');
-
-    const [availableAnimalDetails, setAvailableAnimalDetails] = useState(false);
-
-    const loadAnimalDetils = () => {
+    const [availableTypesOfAnimals, setAvailableTypesOfAnimals] = useState(false);
+    const loadTypesOfAnimals = () => {
         axios({
             method: 'GET',
-            /*url: `${process.env.REACT_APP_API}/adding/product`,*/
+            url: `${process.env.REACT_APP_API}/adding/animalForAdoption/animalType`,
             headers: {
                 Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
-                console.log('Wyswietlanie zwierzat i kategori', response.data.availableAnimalDetails);
-                setAvailableAnimalDetails(response.data.availableAnimalDetails);
-
-                const nazwa = response.data.availableAnimalDetails.animals.map((animal) => {
-                    return animal?.typeofanimal[0].name
-                });
-                console.log([...new Set(nazwa)], "ciap ciap")
+                setAvailableTypesOfAnimals(response.data.availableAnimalTypes);
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
                 if (error.response.status === 401) {
                     signOut(() => {
-                        history.push('/');
+                        history.push('/zaloguj-sie');
                     })
                 }
             });
     };
 
-    const {
+    const [availableBreedsOfAnimals, setAvailableBreedsOfAnimals] = useState(false);
+    const loadBreedsOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/animalForAdoption/breed`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableBreedsOfAnimals(response.data.availableAnimalBreeds);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    const [availableAgesOfAnimals, setAvailableAgesOfAnimals] = useState(false);
+    const loadAgesOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/animalForAdoption/age`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableAgesOfAnimals(response.data.availableAnimalAges);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    const [availableWeightsOfAnimals, setAvailableWeightsOfAnimals] = useState(false);
+    const loadWeightsOfAnimals = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/adding/animalForAdoption/weight`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableWeightsOfAnimals(response.data.availableAnimalWeights);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    let {
         link,
         name,
         address,
         short_description,
+        added_to_adoption_date,
         email,
         phone_number,
         image,
+        sex,
+        type_of_pets_id,
+        breed_id,
+        age_id,
+        weight_id,
         buttonText
     } = values
 
     const handleChangeText = (name) => (event) => {
-        console.log(event.target.value)
         setValues({...values, [name]: event.target.value})
     }
 
-    /*co z tym dalej?*/
-    const createProductLink = () => {
-        let tmp = lowerLetters(values.name)
-        console.log(tmp.replace(' ', '-'))
-        setValues({...values, [link]: tmp.replace(' ', '-')})
+    image = picture
+    type_of_pets_id = valueSelect.typeOfAnimal
+    breed_id = valueSelect.breed
+    age_id = valueSelect.age
+    weight_id = valueSelect.weight
+
+    function generateLinkForAnimal() {
+        let typ;
+        if (type_of_pets_id === '63bee7531312a763a0629bfb') {
+            typ = 'koty'
+        } else if (type_of_pets_id === '63bee7531312a763a0629bfc') {
+            typ = 'psy'
+        } else if (type_of_pets_id === '63bee7531312a763a0629bfd') {
+            typ = 'male-zwierzatka'
+        }
+        link = "/adopcja/" + typ + "/" + name
     }
 
-    function lowerLetters(string) {
-        return string.toLowerCase();
-    }
+    /*Data dodania zwierzątka do adopcji*/
+    let date = new Date().toJSON();
+    added_to_adoption_date = date;
 
     const clickSubmit = event => {
+        generateLinkForAnimal()
         event.preventDefault()
         setValues({...values, buttonText: 'Submitting'})
         axios({
             method: 'POST',
-            /* url: `${process.env.REACT_APP_API}/adding/product`,*/
+            url: `${process.env.REACT_APP_API}/adding/animalForAdoption`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -135,29 +212,41 @@ const AddingAnimal = (props) => {
                 name,
                 address,
                 short_description,
+                added_to_adoption_date,
                 email,
                 phone_number,
                 image,
+                sex,
+                type_of_pets_id,
+                breed_id,
+                age_id,
+                weight_id
             }
         }).then(response => {
-            console.log('Produkt dodany', response);
             setValues({
                 ...values,
                 link,
                 name,
                 address,
                 short_description,
+                added_to_adoption_date,
                 email,
+                sex,
                 phone_number,
                 image,
+                type_of_pets_id,
+                breed_id,
+                age_id,
+                weight_id,
                 buttonText: 'Dodano zwierzątko'
             })
-            toast.success('Zwierzątko dodany');
+            history.push('/profil/pracownik/zwierzeta')
         }).catch(error => {
             setValues({...values, buttonText: 'Submit'})
             toast.error(error.response.data.error)
         })
     }
+
     return (
         <div className="main-AA-container">
             <ProfileNavigation choose={props.choose}/>
@@ -167,7 +256,6 @@ const AddingAnimal = (props) => {
 
                 <form>
                     <div className="AP-FORM-base-info">
-
                         <div className="AP-image-upload">
                             {!isUploaded ? (
                                 <>
@@ -206,16 +294,22 @@ const AddingAnimal = (props) => {
                         </div>
 
                         <div className="AP-base-info-part">
-                            <TextField
-                                onChange={handleChangeText('name')}
-                                value={name}
-                                label="Imię"
-                                variant="outlined"
-                                className={classes.textFieldName}
-                                fullWidth
-                            />
+                            <div className="AA-base-info">
+                                <TextField
+                                    onChange={handleChangeText('name')}
+                                    value={name}
+                                    label="Imię"
+                                    variant="outlined"
+                                    className={classes.textField}
+                                />
+                                <TextField
+                                    onChange={handleChangeText('sex')}
+                                    value={sex}
+                                    label="Płeć"
+                                    variant="outlined"
+                                    className={classes.textField}
+                                />
 
-                            <div className="AP-base-info-second-part">
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rodzaj zwierzęcia</InputLabel>
                                     <Select
@@ -227,13 +321,11 @@ const AddingAnimal = (props) => {
                                         onChange={handleChange}
                                     >
                                         {
-                                            availableAnimalDetails === false ?
+                                            availableTypesOfAnimals.hasOwnProperty('animalTypes') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableAnimalDetails.animals.map((animal) => {
-                                                    /*console.log(animal?.typeofanimal[0]?.name);*/
-                                                    return <MenuItem
-                                                        value={animal?.typeofanimal[0]?._id}>{animal?.typeofanimal[0]?.name}</MenuItem>
+                                                availableTypesOfAnimals.animalTypes.map((types) => {
+                                                    return <MenuItem value={types._id}>{types.name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -250,12 +342,12 @@ const AddingAnimal = (props) => {
                                         onChange={handleChange}
                                     >
                                         {
-                                            availableAnimalDetails === false ?
+                                            availableBreedsOfAnimals.hasOwnProperty('animalBreeds') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableAnimalDetails.animals.map((animal) => {
+                                                availableBreedsOfAnimals.animalBreeds.map((breeds) => {
                                                     return <MenuItem
-                                                        value={animal?.breeds[0]?._id}>{animal?.breeds[0]?.name}</MenuItem>
+                                                        value={breeds._id}>{breeds.name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -272,12 +364,12 @@ const AddingAnimal = (props) => {
                                         onChange={handleChange}
                                     >
                                         {
-                                            availableAnimalDetails === false ?
+                                            availableAgesOfAnimals.hasOwnProperty('animalAges') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableAnimalDetails.animals.map((animal) => {
+                                                availableAgesOfAnimals.animalAges.map((ages) => {
                                                     return <MenuItem
-                                                        value={animal?.age[0]?._id}>{animal?.age[0]?.number_with_name}</MenuItem>
+                                                        value={ages._id}>{ages.number_with_name}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -288,18 +380,18 @@ const AddingAnimal = (props) => {
                                     <Select
                                         className={classes.selectStylesAW}
                                         IconComponent={ExpandMoreRoundedIcon}
-                                        value={valueSelect.aWeight}
+                                        value={valueSelect.weight}
                                         label="Waga"
-                                        name={"aWeight"}
+                                        name={"weight"}
                                         onChange={handleChange}
                                     >
                                         {
-                                            availableAnimalDetails === false ?
+                                            availableWeightsOfAnimals.hasOwnProperty('animalWeights') === false ?
                                                 <MenuItem value="all">Loading..</MenuItem>
                                                 :
-                                                availableAnimalDetails.animals.map((animal) => {
+                                                availableWeightsOfAnimals.animalWeights.map((weights) => {
                                                     return <MenuItem
-                                                        value={animal?.weight[0]?._id}>{animal?.weight[0]?.number}</MenuItem>
+                                                        value={weights._id}>{weights.number}</MenuItem>
                                                 })
                                         }
                                     </Select>
@@ -319,7 +411,6 @@ const AddingAnimal = (props) => {
                             rows={4}
                             className={classes.textFieldName}
                         />
-
                     </div>
 
                     <div className="AA-caretaker-container">
@@ -333,7 +424,6 @@ const AddingAnimal = (props) => {
                                 onChange={handleChangeText('phone_number')}
                                 value={phone_number}
                             />
-
                             <TextField
                                 label="Mail"
                                 variant="outlined"
@@ -349,9 +439,7 @@ const AddingAnimal = (props) => {
                             onChange={handleChangeText('address')}
                             value={address}
                         />
-
                     </div>
-
                     <div className="AP-form-btn-container">
                         <button className="AP-form-btn" onClick={clickSubmit}>{buttonText}</button>
                     </div>

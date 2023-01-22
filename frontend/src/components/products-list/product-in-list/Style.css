@@ -42,6 +42,7 @@
     padding-right: 10px;
     position: absolute;
     right: 0;
+    display: flex;
     bottom: 12px;
 }
 
@@ -71,6 +72,8 @@
     text-decoration-line: line-through;
     font-weight: 400;
     color: #464646;
+    padding-top: 5px;
+    padding-right: 10px;
 }
 
 .product-list-container {

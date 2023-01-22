@@ -34,19 +34,19 @@
     color: #8D451D;
 }
 
-.LOA-list-container{
+.LOA-list-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     row-gap: 50px;
 }
 
-.LOA-one-part-container{
+.LOA-one-part-container {
     position: relative;
     width: 220px;
     border: 1px solid #B4B3B3;
 }
 
-.LOA-animal-image{
+.LOA-animal-image {
     margin: 20px 20px 0 20px;
     height: 160px;
     width: 180px;
@@ -59,15 +59,23 @@
     font-size: 22px;
 }
 
-.LOA-sex{
+.LOA-sex {
     padding: 25px 0 5px 0;
-    right: 35px;
+    right: 25px;
     position: absolute;
-    font-size: 16px;
+    font-size: 18px;
     color: #f29f05;
 }
 
-.LOA-breed{
+.LOA-sex-M {
+    padding: 25px 0 5px 0;
+    right: 25px;
+    position: absolute;
+    font-size: 18px;
+    color: #8D451D;
+}
+
+.LOA-breed {
     padding: 5px 0 15px 15px;
     font-size: 16px;
     font-weight: 300;

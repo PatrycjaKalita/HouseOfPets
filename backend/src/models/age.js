@@ -12,4 +12,4 @@ const ageSchema = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model('Age', ageSchema)
+module.exports = mongoose.model('Ages', ageSchema)

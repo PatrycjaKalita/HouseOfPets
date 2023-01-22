@@ -128,6 +128,7 @@
 
 .product-quantity-price-container {
     margin-top: 20px;
+    position: relative;
     display: flex;
 }
 
@@ -176,6 +177,24 @@
 
 .product-main-price {
     color: #8D451D;
+    font-size: 24px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+}
+
+.product-base-price{
+    font-size: 18px;
+    color: #464646;
+    text-decoration: line-through solid 1px #666666;
+    position: absolute;
+    right: 100px;
+    margin-right: 10px;
+    bottom: 3px;
+}
+
+.product-sale-price{
+    color: #BF1515;
     font-size: 24px;
     font-weight: 500;
     position: absolute;

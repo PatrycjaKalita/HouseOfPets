@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "63bee7531312a763a0629bfb"
+  },
+  "name": "Kot"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629bfc"
+  },
+  "name": "Pies"
+},{
+  "_id": {
+    "$oid": "63bee7531312a763a0629bfd"
+  },
+  "name": "Małe zwierzątko"
+}]

@@ -1,11 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './Style.css'
 import ProfileNavigation from "../profile-navigation/ProfileNavigation";
-import imageCat from '../../../assets/cats-shop-form/img3.PNG'
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import More from "../more/More";
+import {getCookie, signOut} from "../../../auth/Helpers";
+import axios from "axios";
 
 const ListOfAnimal = (props) => {
+    const history = useHistory()
+    useEffect(() => {
+        loadAnimalsList();
+
+    }, []);
+    const token = getCookie('token');
+
+    const [availableAnimalsList, setAvailableAnimalsList] = useState(false);
+    const loadAnimalsList = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/view/animals-list`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableAnimalsList(response.data.availableAnimalsList);
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
     return (
         <div className="main-LOA-container">
             <ProfileNavigation choose={props.choose}/>
@@ -15,7 +45,6 @@ const ListOfAnimal = (props) => {
                     <div>
                         <h1 className="LOA-title">Wszystkie zwierzęta</h1>
                     </div>
-
 
                     <div className="LOA-top-part-icons">
                         <Link to="/profil/pracownik/produkty/dodanie-pupila-do-adopcji">
@@ -31,16 +60,25 @@ const ListOfAnimal = (props) => {
                 </div>
 
                 <div className="LOA-list-container">
-                    <div className="LOA-one-part-container">
-                        <More options={3}/>
+                    {
+                        availableAnimalsList.hasOwnProperty('animal') === false ?
+                            <h1>Loading..</h1>
+                            :
+                            availableAnimalsList.animal.map((animal) => {
+                                return <div className="LOA-one-part-container">
+                                    <More options={3}/>
 
-                        <img alt="animal" className="LOA-animal-image" src={imageCat}/>
-                        <div className="flex">
-                            <h1 className="LOA-name">Bucks</h1>
-                            <h1 className="LOA-sex">Samica</h1>
-                        </div>
-                        <h1 className="LOA-breed">Europejski</h1>
-                    </div>
+                                    <Link to={animal.link}>
+                                    <img alt="animal" className="LOA-animal-image" src={animal.image}/>
+                                    <div className="flex">
+                                        <h1 className="LOA-name">{animal.name}</h1>
+                                        <h1 className={animal.sex === "Samiec" ? "LOA-sex-M" : "LOA-sex"}>{animal.sex}</h1>
+                                    </div>
+                                    <h1 className="LOA-breed">{animal.breeds[0].name}</h1>
+                                </Link>
+                                </div>
+                            })
+                    }
                 </div>
             </div>
         </div>

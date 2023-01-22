@@ -17,7 +17,7 @@ exports.read = (req, res) => {
 }
 
 exports.update = (req, res) => {
-    console.log('Update - req.user', req.user, 'Update data', req.body)
+/*    console.log('Update - req.user', req.user, 'Update data', req.body)*/
     const {login, name, lastname, email, phone_number, street_and_number, postcode_and_city, password} = req.body
 
     User.findOne({_id: req.user._id}, (err, user) => {
@@ -109,3 +109,19 @@ exports.update = (req, res) => {
         });
     });
 };
+
+exports.getAvailableUsersList = async(req, res) => {
+    try {
+        const user = await User.find({})
+
+        res.status(200).json({
+            availableUsersList: {
+                user
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: "BŁĄD wyswietlenie listy produktow."
+        })
+    }
+}
