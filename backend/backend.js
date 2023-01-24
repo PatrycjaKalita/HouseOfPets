@@ -19,6 +19,7 @@ const productsSetRoutes = require('./src/routes/productsSet')
 const authRoutes = require('./src/routes/auth')
 const userRoutes = require('./src/routes/user')
 const animalRoutes = require('./src/routes/animal')
+const shopFormRoutes = require('./src/routes/shopForm')
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
@@ -30,6 +31,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //middleware
+app.use('/api', shopFormRoutes)
 app.use('/api', productsSetRoutes)
 app.use('/api', productRoutes)
 app.use('/api', authRoutes)

@@ -1,5 +1,5 @@
  import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import {makeStyles} from "@material-ui/core/styles";
 import './Style.css';
 import {products} from './productsData';
@@ -39,14 +39,16 @@ const ProductsList = () => {
     const classes = useStyles();
     const numAscending = [...products].sort((a, b) => a.price - b.price);
     const numDescending = [...products].sort((a, b) => b.price - a.price);
-
     const [selectedSorting, setSelectedSorting] = useState('ascending');
 
-    if(selectedSorting === 'ascending'){
-        console.log(numAscending);
-    }else{
-        console.log(numDescending);
-    }
+    const location = useLocation();
+
+    console.log(location.filterResults);
+    let listOfProducts = location.filterResults
+    console.log(listOfProducts)
+
+
+
 
     return (
         <div className="main-container-products-list">
@@ -68,7 +70,7 @@ const ProductsList = () => {
                                 <Select
                                     className={classStyle.selectStyles}
                                     IconComponent={ExpandMoreRoundedIcon}
-
+                                    defaultValue = ""
                                     label="Sortuj po"
                                     onChange={e => setSelectedSorting(e.target.value)}
                                 >
@@ -83,12 +85,15 @@ const ProductsList = () => {
                     {/* Product */}
                     <div className="products-list-container">
                         {
-                            products.map((product) => (
+                            /*location.filterResults.length === 0 ?
+                                <div className="no-product-message">Żaden produkt nie spełnia kryteriów.</div>
+                                :*/
+                                location.filterResults.map((product) => (
                                     <Link to={product.link}>
                                         <ProductInList productImage={product.image}
-                                                       productTitle={productTitleShort(product.title)}
-                                                       productRating={product.rating} productPrice={product.price}
-                                                       productPromotion={product.promotion}/>
+                                                       productTitle={productTitleShort(product.name)}
+                                                       productRating="0" productPrice={product.price}
+                                                       productPromotion={product.sale}/>
                                     </Link>
                                 )) /*:
                                 <div className="no-product-message">Żaden produkt nie spełnia kryteriów.</div>*/

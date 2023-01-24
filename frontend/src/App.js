@@ -51,7 +51,9 @@ function App() {
                 <Route path="/adopcja/:animalType" exact><AnimalsList/></Route>
                 <Route path="/adopcja/:animalType/:animalId" exact><Animal/></Route>
 
-                <Route path="/shop-form/koty"><ShopForm/></Route>
+                <Route path="/shop-form/koty"><ShopForm choose={'koty'}/></Route>
+                <Route path="/shop-form/psy"><ShopForm choose={'psy'}/></Route>
+                <Route path="/shop-form/male-zwierzatka"><ShopForm choose={'male-zwierzatka'}/></Route>
 
                 <Route path="/shop/:animalType/products/:productCategory" exact>
                     <ProductsList animalType="koty" productCategory="sucha-karma"/>

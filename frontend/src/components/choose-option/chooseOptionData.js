@@ -22,6 +22,6 @@ export const animals = [
         title: "Małe zwierzątka",
         imageAdoption: adoptionLittleAnimals,
         linkToAdoption: "/adopcja/małe-zwierzątka",
-        linkToShopForm: "/shop-form/małe-zwierzątka",
+        linkToShopForm: "/shop-form/male-zwierzatka",
     }
 ]

@@ -6,7 +6,8 @@ import {promotion} from '../../../utils/product'
 const ProductInList = (props) => {
     const productImage = props.productImage;
     const productTitle = props.productTitle;
-    const productRating = false;
+    const productRate = true;
+    const productRating = props.productRating
 
     let productPrice = props.productPrice;
     const productPromotion = props.productPromotion;
@@ -17,15 +18,15 @@ const ProductInList = (props) => {
             <h1 className="product-list-title">{productTitle}</h1>
 
             <div className="product-list-sec-row">
-                <div className={ productRating === true ? "product-list-rating-container" : "hidden"}>
+                <div className={ productRate === true ? "product-list-rating-container" : "hidden"}>
                     <span className="product-list-star">
                         <ion-icon name="star"></ion-icon>
                     </span>
 
-                    <h1 className="product-list-rating">3</h1>
+                    <h1 className="product-list-rating">{productRating}</h1>
                 </div>
 
-                <div className="product-list-container-price">
+               <div className="product-list-container-price">
                     <h1 className={productPromotion === 0 ? "product-list-price" : "hidden"}>{productPrice.toFixed(2)} zł</h1>
 
                     <h1 className={productPromotion !== 0  ? "product-list-price-old" : "hidden"}>{productPrice.toFixed(2)} zł</h1>

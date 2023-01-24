@@ -56,15 +56,6 @@
     font-size: 20px;
     color: #BF1515;
     font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.product-list-container-price-old {
-    padding-right: 10px;
-    position: absolute;
-    right: 0;
-    padding-top: 5px;
-    bottom: 0;
 }
 
 .product-list-price-old{

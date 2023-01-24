@@ -59,7 +59,6 @@ const Filters = () => {
                     <label key={index} className="checkbox-filters-container">{producers.producer}
                         <label
                             className="checkbox-filters-number">({newProducerQuantityProducts.filter(({producer}) => producer === producers.producer).length})</label>
-
                         <input
                             className="checkbox-filters"
                             type="checkbox"
