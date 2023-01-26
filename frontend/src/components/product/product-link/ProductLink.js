@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from "react-router-dom";
+import {Link, useHistory, useParams} from "react-router-dom";
 
 import './Style.css';
 import {capitalizeFirstLetter} from '../../../utils/word'
@@ -8,6 +8,19 @@ const ProductLink = () => {
     let {animalType} = useParams();
     let {productCategory} = useParams();
     let {productName} = useParams();
+    const history = useHistory()
+
+    const goChooseOption = event => {
+        history.push({
+            pathname: `/choose-option/${animalType}`
+        })
+    }
+
+    const goShopForm = event => {
+        history.push({
+            pathname: `/shop-form/${animalType}`
+        })
+    }
 
     return (
         <div className="product-link-container">
@@ -16,14 +29,14 @@ const ProductLink = () => {
             </Link>
             <span> > </span>
 
-            <Link to="/choose-option/:animalType">
+            <button onClick={goChooseOption}>
                 <span className="product-link">{capitalizeFirstLetter(animalType)}</span>
-            </Link>
+            </button>
             <span> > </span>
 
-            <Link to="/shop-form/:animalType">
+            <button onClick={goShopForm}>
                 <span className="product-link">Wybieranie</span>
-            </Link>
+            </button>
             <span> > </span>
 
             <Link to="/shop/:animalType/products/:productCategory">

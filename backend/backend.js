@@ -14,6 +14,8 @@ mongoose
     .catch((err) => console.log("DB Error => ", err));
 
 //import routes
+const cartRoutes = require('./src/routes/cart')
+const productsListRoutes = require('./src/routes/productsList')
 const productRoutes = require('./src/routes/product')
 const productsSetRoutes = require('./src/routes/productsSet')
 const authRoutes = require('./src/routes/auth')
@@ -31,6 +33,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //middleware
+app.use('/api', cartRoutes)
+app.use('/api', productsListRoutes)
 app.use('/api', shopFormRoutes)
 app.use('/api', productsSetRoutes)
 app.use('/api', productRoutes)

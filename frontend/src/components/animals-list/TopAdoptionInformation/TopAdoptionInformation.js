@@ -6,10 +6,11 @@ import meeting from '../../../assets/listOfAnimalsToAdoption/meeting.png'
 import adoption from '../../../assets/listOfAnimalsToAdoption/heart.png'
 import arrow from '../../../assets/listOfAnimalsToAdoption/arrow.png'
 import {capitalizeFirstLetter, capitalizeWholeWorld} from '../../../utils/word'
-import {Link, useParams} from "react-router-dom";
+import {Link, useHistory, useParams} from "react-router-dom";
 
 const TopAdoptionInformation = () => {
     let {animalType} = useParams();
+    const history = useHistory()
 
     function changeLastLetter(string) {
         if (string === "koty") {
@@ -25,6 +26,12 @@ const TopAdoptionInformation = () => {
         }
     }
 
+    const goChooseOption = event => {
+        history.push({
+            pathname: `/choose-option/${animalType}`
+        })
+    }
+
     return (
         <div className="main-container-top-informations">
             <div className="product-list-path-container">
@@ -33,14 +40,9 @@ const TopAdoptionInformation = () => {
                 </Link>
                 <span> > </span>
 
-                <Link to="/choose-option/koty">
+                <button onClick={goChooseOption}>
                     <span className="product-list-link">{capitalizeFirstLetter(animalType)}</span>
-                </Link>
-                <span> > </span>
-
-                <Link to="/shop-form/koty">
-                    <span className="product-list-link">Wybieranie</span>
-                </Link>
+                </button>
                 <span> > </span>
 
                 <span className="product-list-link">Adopcja</span>

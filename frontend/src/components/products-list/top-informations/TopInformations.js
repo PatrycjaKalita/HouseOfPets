@@ -1,12 +1,55 @@
-import React, {useState} from 'react';
-import {Link, useParams} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useHistory, useParams} from "react-router-dom";
 import {capitalizeFirstLetter} from '../../../utils/word'
 import './Style.css';
+import axios from "axios";
+import {getCookie, signOut} from "../../../auth/Helpers";
 
 const TopInformations = (props) => {
     let {animalType} = useParams();
     let {productCategory} = useParams();
-    const productNumber = useState(props.productsNumber);
+    const productNumber = props.productsNumber;
+    const history = useHistory()
+    const token = getCookie('token');
+
+    useEffect(() => {
+        loadCategoryDetails();
+    }, []);
+
+    const [availableCategoryDetails, setAvailableCategoryDetails] = useState(false);
+    const loadCategoryDetails = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/view/categories-details`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableCategoryDetails(response.data.availableCategoriesDetails);
+                console.log(response.data.availableCategoriesDetails)
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    const goChooseOption = event => {
+        history.push({
+            pathname: `/choose-option/${animalType}`
+        })
+    }
+
+    const goShopForm = event => {
+        history.push({
+            pathname: `/shop-form/${animalType}`
+        })
+    }
 
     return (
         <div className="main-container-top-informations">
@@ -16,14 +59,14 @@ const TopInformations = (props) => {
                 </Link>
                 <span> > </span>
 
-                <Link to="/choose-option/koty">
+                <button onClick={goChooseOption}>
                     <span className="product-list-link">{capitalizeFirstLetter(animalType)}</span>
-                </Link>
+                </button>
                 <span> > </span>
 
-                <Link to="/shop-form/koty">
+                <button onClick={goShopForm}>
                     <span className="product-list-link">Wybieranie</span>
-                </Link>
+                </button>
                 <span> > </span>
 
                 <span>{capitalizeFirstLetter(productCategory.replace(/-/g, ' '))}</span>
@@ -36,16 +79,16 @@ const TopInformations = (props) => {
                 <span className="top-information-product-number"> ({productNumber})</span>
             </div>
 
-            <h1 className="top-information-description-title">Sucha karma dla kotów - mit</h1>
-            <p className="top-information-description">
-                Jako posiadacz małego tygrysa, z pewnością znasz karmę mokrą i karmę suchą.
-                Niestety wśród posiadaczy zwierząt nadal pokutuje mit, że sucha karma nie jest najlepszym rozwiązaniem.
-                Czy to jednak prawda? <br/>
-                Dobrze skomponowana sucha karma powinna w znacznym stopniu powinna składać się z produktów mięsnych,
-                uzupełnionych innymi cennymi składnikami odżywczymi.
-                Co więcej, twarde „chrupki” pomagają utrzymać zęby i dziąsła kota w dobrym stanie.
-                Podczas jedzenia pomagają kotu usuwać osad i kamień nazębny.
-            </p>
+            {
+                availableCategoryDetails.hasOwnProperty('details') === false ?
+                    <p className="top-information-description"></p>
+                    :
+                    availableCategoryDetails.details.map((detail) => {
+                        return <p
+                            className={detail.link === productCategory ? "top-information-description" : "hidden"}>{detail.description}</p>
+                    })
+            }
+
         </div>
     );
 };

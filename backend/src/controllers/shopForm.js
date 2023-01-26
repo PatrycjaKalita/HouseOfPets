@@ -2,6 +2,7 @@ const Animal = require("../models/animal");
 const Category = require("../models/category");
 const mongoose = require("mongoose");
 const Product = require("../models/product");
+const ProductsSet = require("../models/productsSet")
 const ObjectId = mongoose.Types.ObjectId;
 
 exports.getAvailableCategories = async (req, res) => {
@@ -40,11 +41,8 @@ exports.getAvailableBreeds = async (req, res) => {
                 }
             }
         ])
-        /*console.log(animalBreeds)*/
-
         const unformatedBreeds = animalBreeds.map((animal) => animal.breeds)
         const breedsArray = Array.prototype.concat(...unformatedBreeds)
-        /*console.log(breedsArray)*/
 
         const breeds = breedsArray.filter((value, index) => {
             const _value = JSON.stringify(value);
@@ -158,40 +156,59 @@ exports.postProductsList = async (req, res) => {
             weight_id
         } = req.body
 
-        let products = await Product.aggregate([
-            {
-                '$lookup': {
-                    'from': 'animals',
-                    'localField': 'animal_id',
-                    'foreignField': '_id',
-                    'as': 'animals'
+        let results
+
+        /*Sprawdzenie czy to zestaw*/
+        if (category_id === '63cc3e194c6402d09b507b67') {
+            results = await ProductsSet.aggregate([
+                {
+                    '$lookup': {
+                        'from': 'animals',
+                        'localField': 'animal_id',
+                        'foreignField': '_id',
+                        'as': 'animals'
+                    }
                 }
+            ])
+        } else {
+            results = await Product.aggregate([
+                {
+                    '$lookup': {
+                        'from': 'animals',
+                        'localField': 'animal_id',
+                        'foreignField': '_id',
+                        'as': 'animals'
+                    }
+                }
+            ])
+        }
+
+        if (type_of_pets_id !== '') {
+            results = results.filter(product => type_of_pets_id === String(product.animals[0].type_of_pets_id))
+        }
+
+        if(category_id !== '63cc3e194c6402d09b507b67'){
+            if (category_id !== '') {
+                results = results.filter(product => category_id === String(product.category_id))
             }
-        ])
 
-        if (category_id !== ''){
-            products = products.filter(product => category_id === String(product.category_id))
-        }
 
-        if(type_of_pets_id !== '') {
-            products = products.filter(product => type_of_pets_id === String(product.animals[0].type_of_pets_id))
-        }
+            if (breed_id !== '') {
+                results = results.filter(product => breed_id === String(product.animals[0].breed_id))
+            }
 
-        if (breed_id !== ''){
-            products = products.filter(product => breed_id === String(product.animals[0].breed_id))
-        }
+            if (age_id !== '') {
+                results = results.filter(product => age_id === String(product.animals[0].age_id))
+            }
 
-        if (age_id !== ''){
-            products = products.filter(product => age_id === String(product.animals[0].age_id))
-        }
-
-        if (weight_id !== ''){
-            products = products.filter(product => weight_id === String(product.animals[0].weight_id))
+            if (weight_id !== '') {
+                results = results.filter(product => weight_id === String(product.animals[0].weight_id))
+            }
         }
 
         res.status(200).json({
             availableProducts: {
-                products
+                products: results
             }
         })
     } catch (error) {

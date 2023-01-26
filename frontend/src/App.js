@@ -59,6 +59,7 @@ function App() {
                     <ProductsList animalType="koty" productCategory="sucha-karma"/>
                 </Route>
 
+
                 <Route path="/shop/:animalType/products/:productCategory/:productName" exact>
                     <Product animalType="koty" productCategory="sucha-karma"
                              productName="whiskas-sterile-14-kg-z-kurczakiem"/>

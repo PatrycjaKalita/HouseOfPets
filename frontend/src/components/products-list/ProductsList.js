@@ -43,16 +43,13 @@ const ProductsList = () => {
 
     const location = useLocation();
 
-    console.log(location.filterResults);
-    let listOfProducts = location.filterResults
-    console.log(listOfProducts)
-
-
+    let filterResults = localStorage.getItem("filterResults");
+    filterResults = JSON.parse(filterResults);
 
 
     return (
         <div className="main-container-products-list">
-            <TopInformations productsNumber={products.length}/>
+            <TopInformations productsNumber={filterResults.length}/>
 
             <div className="products-filters-list-container">
                 {/*Filtry*/}
@@ -88,7 +85,7 @@ const ProductsList = () => {
                             /*location.filterResults.length === 0 ?
                                 <div className="no-product-message">Żaden produkt nie spełnia kryteriów.</div>
                                 :*/
-                                location.filterResults.map((product) => (
+                                filterResults.map((product) => (
                                     <Link to={product.link}>
                                         <ProductInList productImage={product.image}
                                                        productTitle={productTitleShort(product.name)}

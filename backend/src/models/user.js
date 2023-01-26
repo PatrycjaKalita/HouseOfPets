@@ -57,6 +57,22 @@ const userSchema = new mongoose.Schema(
         resetPasswordLink: {
             data: String,
             default: ''
+        },
+        cart: {
+            products: [{
+                amount: Number,
+                product_id: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'Products'
+                },
+            }],
+            sets: [{
+                amount: Number,
+                productsSet_id: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsSets'
+                },
+            }],
         }
     },
     {

@@ -74,31 +74,65 @@ const Product = () => {
         sale = event.target.value
     }
 
-    const clickSubmitSale = event => {
-        let id = availableProduct.productDetails[0]._id
-        event.preventDefault()
-        setValues({...values})
+    const addProductToCart = (productToCart) => {
+        let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
+        /*console.log(productToCart._id)
+        console.log(cartProducts)*/
+
+        const item = cartProducts?.find(product => {
+            console.log(product.product_id)
+            console.log(productToCart._id)
+            return product.product_id === productToCart._id
+        })
+        //console.log(item) /*undefined*/
+
+        if (item) {
+            item.amount++
+        } else {
+            cartProducts.push({product_id: productToCart._id, 'amount': 1})
+            console.log(cartProducts)
+        }
+
+        localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
+
+        const cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
+
+        const cart = {
+            products: cartProducts,
+            sets: cartSets
+        }
+
+        sendUserCart(cart)
+    }
+
+    const sendUserCart = (cart) => {
         axios({
-            method: 'PUT',
-            url: `${process.env.REACT_APP_API}/update/product-sale`,
+            method: 'PATCH',
+            url: `${process.env.REACT_APP_API}/user/update-cart`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data: {
-                id,
-                sale,
+                cart
             }
-        }).then(response => {
-            console.log('UPDATE SUCCESS', sale);
-            setValues({
-                ...values,
-                sale: '',
-            })
-        }).catch(error => {
-            setValues({...values})
-            toast.error(error.response.data.error)
         })
+            .then(response => {
+                console.log(response.data)
+                localStorage.setItem("user", JSON.stringify(response.data))
+            })
+            .catch(error => {
+                console.log('Blad koszyk (update) ', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    const clickSubmitSale = event => {
+
     }
 
     return (
@@ -191,7 +225,7 @@ const Product = () => {
 
                                             <div
                                                 className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
-                                                <button className="product-btn-add-to-card">Dodaj do koszyka</button>
+                                                <button className="product-btn-add-to-card" onClick={() => addProductToCart(product)}>Dodaj do koszyka</button>
                                             </div>
 
                                             <div
@@ -206,31 +240,33 @@ const Product = () => {
                                                         endAdornment: <InputAdornment position="start">%</InputAdornment>,
                                                     }}
                                                 />
-                                                <button className="product-btn-add-to-card" onClick={clickSubmitSale}>Dodaj promocję</button>
+                                                <button className="product-btn-add-to-card" onClick={clickSubmitSale}>Dodaj
+                                                    promocję
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
-                                    <ProductNavigation body_weight={product.body_weight}/>
+                                <ProductNavigation body_weight={product.body_weight}/>
 
-                                    <ProductDescription productDescription={product.description}
-                                                        productExtraDescription={product.extra_description}
-                                                        productDescriptionImage={product.image_description}/>
+                                <ProductDescription productDescription={product.description}
+                                                    productExtraDescription={product.extra_description}
+                                                    productDescriptionImage={product.image_description}/>
 
-                                    <ProductComposition productComposition={product.composition}
-                                                        productAdditives={product.additives}/>
+                                <ProductComposition productComposition={product.composition}
+                                                    productAdditives={product.additives}/>
 
-                                    <div id="Sklad"
-                                         className={product.protein !== null ? "product-composition-main-container" : "hidden"}>
-                                        <ProductAnalyticalIngredients protein={product.protein} fat={product.fat}
-                                                                      ash={product.ash} fiber={product.fiber}/>
-                                    </div>
+                                <div id="Sklad"
+                                     className={product.protein !== null ? "product-composition-main-container" : "hidden"}>
+                                    <ProductAnalyticalIngredients protein={product.protein} fat={product.fat}
+                                                                  ash={product.ash} fiber={product.fiber}/>
+                                </div>
 
-                                    <div className={product.body_weight !== null ? "" : "hidden"}>
-                                        <ProductDosage body_weight={product.body_weight} low_needs={product.low_needs}
-                                                       moderate_needs={product.moderate_needs}/>
-                                    </div>
+                                <div className={product.body_weight !== null ? "" : "hidden"}>
+                                    <ProductDosage body_weight={product.body_weight} low_needs={product.low_needs}
+                                                   moderate_needs={product.moderate_needs}/>
+                                </div>
                             </>
                         }
                     )

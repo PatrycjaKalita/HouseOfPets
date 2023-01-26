@@ -204,6 +204,7 @@ const ShopForm = () => {
             console.log(response.data)
 
             filterResults = response.data.availableProducts.products;
+            localStorage.setItem("filterResults", JSON.stringify(filterResults))
 
             if (filterResults.length > 0 && category_id !== '') {
                 let selectedCategory = availableProductDetails.categories.filter(category => category._id === String(values.categoryProduct));
@@ -212,14 +213,16 @@ const ShopForm = () => {
                     pathname: `/shop/${urlLink}/products/${selectedCategory[0].link}`,
                     filterResults: filterResults
                 })
-            } else if (filterResults.length > 0 && category_id === '') {
+            }
+            if (filterResults.length > 0 && category_id === '') {
                 history.push({
                     pathname: `/shop/${urlLink}/products/wszystkie-kategorie`,
                     filterResults: filterResults
                 })
-            }  else if (filterResults.length > 0 && category_id === '63cc3e194c6402d09b507b67') {
+            }
+            if (filterResults.length > 0 && category_id === '63cc3e194c6402d09b507b67') {
                 history.push({
-                    pathname: `/shop/${urlLink}/productsset/zestawy`,
+                    pathname: `/shop/${urlLink}/products/zestawy`,
                     filterResults: filterResults
                 })
             }
