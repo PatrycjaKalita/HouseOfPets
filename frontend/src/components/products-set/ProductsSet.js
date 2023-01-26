@@ -5,7 +5,6 @@ import {Rating} from "@mui/material";
 import './Style.css';
 import {productReviews} from '../product/productData';
 import {updatePrice, checkNumberOfOpinions, promotion} from '../../utils/product'
-import ProductReviews from "../product/product-reviews/ProductReviews";
 import {getCookie, isAuth, signOut} from "../../auth/Helpers";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
@@ -15,13 +14,15 @@ import {toast} from "react-toastify";
 import ProductsSetLink from "./products-set-link/ProductsSetLink";
 import ProductsInSet from "./products-in-set/ProductsInSet";
 
-const Product = () => {
-    const [quantity, setQuantity] = useState(1);
+const ProductsSet = () => {
     const token = getCookie('token');
     const history = useHistory()
     const classes = useStyles()
+
+    const [quantity, setQuantity] = useState(1);
     let totalRatings = 0;
     productReviews.forEach(({numberOfStars}) => totalRatings += numberOfStars);
+
     let averageRating = totalRatings / productReviews.length;
     averageRating = averageRating.toFixed(1);
 
@@ -29,6 +30,7 @@ const Product = () => {
         loadProductsSet();
     }, []);
 
+    /*Wyświetlanie zestawu*/
     const [availableProductsSet, setAvailableProductsSet] = useState(false);
     const loadProductsSet = () => {
         let newLink = window.location.href.replace('http://localhost:3000', '')
@@ -53,6 +55,7 @@ const Product = () => {
             });
     };
 
+    /*DODAWANIE PROMOCJI*/
     const [values, setValues] = useState({
         sale: '',
     })
@@ -92,6 +95,62 @@ const Product = () => {
             toast.error(error.response.data.error)
         })
     }
+
+/*Dodawanie do koszyka*/
+    const addSetToCart = (setToCart) => {
+        let cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
+
+        console.log(cartSets)
+
+        const item = cartSets?.find(set => {
+            return set.set_id === setToCart._id
+        })
+
+        if (item) {
+            item.amount++
+        } else {
+            cartSets.push({set_id: setToCart._id, 'amount': quantity})
+            console.log(cartSets)
+        }
+
+        localStorage.setItem("cartSets", JSON.stringify(cartSets))
+
+        const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+        console.log(setToCart._id)
+
+        const cart = {
+            products: cartProducts,
+            sets: cartSets
+        }
+
+        sendUserCart(cart)
+    }
+
+    const sendUserCart = (cart) => {
+        axios({
+            method: 'PATCH',
+            url: `${process.env.REACT_APP_API}/user/update-cart`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                cart
+            }
+        })
+            .then(response => {
+                console.log(response.data)
+                localStorage.setItem("user", JSON.stringify(response.data))
+            })
+            .catch(error => {
+                console.log('Blad koszyk (update) ', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
 
     return (
         <>
@@ -163,7 +222,7 @@ const Product = () => {
 
                                             <div
                                                 className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
-                                                <button className="product-btn-add-to-card">Dodaj do koszyka</button>
+                                                <button className="product-btn-add-to-card" onClick={() => addSetToCart(set)}>Dodaj do koszyka</button>
                                             </div>
 
                                             <div
@@ -210,9 +269,8 @@ const Product = () => {
                         }
                     )
             }
-            {/*<ProductReviews averageRating={averageRating}/>*/}
         </>
     );
 };
 
-export default Product;
+export default ProductsSet;

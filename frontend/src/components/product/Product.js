@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useHistory, useParams} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import {Rating} from "@mui/material";
 
 import './Style.css';
@@ -17,12 +17,9 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import {useStyles} from "../profile/adding-product/MUIStyle";
 import InputAdornment from "@mui/material/InputAdornment";
-import {toast} from "react-toastify";
 
 const Product = () => {
     const [quantity, setQuantity] = useState(1);
-    let {productCategory} = useParams();
-
     const token = getCookie('token');
     const history = useHistory()
     const classes = useStyles()
@@ -90,7 +87,7 @@ const Product = () => {
         if (item) {
             item.amount++
         } else {
-            cartProducts.push({product_id: productToCart._id, 'amount': 1})
+            cartProducts.push({product_id: productToCart._id, 'amount': quantity})
             console.log(cartProducts)
         }
 
@@ -132,7 +129,29 @@ const Product = () => {
     };
 
     const clickSubmitSale = event => {
+        let id = availableProduct.productDetails[0]._id
+        event.preventDefault()
+        setValues({...values})
 
+        axios({
+            method: 'PUT',
+            url: `${process.env.REACT_APP_API}/update/product-sale`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                id,
+                sale,
+            }
+        }).then(response => {
+            setValues({
+                ...values,
+                sale: '',
+            })
+        }).catch(error => {
+            setValues({...values})
+            console.log("Product promotion update error")
+        })
     }
 
     return (

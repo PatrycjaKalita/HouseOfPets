@@ -3,9 +3,7 @@ import React from 'react';
 import './Style.css'
 import cat from '../../../assets/donation/cat.png';
 import dog from '../../../assets/donation/dog.png';
-/*import bird from '../../../assets/donation/bird.png';*/
 import rabbit from '../../../assets/donation/rabbit.png';
-/*import turtle from '../../../assets/donation/turtle.png';*/
 
 const Donation = () => {
     return (
@@ -23,11 +21,9 @@ const Donation = () => {
                     <div className="right-container">
                         <span className="description-text">lub przy użyciu PayPal: informacja@hosueofpets.pl</span>
                      <div className="img-container mt-2">
-                            <img alt="cat" src={cat} className="animal-img"/>
-                            <img alt="dog" src={dog} className="animal-img"/>
-{/*                            <img alt="bird" src={bird} className="animal-img"/>*/}
-                            <img alt="rabbit" src={rabbit} className="animal-img"/>
-{/*                            <img alt="turtle" src={turtle} className="animal-img"/>*/}
+                            <img alt="cat" src={cat} className="animal-donation-img"/>
+                            <img alt="dog" src={dog} className="animal-donation-img"/>
+                            <img alt="rabbit" src={rabbit} className="animal-donation-img"/>
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,20 @@
   "hashed_password": "7f0693af0d38b1faff89bdb2eacf5fe917c85118",
   "salt": "37012260641",
   "role": "klient",
+  "cart": {
+    "products": [
+      {
+        "amount": 6,
+        "product_id": {
+          "$oid": "63ca88d39a71623f0c899351"
+        },
+        "_id": {
+          "$oid": "63d1a47ab3e9eb066948d859"
+        }
+      }
+    ],
+    "sets": []
+  },
   "createdAt": {
     "$date": {
       "$numberLong": "1673426507469"
@@ -19,7 +33,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1673426650608"
+      "$numberLong": "1674683514908"
     }
   },
   "__v": 0
@@ -37,6 +51,10 @@
   "hashed_password": "a35de5f84abdfe123113c52e8076e11eac082133",
   "salt": "1296570788683",
   "role": "pracownik",
+  "cart": {
+    "products": [],
+    "sets": []
+  },
   "createdAt": {
     "$date": {
       "$numberLong": "1673970725995"
@@ -45,6 +63,35 @@
   "updatedAt": {
     "$date": {
       "$numberLong": "1673970725995"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d10e9ea2d744bd357e79c0"
+  },
+  "login": "Patrycja",
+  "name": "Patrycja",
+  "lastname": "Kalita",
+  "email": "kalita@gmail.com",
+  "phone_number": "658483899",
+  "street_and_number": "Podborek 11",
+  "postcode_and_city": "26-236 Rytwiany",
+  "hashed_password": "39cd184e7ef68529248d70f2b208c5fb00df187e",
+  "salt": "226966320608",
+  "role": "klient",
+  "cart": {
+    "products": [],
+    "sets": []
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674645150540"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674645150540"
     }
   },
   "__v": 0

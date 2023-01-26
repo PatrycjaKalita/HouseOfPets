@@ -6,7 +6,7 @@
   "name": "Wolf of Wilderness Junior \"Blue River\", łosoś i kurczak z wolnego wybiegu",
   "producer": "Wolf of Wilderness",
   "price": 32.8,
-  "sale": 75,
+  "sale": 0,
   "amount": 500,
   "expiration_date": {
     "$date": {
@@ -39,7 +39,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1674322299343"
+      "$numberLong": "1674462464926"
     }
   },
   "__v": 0,
@@ -429,7 +429,7 @@
   "moderate_needs": null,
   "low_needs": null,
   "animal_id": {
-    "$oid": "63bee7531312a763a0629bfc"
+    "$oid": "63c95ae6996ba2a3abe622d5"
   }
 },{
   "_id": {

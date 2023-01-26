@@ -34,15 +34,12 @@
   "_id": {
     "$oid": "63ca86349a71623f0c89934f"
   },
-  "type_of_animal": {
+  "type_of_pets_id": {
     "$oid": "63bee7531312a763a0629bfc"
   }
 },{
   "_id": {
     "$oid": "63ca9e459a71623f0c899366"
-  },
-  "rtpe_of_pets_id": {
-    "$oid": "63bee7531312a763a0629bfc"
   },
   "breed_id": {
     "$oid": "63bee7531312a763a0629c07"
@@ -52,6 +49,9 @@
   },
   "weight_id": {
     "$oid": "63bee7531312a763a0629c1d"
+  },
+  "type_of_pets_id": {
+    "$oid": "63bee7531312a763a0629bfc"
   }
 },{
   "_id": {

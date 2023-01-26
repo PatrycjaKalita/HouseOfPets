@@ -92,7 +92,6 @@ const ShopForm = () => {
     };
 
     let idBreed;
-
     function handleAgesChange(e) {
         const {name, value} = e.target
         setValues({...values, [name]: value})
@@ -125,7 +124,6 @@ const ShopForm = () => {
     };
 
     let idAge;
-
     function handleWeightsChange(e) {
         const {name, value} = e.target
         setValues({...values, [name]: value})

@@ -157,7 +157,6 @@ exports.postProductsList = async (req, res) => {
         } = req.body
 
         let results
-
         /*Sprawdzenie czy to zestaw*/
         if (category_id === '63cc3e194c6402d09b507b67') {
             results = await ProductsSet.aggregate([
@@ -192,7 +191,6 @@ exports.postProductsList = async (req, res) => {
                 results = results.filter(product => category_id === String(product.category_id))
             }
 
-
             if (breed_id !== '') {
                 results = results.filter(product => breed_id === String(product.animals[0].breed_id))
             }
@@ -213,7 +211,7 @@ exports.postProductsList = async (req, res) => {
         })
     } catch (error) {
         res.status(404).json({
-            error: "Typy waga."
+            error: "Błąd w formularzu - opcja POST."
         })
     }
 

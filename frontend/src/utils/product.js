@@ -36,3 +36,9 @@ export function checkProductAvailability(number) {
     } else
         return "Dostępny";
 }
+
+export function updatePriceInCart(number, quantity) {
+    let price = quantity * number;
+    price = price.toFixed(2);
+    return price + " zł";
+}

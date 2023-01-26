@@ -326,11 +326,7 @@ exports.updatePromotion = async (req, res) => {
 
 exports.getAvailableProductsSaleList = async (req, res) => {
     try {
-
         const productsSale = await Product.find({})
-       /* console.log(productsSale)
-
-        console.log(Product.sale)*/
 
         res.status(200).json({
             availableProductsSaleList: {

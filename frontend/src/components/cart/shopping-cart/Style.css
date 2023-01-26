@@ -1,6 +1,6 @@
 .sc-title-container {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 .sc-title {
@@ -24,16 +24,17 @@
 .sc-product-img {
     height: 120px;
     width: 120px;
-    object-fit: cover;
+    object-fit:  scale-down;
     padding: 15px 15px 15px 0;
 }
 
 .sc-product-title-container {
     padding: 40px 0 0 20px;
+    width: 400px;
 }
 
 .sc-product-amount {
-    padding: 55px 10px 0 100px;
+    padding: 55px 10px 0 50px;
     font-size: 20px;
     font-weight: 300;
 }
@@ -72,11 +73,18 @@
     border-right: solid 1px #CCCCCC;
 }
 
+.sc-product-price-container{
+    width: 200px;
+    position: relative;
+}
+
 .sc-product-price {
     color: #8D451D;
     font-size: 26px;
     font-weight: 500;
-    padding: 50px 0 0 100px;
+    padding: 50px 0 0 50px;
+    position: absolute;
+    right: 0;
 }
 
 .sc-delete-btn {
@@ -88,4 +96,9 @@
 .sc-delete-btn:hover {
     color: #BF1515;
     cursor: pointer;
+}
+
+.sc-column-container{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
 }
