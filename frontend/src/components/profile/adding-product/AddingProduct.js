@@ -256,24 +256,7 @@ const AddingProduct = (props) => {
         setValueSelect({...valueSelect, [name]: value})
 
         idWeightOfAnimalSelect = e.target.value
-        /*console.log(idWeightOfAnimalSelect)*/
-        /*        console.log(availableProductDetails.animals.map((animal) =>
-                    (animal.type_of_pets_id === typeOfPetsId || animal.breed_id === breedId || animal.age_id === ageId || animal.weight_id === weightId)
-                ))*/
-        /*        console.log(idTypeOfAnimalSelect)
-                console.log(idBreedOfAnimalSelect)
-                console.log(idAgeOfAnimalSelect)
-                console.log(idWeightOfAnimalSelect)*/
-        /*        console.log(availableProductDetails.animals.map((animal) =>
-                    (animal.type_of_pets_id === idTypeOfAnimalSelect || animal.breed_id === idBreedOfAnimalSelect || animal.age_id === idAgeOfAnimalSelect || animal.weight_id === idWeightOfAnimalSelect)
-                ))*/
     }
-
-    /*    console.log(typeOfPetsId)
-        console.log(breedId)
-        console.log(ageId)
-        console.log(weightId)*/
-
 
     let {
         link,

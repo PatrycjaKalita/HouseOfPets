@@ -42,7 +42,7 @@ function App() {
                 <Route path="/zaloguj-sie" component={Login}/>
                 <Route path="/promocje"><Sales/></Route>
                 <Route path="/koszyk"><Cart/></Route>
-                <Route path="/zamowienie"><OrderSummary/></Route>
+                <Route path="/zamowienie/:id"><OrderSummary/></Route>
 
                 <Route path="/choose-option/koty"><ChooseOption choose={'koty'}/></Route>
                 <Route path="/choose-option/psy"><ChooseOption choose={'psy'}/></Route>
@@ -72,11 +72,11 @@ function App() {
                 {/*Links only for client*/}
                 <ClientRoutes path="/profil/zamowienia" exact><Profile choose={'his_orders'}/></ClientRoutes>
                 <ClientRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></ClientRoutes>
-                <ClientRoutes path="/profil/zamowienie/id" exact><OrderDetails choose={'his_orders'}/></ClientRoutes>
+                <ClientRoutes path="/profil/zamowienie/:id" exact><OrderDetails choose={'his_orders'}/></ClientRoutes>
 
                 {/*Links only for employee*/}
                 <EmployeeRoutes path="/profil/pracownik/zamowienia" exact><Profile choose={'orders'}/></EmployeeRoutes>
-                <EmployeeRoutes path="/profil/pracownik/zamowienie/id" exact><OrderDetails
+                <EmployeeRoutes path="/profil/pracownik/zamowienie/:id" exact><OrderDetails
                     choose={'orders'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers

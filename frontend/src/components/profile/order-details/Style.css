@@ -75,7 +75,8 @@
 }
 
 .OD-product-details-container{
-    padding: 40px 15px 0 15px;
+    padding: 40px 0 0 15px;
+    width: 585px;
 }
 
 .OD-product-name{
@@ -91,7 +92,7 @@
 }
 
 .OD-product-amount{
-    padding: 55px 10px 0 250px;
+    padding: 55px 10px 0 50px;
     font-size: 20px;
     font-weight: 300;
 }
@@ -106,7 +107,9 @@
     color: #8D451D;
      font-size: 26px;
      font-weight: 500;
-     padding: 50px 15px 0 250px;
+     padding-top: 50px;
+     right: 0;
+     position: absolute;
  }
 
  .OD-order-data-container{
@@ -133,4 +136,10 @@
 
 .OD-order-data-column2{
     width: 500px;
+}
+
+.OD-product-price-container{
+    padding: 0 15px 0 100px;
+    position: relative;
+    width: 150px;
 }

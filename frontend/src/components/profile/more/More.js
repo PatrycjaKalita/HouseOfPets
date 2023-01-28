@@ -4,10 +4,16 @@ import Typography from '@mui/material/Typography';
 import Popover from '@mui/material/Popover';
 import PopupState, {bindTrigger, bindPopover} from 'material-ui-popup-state';
 import './Style.css'
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 const More = (props) => {
     const classToggle = useState('active');
+    const history = useHistory()
+    const orderID = props.orderID
+
+    const clickSubmit = (orderID) => {
+        history.push(`/profil/pracownik/zamowienie/${orderID}`)
+    }
 
     function dropDown() {
         if (props.options === 1) {
@@ -21,9 +27,7 @@ const More = (props) => {
         if (props.options === 2) {
             return (
                 <div className={classToggle}>
-                    <Link to="/profil/pracownik/zamowienie/id">
-                        <h1 className="dropDown-first-option">Szczegóły zamówienia</h1>
-                    </Link>
+                    <button className="dropDown-first-option" onClick={() => clickSubmit(orderID)}>Szczegóły zamówienia</button>
                     <h1 className="dropDown-second-option">Anuluj</h1>
                 </div>
             );

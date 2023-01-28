@@ -99,3 +99,9 @@
     font-weight: 400;
     color: #464646;
 }
+
+.non-client-orders {
+    font-size: 20px;
+    color: #666666;
+    margin-bottom: 50px;
+}

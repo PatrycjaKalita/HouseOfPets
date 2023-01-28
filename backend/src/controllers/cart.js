@@ -1,6 +1,6 @@
 const User = require("../models/user");
 const Product = require("../models/product");
-const Animal = require("../models/animal");
+const ProductsSet = require("../models/productsSet")
 
 exports.updateCart = (req, res) => {
     const cart = req.body.cart
@@ -44,8 +44,16 @@ exports.getAvailableCart = async (req, res) => {
             return product.product_id
         })
 
+        const cartSets = user.cart.sets.map((set) => {
+            return set.set_id
+        })
+
         let products = await Product.find({
             '_id': {'$in': cartProducts}
+        })
+
+        let sets = await ProductsSet.find({
+            '_id': {'$in': cartSets}
         })
 
         user.cart.products.forEach((product) => {
@@ -56,9 +64,18 @@ exports.getAvailableCart = async (req, res) => {
             })
         })
 
+        user.cart.sets.forEach((set) => {
+            sets.forEach((item) => {
+                if (String(set.set_id) === String(item._id)) {
+                    item.amount = set.amount
+                }
+            })
+        })
+
         res.status(200).json({
             availableItemsInCart: {
-                products
+                products,
+                sets
             }
         })
     } catch (error) {

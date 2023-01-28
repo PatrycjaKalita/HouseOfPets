@@ -1,34 +1,32 @@
 import React, {useState} from 'react';
-import './Style.css'
+import '../shopping-cart/Style.css'
 import {updatePriceInCart} from '../../../utils/product'
 import axios from "axios";
 import {getCookie, signOut} from "../../../auth/Helpers";
 import {useHistory} from "react-router-dom";
 
-const ShoppingCart = (props) => {
-    const [amount, setAmount] = useState(props.productAmount);
+const ShoppingCartSets = (props) => {
+    const [amount, setAmount] = useState(props.setAmount);
 
-    const name = props.productName
-    const price = props.productPrice
-    const image = props.productImage
-    const color = props.productColor
-    const weight = props.productWeight
-    const productId = props.productId
+    const name = props.setName
+    const price = props.setPrice
+    const image = props.setImage
+    const setId = props.setId
 
-    function changeAmountOfProduct(id, newAmount){
+    function changeAmountOfSet(id, newAmount){
         setAmount(newAmount)
-        let cartProducts = localStorage.getItem("cartProducts")
-        cartProducts = JSON.parse(cartProducts);
+        let cartSets = localStorage.getItem("cartSets")
+        cartSets = JSON.parse(cartSets);
 
-        cartProducts = cartProducts.map(function (item) {
-            if(item.product_id === id){
+        cartSets = cartSets.map(function (item) {
+            if(item.set_id === id){
                 item.amount = newAmount
             }
             return item
         })
 
-        localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
-        const cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
+        localStorage.setItem("cartSets", JSON.stringify(cartSets))
+        const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
         const cart = {
             products: cartProducts,
@@ -38,16 +36,16 @@ const ShoppingCart = (props) => {
         sendUserCart(cart)
     }
 
-    function removeProductFromCart(id){
-        let cartProducts = localStorage.getItem("cartProducts")
-        cartProducts = JSON.parse(cartProducts);
+    function removeSetFromCart(id){
+        let cartSets = localStorage.getItem("cartSets")
+        cartSets = JSON.parse(cartSets);
 
-        cartProducts = cartProducts.filter(function (item) {
-            return item.product_id !== id
+        cartSets = cartSets.filter(function (item) {
+            return item.set_id !== id
         })
 
-        localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
-        const cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
+        localStorage.setItem("cartSets", JSON.stringify(cartSets))
+        const cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
         const cart = {
             products: cartProducts,
@@ -90,16 +88,14 @@ const ShoppingCart = (props) => {
             <img src={image} alt="produkcik" className="sc-product-img"/>
 
             <div className="sc-product-title-container">
-                <h1 className="OD-product-name">{name}</h1>
-                <h1 className={color === "" ? "hidden" : "OD-product-detail"}>{color}</h1>
-                <h1 className={weight === null ? "hidden" : "OD-product-detail"}>{weight} g</h1>
+                <h1 className="SCS-set-name">{name}</h1>
             </div>
 
             <h1 className="sc-product-amount">Ilość:</h1>
             <div className="sc-btn-quantity">
                 <button className="sc-btn-minus"
                         onClick={() => {
-                            changeAmountOfProduct(productId,amount - 1);
+                            changeAmountOfSet(setId,amount - 1);
                         }}>
                     -
                 </button>
@@ -107,7 +103,7 @@ const ShoppingCart = (props) => {
                 <h1 className="sc-btn-quantity-number">{amount}</h1>
 
                 <button className="sc-btn-plus" onClick={() => {
-                    changeAmountOfProduct(productId,amount + 1);
+                    changeAmountOfSet(setId,amount + 1);
                 }}>
                     +
                 </button>
@@ -118,7 +114,7 @@ const ShoppingCart = (props) => {
             </div>
 
             <span className="sc-delete-btn" onClick={() => {
-                removeProductFromCart(productId)
+                removeSetFromCart(setId)
             }}>
                 <ion-icon name="trash-outline"></ion-icon>
             </span>
@@ -126,4 +122,4 @@ const ShoppingCart = (props) => {
     );
 };
 
-export default ShoppingCart;
+export default ShoppingCartSets;

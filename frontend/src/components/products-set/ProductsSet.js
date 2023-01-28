@@ -174,10 +174,10 @@ const ProductsSet = () => {
                                             <h1 className="product-name">{set.name}</h1>
 
                                             <div className="product-rating-container">
-                                                <Rating className="starBorderOutlined" value={averageRating} readOnly
+                                                <Rating className="starBorderOutlined" value={0} readOnly
                                                         precision={0.5} max={5} size="small"/>
 
-                                                <h1 className="product-number-opinions">{checkNumberOfOpinions(5)}</h1>
+                                                <h1 className="product-number-opinions">{checkNumberOfOpinions(0)}</h1>
                                             </div>
 
                                             <div className="product-code-container">

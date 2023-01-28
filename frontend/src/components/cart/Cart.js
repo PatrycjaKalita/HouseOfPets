@@ -10,6 +10,8 @@ import osobisty from "../../assets/deliveryMethod/osobisty.png";
 import payPal from "../../assets/paymentMethod/payPal.png";
 import przyOdbiorze from "../../assets/paymentMethod/przyOdbiorze.png";
 import tradycyjny from "../../assets/paymentMethod/tradycyjny.png";
+import ShoppingCartSets from "./shopping-cart-sets/ShoppingCartSets";
+import {toast} from "react-toastify";
 
 const Cart = () => {
     useEffect(() => {
@@ -22,14 +24,14 @@ const Cart = () => {
     const [delivery3, setDelivery3] = useState('radio-button-off-outline');
 
     const [deliveryMethod, setDeliveryMethod] = useState('');
-    const [deliveryCost, setDeliveryPrice] = useState(0);
+    const [deliveryCost, setDeliveryCost] = useState(0);
 
-    function onClickHandlerDelivery(number, newDeliveryPrice, newDeliveryMethod) {
+    function onClickHandlerDelivery(number, newDeliveryCost, newDeliveryMethod) {
         setDelivery1('radio-button-off-outline');
         setDelivery2('radio-button-off-outline');
         setDelivery3('radio-button-off-outline');
         number('radio-button-on-outline');
-        setDeliveryPrice(newDeliveryPrice);
+        setDeliveryCost(newDeliveryCost);
         setDeliveryMethod(newDeliveryMethod);
     }
 
@@ -56,6 +58,7 @@ const Cart = () => {
     const [availableItemsInCart, setAvailableItemsInCart] = useState(false);
     const [numberOfProduct, setNumberOfProduct] = useState(0);
     const [costOfCart, setCostOfCart] = useState(0);
+
     const loadUserCart = () => {
         axios({
             method: 'GET',
@@ -65,10 +68,15 @@ const Cart = () => {
             }
         })
             .then(response => {
-                console.log('CART ', response.data);
+                /*console.log('CART ', response.data);*/
                 setAvailableItemsInCart(response.data.availableItemsInCart)
-                setNumberOfProduct(response.data.availableItemsInCart.products.length)
-                setCostOfCart(response.data.availableItemsInCart.products.reduce((accumulator ,product) => accumulator + (product.price * product.amount), 0))
+
+                /* Ilość elementów w koszyku*/
+                setNumberOfProduct(response.data.availableItemsInCart.products.length + response.data.availableItemsInCart.sets.length);
+
+                setCostOfCart(response.data.availableItemsInCart.products.reduce((accumulator, product) => accumulator + (product.price * product.amount), 0)
+                    + response.data.availableItemsInCart.sets.reduce((accumulator, set) => accumulator + (set.price * set.amount), 0))
+
             })
             .catch(error => {
                 console.log('CART ERROR', error.response.data.error);
@@ -80,11 +88,92 @@ const Cart = () => {
             });
     };
 
-    function totalCostOfOrder(cart,delivery, payment) {
-        let totalCost = delivery + payment + cart
+    let totalCost
+    function totalCostOfOrder(cart, delivery, payment) {
+        totalCost = delivery + payment + cart
         return totalCost.toFixed(2)
     }
+    let status = "Zamówiono"
 
+    /* użytkownik */
+    let user = localStorage.getItem("user")
+    user = JSON.parse(user)
+
+    /* produkty */
+    let cartProducts = localStorage.getItem("cartProducts")
+    let products = JSON.parse(cartProducts);
+
+    /* produkty */
+    let cartSets = localStorage.getItem("cartSets")
+    let sets = JSON.parse(cartSets);
+
+    const clickSubmit = event => {
+        event.preventDefault()
+        axios({
+            method: 'POST',
+            url: `${process.env.REACT_APP_API}/user/make-order`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                totalCost,
+                status,
+                deliveryMethod,
+                deliveryCost,
+                paymentMethod,
+                paymentCost,
+                user,
+                products,
+                sets,
+            }
+        }).then(response => {
+            let orderID = response.data.message._id
+            history.push(`/zamowienie/${orderID}`)
+        }).catch(error => {
+            toast.error(error.response.data.error)
+        })
+
+        removeProductsFromCart()
+
+    }
+    const removeProductsFromCart = () => {
+        let cartProducts = []
+        localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
+
+        let cartSets = []
+        localStorage.setItem("cartSets", JSON.stringify(cartSets))
+
+        const cart = {
+            products: cartProducts,
+            sets: cartSets
+        }
+        sendUserCart(cart)
+    }
+
+    const sendUserCart = (cart) => {
+        axios({
+            method: 'PATCH',
+            url: `${process.env.REACT_APP_API}/user/update-cart`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            data: {
+                cart
+            }
+        })
+            .then(response => {
+                console.log(response.data)
+                localStorage.setItem("user", JSON.stringify(response.data))
+            })
+            .catch(error => {
+                console.log('Blad koszyk (update) ', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
     return (
         <div className="main-cart-container">
             <div className="cart-top-part">
@@ -97,13 +186,24 @@ const Cart = () => {
                     <div className="sc-column-container">
                         {
                             availableItemsInCart.hasOwnProperty('products') === false ?
-                                <div>Loading..</div>
+                                <div></div>
                                 :
                                 availableItemsInCart.products.map((product) => {
                                     return <ShoppingCart productName={product.name} productPrice={product.price}
                                                          productImage={product.image} productAmount={product.amount}
-                                                         productColor={product.color} productWeight={product.weight}/>
+                                                         productColor={product.color} productWeight={product.weight}
+                                                         productId={product._id}/>
+                                })
+                        }
 
+                        {
+                            availableItemsInCart.hasOwnProperty('sets') === false ?
+                                <div></div>
+                                :
+                                availableItemsInCart.sets.map((set) => {
+                                    return <ShoppingCartSets setName={set.name} setPrice={set.price}
+                                                             setImage={set.image} setAmount={set.amount}
+                                                             setId={set._id}/>
                                 })
                         }
                     </div>
@@ -135,9 +235,9 @@ const Cart = () => {
                     </div>
 
                     <div className="cart-summary-btn-container">
-                        <Link to="/zamowienie">
-                            <button className="cart-summary-btn">ZAMÓW</button>
-                        </Link>
+                        {/* <Link to="/zamowienie">*/}
+                        <button className="cart-summary-btn" onClick={clickSubmit}>ZAMÓW</button>
+                        {/* </Link>*/}
                     </div>
                 </div>
             </div>

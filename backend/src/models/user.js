@@ -25,14 +25,12 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
             required: true,
-            unique: true,
             lowercase: true
         },
         phone_number: {
             type: String,
             trim: true,
             required: true,
-            unique: true,
             max: 9
         },
         street_and_number: {
@@ -68,7 +66,7 @@ const userSchema = new mongoose.Schema(
             }],
             sets: [{
                 amount: Number,
-                productsSet_id: {
+                set_id: {
                     type: mongoose.Schema.Types.ObjectId,
                     ref: 'ProductsSets'
                 },

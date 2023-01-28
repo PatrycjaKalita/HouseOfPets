@@ -18,6 +18,9 @@ const productsSetSchema = new mongoose.Schema(
         sale: {
             type: Number,
         },
+        amount: {
+            type: Number,
+        },
         image:{
             type: String,
         },

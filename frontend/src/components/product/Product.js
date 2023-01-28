@@ -74,21 +74,14 @@ const Product = () => {
     const addProductToCart = (productToCart) => {
         let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
-        /*console.log(productToCart._id)
-        console.log(cartProducts)*/
-
         const item = cartProducts?.find(product => {
-            console.log(product.product_id)
-            console.log(productToCart._id)
             return product.product_id === productToCart._id
         })
-        //console.log(item) /*undefined*/
 
         if (item) {
             item.amount++
         } else {
             cartProducts.push({product_id: productToCart._id, 'amount': quantity})
-            console.log(cartProducts)
         }
 
         localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
@@ -176,10 +169,10 @@ const Product = () => {
                                             <h1 className="product-name">{product.name}</h1>
 
                                             <div className="product-rating-container">
-                                                <Rating className="starBorderOutlined" value={averageRating} readOnly
+                                                <Rating className="starBorderOutlined" value={0} readOnly
                                                         precision={0.5} max={5} size="small"/>
 
-                                                <h1 className="product-number-opinions">{checkNumberOfOpinions(5)}</h1>
+                                                <h1 className="product-number-opinions">{checkNumberOfOpinions(0)}</h1>
 
                                                 <h1 className={product.amount > 0 ? "product-availability" : "product-no-availability"}>{checkProductAvailability(product.amount)}</h1>
                                             </div>
@@ -290,7 +283,7 @@ const Product = () => {
                         }
                     )
             }
-            <ProductReviews averageRating={averageRating}/>
+            <ProductReviews averageRating={0}/>
         </>
     );
 };

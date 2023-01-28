@@ -20,7 +20,7 @@ const ProductReviews = (props) => {
 
                 <h2 className="product-reviews-header-number-opinion">({productReviews.length} opinie)</h2>
             </div>
-            {
+            {/*{
                 productReviews.map((productReview) => (
                     <div className="product-reviews-container">
                         <h1 className="product-reviews-user-name">
@@ -33,7 +33,7 @@ const ProductReviews = (props) => {
                         </div>
                     </div>
                 ))
-            }
+            }*/}
         </div>
     );
 };
