@@ -13,17 +13,7 @@
   "salt": "37012260641",
   "role": "klient",
   "cart": {
-    "products": [
-      {
-        "amount": 6,
-        "product_id": {
-          "$oid": "63ca88d39a71623f0c899351"
-        },
-        "_id": {
-          "$oid": "63d1a47ab3e9eb066948d859"
-        }
-      }
-    ],
+    "products": [],
     "sets": []
   },
   "createdAt": {
@@ -33,7 +23,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1674683514908"
+      "$numberLong": "1674922985585"
     }
   },
   "__v": 0
@@ -91,7 +81,7 @@
   },
   "updatedAt": {
     "$date": {
-      "$numberLong": "1674645150540"
+      "$numberLong": "1674923058533"
     }
   },
   "__v": 0

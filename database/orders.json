@@ -1,0 +1,527 @@
+[{
+  "_id": {
+    "$oid": "63d54bcbf5faf9b25a24e913"
+  },
+  "totalCost": 203.56,
+  "status": "Zamówiono",
+  "deliveryMethod": "Kurier - DPD",
+  "deliveryCost": 15,
+  "paymentMethod": "Przelew tradycyjny",
+  "paymentCost": 0,
+  "user": {
+    "login": "Qlita",
+    "name": "Patrycja",
+    "lastname": "Kalita",
+    "email": "pai.kalita@gmail.com",
+    "phone_number": "444555353",
+    "street_and_number": "Polna 2",
+    "postcode_and_city": "20-000 Kielce"
+  },
+  "products": [
+    {
+      "link": "/shop/psy/products/sucha-karma/wolf-of-wildrness-junior-blue-river",
+      "name": "Wolf of Wilderness Junior \"Blue River\", łosoś i kurczak z wolnego wybiegu",
+      "producer": "Wolf of Wilderness",
+      "price": 32.8,
+      "amount": 1,
+      "expiration_date": {
+        "$date": {
+          "$numberLong": "1675206000000"
+        }
+      },
+      "sale": 0,
+      "weight": 1000,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/wolf/of/wilderness/junior/blue/river/oso/i/kurczak/z/wolnego/wybiegu/9/800/wow_freerange_classic_blueriver_junior_12kg_frontright_1000x1000_9.jpg",
+      "product_code": 398546013,
+      "animal_id": {
+        "$oid": "63c95ae6996ba2a3abe622d5"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2c"
+      },
+      "description": "Wolf of Wilderness JUNIOR \"Blue River\", łosoś i kurczak z wolnego wybiegu w skrócie:\n\nZorientowany na nawyki żywieniowe dzikiego wilka: dla psów wszystkich ras i wielkości.\nReceptura w 100% bezzbożowa: odpowiednia również dla psów cierpiących na nietolerancję zbóż.\nWysokiej jakości białko: co najmniej 33 % świeżego mięsa z mięśni kurczaka i wartościowe białko z łososia.\nOdpowiedzialnie i smacznie: zawiera 100% świeżego mięsa z kurcząt hodowanych w klasie premium - z większą przestrzenią, większą ilością ściółki i dostępem do terenów zewnętrznych z przewagą roślinności.\nZgodna z dobrostanem gatunku i naturalna: bez sztucznych konserwantów, barwników i wzmacniaczy smaku.\nDzikie i pierwotne: uszlachetnione owocami leśnymi, korzeniami i dzikimi ziołami.\nZrównoważona jakość premium: żywność jest produkowana w neutralnej pod względem Co2 firmie rodzinnej w Niemczech, opakowanie nadaje się do recyklingu.",
+      "extra_description": "Wolf of Wilderness to dostosowana gatunkowo karma dla psów oparta na oryginalnej diecie wilka na wolności. Oprócz dużej ilości świeżego mięsa, bezzbożowe przepisy zawierają dzikie jagody, korzenie i dzikie zioła.",
+      "image_description": "https://shop-cdn-m.mediazs.com/bilder/wolf/of/wilderness/junior/blue/river/oso/i/kurczak/z/wolnego/wybiegu/4/800/wow_board_classic_freerange_junior_blueriver_2_0_1000x1000_pl3_4.jpg",
+      "composition": "Świeży kurczak z wolnego wybiegu* (33 %), płatki ziemniaczane, białko drobiowe (częściowo suszone i hydrolizowane, 18 %), białko łososia (suszone, 10 %), olej z łososia suszone i hydrolizowane, 18 %), białko łososia (suszone, 10 %), olej z łososia, suszona pulpa buraczana, jabłko (suszone), siemię lniane, drożdże piwne (suszone), ściany komórkowe drożdży (suszone, 0,2 %: beta-glukany i mannan-oligosacharydy), mączka z alg (0,1 %), dzikie jagody (suszone, łącznie 0,3 %: porzeczki, jagody aronii), inulina z cykorii, zioła (suszone, łącznie 0,2%: korzeń mniszka lekarskiego, ziele rumianku, ziele pokrzywy), glukozamina z tkanek zwierzęcych (0,04%), siarczan chondroityny (0,02%). \n*Kury z hodowli premium - z większą ilością miejsca, słomy i dostępem do terenów zewnętrznych z przewagą roślinności.",
+      "additives": "Dodatki żywieniowe:\nWitamina A 15 000 IU, witamina D3 1 600 IU, witamina E 300 IU, witamina C 200 mg, witamina B1 13 mg, witamina B2 (ryboflawina) 15 mg, witamina B6/chlorowodorek pirydoksyny 10 mg, witamina B12 200 mcg, niacyna 40 mg, D-pantotenian wapnia 40 mg, biotyna 350 mcg, kwas foliowy 1,3 mg, chlorek choliny 2. 500 mg, Miedź (pentahydrat siarczanu miedzi(II)) 12,5 mg, Cynk (siarczan cynku, jednowodny) 100 mg, Cynk (chelat cynku glicyny, hydrat) 50 mg, Mangan (siarczan manganu(II), jednowodny) 30 mg, Żelazo (monohydrat siarczanu żelaza(II)) 250 mg, Jod (jodan wapnia, bezwodny) 2,5 mg, Selen (selenin sodu) 0,40 mg.",
+      "protein": 31,
+      "fat": 15,
+      "ash": 7.2,
+      "fiber": 2.5,
+      "body_weight": 5,
+      "moderate_needs": 90,
+      "low_needs": 120,
+      "_id": {
+        "$oid": "63ca61de5161b28818d3589a"
+      }
+    },
+    {
+      "link": "/shop/psy/products/obroze-smycze/heim-smycz-spacerowa-prążkowana-rose-czerwony",
+      "name": "Heim smycz spacerowa prążkowana Rosé",
+      "producer": "Heim",
+      "price": 87.79,
+      "amount": 1,
+      "expiration_date": null,
+      "sale": 45,
+      "weight": null,
+      "color": "czerwony",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/heim/smycz/spacerowa/prkowana/ros/czerwona/6/800/221901_pla_heim_fuehrleine_geriegelt_rose_rot_hs_01_6.jpg",
+      "product_code": 398856012,
+      "animal_id": {
+        "$oid": "63ca86349a71623f0c89934f"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c32"
+      },
+      "description": "Wysokiej jakości uzupełnienie każdego wyposażenia dla psa – prezentowana prążkowana smycz spacerowa Rosé marki Heim przekonuje szlachetnym wzornictwem i solidnym wykonaniem. Powstała z wytrzymałego nylonu utrzymanego w jaskrawoczerwonym kolorze. Wyrafinowane detale stanowią kółka i karabińczyki z wykończeniem w kolorze różowego złota.Smycz idealnie nadaje się do codziennego użytku. Leży wygodnie i miękko w dłoni. Smycz posiada 3-stopniową regulację, co pozwala dopasować jej długość do własnych potrzeb. Za pomocą karabińczyka prążkowaną smycz spacerową Rosé można łatwo przypiąć do obroży lub szelek. Smycz została wyprodukowana w Niemczech i charakteryzuje się wysoką jakością. Idealnie komponuje się w połączeniu z obrożami z tej samej kolekcji.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Smycz: nylon. Karabińczyki i kółka: stal z wykończeniem w kolorze różowego złota.",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63ca8e389a71623f0c899356"
+      }
+    },
+    {
+      "link": "/shop/psy/products/akcesoria/hunter-miska-ze-stali-szlachetnej",
+      "name": "HUNTER miska ze stali szlachetnej",
+      "producer": "HUNTER",
+      "price": 21.99,
+      "amount": 2,
+      "expiration_date": null,
+      "sale": 0,
+      "weight": null,
+      "color": "stalowy",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/hunter/miska/ze/stali/szlachetnej/8/800/26950_pla_hunter_edelstahlnapf_hs_03_8.jpg",
+      "product_code": 238856012,
+      "animal_id": {
+        "$oid": "63ca86349a71623f0c89934f"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c31"
+      },
+      "description": "Miska ze specjalnym logo producenta HUNTER zachwyca nie tylko swoją praktycznością, ale również stanie się ozdobą Twojej kuchni. Antypoślizgowe podłoże zapobiega samowolnemu przesuwaniu się miski podczas spożywania przez psa posiłku. Miska jest łatwa w utrzymaniu w czystości, a przez to higieniczna. Miskę łącznie z gumową obręczą można myć w zmywarce. Jest wykonana ze stali szlachetnej.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Stal szlachetna.",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63ca90359a71623f0c899358"
+      }
+    },
+    {
+      "link": "/shop/psy/products/zabawki/kong-squeezz-gryzak-dla-psa",
+      "name": "KONG Squeezz gryzak dla psa",
+      "producer": "KONG",
+      "price": 23.99,
+      "amount": 1,
+      "expiration_date": null,
+      "sale": 0,
+      "weight": null,
+      "color": "zielony",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/kong/squeezz/gryzak/dla/psa/0/800/326040kong_squeezz_stick_m_0.jpg",
+      "product_code": 200856012,
+      "animal_id": {
+        "$oid": "63ca86349a71623f0c89934f"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2e"
+      },
+      "description": "Gryzak Kong wniesie wiele ruchu do codziennego życia! Wytrzymała zabawka z elastycznego tworzywa sztucznego idealna do aportowania i różnorodnych gier. Dzięki swojej sprężystości odbija się nieprzewidywalnie, co sprawia wiele zabawy psu. Jasny kolor zabawki pomaga znaleźć ją w wysokiej trawie. Gryzak ma dziurkę pośrodku, przez którą możesz wypełnić go przysmakami, co zajmie Twojego psa przez kilka chwil.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Tworzywo sztuczne.",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63ca93c29a71623f0c89935b"
+      }
+    }
+  ],
+  "sets": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674922955632"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674936520817"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d54be9f5faf9b25a24e93e"
+  },
+  "totalCost": 119.24,
+  "status": "Anulowane",
+  "deliveryMethod": "Kurier - DPD",
+  "deliveryCost": 15,
+  "paymentMethod": "Przelew tradycyjny",
+  "paymentCost": 0,
+  "user": {
+    "login": "Qlita",
+    "name": "Patrycja",
+    "lastname": "Kalita",
+    "email": "pai.kalita@gmail.com",
+    "phone_number": "444555353",
+    "street_and_number": "Polna 2",
+    "postcode_and_city": "20-000 Kielce"
+  },
+  "products": [
+    {
+      "link": "/shop/psy/products/mokra-karma/little-wolf-of-wilderness-junior-6-x-800-g",
+      "name": "Little Wolf of Wilderness Junior 6 x 800 g",
+      "producer": "Wolf of Wilderness",
+      "price": 104.24,
+      "amount": 1,
+      "expiration_date": {
+        "$date": {
+          "$numberLong": "1676847600000"
+        }
+      },
+      "sale": 0,
+      "weight": 1000,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/little/wolf/of/wilderness/junior/x/g/4/800/wow_junior_blueriver_800g_1000x1000_4.jpg",
+      "product_code": 198546013,
+      "animal_id": {
+        "$oid": "63c95ae6996ba2a3abe622d5"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2d"
+      },
+      "description": "Nasze psy są nam wierne, są dla nas pełnoprawnymi członkowami naszych rodzin i towarzyszą nam każdego dnia, czym z pewności zasługują sobie na jak najlepsze pożywienie. Ponieważ psy wywodzą się od wilków, są one mięso- i wszystkożerne, co nie zmieniło się mimo zmian ewolucyjnych. Wolf of Wilderness postawił sobie za cel stworzenie karmy, która będzie odpowiadała naturalnym instynktom wilków, w związku z czym w pokarmie tej marki stosuje się wyłącznie naturalne składniki, które obecne są również w wilczej diecie. Badania nad zwyczajami żywieniowymi wilków wykazały, że ich dieta składa się przede wszystkim z mięsa ich ofiar oraz owoców leśnych, korzeni i dzikich ziół, które mogły znajdować się w żołądkach ich zdobyczy. Wilki zamieszkujące dzikie środowisko nie przyjmowały prawie żadnych węglowodanów. Nasza karma również zawiera jedynie niewielką ich ilość oraz nie zawiera zbóż.",
+      "extra_description": "Bezzbożowa receptura karmy Little Wolf of Wilderness Junior składa się w przynajmniej 66% z czystego mięsa, które jest jedynym źródłem białka zwierzęcego. Mięso dostarcza lekkostrawnych białek i tłuszczy, a jedynym dodatkiem są owoce leśne, korzenie i dzikie zioła. Mieszanka owoców leśnych w połączeniu z korzeniami mniszka, ziołami z lasów i łąk, takimi jak babka lancetowata, pokrzywa i krwawnik, dostarcza ważnych składników odżywczych, minerałów i substancji witalnych i roślinnych",
+      "image_description": "",
+      "composition": "46% składa się z: serc kurczęcych, mięsa z kurczaka, wątróbki z kurczaka, płuc z kurczaka, 28,8% bulion mięsny, 20% łosoś, 2% żurawina, 2% porzeczki, 1% minerały, 0,2% olej słonecznikowy, 0,2% dzikie zioła (korzeń mniszka, pokrzywa, babka lancetowata, krwawnik pospolity), 0,1% sproszkowane skorupki jaj",
+      "additives": "witamina D3 200 j.m., witamina E [octan all-rac-alfa-tokoferylu] 30 mg, cynk (jednowodny siarczan cynku) 15 mg, mangan (jednowodny siarczan manganu(III)) 3 mg, jod (jodan wapnia) 0,75 mg",
+      "protein": 11.5,
+      "fat": 6.5,
+      "ash": 2.1,
+      "fiber": 0.4,
+      "body_weight": 5,
+      "moderate_needs": 350,
+      "low_needs": 290,
+      "_id": {
+        "$oid": "63ca98bc9a71623f0c899361"
+      }
+    }
+  ],
+  "sets": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674922985588"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674936512623"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d54c15f5faf9b25a24e980"
+  },
+  "totalCost": 201.6,
+  "status": "Wysłane",
+  "deliveryMethod": "Paczkomaty INPOST",
+  "deliveryCost": 10,
+  "paymentMethod": "Przelew tradycyjny",
+  "paymentCost": 0,
+  "user": {
+    "login": "Patrycja",
+    "name": "Patrycja",
+    "lastname": "Kalita",
+    "email": "kalita@gmail.com",
+    "phone_number": "658483899",
+    "street_and_number": "Podborek 11",
+    "postcode_and_city": "26-236 Rytwiany"
+  },
+  "products": [
+    {
+      "link": "/shop/koty/products/sucha-karma/whiskas-sterile-14-kg-z-kurczakiem",
+      "name": "WHISKAS Sterile 14kg z kurczakiem",
+      "producer": "Whiskas",
+      "price": 115.8,
+      "amount": 1,
+      "expiration_date": {
+        "$date": {
+          "$numberLong": "1690326000000"
+        }
+      },
+      "sale": 0,
+      "weight": 14000,
+      "color": "",
+      "image": "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
+      "product_code": 398546913,
+      "animal_id": {
+        "$oid": "63ca746a9a71623f0c899349"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2c"
+      },
+      "description": "Koty po zabiegu sterylizacji i kastracji często mają specjalne potrzeby żywieniowe. WHISKAS Sterile 14 kg to sucha karma dla kotów po sterylizacji z kurczakiem, która uwzględnia te potrzeby. Obniżony poziom składników mineralnych przekłada się na ochronę dróg moczowych przed popularnymi schorzeniami, zwłaszcza kamicą. Niska wartość tłuszczu sprawia, że pokarm ma obniżoną kaloryczność, a przez to sprzyja utrzymaniu prawidłowej masy ciała kota. Prebiotyki wspierają prawidłowe trawienie i regularne wypróżnienia, co pomaga również w usuwaniu kul włosowych z układu pokarmowego.",
+      "extra_description": "Specjalny kształt krokieta – a zwłaszcza jego twarda obwódka – w połączeniu z kompleksem składników gwarantują mechaniczne usuwanie osadu z zębów i wspieranie zdrowia dziąseł. Nienasycone kwasy tłuszczowe oraz cynk ułatwiają utrzymanie w zdrowiu skóry i powodują piękny wygląd sierści. Krokiety w karmie mają twardą otoczkę i miękkie wnętrze, zachęcające kota do spożycia całej porcji. Karma bytowa dla kotów sterylizowanych może być uzupełniona karmą mokrą tej samej marki.",
+      "image_description": "https://m.media-amazon.com/images/I/7116YTMQtiL._AC_SL1000_.jpg",
+      "composition": "zboża (m.in. 4% pszenicy),mięso i produkty uboczne pochodzenia zwierzęcego (m.in. 4% jasnego mięsa kurczaka), roślinne produkty uboczne (m.in. 2% wysłodki buraczane), oleje i tłuszcze, roślinne ekstrakty białkowe, minerały, warzywa (4% marchwi w pomarańczowych krokietach, 4% grochu w zielonych krokietach).",
+      "additives": "witamina A (4 090 j.m./kg), witamina D3 (450 j.m./kg), witamina E (95 mg/kg), pięciowodny siarczan miedzi (9.6 mg/kg), jednowodny siarczan manganu II (51.6 mg/kg), jodek potasu (0.79 mg/kg), selenin sodu (0,38 mg/kg), jednowodny siarczan cynku (138 mg/kg).",
+      "protein": 32,
+      "fat": 11,
+      "ash": 7.2,
+      "fiber": 4,
+      "body_weight": 5,
+      "moderate_needs": 55,
+      "low_needs": 20,
+      "_id": {
+        "$oid": "63ca75799a71623f0c89934b"
+      }
+    },
+    {
+      "link": "/shop/koty/products/mokra-karma/royal-canin-appetite-control-care-w-galarecie-12-x-85g",
+      "name": "Royal Canin Appetite Control Care w galarecie 12 x 85g",
+      "producer": "Royal Canin",
+      "price": 57.9,
+      "amount": 1,
+      "expiration_date": {
+        "$date": {
+          "$numberLong": "1690326000000"
+        }
+      },
+      "sale": 0,
+      "weight": 1020,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/royal/canin/appetite/control/care/w/galarecie/1/800/203716_royalcanin_appetitecontrol_jelly_85g_hs_02_1.jpg",
+      "product_code": 808540189,
+      "animal_id": {
+        "$oid": "63ca746a9a71623f0c899349"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2d"
+      },
+      "description": "Wielu właścicieli kotów zapewne zna tę sytuacje, kiedy ich pupil stale domaga się kolejnej porcji jedzenia – często przekraczając tym samym ilości określone w zaleceniach żywieniowych. Ważne jest jednak, aby kot utrzymywał odpowiednia masę ciała. Otyłe zwierzę nie tylko ma ograniczoną ruchomość, cierpi na tym przede wszystkim jego zdrowie i samopoczucie, a tym samym spada jakość jego życia. Royal Canin Appetite Control Care to karma stworzona z myślą o czworonogach zagrożonych nadwagą, np. po przebytym zabiegu kastracji/sterylizacji. Zawarty w karmie błonnik rozpuszczalny i nierozpuszczalny może wzmocnić i wydłużyć zdrowe uczucie sytości. Kolejną ważną cechą tej karmy jest odpowiednio niska zawartość tłuszczu i wysoka zawartość białek, co korzystnie wpływa na utrzymanie masy mięśniowej.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Mięso i produkty uboczne pochodzenia zwierzęcego, ryby i produkty uboczne z ryb, produkty uboczne pochodzenia roślinnego, zboża, składniki mineralne.",
+      "additives": "Vitamin D3 (110 j.m./kg), żelazo (3 mg/kg), jod (0,26 mg/kg), miedź (2,1 mg/kg), mangan (1 mg/kg), cynk (10 mg/kg).",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63cac82d9a71623f0c89937b"
+      }
+    },
+    {
+      "link": "/shop/koty/products/sucha-karma/feringa-adult-ryba",
+      "name": "Feringa Adult ryba",
+      "producer": "Feringa",
+      "price": 17.9,
+      "amount": 1,
+      "expiration_date": {
+        "$date": {
+          "$numberLong": "1721948400000"
+        }
+      },
+      "sale": 0,
+      "weight": 400,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/feringa/adult/ryba/8/800/400470_feringa_trofu_fisch_3d_8.jpg",
+      "product_code": 808547189,
+      "animal_id": {
+        "$oid": "63ca746a9a71623f0c899349"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2c"
+      },
+      "description": "Feringa sucha karma dla kota powstała w efekcie niezwykle starannego procesu produkcji i jest bardzo smaczną kompozycją składającą się z lekkostrawnej ryby wzbogaconej odrobiną dyni i szczyptą kocimiętki. Feringa to naturalna karma bez dodatku zbóż, zawiera wartościowe białka i delikatną rybę. Staranny proces produkcji odbywa się w rodzinnym zakładzie w Austrii. Do procesu produkcyjnego wykorzystywane są jedynie wyselekcjonowane składniki, których obróbka jest niezwykle delikatna i pozwala zachować ich substancje odżywcze. Układ trawienny kota nie jest przystosowany do trawienia dużej ilości zbóż, z tego względu karmy Feringa są wytwarzane bez dodatku zbóż. Karma Feringa smakuje tak jakby została przygotowana w domu, Twój kot będzie zachwycony jej jakością.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "35 % ryby ( w tym pstrąg, karmazyn, dorsz, czarniak, śledź; suszone i zmielone), płatki ziemniaczane(rozpuszczone), 11 % tłuszcz drobiowy , 6 % dynia, 3 % olej z łososia, lignoceluloza, 2 % jajka (suszone i zmielone), minerały, 0,5 % suszona żurawina, 0,5 % kocimiętka, fruktooligosacharydy (FOS), 0,25 % suszone jagody.",
+      "additives": "witamina A 20.000 j.m., witamina D3 1.200 j.m., witamina E (RRR octan alfa tokoferolu) 120 mg, tauryna 2.000 mg, selen (jako selenit sodu) 0,15 mg, miedź (jako pięciowodny siarczan meidzi II) 10 mg, cynk (jako tlenek cynku) 125 mg, jod (jako bezwodny jdek wapnia) 1,38 mg",
+      "protein": 32.5,
+      "fat": 17.5,
+      "ash": 7.7,
+      "fiber": 2.6,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63cad2949a71623f0c89937f"
+      }
+    }
+  ],
+  "sets": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674923029108"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674936502991"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d54c32f5faf9b25a24e9ca"
+  },
+  "totalCost": 137.89,
+  "status": "Zakończone",
+  "deliveryMethod": "Odbiór osobisty",
+  "deliveryCost": 0,
+  "paymentMethod": "Przelew tradycyjny",
+  "paymentCost": 0,
+  "user": {
+    "login": "Patrycja",
+    "name": "Patrycja",
+    "lastname": "Kalita",
+    "email": "kalita@gmail.com",
+    "phone_number": "658483899",
+    "street_and_number": "Podborek 11",
+    "postcode_and_city": "26-236 Rytwiany"
+  },
+  "products": [
+    {
+      "link": "/shop/koty/products/kosmetyki-i-pielegnacja/kooa-szczotka-bambusowa-do-sierści",
+      "name": "kooa Szczotka bambusowa do sierści",
+      "producer": "kooa",
+      "price": 19.9,
+      "amount": 1,
+      "expiration_date": null,
+      "sale": 15,
+      "weight": null,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/kooa/szczotka/bambusowa/do/sierci/9/800/1_252334_pla_kooa_zupfb_rste_aus_bambus_4_res_9.jpg",
+      "product_code": 423512389,
+      "animal_id": {
+        "$oid": "63cad65d9a71623f0c899382"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c2f"
+      },
+      "description": "Produkty marki kooa umożliwiają pielęgnację Twojego pupila według tych samych standardów, które stosujesz w odniesieniu do siebie. Z pasją dbamy o dobre samopoczucie i komfort Twojego futrzastego członka rodziny, aby mógł w pełni cieszyć się każdym nowym dniem spędzonym razem z Tobą. Podnieś jakość życia swojego pupila i miej pewność, że stawiasz przy tym na innowacyjną markę produktów pielęgnacyjnych klasy premium dla swojego ulubieńca.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Uchwyt: bambus. Podłoże szczotki: guma. Włosie: drut stalowy.",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63cad7dc9a71623f0c899385"
+      }
+    },
+    {
+      "link": "/shop/koty/products/higiena/benek-super-lawenda-żwirek-dla-kota",
+      "name": "Benek Super Lawenda żwirek dla kota",
+      "producer": "Benek",
+      "price": 34.8,
+      "amount": 3,
+      "expiration_date": null,
+      "sale": 0,
+      "weight": 8000,
+      "color": "",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/benek/super/lawenda/wirek/dla/kota/9/800/55478_pla_super_benek_lavender_10l_hs_01_9.jpg",
+      "product_code": 398543313,
+      "animal_id": {
+        "$oid": "63cc50574c6402d09b507b6f"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c34"
+      },
+      "description": "Żwirek higieniczny dla zwierząt domowych wytwarzany z glinki bentonitowej. Dzięki zastosowanej technologii produkcji uzyskano regularne ziarna żwirku o wymiarach 2-5 mm. Wydajny, zbryla się z jednoczesnym pęcznieniem, co zwiększa znacznie jego wydajność. Bardzo skutecznie pochłania płyny i przykre zapachy. Bardzo chłonny, bezpyłowy granulat zbryla się tworząc regularne bryłki. Nie przykleja się do dna kuwety. Po nasypaniu świeżego żwirku należy zawsze potrząsnąć kuwetą, dzięki czemu żwirek nie klei się do dna.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Żwirek zbrylający się o uspokajającym zapachu lawendy i kocimiętki, bardzo chłonny i w 100% naturalny.",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63cc5b414c6402d09b507b71"
+      }
+    },
+    {
+      "link": "/shop/koty/products/akcesoria/trixie-ceramiczna-miska-w-kształcie-głowy-kota",
+      "name": "Trixie ceramiczna miska w kształcie głowy kota",
+      "producer": "Trixie",
+      "price": 13.59,
+      "amount": 1,
+      "expiration_date": null,
+      "sale": 0,
+      "weight": null,
+      "color": "biało-szary",
+      "image": "https://shop-cdn-m.mediazs.com/bilder/trixie/ceramiczna/miska/w/ksztacie/gowy/kota/9/800/65030_pla_keramiknapf_fg_1_9.jpg",
+      "product_code": 300590313,
+      "animal_id": {
+        "$oid": "63cc50574c6402d09b507b6f"
+      },
+      "category_id": {
+        "$oid": "63bee7ee1312a763a0629c31"
+      },
+      "description": "Płytka, ceramiczna miska marki Trixie to produkt, który na pewno zmieni kocią jadalnię w jeszcze przyjemniejsze miejsce. To wyjątkowa miska w kształcie głowy kota, z wystającymi uszami i namalowanymi oczami, uroczym noskiem w kształcie serca i wąsami. Chropowaty spód i ciężar miski zapobiegają wywróceniu się i przesuwaniu jej przez naszego pupila. Dzięki temu, że miska Trixie jest płytka, ułatwia jedzenie. Od teraz nasz kot może jeść z przyjemnością, aż do ostatniego kęsa. Miska jest higieniczna i łatwa w czyszczeniu: jej gładką powierzchnię można wytrzeć wilgotną ściereczką lub umyć ją w zmywarce.",
+      "extra_description": "",
+      "image_description": "",
+      "composition": "Ceramika",
+      "additives": "",
+      "protein": null,
+      "fat": null,
+      "ash": null,
+      "fiber": null,
+      "body_weight": null,
+      "moderate_needs": null,
+      "low_needs": null,
+      "_id": {
+        "$oid": "63cc5e9d4c6402d09b507b73"
+      }
+    }
+  ],
+  "sets": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674923058536"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674936495283"
+    }
+  },
+  "__v": 0
+}]
