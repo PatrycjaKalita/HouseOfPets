@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 35px;
     margin-bottom: 10px;
 }
@@ -76,19 +76,19 @@ input[type=checkbox] {
 .filter-container {
     border-right: solid 1px #9D9D9D;
     padding: 10px 20px 10px 20px;
-    margin-right: 60px;
+    margin-right: 30px;
     width: 15%;
     height: auto;
 }
 
 .filter-title {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .filter-name {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
     margin-top: 20px
 }

@@ -5,8 +5,8 @@ const {
     addingAnimalForAdoption,
     getAvailableAnimalTypes,
     getAvailableAnimalBreeds, getAvailableAnimalForAdoption,
-    getAvailableAnimalAges, getAvailableAnimalsForAdoptionList,
-    getAvailableAnimalWeights, getAvailableAnimalsList
+    getAvailableAnimalAges, getAvailableAnimalsForAdoptionList, deleteAnimalFromAdoptionList,
+    getAvailableAnimalWeights, getAvailableAnimalsList, getAvailableAnimalForEditing, updateAnimalFoAdoption
 } = require('../controllers/animal')
 const {runValidation} = require("../validators");
 const {addingAnimalForAdoptionValidator} = require("../validators/animal");
@@ -22,5 +22,10 @@ router.get('/adding/animalForAdoption/weight', getAvailableAnimalWeights)
 router.get('/view/animals-list', getAvailableAnimalsList)
 router.get('/view/animals-list-for-adoption', getAvailableAnimalsForAdoptionList)
 router.get('/view/animal-for-adoption', getAvailableAnimalForAdoption)
+router.get('/view/animal-for-editing', getAvailableAnimalForEditing)
+
+router.put('/update/animal-for-adoption', updateAnimalFoAdoption)
+
+router.delete('/delete/animal-from-list', deleteAnimalFromAdoptionList)
 
 module.exports = router

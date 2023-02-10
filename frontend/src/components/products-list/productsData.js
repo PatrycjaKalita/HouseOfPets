@@ -5,11 +5,11 @@ export const products = [
         price: 154.65,
         link: '/royal-canin-hair-&-skin',
         rating: '4.5',
-        producer: 'Royal Canin',
+        producer: 'Feringa',
         lifePhase: 'dorosły',
         promotion: false,
     },
-    {
+/*    {
         image: "https://zooart.com.pl/pol_pl_ROYAL-CANIN-Kitten-Sterilised-2kg-karma-sucha-dla-kociat-od-6-do-12-miesiaca-zycia-sterylizowanych-23748_8.jpg",
         title: "ROYAL CANIN Kitten Sterilised 2kg",
         price: 83.95,
@@ -28,7 +28,7 @@ export const products = [
         producer: 'Royal Canin',
         lifePhase: 'dorosły',
         promotion: false,
-    },
+    },*/
     {
         image: "https://zooart.com.pl/pol_pl_WHISKAS-Sterile-14kg-sucha-karma-dla-kotow-po-sterylizacji-z-kurczakiem-13276_7.jpg",
         title: "WHISKAS Sterile 14kg z kurczakiem",
@@ -39,7 +39,7 @@ export const products = [
         lifePhase: 'dorosły',
         promotion: true,
     },
-    {
+ /*   {
         image: "https://www.krakvet.pl/pol_pl_Almo-Nature-Adult-z-ryba-oleista-sucha-karma-holistyczna-dla-kota-2-kg-31385_1.jpg",
         title: "ALMO NATURE Holistic Adult z rybą oleistą 2kg",
         price: 45.00,
@@ -58,5 +58,5 @@ export const products = [
         producer: 'Perfect Fit',
         lifePhase: 'dorosły',
         promotion: true,
-    },
+    },*/
 ];

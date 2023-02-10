@@ -237,3 +237,125 @@ exports.getAvailableAnimalForAdoption = async (req, res) => {
         })
     }
 }
+
+
+exports.getAvailableAnimalForEditing= async (req, res) => {
+    try {
+        const animalID = req.query.animalId
+        console.log(animalID)
+        const animalForEditing = await AnimalForAdoption.aggregate([
+            {
+                '$match': {
+                    '_id': ObjectId(animalID)
+                }
+            },
+            {
+                '$lookup': {
+                    'from': 'breeds',
+                    'localField': 'breed_id',
+                    'foreignField': '_id',
+                    'as': 'breeds'
+                }
+            },
+            {
+                '$lookup': {
+                    'from': 'typeofanimals',
+                    'localField': 'type_of_pets_id',
+                    'foreignField': '_id',
+                    'as': 'typeofanimals'
+                }
+            },
+            {
+                '$lookup': {
+                    'from': 'ages',
+                    'localField': 'age_id',
+                    'foreignField': '_id',
+                    'as': 'ages'
+                }
+            },
+            {
+                '$lookup': {
+                    'from': 'weights',
+                    'localField': 'weight_id',
+                    'foreignField': '_id',
+                    'as': 'weights'
+                }
+            }
+        ])
+
+        console.log(animalForEditing)
+
+        res.status(200).json({
+            availableAnimalForEditing: {
+                animalForEditing
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: "BŁĄD wyswietlenia zwierzatka do edycji z bazy."
+        })
+    }
+}
+
+exports.updateAnimalFoAdoption= async (req, res) => {
+    const {name, address, short_description, email, phone_number, image, sex, type_of_pets_id, breed_id, age_id, weight_id} = req.body
+
+    AnimalForAdoption.findOne({_id: req.body.id}, (err, animal) => {
+        if (name) {
+            animal.name = name;
+        }
+        if (address) {
+            animal.address = address;
+        }
+        if (short_description) {
+            animal.short_description = short_description;
+        }
+        if (email) {
+            animal.email = email;
+        }
+        if (phone_number.length === 9) {
+            animal.phone_number = phone_number;
+        }
+        if (image) {
+            animal.image = image;
+        }
+        if (sex) {
+            animal.sex = sex;
+        }
+        if (type_of_pets_id) {
+            animal.type_of_pets_id = type_of_pets_id;
+        }
+        if (breed_id) {
+            animal.breed_id = breed_id;
+        }
+        if (age_id) {
+            animal.age_id = age_id;
+        }
+        if (weight_id) {
+            animal.weight_id = weight_id;
+        }
+
+        animal.save((err, updatedAnimalForAdoption) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Aktualizacja zwierzątka nie powiodła się'
+                });
+            }
+            res.status(200).json(updatedAnimalForAdoption);
+        });
+    });
+}
+
+exports.deleteAnimalFromAdoptionList= async (req, res) => {
+    AnimalForAdoption.findOne({_id: req.body.id}, (err, animal) => {
+
+        animal.delete((err, deleteAnimalFromLis) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Zwierze usunięte.'
+                });
+            }
+            res.status(200).json(deleteAnimalFromLis);
+        });
+    });
+}

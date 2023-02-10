@@ -75,7 +75,7 @@ const ClientProfile = () => {
                                     <h1 className="order-data">Data zamówienia: {order.createdAt.slice(0,10)} r.</h1>
 
                                     <div className="client-order-details">
-                                        <h1 className="c-o-price">{order.totalCost} zł</h1>
+                                        <h1 className="c-o-price">{order.totalCost.toFixed(2)} zł</h1>
 
                                         <button className="link-to-order-details" onClick={() => clickSubmit(order._id)}>Szczegóły zamówienia</button>
                                     </div>

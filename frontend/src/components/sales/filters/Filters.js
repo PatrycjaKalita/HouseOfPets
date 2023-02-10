@@ -6,7 +6,7 @@ import {makeStyles} from "@material-ui/core/styles";
 
 const useStyle = makeStyles({
     textFieldStyle: {
-        width: 100,
+        width: 85,
         "& label.Mui-focused": {
             color: '#464646',
         },

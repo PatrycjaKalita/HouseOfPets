@@ -23,7 +23,7 @@ const ProductsInSet = (props) => {
                     </Link>
                     <div className="PS-change-link-container">
                         <h1 className={weight === null ? "OD-product-detail" : "hidden"}>{color}</h1>
-                        <h1 className={weight === null ? "hidden" : "OD-product-detail"}>{weight}</h1>
+                        <h1 className={weight === null ? "hidden" : "OD-product-detail"}>{weight} g</h1>
                         <h1 className="PS-product-change-link" onClick={() => setShowed(true)}>Zmień</h1>
                     </div>
                 </div>

@@ -70,13 +70,13 @@
 .OD-product-img{
     height: 120px;
     width: 120px;
-    object-fit: cover;
+    object-fit: scale-down;
     padding: 15px;
 }
 
 .OD-product-details-container{
-    padding: 40px 0 0 15px;
-    width: 585px;
+    padding: 40px 0 0 5px;
+    width: 500px;
 }
 
 .OD-product-name{
@@ -92,13 +92,13 @@
 }
 
 .OD-product-amount{
-    padding: 55px 10px 0 50px;
+    padding: 55px 10px 0 20px;
     font-size: 20px;
     font-weight: 300;
 }
 
 .OD-product-amount-value{
-    padding: 55px 15px 0 0;
+    padding: 55px 5px 0 0;
     font-size: 20px;
     font-weight: 500;
 }
@@ -139,7 +139,7 @@
 }
 
 .OD-product-price-container{
-    padding: 0 15px 0 100px;
+    padding: 0 15px 0 50px;
     position: relative;
-    width: 150px;
+    width: 200px;
 }

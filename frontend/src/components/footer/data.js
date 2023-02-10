@@ -2,7 +2,7 @@ export const CustomerService = [
     { name: "Czas realizacji zamówienia", link: "#" },
     { name: "Koszt dostawy", link: "#" },
     { name: "Reklamacje i zwroty", link: "#" },
-    { name: "Regulamin", link: "#" },
+    { name: "Regulamin", link: "/regulamin" },
     { name: "Kontakt", link: "#" },
 ];
 export const Help = [

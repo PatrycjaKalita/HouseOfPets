@@ -87,7 +87,7 @@
 
 .main-dm-container {
     margin: 50px 0 100px 0;
-    width: 60%;
+    width: 65%;
 }
 
 .dm-title {
@@ -100,7 +100,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 25px;
-    column-gap: 25px;
+    column-gap: 50px;
 }
 
 .dm-container {

@@ -149,6 +149,13 @@ const OrderDetails = (props) => {
                     </div>
                 </div>
 
+                <div className={logIn === "klient" ? "mb-35 flex" : "hidden"}>
+                    <h1 className="OD-title-part">Status: </h1>
+                    <h1 className="text-black text-lg font-medium ml-3 mt-px">{orderDetails.status}</h1>
+
+                </div>
+
+
                 <div className="">
                     <h1 className={logIn === "klient" ? "OD-title-part" : "hidden"}>Informacje:</h1>
                     <h1 className={logIn === "pracownik" ? "OD-title-part" : "hidden"}>Podsumowanie koszyka:</h1>

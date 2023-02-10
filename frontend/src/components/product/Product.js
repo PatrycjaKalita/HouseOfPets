@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
-import {Rating} from "@mui/material";
+import {CircularProgress, Rating} from "@mui/material";
 
 import './Style.css';
 import {productReviews} from './productData';
@@ -151,7 +151,9 @@ const Product = () => {
         <>
             {
                 availableProduct.hasOwnProperty('productDetails') === false ?
-                    <h1>Loading..</h1>
+                    <div className="circular-progress-container">
+                        <CircularProgress color="inherit"/>
+                    </div>
                     :
                     availableProduct.productDetails.map((product) => {
                             return <>
@@ -237,7 +239,9 @@ const Product = () => {
 
                                             <div
                                                 className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
-                                                <button className="product-btn-add-to-card" onClick={() => addProductToCart(product)}>Dodaj do koszyka</button>
+                                                <button className="product-btn-add-to-card"
+                                                        onClick={() => addProductToCart(product)}>Dodaj do koszyka
+                                                </button>
                                             </div>
 
                                             <div
@@ -247,7 +251,7 @@ const Product = () => {
                                                     variant="outlined"
                                                     value={sale}
                                                     onChange={handleChange('sale')}
-                                                    className={classes.textFieldCareTaker}
+                                                    className={classes.textFieldExtraInfo}
                                                     InputProps={{
                                                         endAdornment: <InputAdornment position="start">%</InputAdornment>,
                                                     }}

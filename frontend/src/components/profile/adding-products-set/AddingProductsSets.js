@@ -40,7 +40,6 @@ const AddingProductsSets = (props) => {
         name: '',
         price: '',
         image: '',
-        buttonText: 'Dodaj produkt'
     })
 
     const [valueSelect, setValueSelect] = useState({
@@ -134,7 +133,7 @@ const AddingProductsSets = (props) => {
 
                                 <div className="APS-price-container">
                                     <h1 className="APS-price-title">Cena:</h1>
-                                    <h1 className="APS-price-value">18.80 zł</h1>
+                                    <h1 className="APS-price-value">0.00 zł</h1>
                                 </div>
                             </div>
 
@@ -142,7 +141,7 @@ const AddingProductsSets = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rodzaj zwierzęcia</InputLabel>
                                     <Select
-                                        className={classes.selectStylesCategories}
+                                        className={classes.selectStylesProducts}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.typeOfAnimal}
                                         label="Rodzaj zwierzęcia"
@@ -164,7 +163,7 @@ const AddingProductsSets = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rasa</InputLabel>
                                     <Select
-                                        className={classes.selectStylesCategories}
+                                        className={classes.selectStylesProducts}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.breed}
                                         label="Rasa"
@@ -239,7 +238,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr1</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr1"
                                 >
@@ -248,7 +247,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr2</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr2"
                                 >
@@ -257,7 +256,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr3</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr3"
                                 >
@@ -266,7 +265,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr4</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr4"
                                 >
@@ -275,7 +274,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr5</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr5"
                                 >
@@ -284,7 +283,7 @@ const AddingProductsSets = (props) => {
                             <FormControl>
                                 <InputLabel className={classes.inputLabelStyle}>Produkt nr6</InputLabel>
                                 <Select
-                                    className={classes.selectStylesProducts}
+                                    className={classes.selectStyles300}
                                     IconComponent={ExpandMoreRoundedIcon}
                                     label="Produkt nr6"
                                 >
@@ -295,7 +294,7 @@ const AddingProductsSets = (props) => {
 
 
                     <div className="APS-form-btn-container">
-                        <button className="APS-form-btn" onClick={clickSubmit}>l</button>
+                        <button className="APS-form-btn" onClick={clickSubmit}>Dodaj zestaw</button>
                     </div>
                 </form>
             </div>

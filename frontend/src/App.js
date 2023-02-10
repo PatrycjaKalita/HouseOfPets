@@ -29,6 +29,10 @@ import Sales from "./components/sales/Sales";
 import AnimalsList from "./components/animals-list/AnimalsList";
 import Animal from "./components/animal/Animal";
 import ProductsSet from "./components/products-set/ProductsSet";
+import ShopRules from "./components/footer/shop-rules/ShopRules";
+import EditAnimal from "./components/profile/edit-animal/EditAnimal";
+import DeleteAnimal from "./components/profile/delete-animal/DeleteAnimal";
+import DeleteProduct from "./components/profile/delete-product/DeleteProduct";
 
 function App() {
     return (
@@ -59,7 +63,6 @@ function App() {
                     <ProductsList animalType="koty" productCategory="sucha-karma"/>
                 </Route>
 
-
                 <Route path="/shop/:animalType/products/:productCategory/:productName" exact>
                     <Product animalType="koty" productCategory="sucha-karma"
                              productName="whiskas-sterile-14-kg-z-kurczakiem"/>
@@ -81,19 +84,32 @@ function App() {
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers
                     choose={'users'}/></EmployeeRoutes>
+
+                {/*PRODUKTY*/}
                 <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts
                     choose={'products'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct
                     choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/usun/:id" exact><DeleteProduct
+                    choose={'products'}/></EmployeeRoutes>
+
+                {/*ZWIERZETA*/}
                 <EmployeeRoutes path="/profil/pracownik/zwierzeta" exact><ListOfAnimal
+                    choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zwierzeta/edycja/:id" exact><EditAnimal
+                    choose={'animals'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zwierzeta/usun/:id" exact><DeleteAnimal
                     choose={'animals'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-pupila-do-adopcji" exact><AddingAnimal
                     choose={'animals'}/></EmployeeRoutes>
+
+                {/*ZESTAWY*/}
                 <EmployeeRoutes path="/profil/pracownik/zestawy-produktow" exact><ListOfProductsSets
                     choose={'products-sets'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-zestawu" exact><AddingProductsSets
                     choose={'products-sets'}/></EmployeeRoutes>
 
+                <Route path="/regulamin"><ShopRules/></Route>
             </Switch>
 
             <Footer/>

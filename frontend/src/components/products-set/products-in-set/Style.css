@@ -143,13 +143,13 @@
 
 .PIS-product-amount-container{
     width: 100px;
-    margin-left: 150px;
+    margin-left: 50px;
     display: flex;
 }
 
 .PIS-product-price-container{
-    width: 180px;
-    margin-left: 150px;
+    width: 150px;
+    margin-left: 100px;
     position: relative;
     /*display: flex;*/
 }

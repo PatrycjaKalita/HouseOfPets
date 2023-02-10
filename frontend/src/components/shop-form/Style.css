@@ -65,7 +65,7 @@
     object-fit: cover;
     border-radius: 300px;
     position: absolute;
-    transform: translateX(-70px);
+    transform: translateX(0px);
 }
 
 .shop-form-second-row-title {
@@ -75,7 +75,7 @@
 
 .options-container {
     display: flex;
-    gap: 55px;
+    gap: 8px;
 }
 
 .breed-container, .age-container {
@@ -99,7 +99,7 @@
     font-size: 18px;
     width: 200px;
     height: 50px;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
     border-radius: 10px;
     border: solid 1px #8D451D;
 }

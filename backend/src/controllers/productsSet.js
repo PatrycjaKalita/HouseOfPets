@@ -1,7 +1,4 @@
-const Product = require('../models/product')
-const Animal = require('../models/animal')
 const ProductsSet = require('../models/productsSet')
-const Category = require('../models/category')
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -91,3 +88,22 @@ exports.getAvailableProductsSet = async (req, res) => {
         })
     }
 }
+
+exports.updatePromotion = async (req, res) => {
+    const {sale} = req.body
+
+    ProductsSet.findOne({_id: req.body.id}, (err, productsSetSale) => {
+        if (sale) {
+            productsSetSale.sale = sale;
+        }
+
+        productsSetSale.save((err, updatedSales) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Aktualizacja profilu nie powiodła się'
+                });
+            }
+            res.status(200).json(updatedSales);
+        });
+    });
+};

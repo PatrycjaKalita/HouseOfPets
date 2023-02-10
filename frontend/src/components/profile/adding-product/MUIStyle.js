@@ -87,7 +87,7 @@ export const useStyles = makeStyles({
     },
     textFieldCareTaker: {
         color: '#666666',
-        width: 300,
+        width: 350,
         "& label.Mui-focused": {
             color: '#666666',
         },
@@ -99,7 +99,7 @@ export const useStyles = makeStyles({
     },
     textFieldAddress: {
         color: '#666666',
-        width: 700,
+        width: 775,
         "& label.Mui-focused": {
             color: '#666666',
         },
@@ -137,5 +137,81 @@ export const useStyles = makeStyles({
                     "background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s",
             },
         },
-    }
+    },
+    textFieldAP: {
+        width: 350,
+        color: '#666666',
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
+    textFieldExtraInfoAP: {
+        color: '#666666',
+        width: 200,
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
+    selectStyles300: {
+        width: 300,
+        "&.MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D",
+                color: "#8D451D"
+            },
+        },
+        selectIcon: {
+            position: "relative",
+            fontSize: "20px",
+            paddingRight: "10px",
+        },
+    },
+    selectStyles200: {
+        width: 200,
+        "&.MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D",
+                color: "#8D451D"
+            },
+        },
+        selectIcon: {
+            position: "relative",
+            fontSize: "20px",
+            paddingRight: "10px",
+        },
+    },
+    textField150: {
+        width: 150,
+        color: '#666666',
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
+    textField300: {
+        width: 300,
+        color: '#666666',
+        "& label.Mui-focused": {
+            color: '#666666',
+        },
+        "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+                borderColor: "#8D451D"
+            }
+        },
+    },
 })

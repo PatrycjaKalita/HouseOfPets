@@ -5,6 +5,7 @@ import AnimalProposedProducts from "./animal-proposed-products/AnimalProposedPro
 import {useHistory, useParams} from "react-router-dom";
 import {getCookie, signOut} from "../../auth/Helpers";
 import axios from "axios";
+import {CircularProgress} from "@mui/material";
 
 const Animal = () => {
     const {animalId} = useParams();
@@ -45,7 +46,9 @@ const Animal = () => {
             <AnimalLink/>
             {
                 availableAnimalForAdoption.hasOwnProperty('animalForAdoption') === false ?
-                    <h1>Loading..</h1>
+                    <div className="circular-progress-container">
+                        <CircularProgress color="inherit"/>
+                    </div>
                     :
                     availableAnimalForAdoption.animalForAdoption.map((animal) => {
                         return <>
@@ -92,9 +95,9 @@ const Animal = () => {
 
                                         <div className="animal-caretaker-mail-info">
                                             <div className="animal-caretaker-info-title">
-                                        <span className="animal-caretaker-info-icon">
-                                            <ion-icon name="mail"></ion-icon>
-                                        </span>
+                                                <span className="animal-caretaker-info-icon">
+                                                    <ion-icon name="mail"></ion-icon>
+                                                </span>
                                                 <h1 className="animal-caretaker-info-name">Mail</h1>
                                             </div>
                                             <h1 className="animal-detail-value">{animal.email}</h1>

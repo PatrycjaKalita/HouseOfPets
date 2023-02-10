@@ -244,17 +244,12 @@ const AddingProduct = (props) => {
 
     };
 
+    // eslint-disable-next-line no-unused-vars
     let idWeightOfAnimalSelect
-
-    let typeOfPetsId = valueSelect.typeOfAnimal
-    let breedId = valueSelect.breed
-    let ageId = valueSelect.age
-    let weightId = valueSelect.aWeight
 
     const handleChange = (e) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
-
         idWeightOfAnimalSelect = e.target.value
     }
 
@@ -268,7 +263,10 @@ const AddingProduct = (props) => {
         weight,
         color,
         image,
-        animal_id,
+        type_of_pets_id,
+        breed_id,
+        age_id,
+        weight_id,
         category_id,
         product_code,
         description,
@@ -288,6 +286,12 @@ const AddingProduct = (props) => {
         buttonText
     } = values
 
+    type_of_pets_id = valueSelect.typeOfAnimal
+    breed_id = valueSelect.breed
+    age_id = valueSelect.age
+    weight_id = valueSelect.aWeight
+
+
     const handleChangeText = (name) => (event) => {
         setValues({...values, [name]: event.target.value})
     }
@@ -295,11 +299,11 @@ const AddingProduct = (props) => {
 
     function generateLink(idCategory) {
         let typ;
-        if (typeOfPetsId === '63bee7531312a763a0629bfb') {
+        if (type_of_pets_id === '63bee7531312a763a0629bfb') {
             typ = 'koty'
-        } else if (typeOfPetsId === '63bee7531312a763a0629bfc') {
+        } else if (type_of_pets_id === '63bee7531312a763a0629bfc') {
             typ = 'psy'
-        } else if (typeOfPetsId === '63bee7531312a763a0629bfd') {
+        } else if (type_of_pets_id === '63bee7531312a763a0629bfd') {
             typ = 'male-zwierzatka'
         }
         let categoryNameArray = availableProductDetails.categories.map((category) => {
@@ -363,7 +367,10 @@ const AddingProduct = (props) => {
                 moderate_needs,
                 low_needs,
                 category_id,
-                animal_id,
+                type_of_pets_id,
+                breed_id,
+                age_id,
+                weight_id,
                 type_of_animal_name,
             }
         }).then(response => {
@@ -378,7 +385,10 @@ const AddingProduct = (props) => {
                 weight,
                 color,
                 image,
-                animal_id,
+                type_of_pets_id,
+                breed_id,
+                age_id,
+                weight_id,
                 category_id,
                 product_code,
                 description,
@@ -397,7 +407,7 @@ const AddingProduct = (props) => {
                 type_of_animal_name,
                 buttonText: 'Dodano produkt'
             })
-            toast.success('Produkt dodany');
+            history.push('/profil/pracownik/produkty')
 
         }).catch(error => {
             setValues({...values, buttonText: 'Submit'})
@@ -469,13 +479,13 @@ const AddingProduct = (props) => {
                                     value={producer}
                                     label="Producent"
                                     variant="outlined"
-                                    className={classes.textField}
+                                    className={classes.textFieldAP}
                                 />
 
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Kategoria</InputLabel>
                                     <Select
-                                        className={classes.selectStylesCategories}
+                                        className={classes.selectStylesProducts}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.category}
                                         label="Kategoria"
@@ -498,7 +508,7 @@ const AddingProduct = (props) => {
                                     value={amount}
                                     label="Ilość"
                                     variant="outlined"
-                                    className={classes.textField}
+                                    className={classes.textFieldAP}
                                 />
 
                                 <TextField
@@ -506,7 +516,7 @@ const AddingProduct = (props) => {
                                     value={price}
                                     label="Cena"
                                     variant="outlined"
-                                    className={classes.textField}
+                                    className={classes.textFieldAP}
                                 />
                             </div>
 
@@ -515,7 +525,7 @@ const AddingProduct = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rodzaj zwierzęcia</InputLabel>
                                     <Select
-                                        className={classes.selectStylesCategories}
+                                        className={classes.selectStylesProducts}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.typeOfAnimal}
                                         label="Rodzaj zwierzęcia"
@@ -536,7 +546,7 @@ const AddingProduct = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rasa</InputLabel>
                                     <Select
-                                        className={classes.selectStylesCategories}
+                                        className={classes.selectStylesProducts}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.breed}
                                         label="Rasa"
@@ -734,7 +744,7 @@ const AddingProduct = (props) => {
                                 onChange={handleChangeText('protein')}
                                 label="Białko surowe"
                                 variant="outlined"
-                                className={classes.textFieldExtraInfo}
+                                className={classes.textFieldExtraInfoAP}
                             />
 
                             <TextField
@@ -742,7 +752,7 @@ const AddingProduct = (props) => {
                                 onChange={handleChangeText('fat')}
                                 label="Tłuszcze surowe"
                                 variant="outlined"
-                                className={classes.textFieldExtraInfo}
+                                className={classes.textFieldExtraInfoAP}
                             />
 
                             <TextField
@@ -750,7 +760,7 @@ const AddingProduct = (props) => {
                                 onChange={handleChangeText('ash')}
                                 label="Popiół surowy"
                                 variant="outlined"
-                                className={classes.textFieldExtraInfo}
+                                className={classes.textFieldExtraInfoAP}
                             />
 
                             <TextField
@@ -758,7 +768,7 @@ const AddingProduct = (props) => {
                                 onChange={handleChangeText('fiber')}
                                 label="Włókno surowe"
                                 variant="outlined"
-                                className={classes.textFieldExtraInfo}
+                                className={classes.textFieldExtraInfoAP}
                             />
                         </div>
                     </div>

@@ -79,13 +79,13 @@ const ChangingSearchingOptions = () => {
                         <p className="top-part-options">OPCJE:</p>
 
                         <p className="top-part-selected-options">Rasa:</p>
-                        <p className="top-part-selected-options-answer">Domowy</p>
+                        <p className="top-part-selected-options-answer">Europejski</p>
 
                         <p className="top-part-selected-options">Wiek:</p>
-                        <p className="top-part-selected-options-answer">Wszystkie</p>
+                        <p className="top-part-selected-options-answer">1-2 lata</p>
 
                         <p className="top-part-selected-options">Waga:</p>
-                        <p className="top-part-selected-options-answer">Brak</p>
+                        <p className="top-part-selected-options-answer">3-6 kg</p>
 
                         <p className="top-part-selected-options">Kategoria:</p>
                         <p className="top-part-selected-options-answer">Sucha karma</p>

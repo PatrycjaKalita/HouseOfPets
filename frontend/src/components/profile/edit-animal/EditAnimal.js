@@ -1,25 +1,76 @@
 import React, {useEffect, useState} from 'react';
-import './Style.css'
-import {useStyles} from "../adding-product/MUIStyle";
-
 import ProfileNavigation from "../profile-navigation/ProfileNavigation";
-import {useHistory} from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
-import {getCookie, signOut} from "../../../auth/Helpers";
+import {useHistory} from "react-router-dom";
+import {useStyles} from "../adding-product/MUIStyle";
+import {getCookie, signOut, updateUser} from "../../../auth/Helpers";
 import axios from "axios";
 import {toast} from "react-toastify";
 
-const AddingAnimal = (props) => {
+const EditAnimal = (props) => {
     const history = useHistory()
     const classes = useStyles()
 
+    useEffect(() => {
+        loadAnimalForEditing();
+        loadTypesOfAnimals();
+        loadBreedsOfAnimals();
+        loadAgesOfAnimals();
+        loadWeightsOfAnimals();
+    }, []);
+
+    //WYŚWIETLENIE DANYCH WYBRANEGO ZWIERZĄTKA DO EDYCJI
+    const [getAnimalForEdit, setGetAnimalForEdit] = useState([]);
+    const [getAnimalAge, setGetAnimalAge] = useState('');
+    const [getAnimalBreed, setGetAnimalBreed] = useState('');
+    const [getAnimalType, setGetAnimalType] = useState('');
+    const [getAnimalWeight, setGetAnimalWeight] = useState('');
+    const loadAnimalForEditing = () => {
+        let animalID = window.location.href.replace('http://localhost:3000/profil/pracownik/zwierzeta/edycja/', '')
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/view/animal-for-editing?animalId=${animalID}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setGetAnimalForEdit(response.data.availableAnimalForEditing.animalForEditing[0]);
+                //console.log(response.data.availableAnimalForEditing.animalForEditing)
+                setGetAnimalType(response.data.availableAnimalForEditing.animalForEditing[0].typeofanimals[0].name)
+                setGetAnimalBreed(response.data.availableAnimalForEditing.animalForEditing[0].breeds[0].name)
+                setGetAnimalAge(response.data.availableAnimalForEditing.animalForEditing[0].ages[0].number_with_name)
+                setGetAnimalWeight(response.data.availableAnimalForEditing.animalForEditing[0].weights[0].number)
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
+    //AKTUALZACJA
+    const [values, setValues] = useState({
+        name: '',
+        address: '',
+        short_description: '',
+        sex: '',
+        email: '',
+        phone_number: '',
+        image: '',
+        buttonText: 'Aktualizuj zwierzątko'
+    })
+
     const [isUploaded, setIsUploaded] = useState(false);
-    const [picture, setPicture] = useState("");
+    const [picture, setPicture] = useState('');
 
     function handlePictureChange(e) {
         if (e.target.files && e.target.files[0]) {
@@ -34,18 +85,6 @@ const AddingAnimal = (props) => {
         }
     }
 
-    const [values, setValues] = useState({
-        link: '',
-        name: '',
-        address: '',
-        short_description: '',
-        sex: '',
-        email: '',
-        phone_number: '',
-        image: '',
-        buttonText: 'Dodaj zwierzątko'
-    })
-
     const [valueSelect, setValueSelect] = useState({
         typeOfAnimal: '',
         breed: '',
@@ -57,13 +96,6 @@ const AddingAnimal = (props) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
     }
-
-    useEffect(() => {
-        loadTypesOfAnimals();
-        loadBreedsOfAnimals();
-        loadAgesOfAnimals();
-        loadWeightsOfAnimals();
-    }, []);
 
     const token = getCookie('token');
     const [availableTypesOfAnimals, setAvailableTypesOfAnimals] = useState(false);
@@ -155,11 +187,9 @@ const AddingAnimal = (props) => {
     };
 
     let {
-        link,
         name,
         address,
         short_description,
-        added_to_adoption_date,
         email,
         phone_number,
         image,
@@ -181,78 +211,88 @@ const AddingAnimal = (props) => {
     age_id = valueSelect.age
     weight_id = valueSelect.weight
 
-    function generateLinkForAnimal() {
-        let typ;
-        if (type_of_pets_id === '63bee7531312a763a0629bfb') {
-            typ = 'koty'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfc') {
-            typ = 'psy'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfd') {
-            typ = 'male-zwierzatka'
-        }
-        link = "/adopcja/" + typ + "/" + name
-    }
-
-    /*Data dodania zwierzątka do adopcji*/
-    let date = new Date().toJSON();
-    added_to_adoption_date = date;
-
-    const clickSubmit = event => {
-        generateLinkForAnimal()
+    const clickEditSubmit = event => {
         event.preventDefault()
-        setValues({...values, buttonText: 'Submitting'})
+        let id = getAnimalForEdit._id
+        setValues({...values, buttonText: 'Aktualizacja'})
         axios({
-            method: 'POST',
-            url: `${process.env.REACT_APP_API}/adding/animalForAdoption`,
+            method: 'PUT',
+            url: `${process.env.REACT_APP_API}/update/animal-for-adoption`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data: {
-                link,
+                id,
                 name,
                 address,
                 short_description,
-                added_to_adoption_date,
                 email,
                 phone_number,
                 image,
                 sex,
-                type_of_pets_id,
-                breed_id,
-                age_id,
-                weight_id
-            }
-        }).then(response => {
-            setValues({
-                ...values,
-                link,
-                name,
-                address,
-                short_description,
-                added_to_adoption_date,
-                email,
-                sex,
-                phone_number,
-                image,
                 type_of_pets_id,
                 breed_id,
                 age_id,
                 weight_id,
-                buttonText: 'Dodano zwierzątko'
-            })
+            }
+        }).then(response => {
+            console.log('PRIVATE PROFILE UPDATE SUCCESS', response);
             history.push('/profil/pracownik/zwierzeta')
         }).catch(error => {
-            setValues({...values, buttonText: 'Submit'})
+            //console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
+            setValues({...values, buttonText: 'Aktualizuj zwierzątko'})
             toast.error(error.response.data.error)
         })
     }
-
     return (
-        <div className="main-AA-container">
+        <div className="w-4/5 mt-50 mb-100 mx-auto flex">
             <ProfileNavigation choose={props.choose}/>
 
-            <div className="AA-container">
-                <h1 className="AA-title">Dodanie zwierzątka do adopcji</h1>
+            <div className="w-4/5">
+                <h1 className="mb-35 font-semibold">Edycja zwierzątka</h1>
+                <div className="mb-35">
+                    <div className="flex mb-5">
+                        <img
+                            className="EA-image-upload"
+                            src={getAnimalForEdit.image}
+                            alt="uploaded-img"
+                        />
+
+                        <div className="grid grid-cols-4 ml-5">
+                            <h1 className="text-right font-medium">Imię:</h1>
+                            <h1 className="ml-3">{getAnimalForEdit.name}</h1>
+
+                            <h1 className="text-right font-medium">Płeć:</h1>
+                            <h1 className="ml-3">{getAnimalForEdit.sex}</h1>
+
+                            <h1 className="text-right font-medium">Typ zwierzęcia:</h1>
+                            <h1 className="ml-3">{getAnimalType}</h1>
+
+                            <h1 className="text-right font-medium">Rasa:</h1>
+                            <h1 className="ml-3">{getAnimalBreed}</h1>
+
+                            <h1 className="text-right font-medium">Wiek:</h1>
+                            <h1 className="ml-3">{getAnimalAge}</h1>
+
+                            <h1 className="text-right font-medium">Waga:</h1>
+                            <h1 className="ml-3">{getAnimalWeight}</h1>
+                        </div>
+                    </div>
+
+                    <h1 className="font-medium">Opis zwierzątka:</h1>
+                    <h1 className="mb-5">{getAnimalForEdit.short_description}</h1>
+
+                    <div className="grid grid-cols-2 w-2/3">
+                        <h1 className="font-medium w-100px">Numer telefonu opiekuna:</h1>
+                        <h1 className="ml-3">{getAnimalForEdit.phone_number}</h1>
+
+                        <h1 className="font-medium">Mail opiekuna:</h1>
+                        <h1 className="ml-3">{getAnimalForEdit.email}</h1>
+
+                        <h1 className="font-medium">Adres pobytu zwierzątka:</h1>
+                        <h1 className="ml-3 w-auto">{getAnimalForEdit.address}</h1>
+                    </div>
+                </div>
 
                 <form>
                     <div className="AP-FORM-base-info">
@@ -263,7 +303,7 @@ const AddingAnimal = (props) => {
                                     <span className="AP-camera-icon" onChange={handlePictureChange}>
                                         <ion-icon name="camera-outline"></ion-icon>
                                     </span>
-                                        <p className="AP-upload-image-label">Dodaj zdjęcie zwierzaka</p>
+                                        <p className="AP-upload-image-label">Zaktualizuj zdjęcie zwierzaka</p>
                                     </label>
 
                                     <input
@@ -294,26 +334,26 @@ const AddingAnimal = (props) => {
                         </div>
 
                         <div className="AP-base-info-part">
-                            <div className="AA-base-info">
+                            <div className="grid grid-cols-2 gap-y-9">
                                 <TextField
                                     onChange={handleChangeText('name')}
                                     value={name}
                                     label="Imię"
                                     variant="outlined"
-                                    className={classes.textFieldCareTaker}
+                                    className={classes.textField300}
                                 />
                                 <TextField
                                     onChange={handleChangeText('sex')}
                                     value={sex}
                                     label="Płeć"
                                     variant="outlined"
-                                    className={classes.textFieldCareTaker}
+                                    className={classes.textField300}
                                 />
 
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rodzaj zwierzęcia</InputLabel>
                                     <Select
-                                        className={classes.selectStylesProducts}
+                                        className={classes.selectStyles300}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.typeOfAnimal}
                                         label="Rodzaj zwierzęcia"
@@ -334,7 +374,7 @@ const AddingAnimal = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Rasa</InputLabel>
                                     <Select
-                                        className={classes.selectStylesProducts}
+                                        className={classes.selectStyles300}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.breed}
                                         label="Rasa"
@@ -356,7 +396,7 @@ const AddingAnimal = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Wiek</InputLabel>
                                     <Select
-                                        className={classes.selectStylesAW}
+                                        className={classes.selectStyles200}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.age}
                                         label="Wiek"
@@ -378,7 +418,7 @@ const AddingAnimal = (props) => {
                                 <FormControl>
                                     <InputLabel className={classes.inputLabelStyle}>Waga</InputLabel>
                                     <Select
-                                        className={classes.selectStylesAW}
+                                        className={classes.selectStyles200}
                                         IconComponent={ExpandMoreRoundedIcon}
                                         value={valueSelect.weight}
                                         label="Waga"
@@ -400,7 +440,7 @@ const AddingAnimal = (props) => {
                         </div>
                     </div>
 
-                    <div className="AA-info-container">
+                    <div className="my-50">
                         <TextField
                             onChange={handleChangeText('short_description')}
                             value={short_description}
@@ -413,10 +453,10 @@ const AddingAnimal = (props) => {
                         />
                     </div>
 
-                    <div className="AA-caretaker-container">
+                    <div className="my-50">
                         <h1 className="AP-title-of-section-ac">Dane opiekuna</h1>
 
-                        <div className="AA-dosage-inputs">
+                        <div className="grid grid-cols-3 gap-x-80 mb-35">
                             <TextField
                                 label="Numer telefonu"
                                 variant="outlined"
@@ -441,7 +481,7 @@ const AddingAnimal = (props) => {
                         />
                     </div>
                     <div className="AP-form-btn-container">
-                        <button className="AP-form-btn" onClick={clickSubmit}>{buttonText}</button>
+                        <button className="AP-form-btn" onClick={clickEditSubmit}>{buttonText}</button>
                     </div>
                 </form>
 
@@ -450,4 +490,4 @@ const AddingAnimal = (props) => {
     );
 };
 
-export default AddingAnimal;
+export default EditAnimal;

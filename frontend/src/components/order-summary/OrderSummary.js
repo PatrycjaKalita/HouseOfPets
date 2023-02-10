@@ -83,11 +83,11 @@ const OrderSummary = () => {
                 tego zamówienia można podejrzeć również w profilu użytkownika (zakładka “Historia
                 zamówień”). W razie problemów prosimy o niezwłoczny kontakt z nami.</p>
 
-            <div className="os-btn-container">
+            {/*<div className="os-btn-container">
                 <Link to="/">
                     <button className="os-btn">Zapłać</button>
                 </Link>
-            </div>
+            </div>*/}
         </div>
 
     );

@@ -68,7 +68,7 @@ const ListOfProducts = (props) => {
                         :
                         availableProductsList.product.map((product) => {
                             return <div className="LOP-one-part-container">
-                                <More options={3}/>
+                                <More options={4} productID={product._id}/>
 
                                 <Link to={product.link}>
                                     <img alt="animal" className="LOP-animal-image" src={product.image}/>

@@ -80,7 +80,7 @@ const ListOfProductSets = (props) => {
                                                     <span className="LOPS-list-star">
                                                         <ion-icon name="star"></ion-icon>
                                                     </span>
-                                                <h1 className="LOPS-list-rating">4.2</h1>
+                                                <h1 className="LOPS-list-rating">0</h1>
                                             </div>
 
                                             <div className="LOPS-list-container-price">

@@ -6,12 +6,13 @@ const {runValidation} = require('../validators')
 const {
     addingProduct,
     getAvailableProduct,
-    getAvailableProductDetails,getAvailableProductsList,
+    getAvailableProductDetails, getAvailableProductsList,
     getAvailableAnimalTypes,
     getAvailableAnimalBreeds,
-    getAvailableAnimalAges,
+    getAvailableAnimalAges, deleteProductFromShop,
     getAvailableAnimalWeights, updatePromotion, getAvailableProductsSaleList
 } = require('../controllers/product')
+
 
 router.post('/adding/product', addingProductValidator, runValidation, addingProduct)
 router.get('/adding/product', getAvailableProductDetails)
@@ -25,5 +26,7 @@ router.get('/adding/product/weight', getAvailableAnimalWeights)
 
 router.get('/view/products', getAvailableProduct)
 router.put('/update/product-sale', updatePromotion)
+
+router.delete('/delete/product-from-shop', deleteProductFromShop)
 
 module.exports = router // by default it is empty object

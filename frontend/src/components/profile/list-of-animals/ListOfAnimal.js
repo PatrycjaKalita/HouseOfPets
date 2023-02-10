@@ -66,7 +66,7 @@ const ListOfAnimal = (props) => {
                             :
                             availableAnimalsList.animal.map((animal) => {
                                 return <div className="LOA-one-part-container">
-                                    <More options={3}/>
+                                    <More options={3} animalID={animal._id}/>
 
                                     <Link to={animal.link}>
                                     <img alt="animal" className="LOA-animal-image" src={animal.image}/>

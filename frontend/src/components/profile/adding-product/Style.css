@@ -69,6 +69,13 @@
     border-radius: 20px;
 }
 
+.EA-image-upload {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .AP-base-info-part {
     width: 75%;
     height: auto;
@@ -79,7 +86,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 35px;
-    column-gap: 70px;
+    column-gap: 35px;
 }
 
 .AP-extra-info-container, .AP-composition-container, .AP-dosage-container {
@@ -124,7 +131,7 @@
 }
 
 .AP-extra-info-weight-info {
-    margin: 0 200px;
+    margin: 0 120px;
 }
 
 .AP-description-extra {
@@ -155,13 +162,13 @@
 .AP-AC-inputs{
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    column-gap: 50px;
+    column-gap: 65px;
 }
 
 .AP-dosage-inputs{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 200px;
+    column-gap: 120px;
 }
 
 .AP-form-btn-container{
@@ -177,4 +184,47 @@
     color: white;
     margin: 0 auto 15px auto;
     font-size: 18px;
+    border: solid 2px #8D451D;
+}
+
+.AP-form-btn:hover{
+    background-color: transparent;
+    color: #8D451D;
+    border: solid 2px #8D451D;
+    font-size: 18px;
+}
+
+.delete-element-btn{
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #BF1515;
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    border: solid 2px #BF1515;
+}
+
+.delete-element-btn:hover{
+    background-color: transparent;
+    color: #BF1515;
+    border: solid 2px #BF1515;
+    font-size: 18px;
+}
+
+.cancel-delete-element-btn:hover{
+    background-color: #666666;
+    color: white;
+    border: solid 2px #666666;
+}
+
+.cancel-delete-element-btn{
+    background-color: transparent;
+    color: #666666;
+    border: solid 2px #666666;
+    font-size: 18px;
+    margin: 0 50px 15px 0;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
 }

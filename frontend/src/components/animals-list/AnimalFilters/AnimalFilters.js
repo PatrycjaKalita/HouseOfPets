@@ -22,7 +22,7 @@ const AnimalFilters = () => {
         <div className="AF-container">
             <h1 className="AF-title">Filtry</h1>
 
-            <h1 className="AF-name">Faza życia</h1>
+{/*            <h1 className="AF-name">Faza życia</h1>
             {
                 uniqueLifePhase.map((lifePhase) => (
                     <label className="checkbox-filters-container">{lifePhase.age}
@@ -36,7 +36,7 @@ const AnimalFilters = () => {
                         <span className="custom-checkmark"></span>
                     </label>
                 ))
-            }
+            }*/}
 
             <h1 className="AF-name">Płeć</h1>
             {

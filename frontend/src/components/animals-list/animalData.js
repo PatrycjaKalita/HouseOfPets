@@ -15,14 +15,14 @@ export const animalList = [
         age: "2-6 lat",
         link: "",
     },
-    {
+/*    {
         name: "Puszek",
         sex: "Samiec",
         breed: "Europejski",
         image: "https://trupanion.com/-/media/Trupanion/Images/Breed--Guide--New/Mixed--Breed--Cat/mixed-breed-cat2.jpg?rev=31bbd50aa6b04287bc4f180014f321ca&hash=6FE8D8611C7E4884849351BB57962A6B",
         age: "6 mies - 1 rok",
         link: "",
-    },
+    },*/
     {
         name: "Kropka",
         sex: "Samica",
@@ -55,7 +55,7 @@ export const animalList = [
         age: "2-6 lat",
         link: "",
     },
-    {
+/*    {
         name: "Lucky",
         sex: "Samiec",
         breed: "Mix",
@@ -70,5 +70,5 @@ export const animalList = [
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/British_Shorthair_tricolore.jpg/220px-British_Shorthair_tricolore.jpg",
         age: "4-6 mies",
         link: "",
-    },
+    },*/
 ]

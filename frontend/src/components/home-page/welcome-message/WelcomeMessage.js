@@ -11,9 +11,9 @@ const WelcomeMessage = () => {
                 <h1 className="second-text-wm">Znajdź z nami swoje idealne zwierzątko</h1>
 
                 <p className="block-of-text-wm">
-                    Bardzo się cieszymy, że jesteś tutaj z nami! Nasze zwierzątka<br/>
-                    czekająna Ciebie.<br/>
-                    Działamy na terenie całej Polski. Jeśli zwierzak ma do Ciebie <br/>
+                    Bardzo się cieszymy, że jesteś tutaj z nami! Nasze zwierzątka
+                    czekają na Ciebie.
+                    Działamy na terenie całej Polski. Jeśli zwierzak ma do Ciebie
                     trafić to ograniemy to.
                 </p>
             </div>

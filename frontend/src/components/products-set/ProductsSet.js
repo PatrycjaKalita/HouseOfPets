@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useHistory} from "react-router-dom";
-import {Rating} from "@mui/material";
+import {CircularProgress, Rating} from "@mui/material";
 
 import './Style.css';
 import {productReviews} from '../product/productData';
@@ -76,7 +76,7 @@ const ProductsSet = () => {
 
         axios({
             method: 'PUT',
-            url: `${process.env.REACT_APP_API}/update/product-sale`,
+            url: `${process.env.REACT_APP_API}/update/products-set-sale`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -156,7 +156,9 @@ const ProductsSet = () => {
         <>
             {
                 availableProductsSet.hasOwnProperty('productsSet') === false ?
-                    <h1>Loading..</h1>
+                    <div className="circular-progress-container">
+                        <CircularProgress color="inherit"/>
+                    </div>
                     :
                     availableProductsSet.productsSet.map((set) => {
                             return <>
@@ -232,7 +234,7 @@ const ProductsSet = () => {
                                                     variant="outlined"
                                                     value={sale}
                                                     onChange={handleChange('sale')}
-                                                    className={classes.textFieldCareTaker}
+                                                    className={classes.textFieldExtraInfo}
                                                     InputProps={{
                                                         endAdornment: <InputAdornment position="start">%</InputAdornment>,
                                                     }}

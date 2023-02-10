@@ -90,9 +90,9 @@ const ShoppingCart = (props) => {
             <img src={image} alt="produkcik" className="sc-product-img"/>
 
             <div className="sc-product-title-container">
-                <h1 className="OD-product-name">{name}</h1>
-                <h1 className={color === "" ? "hidden" : "OD-product-detail"}>{color}</h1>
-                <h1 className={weight === null ? "hidden" : "OD-product-detail"}>{weight} g</h1>
+                <h1 className="sc-product-name">{name}</h1>
+                <h1 className={color === "" ? "hidden" : "sc-product-detail"}>{color}</h1>
+                <h1 className={weight === null ? "hidden" : "sc-product-detail"}>{weight} g</h1>
             </div>
 
             <h1 className="sc-product-amount">Ilość:</h1>

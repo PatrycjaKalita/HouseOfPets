@@ -18,7 +18,10 @@ exports.addingProduct = async (req, res) => {
         image,
         product_code,
         sale,
-        animal_id,
+        type_of_pets_id,
+        breed_id,
+        age_id,
+        weight_id,
         category_id,
         description,
         extra_description,
@@ -33,6 +36,40 @@ exports.addingProduct = async (req, res) => {
         moderate_needs,
         low_needs
     } = req.body
+
+    let result;
+    result = await Animal.aggregate([
+        {
+            '$lookup': {
+                'from': 'animals',
+                'localField': 'animal_id',
+                'foreignField': '_id',
+                'as': 'animals'
+            }
+        }
+    ])
+
+    if (type_of_pets_id !== '') {
+        result = result.filter(animal => type_of_pets_id === String(animal.type_of_pets_id))
+    }
+
+    if (breed_id === '') {
+        result = result.filter(animal => animal.breed_id === undefined)
+    } else
+    {
+        result = result.filter(animal => breed_id === String(animal.breed_id))
+
+        if (age_id !== '') {
+            result = result.filter(animal => age_id === String(animal.age_id))
+
+            if (weight_id !== '') {
+                result = result.filter(animal => weight_id === String(animal.weight_id))
+            }
+        }
+    }
+    console.log('result: ', result)
+
+    let animal_id = result[0]._id;
 
     let newProduct = new Product({
         link,
@@ -338,4 +375,18 @@ exports.getAvailableProductsSaleList = async (req, res) => {
             error: "BŁĄD wyswietlenie listy produktow."
         })
     }
+}
+
+exports.deleteProductFromShop = async (req, res) => {
+    Product.findOne({_id: req.body.id}, (err, product) => {
+
+        product.delete((err, deleteProduct) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Produkt usunięty.'
+                });
+            }
+            res.status(200).json(deleteProduct);
+        });
+    });
 }

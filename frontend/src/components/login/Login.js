@@ -124,7 +124,7 @@ const Login = () => {
             <ToastContainer/>
             <div className="left-login-container">
                 <h1 className="login-title">Witaj ponownie w House of pets</h1>
-                <h1 className="login-title-desc">Zaloguj się, by kontynuować przygodę z nami</h1>
+                <h1 className="login-title-desc">Zaloguj się, aby kontynuować przygodę z nami</h1>
 
                 <form>
                     <div className="login-input-container">
