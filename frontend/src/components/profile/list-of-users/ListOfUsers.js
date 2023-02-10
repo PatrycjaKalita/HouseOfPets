@@ -50,7 +50,7 @@ const ListOfUsers = (props) => {
                             :
                             availableUsersList.user.map((user) => {
                                 return <div className="LOU-one-part-container">
-                                    <More options={1}/>
+                                    <More options={1} userId={user._id}/>
 
                                     <h1 className="LOU-login">Login: <b>{user.login}</b></h1>
                                     <h1 className="LOU-name">Imię: <b>{user.name}</b></h1>

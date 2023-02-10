@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const AnimalForAdoption = require("../models/animalForAdoption");
 
 exports.read = (req, res) => {
     const userId = req.params.id
@@ -124,4 +125,18 @@ exports.getAvailableUsersList = async(req, res) => {
             error: "BŁĄD wyswietlenie listy produktow."
         })
     }
+}
+
+exports.deleteUser= async (req, res) => {
+    User.findOne({_id: req.body.id}, (err, user) => {
+
+        user.delete((err, deleteUser) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Użytkownik usunięty.'
+                });
+            }
+            res.status(200).json(deleteUser);
+        });
+    });
 }

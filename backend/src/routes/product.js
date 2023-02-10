@@ -5,10 +5,10 @@ const {addingProductValidator} = require('../validators/product')
 const {runValidation} = require('../validators')
 const {
     addingProduct,
-    getAvailableProduct,
+    getAvailableProduct, updateDelivery,
     getAvailableProductDetails, getAvailableProductsList,
-    getAvailableAnimalTypes,
-    getAvailableAnimalBreeds,
+    getAvailableAnimalTypes, getAvailableProductToEdit,
+    getAvailableAnimalBreeds, updateProductDetails,
     getAvailableAnimalAges, deleteProductFromShop,
     getAvailableAnimalWeights, updatePromotion, getAvailableProductsSaleList
 } = require('../controllers/product')
@@ -25,7 +25,11 @@ router.get('/adding/product/age', getAvailableAnimalAges)
 router.get('/adding/product/weight', getAvailableAnimalWeights)
 
 router.get('/view/products', getAvailableProduct)
+router.get('/view/products-edit', getAvailableProductToEdit)
+
 router.put('/update/product-sale', updatePromotion)
+router.put('/update/product-delivery', updateDelivery)
+router.put('/update/product-detail', updateProductDetails)
 
 router.delete('/delete/product-from-shop', deleteProductFromShop)
 

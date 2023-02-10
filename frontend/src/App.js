@@ -33,6 +33,12 @@ import ShopRules from "./components/footer/shop-rules/ShopRules";
 import EditAnimal from "./components/profile/edit-animal/EditAnimal";
 import DeleteAnimal from "./components/profile/delete-animal/DeleteAnimal";
 import DeleteProduct from "./components/profile/delete-product/DeleteProduct";
+import EditProduct from "./components/profile/edit-product/EditProduct";
+import AddProductDelivery from "./components/profile/add-product-delivery/AddProductDelivery";
+import DeleteUser from "./components/profile/delete-user/DeleteUser";
+import DeleteProductsSet from "./components/profile/delete-products-set/DeleteProductsSet";
+import EditProductsSet from "./components/profile/edit-products-set/EditProductsSet";
+import AddProductsSetDelivery from "./components/profile/add-products-set-delivery/AddProductsSetDelivery";
 
 function App() {
     return (
@@ -84,11 +90,17 @@ function App() {
                 <EmployeeRoutes path="/profil/ustawienia" exact><Settings choose={'settings'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/uzytkownicy" exact><ListOfUsers
                     choose={'users'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/uzytkownicy/usun/:id" exact><DeleteUser
+                    choose={'users'}/></EmployeeRoutes>
 
                 {/*PRODUKTY*/}
                 <EmployeeRoutes path="/profil/pracownik/produkty" exact><ListOfProducts
                     choose={'products'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-produktu" exact><AddingProduct
+                    choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/edycja/:id" exact><EditProduct
+                    choose={'products'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/produkty/dostawa/:id" exact><AddProductDelivery
                     choose={'products'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/usun/:id" exact><DeleteProduct
                     choose={'products'}/></EmployeeRoutes>
@@ -107,6 +119,12 @@ function App() {
                 <EmployeeRoutes path="/profil/pracownik/zestawy-produktow" exact><ListOfProductsSets
                     choose={'products-sets'}/></EmployeeRoutes>
                 <EmployeeRoutes path="/profil/pracownik/produkty/dodanie-nowego-zestawu" exact><AddingProductsSets
+                    choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow/edycja/:id" exact><EditProductsSet
+                    choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow/dostawa/:id" exact><AddProductsSetDelivery
+                    choose={'products-sets'}/></EmployeeRoutes>
+                <EmployeeRoutes path="/profil/pracownik/zestawy-produktow/usun/:id" exact><DeleteProductsSet
                     choose={'products-sets'}/></EmployeeRoutes>
 
                 <Route path="/regulamin"><ShopRules/></Route>

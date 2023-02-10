@@ -236,7 +236,6 @@ const EditAnimal = (props) => {
                 weight_id,
             }
         }).then(response => {
-            console.log('PRIVATE PROFILE UPDATE SUCCESS', response);
             history.push('/profil/pracownik/zwierzeta')
         }).catch(error => {
             //console.log('PRIVATE PROFILE UPDATE ERROR', error.response.data.error);
@@ -244,6 +243,7 @@ const EditAnimal = (props) => {
             toast.error(error.response.data.error)
         })
     }
+
     return (
         <div className="w-4/5 mt-50 mb-100 mx-auto flex">
             <ProfileNavigation choose={props.choose}/>

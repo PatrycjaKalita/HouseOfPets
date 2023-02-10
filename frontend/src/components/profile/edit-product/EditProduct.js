@@ -1,24 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import './Style.css'
-import {useStyles} from './MUIStyle'
-
 import ProfileNavigation from "../profile-navigation/ProfileNavigation";
-import {toast, ToastContainer} from "react-toastify";
+import {getCookie, signOut} from "../../../auth/Helpers";
+import {useHistory} from "react-router-dom";
+import {useStyles} from "../adding-product/MUIStyle";
+import EditProductDetails from "./edit-product-details/EditProductDetails";
+import axios from "axios";
+import {toast} from "react-toastify";
 import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
-import {getCookie, signOut} from "../../../auth/Helpers";
-import {useHistory} from "react-router-dom";
 
-const AddingProduct = (props) => {
+const EditProduct = (props) => {
+    const token = getCookie('token');
     const history = useHistory()
     const classes = useStyles()
+    let id = window.location.href.replace('http://localhost:3000/profil/pracownik/produkty/edycja/', '')
 
     /*Product Image*/
     const [picture, setPicture] = useState("");
@@ -53,7 +53,6 @@ const AddingProduct = (props) => {
     }
 
     const [values, setValues] = useState({
-        link: '',
         name: '',
         producer: '',
         price: '',
@@ -62,7 +61,6 @@ const AddingProduct = (props) => {
         weight: '',
         color: '',
         image: '',
-        product_code: '',
         description: '',
         extra_description: '',
         image_description: '',
@@ -75,7 +73,6 @@ const AddingProduct = (props) => {
         body_weight: '',
         moderate_needs: '',
         low_needs: '',
-        buttonText: 'Dodaj produkt'
     })
 
     const [valueSelect, setValueSelect] = useState({
@@ -91,7 +88,6 @@ const AddingProduct = (props) => {
         loadTypesOfAnimals();
     }, []);
 
-    const token = getCookie('token');
     const [availableProductDetails, setAvailableProductDetails] = useState(false);
     const loadProductDetails = () => {
         axios({
@@ -103,7 +99,6 @@ const AddingProduct = (props) => {
         })
             .then(response => {
                 setAvailableProductDetails(response.data.availableProductDetails);
-                /*console.log(response.data.availableProductDetails.animals)*/
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
@@ -149,7 +144,7 @@ const AddingProduct = (props) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
         idTypeOfAnimalSelect = e.target.value
-        /*console.log(availableProductDetails.animals.map((animal) => animal.type_of_pets_id === idTypeOfAnimalSelect))*/
+
         if (availableTypesOfAnimals !== false) {
             loadBreedsOfAnimals()
         }
@@ -182,7 +177,7 @@ const AddingProduct = (props) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
         idBreedOfAnimalSelect = e.target.value
-        /*console.log(availableProductDetails.animals.map((animal) => animal.type_of_pets_id === idTypeOfAnimalSelect || animal.breed_id === idBreedOfAnimalSelect))*/
+
         if (availableBreedsOfAnimals !== 0) {
             loadAgesOfAnimals()
         }
@@ -246,7 +241,6 @@ const AddingProduct = (props) => {
 
     // eslint-disable-next-line no-unused-vars
     let idWeightOfAnimalSelect
-
     const handleChange = (e) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
@@ -254,7 +248,6 @@ const AddingProduct = (props) => {
     }
 
     let {
-        link,
         name,
         producer,
         price,
@@ -268,10 +261,8 @@ const AddingProduct = (props) => {
         age_id,
         weight_id,
         category_id,
-        product_code,
         description,
         extra_description,
-        sale,
         image_description,
         composition,
         additives,
@@ -282,67 +273,31 @@ const AddingProduct = (props) => {
         body_weight,
         moderate_needs,
         low_needs,
-        buttonText
     } = values
-
-    type_of_pets_id = valueSelect.typeOfAnimal
-    breed_id = valueSelect.breed
-    age_id = valueSelect.age
-    weight_id = valueSelect.aWeight
-
 
     const handleChangeText = (name) => (event) => {
         setValues({...values, [name]: event.target.value})
     }
-    category_id = valueSelect.category
-
-    function generateLink() {
-        let typ;
-        if (type_of_pets_id === '63bee7531312a763a0629bfb') {
-            typ = 'koty'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfc') {
-            typ = 'psy'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfd') {
-            typ = 'male-zwierzatka'
-        }
-
-        let result = availableProductDetails.categories.filter(animal => category_id === String(animal._id))
-        let categoryNameArray = result[0].link
-
-        let removeSpaceInName = name.replaceAll(" ", "-")
-        let customLink = "/shop/" + typ + "/products/" + categoryNameArray + '/' + lowerLetters(removeSpaceInName)
-
-        link = customLink.replaceAll(",", "")
-    }
-
-    function lowerLetters(string) {
-        return string.toLowerCase();
-    }
-
-    product_code = Math.floor(Math.random() * (999999999 - 100000) ) + 100000
-
-    /*Dodawanie daty*/
     const [startDate, setStartDate] = useState(null);
     expiration_date = startDate
 
-    /*Dodanie zdjęć*/
+    category_id = valueSelect.category
+    type_of_pets_id = valueSelect.typeOfAnimal
+    breed_id = valueSelect.breed
+    age_id = valueSelect.age
+    weight_id = valueSelect.aWeight
     image = picture
 
-    /*Promocje*/
-    sale = 0
-
-    const clickSubmit = event => {
-        generateLink()
+    const clickEditButton = event => {
         event.preventDefault()
-        setValues({...values, buttonText: 'Submitting'})
         axios({
-            method: 'POST',
-            url: `${process.env.REACT_APP_API}/adding/product`,
+            method: 'PUT',
+            url: `${process.env.REACT_APP_API}/update/product-detail`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data: {
-                link,
+                id,
                 name,
                 producer,
                 price,
@@ -351,8 +306,6 @@ const AddingProduct = (props) => {
                 weight,
                 color,
                 image,
-                sale,
-                product_code,
                 description,
                 extra_description,
                 image_description,
@@ -372,53 +325,22 @@ const AddingProduct = (props) => {
                 weight_id,
             }
         }).then(response => {
-            setValues({
-                ...values,
-                link,
-                name,
-                producer,
-                price,
-                amount,
-                expiration_date,
-                weight,
-                color,
-                image,
-                type_of_pets_id,
-                breed_id,
-                age_id,
-                weight_id,
-                category_id,
-                product_code,
-                description,
-                sale,
-                extra_description,
-                image_description,
-                composition,
-                additives,
-                protein,
-                fat,
-                ash,
-                fiber,
-                body_weight,
-                moderate_needs,
-                low_needs,
-                buttonText: 'Dodano produkt'
-            })
             history.push('/profil/pracownik/produkty')
 
         }).catch(error => {
-            setValues({...values, buttonText: 'Submit'})
             toast.error(error.response.data.error)
         })
     }
 
     return (
-        <div className="main-AP-container">
+        <div className="w-4/5 mt-50 mb-100 mx-auto flex">
             <ProfileNavigation choose={props.choose}/>
-            <ToastContainer/>
 
-            <div className="AP-container">
-                <h1 className="AP-title">Dodanie nowego produktu</h1>
+            <div className="w-4/5">
+                <h1 className="mb-35 font-semibold">Edycja produktu</h1>
+                <EditProductDetails productId={id} />
+
+                <h1 className="mb-15 font-semibold">Formularz</h1>
 
                 <form>
                     <div className="AP-FORM-base-info">
@@ -802,7 +724,7 @@ const AddingProduct = (props) => {
                         </div>
                     </div>
                     <div className="AP-form-btn-container">
-                        <button className="AP-form-btn" onClick={clickSubmit}>{buttonText}</button>
+                        <button className="AP-form-btn" onClick={clickEditButton}>Aktualizuj produkt</button>
                     </div>
                 </form>
             </div>
@@ -810,4 +732,4 @@ const AddingProduct = (props) => {
     );
 };
 
-export default AddingProduct;
+export default EditProduct;

@@ -3,6 +3,7 @@ const Animal = require('../models/animal')
 const TypeOfAnimals = require('../models/typeOfAnimal')
 const Category = require('../models/category')
 const mongoose = require("mongoose");
+const AnimalForAdoption = require("../models/animalForAdoption");
 const ObjectId = mongoose.Types.ObjectId;
 
 exports.addingProduct = async (req, res) => {
@@ -55,8 +56,7 @@ exports.addingProduct = async (req, res) => {
 
     if (breed_id === '') {
         result = result.filter(animal => animal.breed_id === undefined)
-    } else
-    {
+    } else {
         result = result.filter(animal => breed_id === String(animal.breed_id))
 
         if (age_id !== '') {
@@ -390,3 +390,185 @@ exports.deleteProductFromShop = async (req, res) => {
         });
     });
 }
+
+exports.getAvailableProductToEdit = async (req, res) => {
+    try {
+        const productID = req.query.product_id
+
+        const productDetails = await Product.aggregate([
+            {
+                '$match': {
+                    '_id': ObjectId(productID)
+                }
+            }
+        ])
+        res.status(200).json({
+            availableProduct: {
+                productDetails
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: "BŁĄD: wyswietlenie produktu w oknie edycji."
+        })
+    }
+}
+
+
+exports.updateProductDetails = async (req, res) => {
+    const {
+        name,
+        producer,
+        price,
+        amount,
+        expiration_date,
+        weight,
+        color,
+        image,
+        description,
+        extra_description,
+        image_description,
+        composition,
+        additives,
+        protein,
+        fat,
+        ash,
+        fiber,
+        body_weight,
+        moderate_needs,
+        low_needs,
+        category_id,
+        type_of_pets_id,
+        breed_id,
+        age_id,
+        weight_id,
+    } = req.body
+
+    let result = await Animal.aggregate([
+        {
+            '$lookup': {
+                'from': 'animals',
+                'localField': 'animal_id',
+                'foreignField': '_id',
+                'as': 'animals'
+            }
+        }
+    ])
+
+    if (type_of_pets_id !== '') {
+        result = result.filter(animal => type_of_pets_id === String(animal.type_of_pets_id))
+    }
+
+    if (breed_id === '') {
+        result = result.filter(animal => animal.breed_id === undefined)
+    } else {
+        result = result.filter(animal => breed_id === String(animal.breed_id))
+
+        if (age_id !== '') {
+            result = result.filter(animal => age_id === String(animal.age_id))
+
+            if (weight_id !== '') {
+                result = result.filter(animal => weight_id === String(animal.weight_id))
+            }
+        }
+    }
+
+    Product.findOne({_id: req.body.id}, (err, product) => {
+        if (name) {
+            product.name = name;
+        }
+        if (producer) {
+            product.producer = producer;
+        }
+        if (price) {
+            product.price = price;
+        }
+        if (amount) {
+            product.amount = amount;
+        }
+        if (expiration_date) {
+            product.expiration_date = expiration_date;
+        }
+        if (weight) {
+            product.weight = weight;
+        }
+        if (color) {
+            product.color = color;
+        }
+        if (image) {
+            product.image = image;
+        }
+        if (description) {
+            product.description = description;
+        }
+        if (extra_description) {
+            product.extra_description = extra_description;
+        }
+        if (image_description) {
+            product.image_description = image_description;
+        }
+        if (composition) {
+            product.composition = composition;
+        }
+        if (additives) {
+            product.additives = additives;
+        }
+        if (protein) {
+            product.protein = protein;
+        }
+        if (fat) {
+            product.fat = fat;
+        }
+        if (ash) {
+            product.ash = ash;
+        }
+        if (fiber) {
+            product.fiber = fiber;
+        }
+        if (body_weight) {
+            product.body_weight = body_weight;
+        }
+        if (moderate_needs) {
+            product.moderate_needs = moderate_needs;
+        }
+        if (low_needs) {
+            product.low_needs = low_needs;
+        }
+        if (category_id) {
+            product.category_id = category_id;
+        }
+
+        let animal_id = result[0]._id;
+        if (animal_id) {
+            product.animal_id = animal_id;
+        }
+
+        product.save((err, updatedProductDetails) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Aktualizacja produktu nie powiodła się'
+                });
+            }
+            res.status(200).json(updatedProductDetails);
+        });
+    });
+}
+
+exports.updateDelivery = async (req, res) => {
+    const {amount} = req.body
+
+    Product.findOne({_id: req.body.id}, (err, delivery) => {
+        if (amount) {
+            delivery.amount = amount;
+        }
+
+        delivery.save((err, updateDelivery) => {
+            if (err) {
+                return res.status(400).json({
+                    error: 'Aktualizacja dostawy nie powiodła się'
+                });
+            }
+            res.status(200).json(updateDelivery);
+        });
+    });
+};

@@ -1,22 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import ProfileNavigation from "../profile-navigation/ProfileNavigation";
-import {useHistory} from "react-router-dom";
-
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
-
+import MenuItem from "@mui/material/MenuItem";
 import {useStyles} from "../adding-product/MUIStyle";
+import {useHistory} from "react-router-dom";
 import {getCookie, signOut} from "../../../auth/Helpers";
-
-import './Style.css'
 import axios from "axios";
 import {toast} from "react-toastify";
-import MenuItem from "@mui/material/MenuItem";
+import EditProductSetDetails from "./edit-products-set-details/EditProductSetDetails";
 
-const AddingProductsSets = (props) => {
+
+const EditProductsSet = (props) => {
     const classes = useStyles()
     const history = useHistory()
 
@@ -37,13 +35,10 @@ const AddingProductsSets = (props) => {
     }
 
     const [values, setValues] = useState({
-        link: '',
         name: '',
         price: '',
         image: '',
-        set_code: '',
         amount: '',
-        sale: '',
     })
 
     const [valueSelect, setValueSelect] = useState({
@@ -77,7 +72,6 @@ const AddingProductsSets = (props) => {
         })
             .then(response => {
                 setAvailableProductsList(response.data.availableProductsList);
-                console.log(response.data.availableProductsList)
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
@@ -112,6 +106,7 @@ const AddingProductsSets = (props) => {
     };
 
     let idTypeOfAnimalSelect;
+
     function handleBreedsChange(e) {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
@@ -144,6 +139,7 @@ const AddingProductsSets = (props) => {
     };
 
     let idBreedOfAnimalSelect;
+
     function handleAgesChange(e) {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
@@ -176,6 +172,7 @@ const AddingProductsSets = (props) => {
     };
 
     let idAgeOfAnimalSelect;
+
     function handleWeightsChange(e) {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
@@ -219,22 +216,17 @@ const AddingProductsSets = (props) => {
     const handleChangeProduct = (e) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
-        /*idWeightOfAnimalSelect = e.target.value*/
     }
 
     let {
-        link,
         name,
         price,
         image,
-        set_code,
         amount,
-        sale,
         type_of_pets_id,
         breed_id,
         age_id,
         weight_id,
-        category_id,
         products_id
     } = values
 
@@ -242,75 +234,49 @@ const AddingProductsSets = (props) => {
     breed_id = valueSelect.breed
     age_id = valueSelect.age
     weight_id = valueSelect.aWeight
-    category_id = '63cc3e194c6402d09b507b67'
 
     const handleChangeText = (name) => (event) => {
-        console.log(event.target.value)
         setValues({...values, [name]: event.target.value})
     }
 
-    function generateLink() {
-        let typ;
-        if (type_of_pets_id === '63bee7531312a763a0629bfb') {
-            typ = 'koty'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfc') {
-            typ = 'psy'
-        } else if (type_of_pets_id === '63bee7531312a763a0629bfd') {
-            typ = 'male-zwierzatka'
-        }
-        let removeSpaceInName = name.replaceAll(" ", "-")
-        let customLink = "/shop/" + typ + '/productsset/zestawy/' + lowerLetters(removeSpaceInName)
-        link = customLink.replaceAll(",", "")
-    }
-
-    function lowerLetters(string) {
-        return string.toLowerCase();
-    }
-
-    set_code = Math.floor(Math.random() * (999999999 - 100000)) + 100000
     image = picture
-    sale = 0
 
     products_id = []
 
-    if(valueSelect.product1 !== ''){
+    if (valueSelect.product1 !== '') {
         products_id.push(valueSelect.product1)
     }
-    if(valueSelect.product2 !== ''){
+    if (valueSelect.product2 !== '') {
         products_id.push(valueSelect.product2)
     }
-    if(valueSelect.product3 !== ''){
+    if (valueSelect.product3 !== '') {
         products_id.push(valueSelect.product3)
     }
-    if(valueSelect.product4 !== ''){
+    if (valueSelect.product4 !== '') {
         products_id.push(valueSelect.product4)
     }
-    if(valueSelect.product5 !== ''){
+    if (valueSelect.product5 !== '') {
         products_id.push(valueSelect.product5)
     }
-    if(valueSelect.product6 !== ''){
+    if (valueSelect.product6 !== '') {
         products_id.push(valueSelect.product6)
     }
-
+    let id = window.location.href.replace('http://localhost:3000/profil/pracownik/zestawy-produktow/edycja/', '')
     const clickSubmit = event => {
-        generateLink()
         event.preventDefault()
         setValues({...values})
         axios({
-            method: 'POST',
-            url: `${process.env.REACT_APP_API}/adding/products-set`,
+            method: 'PUT',
+            url: `${process.env.REACT_APP_API}/update/products-set`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data: {
-                link,
+                id,
                 name,
-                set_code,
                 price,
                 amount,
                 image,
-                sale,
-                category_id,
                 type_of_pets_id,
                 breed_id,
                 age_id,
@@ -318,21 +284,22 @@ const AddingProductsSets = (props) => {
                 products_id,
             }
         }).then(response => {
+            console.log(response)
             history.push('/profil/pracownik/zestawy-produktow')
 
         }).catch(error => {
-            setValues({...values})
             toast.error(error.response.data.error)
         })
     }
-
     return (
-        <div className="main-LOPS-container">
+        <div className="w-4/5 mt-50 mb-100 mx-auto flex">
             <ProfileNavigation choose={props.choose}/>
 
-            <div className="LOPS-container">
-                <h1 className="APS-title">Dodanie nowego zestawu produktów</h1>
+            <div className="w-4/5">
+                <h1 className="mb-35 font-semibold">Edycja produktu</h1>
+                <EditProductSetDetails setID={id}/>
 
+                <h1 className="mb-15 font-semibold">Formularz</h1>
                 <form>
                     <div className="AP-FORM-base-info">
 
@@ -343,7 +310,7 @@ const AddingProductsSets = (props) => {
                                     <span className="AP-camera-icon" onChange={handleImageChange}>
                                         <ion-icon name="camera-outline"></ion-icon>
                                     </span>
-                                        <p className="AP-upload-image-label">Dodaj zdjęcie zestawu</p>
+                                        <p className="AP-upload-image-label">Zmień zdjęcie zestawu</p>
                                     </label>
 
                                     <input
@@ -393,12 +360,12 @@ const AddingProductsSets = (props) => {
                             </div>
                             <div className="flex mt-15">
                                 <TextField
-                                onChange={handleChangeText('amount')}
-                                label="Ilość zestawu"
-                                variant="outlined"
-                                value={amount}
-                                className={classes.textFieldAP}
-                            />
+                                    onChange={handleChangeText('amount')}
+                                    label="Ilość zestawu"
+                                    variant="outlined"
+                                    value={amount}
+                                    className={classes.textFieldAP}
+                                />
                             </div>
 
                             <div className="AP-base-info-second-part">
@@ -454,7 +421,7 @@ const AddingProductsSets = (props) => {
                                         label="Wiek"
                                         name={"age"}
                                         onChange={handleWeightsChange}
-                                        >
+                                    >
                                         {
                                             availableAgesOfAnimals.length === 0 ?
                                                 <MenuItem value="all">Loading..</MenuItem>
@@ -464,7 +431,7 @@ const AddingProductsSets = (props) => {
                                                         value={age._id}>{age.number_with_name}</MenuItem>
                                                 })
                                         }
-                                </Select>
+                                    </Select>
                                 </FormControl>
 
                                 <FormControl>
@@ -493,9 +460,9 @@ const AddingProductsSets = (props) => {
                     </div>
 
                     <div className="AP-dosage-container">
-                        <h1 className="AP-title-of-section-ac">Dodaj produkty</h1>
-                        <p className="AP-title-of-section-ac-desc">Zestaw musi zawierać minimum 2 produkty. Maksymalnie
-                            może zawierać do 6 produktów. </p>
+                        <h1 className="AP-title-of-section-ac">Zmień produkty</h1>
+                        <p className="AP-title-of-section-ac-desc">Wybrany zestaw podmieni istniejący wybrany wcześniej
+                            zestaw. Wybierz wszystkie produkty które ma zawierać zestaw (max 6 produktów).</p>
 
                         <div className="APS-products-in-set">
                             <FormControl>
@@ -627,9 +594,8 @@ const AddingProductsSets = (props) => {
                         </div>
                     </div>
 
-
                     <div className="APS-form-btn-container">
-                        <button className="APS-form-btn" onClick={clickSubmit}>Dodaj zestaw</button>
+                        <button className="APS-form-btn" onClick={clickSubmit}>Aktualizuj zestaw</button>
                     </div>
                 </form>
             </div>
@@ -637,4 +603,4 @@ const AddingProductsSets = (props) => {
     );
 };
 
-export default AddingProductsSets;
+export default EditProductsSet;

@@ -68,7 +68,7 @@ const ListOfProductSets = (props) => {
                             :
                             availableProductsSetList.productsSet.map((set) => {
                                 return <div className="LOPS-one-part-container">
-                                    <More options={3}/>
+                                    <More options={5} setId={set._id}/>
 
                                     <Link to={set.link}>
                                         <img alt="animal" className="LOPS-animal-image" src={set.image}/>

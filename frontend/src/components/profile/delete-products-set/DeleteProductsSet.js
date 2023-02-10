@@ -1,23 +1,23 @@
 import React from 'react';
-import ProfileNavigation from "../profile-navigation/ProfileNavigation";
 import {useHistory} from "react-router-dom";
+import {getCookie} from "../../../auth/Helpers";
 import axios from "axios";
 import {toast} from "react-toastify";
-import {getCookie} from "../../../auth/Helpers";
+import ProfileNavigation from "../profile-navigation/ProfileNavigation";
 
-const DeleteAnimal = (props) => {
+const DeleteProductsSet = (props) => {
     const history = useHistory()
     const token = getCookie('token');
 
     const clickNoButton = () => {
-        history.push(`/profil/pracownik/zwierzeta`)
+        history.push(`/profil/pracownik/zestawy-produktow`)
     }
 
     const clickYesButton = () => {
-        let id = window.location.href.replace('http://localhost:3000/profil/pracownik/zwierzeta/usun/', '')
+        let id = window.location.href.replace('http://localhost:3000/profil/pracownik/zestawy-produktow/usun/', '')
         axios({
             method: 'DELETE',
-            url: `${process.env.REACT_APP_API}/delete/animal-from-list`,
+            url: `${process.env.REACT_APP_API}/delete/products-set`,
             headers: {
                 Authorization: `Bearer ${token}`
             },
@@ -25,8 +25,7 @@ const DeleteAnimal = (props) => {
                 id,
             }
         }).then(response => {
-            console.log('Zwierze usunięte');
-            history.push('/profil/pracownik/zwierzeta')
+            history.push('/profil/pracownik/zestawy-produktow')
         }).catch(error => {
             toast.error(error.response.data.error)
         })
@@ -37,8 +36,7 @@ const DeleteAnimal = (props) => {
             <ProfileNavigation choose={props.choose}/>
 
             <div className="w-4/5">
-                <h1 className="mb-35 mt-100 text-2xl font-semibold text-center">Czy chcesz usunąć to zwierzątko z listy
-                    adopcji?</h1>
+                <h1 className="mb-35 mt-100 text-2xl font-semibold text-center">Czy chcesz usunąć ten zestaw produktów?</h1>
 
                 <div className="flex mx-auto w-full">
                     <div className="mx-auto block">
@@ -51,4 +49,4 @@ const DeleteAnimal = (props) => {
     );
 };
 
-export default DeleteAnimal;
+export default DeleteProductsSet;

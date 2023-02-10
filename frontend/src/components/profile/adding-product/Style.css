@@ -228,3 +228,16 @@
     height: 50px;
     border-radius: 10px;
 }
+
+.delivery-element-btn{
+    width: 200px;
+    height: 55px;
+    background-color: #8D451D;
+    color: white;
+    margin: 0 0 15px 35px;
+    font-size: 18px;
+}
+
+.delivery-element-btn:hover{
+    border-radius: 10px;
+}

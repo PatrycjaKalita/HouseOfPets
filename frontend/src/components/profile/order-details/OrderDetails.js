@@ -63,7 +63,6 @@ const OrderDetails = (props) => {
         return shorterDate
     }
 
-
     const handleChange = (status, id) => {
         console.log(status, id)
 
@@ -123,7 +122,7 @@ const OrderDetails = (props) => {
                                 label="Status"
                                 onChange={(e) => handleChange(e.target.value, orderDetails._id)}
                             >
-                                    <MenuItem value="Zamówiono">Zamówiono</MenuItem>
+                                <MenuItem value="Zamówiono">Zamówiono</MenuItem>
                                 <MenuItem value="Zapłacono">Zapłacono</MenuItem>
                                 <MenuItem value="Wysłane">Wysłane</MenuItem>
                                 <MenuItem value="Zakończone">Zakończone</MenuItem>
