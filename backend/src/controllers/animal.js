@@ -5,6 +5,8 @@ const Ages = require("../models/age")
 const Weights = require('../models/weight')
 const Product = require("../models/product");
 const mongoose = require("mongoose");
+const ProductsSet = require("../models/productsSet");
+const Animal = require("../models/animal");
 const ObjectId = mongoose.Types.ObjectId;
 
 exports.addingAnimalForAdoption = async (req, res) => {
@@ -138,7 +140,7 @@ exports.getAvailableAnimalsList = async (req, res) => {
         })
     } catch (error) {
         res.status(404).json({
-            error: "BŁĄD wyswietlenie listy produktow."
+            error: "BŁĄD wyswietlenie listy zwierat."
         })
     }
 }
@@ -239,10 +241,10 @@ exports.getAvailableAnimalForAdoption = async (req, res) => {
 }
 
 
-exports.getAvailableAnimalForEditing= async (req, res) => {
+exports.getAvailableAnimalForEditing = async (req, res) => {
     try {
         const animalID = req.query.animalId
-        console.log(animalID)
+
         const animalForEditing = await AnimalForAdoption.aggregate([
             {
                 '$match': {
@@ -297,8 +299,20 @@ exports.getAvailableAnimalForEditing= async (req, res) => {
     }
 }
 
-exports.updateAnimalFoAdoption= async (req, res) => {
-    const {name, address, short_description, email, phone_number, image, sex, type_of_pets_id, breed_id, age_id, weight_id} = req.body
+exports.updateAnimalFoAdoption = async (req, res) => {
+    const {
+        name,
+        address,
+        short_description,
+        email,
+        phone_number,
+        image,
+        sex,
+        type_of_pets_id,
+        breed_id,
+        age_id,
+        weight_id
+    } = req.body
 
     AnimalForAdoption.findOne({_id: req.body.id}, (err, animal) => {
         if (name) {
@@ -346,7 +360,7 @@ exports.updateAnimalFoAdoption= async (req, res) => {
     });
 }
 
-exports.deleteAnimalFromAdoptionList= async (req, res) => {
+exports.deleteAnimalFromAdoptionList = async (req, res) => {
     AnimalForAdoption.findOne({_id: req.body.id}, (err, animal) => {
 
         animal.delete((err, deleteAnimalFromLis) => {
@@ -358,4 +372,81 @@ exports.deleteAnimalFromAdoptionList= async (req, res) => {
             res.status(200).json(deleteAnimalFromLis);
         });
     });
+}
+
+//get set for concrete animal type
+exports.getAvailableProductsSetForAnimal = async (req, res) => {
+    try {
+        const typeOfAnimalID = req.query.type_of_pet_id
+
+        let result = await Animal.aggregate([
+            {
+                '$lookup': {
+                    'from': 'animals',
+                    'localField': 'animal_id',
+                    'foreignField': '_id',
+                    'as': 'animals'
+                }
+            }
+        ])
+
+        if (typeOfAnimalID !== '') {
+            result = result.filter(animal => typeOfAnimalID === String(animal.type_of_pets_id) && animal.breed_id === undefined)
+        }
+
+        let animalID = result[0]._id;
+        const productsSet = await ProductsSet.findOne({animal_id: animalID})
+
+        res.status(200).json({
+            availableProductsSet: {
+                productsSet
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: "BŁĄD wyswietlena zestawu dla zwierzaka."
+        })
+    }
+}
+
+//get products for concrete animal type
+exports.getAvailableProductsForAnimal = async (req, res) => {
+    try {
+        const typeOfAnimalID = req.query.type_of_pet_id
+
+        let result = await Animal.aggregate([
+            {
+                '$lookup': {
+                    'from': 'animals',
+                    'localField': 'animal_id',
+                    'foreignField': '_id',
+                    'as': 'animals'
+                }
+            }
+        ])
+
+        if (typeOfAnimalID !== '') {
+            result = result.filter(animal => typeOfAnimalID === String(animal.type_of_pets_id) && animal.breed_id === undefined)
+        }
+
+        let animalID = result[0]._id;
+
+        const products = await Product.aggregate([
+            {
+                '$match': {
+                    'animal_id': ObjectId(animalID)
+                },
+            },
+        ]).limit(3)
+
+        res.status(200).json({
+            availableProducts: {
+                products
+            }
+        })
+    } catch (error) {
+        res.status(404).json({
+            error: "BŁĄD wyswietlena produktów dla zwierzaka."
+        })
+    }
 }

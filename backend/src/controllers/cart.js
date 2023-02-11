@@ -2,11 +2,27 @@ const User = require("../models/user");
 const Product = require("../models/product");
 const ProductsSet = require("../models/productsSet")
 
-exports.updateCart = (req, res) => {
+exports.updateCart = async (req, res) => {
     const cart = req.body.cart
+    //console.log(req.body.cart.products)
+    let productsInCart = req.body.cart.products
+    let products = await Product.aggregate([
+        {
+            '$lookup': {
+                'from': 'products',
+                'localField': 'product_id',
+                'foreignField': '_id',
+                'as': 'products'
+            }
+        }
+    ])
+    console.log(productsInCart)
+    //console.log(products)
 
-    console.log(req.body.cart)
-    console.log(req.user._id)
+
+
+
+
 
     User.findOne({_id: req.user._id}, (err, user) => {
         if (err || !user) {
@@ -18,7 +34,7 @@ exports.updateCart = (req, res) => {
         if (cart) {
             user.cart = cart;
         }
-        console.log(cart)
+        //console.log(cart)
 
         user.save((err, updatedUser) => {
             if (err) {

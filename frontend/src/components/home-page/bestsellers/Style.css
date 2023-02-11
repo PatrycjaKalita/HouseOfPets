@@ -58,3 +58,18 @@
     margin-left: 5px;
 }
 
+.product-container-price-promotion{
+    font-weight: 700;
+    color: #BF1515;
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+.product-container-price-old{
+    font-weight: 300;
+    text-decoration-line: line-through;
+    color: #464646;
+    margin-top: 6px;
+    font-size: 16px;
+    margin-left: 5px;
+}

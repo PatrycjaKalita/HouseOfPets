@@ -27,7 +27,7 @@ const OrderDetails = (props) => {
     const [orderDetails, setOrderDetails] = useState('');
     const [customerData, setCustomerData] = useState('');
     const [productsList, setProductsList] = useState([]);
-
+    const [productsSetList, setProductsSetList] = useState([]);
     const loadClientOrder = () => {
         axios({
             method: 'GET',
@@ -41,6 +41,8 @@ const OrderDetails = (props) => {
                 setOrderDetails(response.data.availableOrder.order)
                 setCustomerData(response.data.availableOrder.order.user)
                 setProductsList(response.data.availableOrder.order.products)
+                setProductsSetList(response.data.availableOrder.order.sets)
+
             })
             .catch(error => {
                 console.log('ORDER ERROR', error.response.data.error);
@@ -154,7 +156,6 @@ const OrderDetails = (props) => {
 
                 </div>
 
-
                 <div className="">
                     <h1 className={logIn === "klient" ? "OD-title-part" : "hidden"}>Informacje:</h1>
                     <h1 className={logIn === "pracownik" ? "OD-title-part" : "hidden"}>Podsumowanie koszyka:</h1>
@@ -180,7 +181,7 @@ const OrderDetails = (props) => {
                     <h1 className="OD-title-part">Produkty:</h1>
                     {
                         productsList.length === 0 ?
-                            <div className="non-client-orders">Brak zamówień</div>
+                            <div className="non-client-orders"></div>
                             :
                             productsList.map((product) => {
                                 return <div>
@@ -193,15 +194,36 @@ const OrderDetails = (props) => {
                                             <h1 className={product.weight === null ? "hidden" : "OD-product-detail"}>{product.weight} g</h1>
                                         </div>
 
-
                                         <h1 className="OD-product-amount">Ilość:</h1>
                                         <h1 className="OD-product-amount-value">{product.amount}</h1>
-
 
                                         <div className="OD-product-price-container">
                                             <h1 className="OD-product-price">{product.price.toFixed(2)} zł</h1>
                                         </div>
 
+                                    </div>
+                                </div>
+                            })
+                    }
+                    {
+                        productsSetList.length === 0 ?
+                            <div className="non-client-orders">Brak zamówień</div>
+                            :
+                            productsSetList.map((set) => {
+                                return <div>
+                                    <div className="OD-product-container">
+                                        <img src={set.image} alt="focia" className="OD-product-img"/>
+
+                                        <div className="OD-product-details-container">
+                                            <h1 className="OD-product-name">{set.name}</h1>
+                                        </div>
+
+                                        <h1 className="OD-product-amount">Ilość:</h1>
+                                        <h1 className="OD-product-amount-value">{set.amount}</h1>
+
+                                        <div className="OD-product-price-container">
+                                            <h1 className="OD-product-price">{set.price.toFixed(2)} zł</h1>
+                                        </div>
                                     </div>
                                 </div>
                             })

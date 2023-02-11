@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Style.css'
 import {updatePriceInCart} from '../../../utils/product'
 import axios from "axios";
 import {getCookie, signOut} from "../../../auth/Helpers";
 import {useHistory} from "react-router-dom";
+import {toast, ToastContainer} from "react-toastify";
 
 const ShoppingCart = (props) => {
     const [amount, setAmount] = useState(props.productAmount);
@@ -15,30 +16,40 @@ const ShoppingCart = (props) => {
     const weight = props.productWeight
     const productId = props.productId
 
-    function changeAmountOfProduct(id, newAmount){
+    useEffect(() => {
+        loadProduct();
+    }, []);
+
+    function changeAmountOfProduct(id, newAmount, amountFromDB) {
         setAmount(newAmount)
-        let cartProducts = localStorage.getItem("cartProducts")
-        cartProducts = JSON.parse(cartProducts);
 
-        cartProducts = cartProducts.map(function (item) {
-            if(item.product_id === id){
-                item.amount = newAmount
+        if (newAmount === amountFromDB || newAmount < amountFromDB) {
+
+            let cartProducts = localStorage.getItem("cartProducts")
+            cartProducts = JSON.parse(cartProducts);
+
+            cartProducts = cartProducts.map(function (item) {
+                if (item.product_id === id) {
+                    item.amount = newAmount
+                }
+                return item
+            })
+
+            localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
+            const cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
+
+            const cart = {
+                products: cartProducts,
+                sets: cartSets
             }
-            return item
-        })
 
-        localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
-        const cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
-
-        const cart = {
-            products: cartProducts,
-            sets: cartSets
+            sendUserCart(cart)
+        } else {
+            toast.error("Nie ma takiej ilości produktu w magazynie. Zmniejsz ilość.")
         }
-
-        sendUserCart(cart)
     }
 
-    function removeProductFromCart(id){
+    function removeProductFromCart(id) {
         let cartProducts = localStorage.getItem("cartProducts")
         cartProducts = JSON.parse(cartProducts);
 
@@ -85,8 +96,32 @@ const ShoppingCart = (props) => {
             });
     };
 
+    const [availableProductAmountFromDB, setAvailableProductAmountFromDB] = useState(0);
+    const loadProduct = () => {
+        axios({
+            method: 'GET',
+            url: `${process.env.REACT_APP_API}/view/products-edit?product_id=${productId}`,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+            .then(response => {
+                setAvailableProductAmountFromDB(response.data.availableProduct.productDetails[0].amount);
+                console.log(response.data.availableProduct.productDetails)
+            })
+            .catch(error => {
+                console.log('Blad wyswietlania', error.response.data.error);
+                if (error.response.status === 401) {
+                    signOut(() => {
+                        history.push('/zaloguj-sie');
+                    })
+                }
+            });
+    };
+
     return (
         <div className="sc-product-container">
+            <ToastContainer/>
             <img src={image} alt="produkcik" className="sc-product-img"/>
 
             <div className="sc-product-title-container">
@@ -99,7 +134,7 @@ const ShoppingCart = (props) => {
             <div className="sc-btn-quantity">
                 <button className="sc-btn-minus"
                         onClick={() => {
-                            changeAmountOfProduct(productId,amount - 1);
+                            changeAmountOfProduct(productId,amount - 1, availableProductAmountFromDB);
                         }}>
                     -
                 </button>
@@ -107,7 +142,7 @@ const ShoppingCart = (props) => {
                 <h1 className="sc-btn-quantity-number">{amount}</h1>
 
                 <button className="sc-btn-plus" onClick={() => {
-                    changeAmountOfProduct(productId,amount + 1);
+                    changeAmountOfProduct(productId,amount + 1, availableProductAmountFromDB);
                 }}>
                     +
                 </button>

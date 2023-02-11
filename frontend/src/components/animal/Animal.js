@@ -8,7 +8,6 @@ import axios from "axios";
 import {CircularProgress} from "@mui/material";
 
 const Animal = () => {
-    const {animalId} = useParams();
     const token = getCookie('token');
     const history = useHistory()
 
@@ -30,7 +29,6 @@ const Animal = () => {
         })
             .then(response => {
                 setAvailableAnimalForAdoption(response.data.availableAnimalForAdoption);
-                console.log(response.data)
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
@@ -120,10 +118,12 @@ const Animal = () => {
                                 <h1 className="animal-description-title">O zwierzątku</h1>
                                 <p className="animal-description-value">{animal.short_description}</p>
                             </div>
+
+                            <AnimalProposedProducts typeOfPet={animal.type_of_pets_id}/>
                         </>
                     })
             }
-            <AnimalProposedProducts/>
+
         </div>
     );
 };

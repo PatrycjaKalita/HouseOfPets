@@ -17,9 +17,9 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import {useStyles} from "../profile/adding-product/MUIStyle";
 import InputAdornment from "@mui/material/InputAdornment";
+import {toast, ToastContainer} from "react-toastify";
 
 const Product = () => {
-    const [quantity, setQuantity] = useState(1);
     const token = getCookie('token');
     const history = useHistory()
     const classes = useStyles()
@@ -28,7 +28,7 @@ const Product = () => {
     productReviews.forEach(({numberOfStars}) => totalRatings += numberOfStars);
 
     let averageRating = totalRatings / productReviews.length;
-    averageRating = averageRating.toFixed(1);
+    averageRating.toFixed(1);
 
     useEffect(() => {
         loadProduct();
@@ -71,6 +71,17 @@ const Product = () => {
         sale = event.target.value
     }
 
+    const [quantity, setQuantity] = useState(1);
+    const check = (quantity, amountFromDB, product) => {
+        if (quantity === amountFromDB || quantity < amountFromDB){
+            addProductToCart(product)
+        }
+
+        if (quantity > amountFromDB){
+            toast.error("Nie ma takiej ilości produktu w magazynie. Zmniejsz ilość.")
+        }
+    }
+
     const addProductToCart = (productToCart) => {
         let cartProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
@@ -108,7 +119,7 @@ const Product = () => {
             }
         })
             .then(response => {
-                console.log(response.data)
+                //console.log(response.data)
                 localStorage.setItem("user", JSON.stringify(response.data))
             })
             .catch(error => {
@@ -158,6 +169,7 @@ const Product = () => {
                     availableProduct.productDetails.map((product) => {
                             return <>
                                 <div className="main-product-container">
+                                    <ToastContainer/>
                                     <ProductLink/>
 
                                     <div className="main-details-container">
@@ -239,8 +251,11 @@ const Product = () => {
 
                                             <div
                                                 className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
-                                                <button className="product-btn-add-to-card"
-                                                        onClick={() => addProductToCart(product)}>Dodaj do koszyka
+
+                                                <button className={product.amount !== 0 ? "product-btn-add-to-card": "hidden"}
+                                                        onClick={() => check(quantity, product.amount, product)}>Dodaj do koszyka
+                                                </button>
+                                                <button className={product.amount === 0 ? "product-btn-no-product": "hidden"}>Dodaj do koszyka
                                                 </button>
                                             </div>
 

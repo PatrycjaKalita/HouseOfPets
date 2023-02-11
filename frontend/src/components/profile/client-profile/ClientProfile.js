@@ -70,7 +70,9 @@ const ClientProfile = () => {
                                 {order.products.map((product) => {
                                     return (<img src={product.image} alt="product" className="order-image"/>);
                                 })}
-
+                                {order.sets.map((set) => {
+                                    return (<img src={set.image} alt="product" className="order-image"/>);
+                                })}
                                 <div className="order-details-client">
                                     <h1 className="order-data">Data zamówienia: {order.createdAt.slice(0,10)} r.</h1>
 

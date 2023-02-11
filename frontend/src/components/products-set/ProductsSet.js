@@ -4,13 +4,13 @@ import {CircularProgress, Rating} from "@mui/material";
 
 import './Style.css';
 import {productReviews} from '../product/productData';
-import {updatePrice, checkNumberOfOpinions, promotion} from '../../utils/product'
+import {updatePrice, checkNumberOfOpinions, promotion, checkProductAvailability} from '../../utils/product'
 import {getCookie, isAuth, signOut} from "../../auth/Helpers";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import {useStyles} from "../profile/adding-product/MUIStyle";
 import InputAdornment from "@mui/material/InputAdornment";
-import {toast} from "react-toastify";
+import {toast, ToastContainer} from "react-toastify";
 import ProductsSetLink from "./products-set-link/ProductsSetLink";
 import ProductsInSet from "./products-in-set/ProductsInSet";
 
@@ -96,6 +96,16 @@ const ProductsSet = () => {
         })
     }
 
+    const check = (quantity, amountFromDB, set) => {
+        if (quantity === amountFromDB || quantity < amountFromDB){
+            addSetToCart(set)
+        }
+
+        if (quantity > amountFromDB){
+            toast.error("Nie ma takiej ilości produktu w magazynie. Zmniejsz ilość.")
+        }
+    }
+
 /*Dodawanie do koszyka*/
     const addSetToCart = (setToCart) => {
         let cartSets = JSON.parse(localStorage.getItem("cartSets")) || [];
@@ -163,6 +173,7 @@ const ProductsSet = () => {
                     availableProductsSet.productsSet.map((set) => {
                             return <>
                                 <div className="main-product-container">
+                                    <ToastContainer/>
                                     <ProductsSetLink/>
 
                                     <div className="main-details-container">
@@ -180,6 +191,8 @@ const ProductsSet = () => {
                                                         precision={0.5} max={5} size="small"/>
 
                                                 <h1 className="product-number-opinions">{checkNumberOfOpinions(0)}</h1>
+
+                                                <h1 className={set.amount > 0 ? "product-availability" : "product-no-availability"}>{checkProductAvailability(set.amount)}</h1>
                                             </div>
 
                                             <div className="product-code-container">
@@ -224,7 +237,11 @@ const ProductsSet = () => {
 
                                             <div
                                                 className={isAuth().role !== "pracownik" ? "product-btn-add-container" : "hidden"}>
-                                                <button className="product-btn-add-to-card" onClick={() => addSetToCart(set)}>Dodaj do koszyka</button>
+                                               <button className={set.amount !== 0 ? "product-btn-add-to-card": "hidden"}
+                                                        onClick={() => check(quantity, set.amount, set)}>Dodaj do koszyka
+                                                </button>
+                                                <button className={set.amount === 0 ? "product-btn-no-product": "hidden"}>Dodaj do koszyka
+                                                </button>
                                             </div>
 
                                             <div

@@ -10,7 +10,6 @@ const ListOfAnimal = (props) => {
     const history = useHistory()
     useEffect(() => {
         loadAnimalsList();
-
     }, []);
     const token = getCookie('token');
 

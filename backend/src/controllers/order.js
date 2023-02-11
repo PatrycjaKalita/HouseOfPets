@@ -32,6 +32,20 @@ exports.addingOrder = async (req, res) => {
         })
     })
 
+    items.forEach( (product)  => {
+        Product.findById(product._id, (error,databaseProduct) =>{
+            if(error){
+                return error
+            }
+            databaseProduct.amount = databaseProduct.amount - product.amount
+            databaseProduct.save((error, savedProduct) => {
+                if(error){
+                    return error
+                }
+            })
+        } )
+    })
+
     const cartSets = sets.map((set) => {
         return set.set_id
     })
@@ -46,6 +60,20 @@ exports.addingOrder = async (req, res) => {
                 setItem.amount = set.amount
             }
         })
+    })
+
+    setsItems.forEach( (set)  => {
+        ProductsSets.findById(set._id, (error,databaseSet) =>{
+            if(error){
+                return error
+            }
+            databaseSet.amount = databaseSet.amount - set.amount
+            databaseSet.save((error, savedSet) => {
+                if(error){
+                    return error
+                }
+            })
+        } )
     })
 
     let newOrder = new Order({
