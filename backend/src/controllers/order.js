@@ -4,17 +4,7 @@ const ProductsSets = require("../models/productsSet")
 const User = require("../models/user");
 
 exports.addingOrder = async (req, res) => {
-    let {
-        totalCost,
-        status,
-        deliveryMethod,
-        deliveryCost,
-        paymentMethod,
-        paymentCost,
-        user,
-        products,
-        sets,
-    } = req.body
+    let { totalCost, status, deliveryMethod, deliveryCost, paymentMethod, paymentCost, user, products, sets} = req.body
 
     const cartProducts = products.map((product) => {
         return product.product_id
@@ -32,6 +22,7 @@ exports.addingOrder = async (req, res) => {
         })
     })
 
+    /*Zmniejszanie ilości produktu w bazie danych, po dokonaniu zamówienia*/
     items.forEach( (product)  => {
         Product.findById(product._id, (error,databaseProduct) =>{
             if(error){
@@ -61,7 +52,7 @@ exports.addingOrder = async (req, res) => {
             }
         })
     })
-
+    /*Zmniejszanie ilości zestawu w bazie danych, po dokonaniu zamówienia*/
     setsItems.forEach( (set)  => {
         ProductsSets.findById(set._id, (error,databaseSet) =>{
             if(error){
@@ -76,18 +67,7 @@ exports.addingOrder = async (req, res) => {
         } )
     })
 
-    let newOrder = new Order({
-        totalCost,
-        status,
-        deliveryMethod,
-        deliveryCost,
-        paymentMethod,
-        paymentCost,
-        user,
-        products: items,
-        sets: setsItems,
-    })
-
+    let newOrder = new Order({totalCost, status, deliveryMethod, deliveryCost, paymentMethod, paymentCost, user, products: items, sets: setsItems})
     //zapisanie do bazy
     newOrder.save((err, success) => {
         if (err) {

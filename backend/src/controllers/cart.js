@@ -4,25 +4,6 @@ const ProductsSet = require("../models/productsSet")
 
 exports.updateCart = async (req, res) => {
     const cart = req.body.cart
-    //console.log(req.body.cart.products)
-    let productsInCart = req.body.cart.products
-    let products = await Product.aggregate([
-        {
-            '$lookup': {
-                'from': 'products',
-                'localField': 'product_id',
-                'foreignField': '_id',
-                'as': 'products'
-            }
-        }
-    ])
-    console.log(productsInCart)
-    //console.log(products)
-
-
-
-
-
 
     User.findOne({_id: req.user._id}, (err, user) => {
         if (err || !user) {
@@ -34,12 +15,11 @@ exports.updateCart = async (req, res) => {
         if (cart) {
             user.cart = cart;
         }
-        //console.log(cart)
 
         user.save((err, updatedUser) => {
             if (err) {
                 return res.status(400).json({
-                    error: 'Aktualizacja profilu nie powiodła się'
+                    error: 'Aktualizacja koszyka nie powiodła się'
                 });
             }
 

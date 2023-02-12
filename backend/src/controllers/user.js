@@ -1,5 +1,4 @@
 const User = require('../models/user')
-const AnimalForAdoption = require("../models/animalForAdoption");
 
 exports.read = (req, res) => {
     const userId = req.params.id

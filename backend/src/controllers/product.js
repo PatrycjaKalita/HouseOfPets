@@ -3,7 +3,6 @@ const Animal = require('../models/animal')
 const TypeOfAnimals = require('../models/typeOfAnimal')
 const Category = require('../models/category')
 const mongoose = require("mongoose");
-const AnimalForAdoption = require("../models/animalForAdoption");
 const ObjectId = mongoose.Types.ObjectId;
 
 exports.addingProduct = async (req, res) => {

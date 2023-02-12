@@ -23,10 +23,8 @@ exports.getAvailableCategories = async (req, res) => {
 
 exports.getAvailableBreeds = async (req, res) => {
     try {
-        /*console.log(req.query.id)*/
         const animalTypeId = req.query.id
-
-        let animalBreeds = await Animal.aggregate([
+        let animalsAndTheirBreeds = await Animal.aggregate([
             {
                 '$match': {
                     'type_of_pets_id': ObjectId(animalTypeId)
@@ -41,7 +39,7 @@ exports.getAvailableBreeds = async (req, res) => {
                 }
             }
         ])
-        const unformatedBreeds = animalBreeds.map((animal) => animal.breeds)
+        const unformatedBreeds = animalsAndTheirBreeds.map((animal) => animal.breeds)
         const breedsArray = Array.prototype.concat(...unformatedBreeds)
 
         const breeds = breedsArray.filter((value, index) => {
@@ -148,13 +146,7 @@ exports.getAvailableWeights = async (req, res) => {
 
 exports.postProductsList = async (req, res) => {
     try {
-        const {
-            category_id,
-            type_of_pets_id,
-            breed_id,
-            age_id,
-            weight_id
-        } = req.body
+        const {category_id, type_of_pets_id, breed_id, age_id, weight_id} = req.body
 
         let results
         /*Sprawdzenie czy to zestaw*/
@@ -190,15 +182,12 @@ exports.postProductsList = async (req, res) => {
             if (category_id !== '') {
                 results = results.filter(product => category_id === String(product.category_id))
             }
-
             if (breed_id !== '') {
                 results = results.filter(product => breed_id === String(product.animals[0].breed_id))
             }
-
             if (age_id !== '') {
                 results = results.filter(product => age_id === String(product.animals[0].age_id))
             }
-
             if (weight_id !== '') {
                 results = results.filter(product => weight_id === String(product.animals[0].weight_id))
             }
@@ -211,8 +200,7 @@ exports.postProductsList = async (req, res) => {
         })
     } catch (error) {
         res.status(404).json({
-            error: "Błąd w formularzu - opcja POST."
+            error: "Błąd w formularzu sklepu."
         })
     }
-
 }
