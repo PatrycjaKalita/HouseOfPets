@@ -30,7 +30,6 @@ const AnimalProposedProducts = (props) => {
             .then(response => {
                 setAvailableProductsSet(response.data.availableProductsSet.productsSet);
                 setPriceOfSet(response.data.availableProductsSet.productsSet.price)
-                //console.log(response.data.availableProductsSet.productsSet)
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);

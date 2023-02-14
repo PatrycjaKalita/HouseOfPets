@@ -80,7 +80,7 @@ const AddProductsSetDelivery = (props) => {
             <ProfileNavigation choose={props.choose}/>
 
             <div className="w-4/5">
-                <h1 className="mb-35 mt-100 text-2xl font-semibold text-center">Czy chcesz dodać dostawę produktu?</h1>
+                <h1 className="mb-35 mt-100 text-2xl font-semibold text-center">Czy chcesz dodać dostawę zestawu?</h1>
 
                 {
                     availableProductsSet.hasOwnProperty('productsSet') === false ?

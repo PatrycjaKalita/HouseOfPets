@@ -20,20 +20,6 @@ const ProductReviews = (props) => {
 
                 <h2 className="product-reviews-header-number-opinion">({productReviews.length} opinie)</h2>
             </div>
-            {/*{
-                productReviews.map((productReview) => (
-                    <div className="product-reviews-container">
-                        <h1 className="product-reviews-user-name">
-                            {productReview.username}</h1>
-
-                        <div className="product-reviews-content-container">
-                            <Rating className="starBorderOutlined" value={productReview.numberOfStars} readOnly
-                                    precision={0.1} max={5} size="small"/>
-                            <h1 className="product-reviews-content-review">{productReview.review}</h1>
-                        </div>
-                    </div>
-                ))
-            }*/}
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {getCookie, signOut} from "../../../../auth/Helpers";
 import {useHistory} from "react-router-dom";
-import {useStyles} from "../../adding-product/MUIStyle";
 import axios from "axios";
 import {CircularProgress} from "@mui/material";
 
@@ -14,7 +13,6 @@ const EditProductDetails = (props) => {
 
     const token = getCookie('token');
     const history = useHistory()
-    const classes = useStyles()
 
     const [availableProduct, setAvailableProduct] = useState(false);
     const loadProduct = () => {
@@ -67,21 +65,6 @@ const EditProductDetails = (props) => {
                                 <div className="grid grid-cols-4 ml-5">
                                     <h1 className="text-right font-medium">Producent:</h1>
                                     <h1 className="ml-3">{product.producer}</h1>
-
-                                    <h1 className="text-right font-medium">Kategoria:</h1>
-                                    <h1 className="ml-3">{product.amount}</h1>
-
-                                    <h1 className="text-right font-medium">Typ zwierzęcia:</h1>
-                                    <h1 className="ml-3">{product.amount}</h1>
-
-                                    <h1 className="text-right font-medium">Rasa:</h1>
-                                    <h1 className="ml-3">{product.amount}</h1>
-
-                                    <h1 className="text-right font-medium">Wiek:</h1>
-                                    <h1 className="ml-3">{product.amount}</h1>
-
-                                    <h1 className="text-right font-medium">Waga:</h1>
-                                    <h1 className="ml-3">{product.amount}</h1>
 
                                     <h1 className="text-right font-medium">Ilość:</h1>
                                     <h1 className="ml-3">{product.amount}</h1>

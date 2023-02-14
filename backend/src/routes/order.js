@@ -9,7 +9,6 @@ const {
     getAvailableOrder,
     getAvailableOrdersList, updateOrderStatus
 } = require("../controllers/order");
-const {updatePromotion} = require("../controllers/product");
 
 router.post('/user/make-order', requireSignin, addingOrder)
 

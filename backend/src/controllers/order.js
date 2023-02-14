@@ -85,10 +85,8 @@ exports.addingOrder = async (req, res) => {
 exports.getAvailableNewOrder = async (req, res) => {
     try {
         const orderID = req.params.id
-        /*console.log(orderID)*/
 
         Order.findById(orderID).exec((err, order) => {
-            /*console.log(order)*/
 
             res.status(200).json({
                 availableNewOrder: {
@@ -137,7 +135,6 @@ exports.getAvailableOrder = async (req, res) => {
         const orderID = req.params.id
 
         Order.findById(orderID).exec((err, order) => {
-            /*console.log(order)*/
 
             res.status(200).json({
                 availableOrder: {

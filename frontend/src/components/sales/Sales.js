@@ -12,7 +12,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import TopSaleInformation from "./top-sale-information/TopSaleInformation";
 import Filters from "./filters/Filters";
 import './Style.css'
-import {promotion} from "./promotionData";
 import axios from "axios";
 import {getCookie, signOut} from "../../auth/Helpers";
 
@@ -55,9 +54,6 @@ const Sales = () => {
         })
             .then(response => {
                 setAvailableProductsSaleList(response.data.availableProductsSaleList);
-                /*console.log(response.data.availableProductsSaleList.productsSale.map((sale) => {
-                    return sale.sale !== 0
-                }))*/
             })
             .catch(error => {
                 console.log('Blad wyswietlania', error.response.data.error);
@@ -101,7 +97,7 @@ const Sales = () => {
                                     return <Link to={product.link} className={product.sale !== 0 ? '' : 'hidden'}>
                                         <ProductInList productImage={product.image}
                                                        productTitle={productTitleShort(product.name)}
-                                                       /*productRating={product.rating}*/ productPrice={product.price}
+                                                       productRating={0} productPrice={product.price}
                                                        productPromotion={product.sale}/>
                                     </Link>
                                 })

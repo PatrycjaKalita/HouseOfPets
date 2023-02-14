@@ -82,12 +82,6 @@ const OrderSummary = () => {
             <p className="os-description">Podsumowanie zamówienia zostało wysłane na powyższy adres mailowy. Szczegóły
                 tego zamówienia można podejrzeć również w profilu użytkownika (zakładka “Historia
                 zamówień”). W razie problemów prosimy o niezwłoczny kontakt z nami.</p>
-
-            {/*<div className="os-btn-container">
-                <Link to="/">
-                    <button className="os-btn">Zapłać</button>
-                </Link>
-            </div>*/}
         </div>
 
     );

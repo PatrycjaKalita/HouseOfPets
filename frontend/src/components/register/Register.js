@@ -230,13 +230,6 @@ const Register = () => {
                         />
                     </div>
 
-{/*                    <div className="">
-                        check
-                        <span>Wyrażam zgodę na to, żeby moje dane personalne i informacje o wykorzystaniu ofert przez
-                            firmę House of pets i jej partnerów, były do odwołania rejestrowane w centralnym profilu użytkownika
-                            i wykorzystywane przez firmę House of pets do optymalizacji (personalizacji) ofert.</span>
-                    </div>*/}
-
                     <button className="register-btn" onClick={clickSubmit}>{buttonText}</button>
                 </form>
 

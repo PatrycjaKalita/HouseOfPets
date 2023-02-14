@@ -32,7 +32,7 @@ export function checkNumberOfOpinions(number) {
 
 export function checkProductAvailability(number) {
     if (number <= 0) {
-        return "Nie dostępny";
+        return "Niedostępny";
     } else
         return "Dostępny";
 }

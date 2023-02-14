@@ -207,7 +207,7 @@ const OrderDetails = (props) => {
                     }
                     {
                         productsSetList.length === 0 ?
-                            <div className="non-client-orders">Brak zamówień</div>
+                            <div className="non-client-orders"></div>
                             :
                             productsSetList.map((set) => {
                                 return <div>

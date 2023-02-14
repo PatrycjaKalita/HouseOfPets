@@ -3,7 +3,6 @@ import axios from "axios";
 import {getCookie, signOut} from "../../../../auth/Helpers";
 import {useHistory} from "react-router-dom";
 import {CircularProgress} from "@mui/material";
-import {useStyles} from "../../adding-product/MUIStyle";
 
 const EditProductSetDetails = (props) => {
     const id = props.setID

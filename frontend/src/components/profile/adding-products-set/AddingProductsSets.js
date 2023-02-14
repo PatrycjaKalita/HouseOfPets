@@ -219,7 +219,6 @@ const AddingProductsSets = (props) => {
     const handleChangeProduct = (e) => {
         const {name, value} = e.target
         setValueSelect({...valueSelect, [name]: value})
-        /*idWeightOfAnimalSelect = e.target.value*/
     }
 
     let {

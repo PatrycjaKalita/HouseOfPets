@@ -82,9 +82,6 @@ const ProductsList = () => {
                     {/* Product */}
                     <div className="products-list-container">
                         {
-                            /*location.filterResults.length === 0 ?
-                                <div className="no-product-message">Żaden produkt nie spełnia kryteriów.</div>
-                                :*/
                                 filterResults.map((product) => (
                                     <Link to={product.link}>
                                         <ProductInList productImage={product.image}
@@ -92,8 +89,7 @@ const ProductsList = () => {
                                                        productRating="0" productPrice={product.price}
                                                        productPromotion={product.sale}/>
                                     </Link>
-                                )) /*:
-                                <div className="no-product-message">Żaden produkt nie spełnia kryteriów.</div>*/
+                                ))
                         }
                     </div>
                 </div>

@@ -296,7 +296,7 @@ const EditProductsSet = (props) => {
             <ProfileNavigation choose={props.choose}/>
 
             <div className="w-4/5">
-                <h1 className="mb-35 font-semibold">Edycja produktu</h1>
+                <h1 className="mb-35 font-semibold">Edytuj zestaw</h1>
                 <EditProductSetDetails setID={id}/>
 
                 <h1 className="mb-15 font-semibold">Formularz</h1>

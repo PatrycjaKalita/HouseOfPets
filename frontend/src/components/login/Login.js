@@ -76,7 +76,6 @@ const Login = () => {
     } = values
 
     const handleChange = (name) => (event) => {
-        //console.log(event.target.value);
         setValues({...values, [name]: event.target.value})
     }
 
